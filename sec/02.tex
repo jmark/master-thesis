@@ -1,0 +1,44 @@
+\section{3D Interpolation of Shocks / Real world data}
+
+Following figures depict the very same as the previous section but with real
+world FLASH data of a fully developed turbulence.
+
+\image{1.0}{lagrange-interpolation-3d-turbulence.png}{
+Fully developed turbulence: Third-order 3d interpolation
+of \textsc{flash} data to \textsc{flexi} data. \\
+rms = 3.162914 | rms error = 0.879976 | relative rms error = 27.821685\%}
+
+\image{1.0}{lagrange-interpolation-3d-turbulence-nvisu-4.png}{
+Fully developed turbulence - ray through the center: Third-order 3d
+interpolation of \textsc{flash} data to \textsc{flexi} data. The vertical
+dashed lines depict the boundaries of an element.}
+
+As one can see the result is not satisfiying. Shocks do not get resolved very
+well with this scheme. Suprisingly, the huge jumps within an element do not
+cause any harm. This turbulence snapshot has a resolution of $128^3$ nodes in
+BCG space. Hence, higher resolution like $256^3$, which is necessary for
+serious simulation anyway, in the first place would mitigate interpolation
+errors considerably.
+ 
+The bigger problem is the necessary extrapolation near the element boundaries
+during conversion from BCG space to nodal space. As noted in the beginning
+Lagrange polynomes tend to explode outside their anchor nodes. In conjunction
+with the influence of the other dimensions this might explain the shift of the
+interpolant at shocks. To exemplify this phenomena following artificial shock
+cases were generated.
+
+\image{1.0}{lagrange-interpolation-3d-steps-ray-nvisu-8.png}{
+Superposed sines and cosines - ray through the center: Third-order 3d interpolation of
+\textsc{flash} data to \textsc{flexi} data. The vertical
+dashed lines depict the boundaries of an element.}
+
+\image{1.0}{lagrange-interpolation-3d-steps-ray-nvisu-8-1.png}{ Superposed
+sines and cosines - ray through the center: Third-order 3d interpolation of
+\textsc{flash} data to \textsc{flexi} data. The vertical dashed lines depict
+the boundaries of an element.}
+
+Bearing figure \ref{fig-grid-spaces.png} (comparison of grid spaces) in mind
+extrapolation from BCG to nodal space clearly yields erroneous values.  Remedy
+would be to enforce the Lagrange polynome to consider the via a different
+method obtained values at element boundaries. If one could achieve that I would
+bet for considerably better shock resolution. Suggestions are welcome.

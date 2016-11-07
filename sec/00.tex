@@ -1,0 +1,140 @@
+In our last meeting we discussed how to proceed after I got FLEXI successfully
+running. Our main goal is to compare initally identical MHD turbulence setups
+in FLASH and in FLEXI. One option is to transfer a fully developed turbulence
+stored in a FLASH snapshot file to a format FLEXI understands. The other option
+is using an initally smooth velocity field which leads to turbulence during
+simulation. Interpolation is in order. So before that the
+transfer/interpolation scheme from FLASH all the way through FLEXI has to be
+tested on sensible test cases. The focus lies on the correctnes of handling
+smooth setups and the resolution of shocks. Following document testifies just
+that, shows many plots, reveals encountered problems and puts the result into
+perspective.
+
+\section{Definitions and Preliminary Remarks}
+
+\subsection{Grids, Cells and Elements}
+Since there is no precise nomenclature yet for grids, cells and elements, I
+will propose one for this document. The following definitions reflect the
+common way of implementation in actual code as well and shall be framework
+agnostic. This is open for debate of course.
+
+\begin{description}
+\item[Grid] A grid consists of either cells or elements. The grid can be
+structured or unstructured. It contains the necessary information where to find
+cells/elements and what their (spatial) relationship to neighbors are.
+
+\item[Cell] The atomic container type of a grid. They contain the actual data
+which can be a scalar, arrays of scalars, vectors, tensors, etc. What cells
+distinguish from points is that they have an expanse. Hence, one must specificy
+if the data is defined in the cell-center, at their corners or at their faces.
+
+\item[Element] Elements are spatially extended objects like cells. However,
+they group a list of points called \emph{nodes} on which the data is pinned on.
+When an element interacts with the outside world it must extract the necessary
+values from these nodes via polynomial interpolation.
+\end{description}
+
+Specifically for this document, it is important to keep in mind that cells
+refer to the \emph{finite volumes (FV)} of the \textsc{FLASH} grid and elements
+to \textsc{HOPR} mesh scheme. Remark: No nodal information is stored in the
+\textsc{HOPR} mesh file. \emph{FLEXI} on the other hand just stores the data as
+arrays of scalars refering to an element in the mesh. The exact assignment of
+values to the nodes is based on convention only.
+
+\subsection{Grid Spaces and Transformation}
+In this work, four grid spaces are of importance: \emph{Face-centered grid
+(FCG)}, \emph{body-centered grid (BCG)}, \emph{Gauss nodal grid (GNG)} and
+\emph{Gauss-Lobatto nodal grid (LNG)}. A visual representation can be found in
+figure \ref{fig-grid-spaces.png}. This figure shows a one-dimensional grid of
+eight cells (dashed lines) or alternatively a grid with two elements (thick
+lines) each consisting of four nodes which implies a polynomial order of three.
+Major part of the work is the transformation back and forth between these
+grid spaces via interpolation. Another significant aspect is the relationship
+of elements to cells. First one overlays both grids. Ideally, they are of the
+same shape and cover the same physical domain. When transforming between both
+grid types, cells get grouped together in numbers equal to the nodal number of
+the superincumbent element. Interpolation happens in each group/element
+independently.
+
+\image{0.6}{grid-spaces.png}{Nodes in a two element grid each consisting of
+four cells. From bottom to top: face-centered, body-centered, Gauss nodes (n =
+3), Gauss-Lobatto nodes (n = 3).}
+
+\subsection{1D Lagrange Interpolation}
+
+For illustrative purposes we begin with the simplest case: one-dimensional
+\textsc{Lagrange} interpolation.
+\image{0.8}{lagrange-interpolation-1d.png}{One-dimensinal Lagrange
+interpolation with four sample nodes.}
+The Lagrange polynome of third order needs four anchor nodes with their
+associated values in order to interpolate any other point in between. This
+works very well and does not cause any headaches. Unfortunately, considering
+previous section, extrapolation is necessary, too. Lagrange polynomes tend to
+explode going further away from the outer anchor nodes. In pathological
+interpolation cases this effect yields erroneous results. The end of the
+document shows specific examples.
+
+\subsection{Multidimensional Lagrange Interpolation}
+
+Since we operate in three-dimensional space we need to generalize
+the one-dimensional Lagrange interpolation to higher dimensions. One
+approach is called: \emph{Multivariate Lagrange Interpolation}. Their
+exists extensive amout of literature about this. Interestingly, this
+method needs lesser anchor nodes than the following one, we use: \emph{Tensor
+Ansatz Lagrange Interpolation}. The ansatz is straigtforward. For the three
+dimensional case it reads:
+
+\begin{equation}
+\label{eq-tensor-ansatz}
+    p(x,y,z) = \sum^{n_x,n_y,n_z}_{i,j,k = 0} f_{ijk} \cdot l_i(x) \cdot l_j(y) \cdot l_k(z)
+\end{equation}
+
+Life is easy, so we set $n = n_x = n_y = n_z$. If we go crazy we could
+introduce tensor notation.
+
+\begin{equation}
+\label{eq-tensor-ansatz}
+    p(x,y,z) = \mathbb F \odot (\vec{l(x)} \otimes \vec{l(y)} \otimes \vec{l(z)})
+\end{equation}
+
+where $\odot$ is the \emph{relentless} contraction operator. If the target
+nodes $x_q, y_r, z_s$ are known beforehand, $(\vec{l(x)} \otimes \vec{l(y)} \otimes \vec{l(z)})$
+can be precomputed and stays the same for all interpolations within an element
+and it's cell group.
+
+\subsection{Transformation from \textsc{FLASH} to \textsc{FLEXI}}
+
+All following examples/figures in this document are produced by the very same
+procedure where we set the interpolation order $n = 3$. First the intial values
+are generated (or read) in the FLASH grid format. The grid is split into groups
+of $4^3 = 64$ neighboring cells. These groups get mapped to the associated
+element of the HOPR grid. Looping over all group-element pairs a
+three-dimensional Lagrange Polynome gets constructed according to the
+body-centered values of the cells. Then the new values at the
+Gauss/Gauss-Lobatto nodes get interpolated and stored according to the ordering
+convention of FLEXI.
+
+In order to do useful analysis and visualization, the FLEXI data gets again
+back-interpolated to BCG. This is similar to what the visualization routines in
+FLEXI do.
+
+\subsection{Interpolation Error Estimate}
+
+As a meassure of interpolation error of an original function $f$ and its
+interpolated counterfeit $\widetilde{f}$ I opted for the relative
+root-means-sqare variance. Taking the absolute error would of course be another
+valid option.
+
+\begin{equation}
+    \text{rms} = \sqrt{\frac{1}{N} \sum^N_i f^2_i} 
+\end{equation}
+
+\begin{equation}
+    \text{rmse} = \sqrt{\frac{1}{N} \sum^N_i (f_i - \widetilde{f_i})^2} 
+\end{equation}
+
+\begin{equation}
+    \text{relative rmse} = \frac{\text{rmse}}{\text{rms}} 
+\end{equation}
+
+One has to ensure that $f_i$ and $\widetilde{f_i}$ live in the same grid space.

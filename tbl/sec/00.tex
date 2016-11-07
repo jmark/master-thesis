@@ -1,0 +1,40 @@
+In diesem Projekt soll das DGSEM Verfahren auf die zweidimensionalen
+kompressiblen linearen Eulergleichungen (kompressiblen Akkustik-Gleichungen)
+angewandt werden. Die Gleichungen sind gegegeben durch
+
+\begin{align}
+\begin{pmatrix}
+v_1\\
+v_2\\
+p
+\end{pmatrix}_t
++
+\begin{pmatrix}
+\frac{1}{\rho}p\\
+0\\
+\lambda v_1
+\end{pmatrix}_x
++
+\begin{pmatrix}
+0\\
+\frac{1}{\rho}p\\
+\lambda v_2
+\end{pmatrix}_y
+=
+\begin{pmatrix}
+0\\
+0\\
+0
+\end{pmatrix}
+\end{align}
+
+Dabei bezeichnet $v_1$, bzw. $v_2$ die Geschwindigkeit einer Akkustikwelle in
+$x$-, bzw. $y$-Richtung. Der Druck der Welle ist durch $p$ gegeben.
+Zusätzlich beschreiben die Konstanten $\rho > 0$ die Dichte und $\lambda > 0$ die
+sogenannte „zweite Lame Konstante“.
+
+Ziel dieses Projekts ist es, ein zweidimensionales DGSEM Verfahren zu
+implementieren und zu verifizieren.  Verwendet werden im Folgenden stets das
+Low- Storage-4th-Order Runge-Kutta-Verfahren des letzten Projektes zur
+Zeitintegration. Der Zeitschritt wird stets adaptiv durch die CFL-Bedingung
+gemäß Vorlesung bestimmt werden.

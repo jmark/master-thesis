@@ -1,0 +1,80 @@
+\section{Interpolation Test Cases}
+
+This section displays a variety of test cases in order to confirm the
+correctness of the implementation. The two-dimensional interpolation is
+implemented in the same manner as the three-dimensinal. As expected functions
+of sufficient low polynomial order get interpolated exactly.
+
+\subsection{2D Interpolation in one element}
+
+Here we see the interpolation of two-dimensional functions within an element
+consisting of four nodes as usual. If not specified otherwise, the anchor
+points are four-times-four BCG nodes.
+
+\image{1.0}{lagrange-interpolation-2d-plane.png}{Third-order 2d interpolation
+of the ascending plane.\\ rms = 5.393455 | rms error = 0.000000 | relative rms
+error = 0.000000\%}
+
+\image{1.0}{lagrange-interpolation-2d-polynom.png}{Third-order 2d interpolation
+of a second-order polynome.\\ rms = 23.398272 | rms error = 0.000000 | relative
+rms error = 0.000000\%}
+
+\image{1.0}{lagrange-interpolation-2d-sinus1.png}{Third-order 2d interpolation
+of a moderate sine-cosine superposition.\\ rms = 1.000000 | rms error =
+0.028277 | relative rms error = 2.827652\%}
+
+\image{1.0}{lagrange-interpolation-2d-sinus2.png}{Third-order 2d interpolation
+of a more difficult sine-cosine superposition.\\ rms = 0.974679 | rms error =
+0.110654 | relative rms error = 11.352840\%}
+
+\image{1.0}{lagrange-interpolation-2d-sinus3.png}{Third-order 2d interpolation
+of an incommensurable sine-cosine superposition. \\
+rms = 2.280351 | rms error = 3.157907 | relative rms error = 138.483376\%}
+
+\image{1.0}{lagrange-interpolation-2d-sampling-comparison-1.png}{Comparison of
+third-order 2d interpolation with different sampling grids.}
+
+\image{1.0}{lagrange-interpolation-2d-sampling-comparison-2.png}{Comparison of
+third-order 2d interpolation with different sampling grids.}
+
+\subsection{3D Interpolation over the grid}
+
+Following compares the original data on the FLASH grid (BCG) to the
+back-interpolated data of FLEXI (BCG!).
+
+\image{1.0}{lagrange-interpolation-3d-plane.png}{
+Ascending plane in x-direction: Third-order 3d interpolation of \textsc{flash} data to \textsc{flexi} data.\\
+rms = 0.404423 | rms error = 0.000000 | relative rms error = 0.000000\%}
+
+\image{1.0}{lagrange-interpolation-3d-gaussian.png}{
+3D Gaussian: Third-order 3d interpolation of \textsc{flash} data to \textsc{flexi} data.\\
+rms = 0.125497 | rms error = 0.000000 | relative rms error = 0.000000\%}
+
+\image{1.0}{lagrange-interpolation-3d-gaussian-ray-nvisu-4.png}{
+3D Gaussian - ray through the center: Third-order 3d interpolation of
+\textsc{flash} data to \textsc{flexi} data.}
+
+\image{1.0}{lagrange-interpolation-3d-plane-wiggle.png}{
+Ascending plane in all directions superposed by sines and cosines. Third-order 3d
+interpolation of \textsc{flash} data to \textsc{flexi} data.\\
+rms = 1.377285 | rms error = 0.000000 | relative rms error = 0.000000\%}
+
+\image{1.0}{lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png}{
+Ascending plane in all directions superposed by sines and cosines - ray through
+the center: Third-order 3d interpolation of \textsc{flash} data to
+\textsc{flexi} data.}
+
+\image{1.0}{lagrange-interpolation-3d-steps.png}{
+Stress test: 3D superposed sines and cosines with random noise: Third-order 3d interpolation
+of \textsc{flash} data to \textsc{flexi} data. \\
+rms = 2.731093 | rms error = 0.409321 | relative rms error = 14.987457\%}
+
+The bottom line is that for nice and smooth setups the transformation scheme is
+exact up to machine precision. Nasty discontinuities cause the Lagrange
+polynomial to break out but within bearable magnitude. The global solution
+still remains stable and resembles the overall structure. More on this in the
+next chapter. Remark: Considering
+figure \ref{fig-lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png}, how can this
+setup still yield zero error estimate? The green curve depicts more points than
+just the (back-interpolated) BCG nodes. The error estimate only considers the
+values at the same position as the FLASH data which coincide. 

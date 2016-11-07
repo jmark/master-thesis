@@ -1,0 +1,52 @@
+\section*{Aufgabe 2}
+\label{sec:2}
+
+In dieser Aufgabe wurde ein DGSEM-Verfahren in starker Form für die
+zweidimensionalen linearen Eulergleichungen unter Verwendung der
+Legendre-Gauss-Lobatto Punkte implementiert. Als numerischen Fluss wurde der
+lokale Lax-Friedrich- bzw. Rusanov-Fluss verwendet. Die Randbedingungen wurden
+als periodisch angenommen. Die Ergebnisse der anhand der Erhaltungsgröße $p$
+(Druck) vorgenommenen Untersuchungen bzgl. des Konvergenzverhaltens sind in den
+Tabellen \ref{tab:T21} und \ref{tab:T22} zusammengefasst.
+
+\begin{table} [H]
+	%\captionsetup{width=.6\textwidth}
+	\fontsize{3.5mm}{3.5mm}\selectfont
+	\caption{Fehler und Konvergenzeigenschaften für $N=5$ in $t=1.0$ und mit $CFL=0.1$.}
+	\centering
+	\begin{tabular}{rllll}
+		\toprule
+		$ N_Q $ & $\Delta x_{eff}=\Delta y_{eff}$ & $\epsilon_{max}$ & $EOC$ \\
+		\midrule
+		2 & 8.3333333333333329e-002 & 7.2566066459671674e-003 & -- \\
+		4 & 4.1666666666666664e-002 & 1.5736567232416121e-004 & 5.5271022975099449 \\
+		8 & 2.0833333333333332e-002 & 3.0023273192014699e-006 & 5.7118957853252548 \\
+		16 & 1.0416666666666666e-002 & 4.8908812111392308e-008 & 5.9398430353746114 \\
+		32 & 5.2083333333333330e-003 & 7.6589579123265139e-010 & 5.9968025043945419 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:T21}
+\end{table}
+
+\begin{table} [H]
+	%\captionsetup{width=.6\textwidth}
+	\fontsize{3.5mm}{3.5mm}\selectfont
+	\caption{Fehler und Konvergenzeigenschaften für $N=6$ in $t=1.0$ und mit $CFL=0.1$.}
+	\centering
+	\begin{tabular}{rllll}
+		\toprule
+		$ N_Q $ & $\Delta x_{eff}=\Delta y_{eff}$ & $\epsilon_{max}$ & $EOC$ \\
+		\midrule
+		2 & 7.1428571428571425e-002 & 8.6944437855507317e-004 & -- \\
+		4 & 3.5714285714285712e-002 & 9.3385047357230633e-006 & 6.5407583591940650 \\
+		8 & 1.7857142857142856e-002 & 8.6390028464222723e-008 & 6.7561829570347793 \\
+		16 & 8.9285714285714281e-003 & 7.0123284956480347e-010 & 6.9448274078819257 \\
+		32 & 4.4642857142857140e-003 &  5.5804250109758868e-012 & 6.8989603852564061 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:T22}
+\end{table}
+
+Es ist zu erkennen, dass die erhaltene Konvergenzordnung (EOC) der formalen
+Ordnung des Verfahrens entspricht. D.h. die experimentelle Konvergenzordnung
+der Implementierung ist stets $N+1$.

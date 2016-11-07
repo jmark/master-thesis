@@ -1,0 +1,172 @@
+\documentclass[
+	11pt,			% 
+	a4paper,		% DIN A4
+]{scrartcl}		% Zweiseitig
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{
+	calc,			
+	color,			
+	float,			
+	mdwlist,		
+	%scrdate,		
+	%scrtime,		
+    %supertabular,	
+	%tabularx,		
+	marvosym,		
+}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage[amsmath,thmmarks,amsthm]{ntheorem}
+
+%\newtheorem{proof}{Beweis}
+
+%\usepackage[]{units}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{lscape}
+%\usepackage{bbold}
+\usepackage{mathtools}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{textwidth=17cm}
+\geometry{textheight=25cm}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage[ngerman]{babel}
+%\usepackage[autostyle=true,german=quotes]{csquotes}
+
+\usepackage[
+    justification=justified,
+    singlelinecheck=false,
+    font=small,
+    format=plain,
+    labelfont=bf,
+    up,
+    aboveskip=2pt,
+    center
+]{caption}
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{gnuplot-lua-tikz}
+
+\lstset{ %
+    breaklines=true,
+    basicstyle=\scriptsize\sffamily,
+    captionpos=b,
+    frame=single,
+    framexleftmargin=1.5em,
+    xleftmargin=16pt,
+    keepspaces=true,
+    aboveskip=0.5cm,
+    belowskip=0.3cm,
+    lineskip=4pt,
+    %keywordstyle=\bf,
+    language=Mathematica,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\color{black},
+    rulecolor=\color{black},
+    morekeywords={Quiet},
+    alsoletter={\#},
+    %emph={map,jacobian,initV,steps,orbit,initQ,initR,diagsR},
+    %emphstyle={\color{green}},
+    emph={[2]\#},emphstyle={[2]\color{green}}
+}
+\usepackage{dcolumn}
+% \renewcommand{\lstlistingname}{Code}
+
+% \setcounter{tocdepth}{3}
+
+% \fussy			% viele Worttrennungen, "schönere" Wortabstände
+
+\usepackage{stmaryrd}
+\usepackage{float}
+%\usepackage{algpseudocode}
+
+\newtheorem{mydef}{Definition}[section]
+\newtheorem{lemma}[mydef]{Lemma}
+\newtheorem{satz}[mydef]{Satz}
+\newtheorem{kor}[mydef]{Korollar}
+\newtheorem{prop}[mydef]{Proposition}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+%\usepackage{siunitx}
+
+\lstset{ %
+    breaklines=true,
+    basicstyle=\scriptsize\sffamily,
+    captionpos=b,
+    frame=single,
+    framexleftmargin=1.5em,
+    xleftmargin=16pt,
+    keepspaces=true,
+    aboveskip=0.5cm,
+    belowskip=0.3cm,
+    lineskip=4pt,
+    language=C++,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\color{black},
+    rulecolor=\color{black},
+    morekeywords={Quiet},
+    alsoletter={\#},
+    emph={[2]\#},emphstyle={[2]\color{green}}
+}
+
+\renewcommand{\lstlistingname}{Code}
+
+
+\newcommand{\image}[3]
+{
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=#1\textwidth]{./fig/#2}
+    \vspace*{2mm}
+    \caption{#3}
+    \label{fig-#2}
+    \end{figure}
+}
+% usage: \image{1.0}{blubb.png}{This is the caption.}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\renewcommand{\vec}[1]{\underline{#1}}
+\newcommand{\mat}[1]{\underline{\underline{#1}}}
+%\renewcommand{\qed}[0]{$\square$}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newcommand{\Gaense}[1]{\textquotedblleft #1\textquotedblright}
+
+\setcounter{section}{0}
+
+\raggedbottom
+
+\begin{document}
+
+%\input{./frp/frontpage}
+
+%\pagenumbering{gobble}
+%\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{./sec/00}
+\input{./sec/01}
+\input{./sec/02}
+\input{./sec/03}
+
+% \bibliography{references}{}
+% \bibliographystyle{myplain}
+
+\end{document}
