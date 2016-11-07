@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.9.1)  20 OCT 2016 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.9.1)  7 NOV 2016 12:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1277,76 +1277,76 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count160
 ABD: EveryShipout initializing macros (./sec/00.tex
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 13.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 2.
 
 (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./fig/grid-spaces.png, id=56, 349.7868pt x 252.2223pt>
+<./fig/grid-spaces.png, id=68, 349.7868pt x 252.2223pt>
 File: ./fig/grid-spaces.png Graphic file (type png)
 
 <use ./fig/grid-spaces.png>
-Package pdftex.def Info: ./fig/grid-spaces.png used on input line 61.
+Package pdftex.def Info: ./fig/grid-spaces.png used on input line 67.
 (pdftex.def)             Requested size: 290.22105pt x 209.27133pt.
  [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <./fig/lagrange-interpolat
-ion-1d.png, id=68, 605.6226pt x 326.6604pt>
+ion-1d.png, id=82, 605.6226pt x 326.6604pt>
 File: ./fig/lagrange-interpolation-1d.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-1d.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-1d.png used on input line
- 68.
+ 74.
 (pdftex.def)             Requested size: 386.95894pt x 208.72299pt.
  [2 <./fig/grid-spaces.png> <./fig/lagrange-interpolation-1d.png>]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 87.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 93.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 87.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 93.
 
 (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 87.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 93.
 
 
 (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 87.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 93.
 
 
 (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 87.
+(Font)              <10.95> on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 87.
+(Font)              <8> on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 87.
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+(Font)              <6> on input line 93.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 87.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 93.
 
 (/usr/share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
-(Font)              using `T1/lmss/bx/n' instead on input line 105.
+(Font)              using `T1/lmss/bx/n' instead on input line 111.
 
-) (./sec/01.tex [3]
-<./fig/lagrange-interpolation-2d-plane.png, id=94, 1022.6205pt x 317.2653pt>
+[3]) (./sec/01.tex
+<./fig/lagrange-interpolation-2d-plane.png, id=109, 1022.6205pt x 317.2653pt>
 File: ./fig/lagrange-interpolation-2d-plane.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-2d-plane.png>
@@ -1354,24 +1354,22 @@ Package pdftex.def Info: ./fig/lagrange-interpolation-2d-plane.png used on inpu
 t line 16.
 (pdftex.def)             Requested size: 483.69684pt x 150.0684pt.
 
-<./fig/lagrange-interpolation-2d-polynom.png, id=95, 1022.6205pt x 317.2653pt>
+<./fig/lagrange-interpolation-2d-polynom.png, id=110, 1022.6205pt x 317.2653pt>
 File: ./fig/lagrange-interpolation-2d-polynom.png Graphic file (type png)
-
 <use ./fig/lagrange-interpolation-2d-polynom.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-2d-polynom.png used on in
 put line 20.
 (pdftex.def)             Requested size: 483.69684pt x 150.0684pt.
-
-<./fig/lagrange-interpolation-2d-sinus1.png, id=96, 1022.6205pt x 317.2653pt>
+ [4 <./fig/lagrange-interpolation-2d-plane.png>]
+<./fig/lagrange-interpolation-2d-sinus1.png, id=119, 1022.6205pt x 317.2653pt>
 File: ./fig/lagrange-interpolation-2d-sinus1.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-2d-sinus1.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-2d-sinus1.png used on inp
 ut line 24.
 (pdftex.def)             Requested size: 483.69684pt x 150.0684pt.
- [4 <./fig/lagrange-interpolation-2d-plane.png> <./fig/lagrange-interpolation-2
-d-polynom.png>]
-<./fig/lagrange-interpolation-2d-sinus2.png, id=105, 1022.6205pt x 317.2653pt>
+
+<./fig/lagrange-interpolation-2d-sinus2.png, id=120, 1022.6205pt x 317.2653pt>
 File: ./fig/lagrange-interpolation-2d-sinus2.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-2d-sinus2.png>
@@ -1379,15 +1377,16 @@ Package pdftex.def Info: ./fig/lagrange-interpolation-2d-sinus2.png used on inp
 ut line 28.
 (pdftex.def)             Requested size: 483.69684pt x 150.0684pt.
 
-<./fig/lagrange-interpolation-2d-sinus3.png, id=106, 1022.6205pt x 317.2653pt>
+<./fig/lagrange-interpolation-2d-sinus3.png, id=121, 1022.6205pt x 317.2653pt>
 File: ./fig/lagrange-interpolation-2d-sinus3.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-2d-sinus3.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-2d-sinus3.png used on inp
 ut line 32.
 (pdftex.def)             Requested size: 483.69684pt x 150.0684pt.
-
-<./fig/lagrange-interpolation-2d-sampling-comparison-1.png, id=107, 1022.6205pt
+ [5 <./fig/lagrange-interpolation-2d-polynom.png> <./fig/lagrange-interpolation
+-2d-sinus1.png> <./fig/lagrange-interpolation-2d-sinus2.png>]
+<./fig/lagrange-interpolation-2d-sampling-comparison-1.png, id=132, 1022.6205pt
  x 622.2447pt>
 File: ./fig/lagrange-interpolation-2d-sampling-comparison-1.png Graphic file (t
 ype png)
@@ -1396,9 +1395,7 @@ Package pdftex.def Info: ./fig/lagrange-interpolation-2d-sampling-comparison-1.
 png used on input line 35.
 (pdftex.def)             Requested size: 483.69684pt x 294.3255pt.
 
-[5 <./fig/lagrange-interpolation-2d-sinus1.png> <./fig/lagrange-interpolation-2
-d-sinus2.png> <./fig/lagrange-interpolation-2d-sinus3.png>]
-<./fig/lagrange-interpolation-2d-sampling-comparison-2.png, id=118, 1022.6205pt
+<./fig/lagrange-interpolation-2d-sampling-comparison-2.png, id=133, 1022.6205pt
  x 622.2447pt>
 File: ./fig/lagrange-interpolation-2d-sampling-comparison-2.png Graphic file (t
 ype png)
@@ -1407,24 +1404,26 @@ Package pdftex.def Info: ./fig/lagrange-interpolation-2d-sampling-comparison-2.
 png used on input line 38.
 (pdftex.def)             Requested size: 483.69684pt x 294.3255pt.
 
-<./fig/lagrange-interpolation-3d-plane.png, id=119, 686.565pt x 306.4248pt>
+[6 <./fig/lagrange-interpolation-2d-sinus3.png> <./fig/lagrange-interpolation-2
+d-sampling-comparison-1.png>]
+<./fig/lagrange-interpolation-3d-plane.png, id=142, 686.565pt x 306.4248pt>
 File: ./fig/lagrange-interpolation-3d-plane.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-3d-plane.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-plane.png used on inpu
 t line 47.
 (pdftex.def)             Requested size: 483.69684pt x 215.87988pt.
- [6 <./fig/lagrange-interpolation-2d-sampling-comparison-1.png> <./fig/lagrange
--interpolation-2d-sampling-comparison-2.png>]
-<./fig/lagrange-interpolation-3d-gaussian.png, id=128, 686.565pt x 306.4248pt>
+
+<./fig/lagrange-interpolation-3d-gaussian.png, id=143, 686.565pt x 306.4248pt>
 File: ./fig/lagrange-interpolation-3d-gaussian.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-3d-gaussian.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-gaussian.png used on i
 nput line 51.
 (pdftex.def)             Requested size: 483.69684pt x 215.87988pt.
-
-<./fig/lagrange-interpolation-3d-gaussian-ray-nvisu-4.png, id=129, 708.9687pt x
+ [7 <./fig/lagrange-interpolation-2d-sampling-comparison-2.png> <./fig/lagrange
+-interpolation-3d-plane.png>]
+<./fig/lagrange-interpolation-3d-gaussian-ray-nvisu-4.png, id=153, 708.9687pt x
  384.4764pt>
 File: ./fig/lagrange-interpolation-3d-gaussian-ray-nvisu-4.png Graphic file (ty
 pe png)
@@ -1433,17 +1432,16 @@ Package pdftex.def Info: ./fig/lagrange-interpolation-3d-gaussian-ray-nvisu-4.p
 ng used on input line 55.
 (pdftex.def)             Requested size: 483.69684pt x 262.32048pt.
 
-[7 <./fig/lagrange-interpolation-3d-plane.png> <./fig/lagrange-interpolation-3d
--gaussian.png>]
-<./fig/lagrange-interpolation-3d-plane-wiggle.png, id=139, 686.565pt x 306.4248
+<./fig/lagrange-interpolation-3d-plane-wiggle.png, id=154, 686.565pt x 306.4248
 pt>
 File: ./fig/lagrange-interpolation-3d-plane-wiggle.png Graphic file (type png)
  <use ./fig/lagrange-interpolation-3d-plane-wiggle.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-plane-wiggle.png used 
 on input line 60.
 (pdftex.def)             Requested size: 483.69684pt x 215.87988pt.
-
-<./fig/lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png, id=140, 708.246p
+ [8 <./fig/lagrange-interpolation-3d-gaussian.png> <./fig/lagrange-interpolatio
+n-3d-gaussian-ray-nvisu-4.png>]
+<./fig/lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png, id=163, 708.246p
 t x 384.4764pt>
 File: ./fig/lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png Graphic file
  (type png)
@@ -1452,59 +1450,137 @@ File: ./fig/lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png Graphic file
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-plane-wiggle-ray-nvisu
 -8.png used on input line 65.
 (pdftex.def)             Requested size: 483.69684pt x 262.58447pt.
- [8 <./fig/lagrange-interpolation-3d-gaussian-ray-nvisu-4.png> <./fig/lagrange-
-interpolation-3d-plane-wiggle.png>]
-<./fig/lagrange-interpolation-3d-steps.png, id=149, 686.565pt x 306.4248pt>
+
+<./fig/lagrange-interpolation-3d-steps.png, id=164, 686.565pt x 306.4248pt>
 File: ./fig/lagrange-interpolation-3d-steps.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-3d-steps.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-steps.png used on inpu
 t line 70.
 (pdftex.def)             Requested size: 483.69684pt x 215.87988pt.
-) (./sec/02.tex
-<./fig/lagrange-interpolation-3d-turbulence.png, id=151, 686.565pt x 306.4248pt
+ [9 <./fig/lagrange-interpolation-3d-plane-wiggle.png> <./fig/lagrange-interpol
+ation-3d-plane-wiggle-ray-nvisu-8.png>]) (./sec/02.tex
+<./fig/ekin-over-time-b5-128-256.png, id=174, 619.31375pt x 423.5825pt>
+File: ./fig/ekin-over-time-b5-128-256.png Graphic file (type png)
+
+<use ./fig/ekin-over-time-b5-128-256.png>
+Package pdftex.def Info: ./fig/ekin-over-time-b5-128-256.png used on input line
+ 3.
+(pdftex.def)             Requested size: 483.69684pt x 330.83899pt.
+ [10 <./fig/lagrange-interpolation-3d-steps.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 5.
+
+
+<./fig/lagrange-interpolation-3d-turbulence.png, id=181, 686.565pt x 306.4248pt
 >
 File: ./fig/lagrange-interpolation-3d-turbulence.png Graphic file (type png)
  <use ./fig/lagrange-interpolation-3d-turbulence.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-turbulence.png used on
- input line 9.
+ input line 13.
 (pdftex.def)             Requested size: 483.69684pt x 215.87988pt.
- [9 <./fig/lagrange-interpolation-3d-plane-wiggle-ray-nvisu-8.png> <./fig/lagra
-nge-interpolation-3d-steps.png>]
-<./fig/lagrange-interpolation-3d-turbulence-nvisu-4.png, id=160, 706.8006pt x 3
+ [11 <./fig/ekin-over-time-b5-128-256.png>]
+<./fig/lagrange-interpolation-3d-turbulence-nvisu-4.png, id=190, 706.8006pt x 3
 84.4764pt>
 File: ./fig/lagrange-interpolation-3d-turbulence-nvisu-4.png Graphic file (type
  png)
  <use ./fig/lagrange-interpolation-3d-turbulence-nvisu-4.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-turbulence-nvisu-4.png
- used on input line 14.
+ used on input line 18.
 (pdftex.def)             Requested size: 483.69684pt x 263.11833pt.
 
-[10 <./fig/lagrange-interpolation-3d-turbulence.png> <./fig/lagrange-interpolat
-ion-3d-turbulence-nvisu-4.png>]
-<./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png, id=169, 715.473pt x 384
+<./fig/column-density-128.png, id=191, 734.9859pt x 337.5009pt>
+File: ./fig/column-density-128.png Graphic file (type png)
+
+<use ./fig/column-density-128.png>
+Package pdftex.def Info: ./fig/column-density-128.png used on input line 21.
+(pdftex.def)             Requested size: 483.69684pt x 222.1127pt.
+ [12 <./fig/lagrange-interpolation-3d-turbulence.png> <./fig/lagrange-interpola
+tion-3d-turbulence-nvisu-4.png>]
+<./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png, id=200, 715.473pt x 384
 .4764pt>
 File: ./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png Graphic file (type 
 png)
  <use ./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png 
-used on input line 33.
+used on input line 43.
 (pdftex.def)             Requested size: 483.69684pt x 259.92102pt.
-
-<./fig/lagrange-interpolation-3d-steps-ray-nvisu-8-1.png, id=170, 723.4227pt x 
+ [13 <./fig/column-density-128.png>]
+<./fig/lagrange-interpolation-3d-steps-ray-nvisu-8-1.png, id=209, 723.4227pt x 
 384.4764pt>
 File: ./fig/lagrange-interpolation-3d-steps-ray-nvisu-8-1.png Graphic file (typ
 e png)
  <use ./fig/lagrange-interpolation-3d-steps-ray-nvisu-8-1.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-3d-steps-ray-nvisu-8-1.pn
-g used on input line 38.
+g used on input line 48.
 (pdftex.def)             Requested size: 483.69684pt x 257.06984pt.
 
-[11 <./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png>]) (./sec/03.tex)
-[12 <./fig/lagrange-interpolation-3d-steps-ray-nvisu-8-1.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 56.
+
+[14 <./fig/lagrange-interpolation-3d-steps-ray-nvisu-8.png> <./fig/lagrange-int
+erpolation-3d-steps-ray-nvisu-8-1.png>]
+<./fig/ray-density-256_a.png, id=219, 727.7589pt x 394.5942pt>
+File: ./fig/ray-density-256_a.png Graphic file (type png)
+
+<use ./fig/ray-density-256_a.png>
+Package pdftex.def Info: ./fig/ray-density-256_a.png used on input line 64.
+(pdftex.def)             Requested size: 483.69684pt x 262.26335pt.
+
+<./fig/ray-density-256_b.png, id=220, 728.4816pt x 394.5942pt>
+File: ./fig/ray-density-256_b.png Graphic file (type png)
+
+<use ./fig/ray-density-256_b.png>
+Package pdftex.def Info: ./fig/ray-density-256_b.png used on input line 65.
+(pdftex.def)             Requested size: 483.69684pt x 262.00444pt.
+
+<./fig/ray-density-256_c.png, id=221, 727.7589pt x 394.5942pt>
+File: ./fig/ray-density-256_c.png Graphic file (type png)
+
+<use ./fig/ray-density-256_c.png>
+Package pdftex.def Info: ./fig/ray-density-256_c.png used on input line 66.
+(pdftex.def)             Requested size: 483.69684pt x 262.26335pt.
+ [15 <./fig/ray-density-256_a.png> <./fig/ray-density-256_b.png>]
+<./fig/slice-density-256.png, id=231, 686.565pt x 294.1389pt>
+File: ./fig/slice-density-256.png Graphic file (type png)
+
+<use ./fig/slice-density-256.png>
+Package pdftex.def Info: ./fig/slice-density-256.png used on input line 68.
+(pdftex.def)             Requested size: 483.69684pt x 207.22432pt.
+
+<./fig/column-density-256.png, id=232, 744.381pt x 337.5009pt>
+File: ./fig/column-density-256.png Graphic file (type png)
+
+<use ./fig/column-density-256.png>
+Package pdftex.def Info: ./fig/column-density-256.png used on input line 71.
+(pdftex.def)             Requested size: 483.69684pt x 219.30603pt.
+ [16 <./fig/ray-density-256_c.png> <./fig/slice-density-256.png>]) (./sec/03.te
+x) [17 <./fig/column-density-256.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 172.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 172.
- (out/main.aux)
+
+(out/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 172.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 172.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1519,13 +1595,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 172.
  ) 
 Here is how much of TeX's memory you used:
- 23867 strings out of 493013
- 442251 string characters out of 6139318
+ 23952 strings out of 493013
+ 444080 string characters out of 6139318
  763028 words of memory out of 5000000
- 26883 multiletter control sequences out of 15000+600000
- 53459 words of font info for 47 fonts, out of 8000000 for 9000
+ 26928 multiletter control sequences out of 15000+600000
+ 57680 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,7n,66p,8815b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,8n,66p,8815b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dis
 t/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hex.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/tex
@@ -1535,14 +1611,15 @@ are/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 ></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/
 fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lm
-r8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texm
-f-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb>
-Output written on out/main.pdf (12 pages, 3068634 bytes).
+r12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf
+-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
+/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on out/main.pdf (17 pages, 4199419 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

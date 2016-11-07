@@ -1,3 +1,4 @@
+\paragraph{13.10.2016}
 In our last meeting we discussed how to proceed after I got FLEXI successfully
 running. Our main goal is to compare initally identical MHD turbulence setups
 in FLASH and in FLEXI. One option is to transfer a fully developed turbulence
@@ -10,6 +11,9 @@ smooth setups and the resolution of shocks. Following document testifies just
 that, shows many plots, reveals encountered problems and puts the result into
 perspective.
 
+\paragraph{07.11.2016}
+Answer to the resolution problem of turbulences via 3D Lagrange interpolation.
+
 \section{Definitions and Preliminary Remarks}
 
 \subsection{Grids, Cells and Elements}
@@ -19,9 +23,11 @@ common way of implementation in actual code as well and shall be framework
 agnostic. This is open for debate of course.
 
 \begin{description}
-\item[Grid] A grid consists of either cells or elements. The grid can be
+\item[Mesh] A mesh consists of either cells or elements. The mesh can be
 structured or unstructured. It contains the necessary information where to find
 cells/elements and what their (spatial) relationship to neighbors are.
+
+\item[Grid] Regular/Irregular, grid spaces, array of points/nodes.
 
 \item[Cell] The atomic container type of a grid. They contain the actual data
 which can be a scalar, arrays of scalars, vectors, tensors, etc. What cells
@@ -138,3 +144,21 @@ valid option.
 \end{equation}
 
 One has to ensure that $f_i$ and $\widetilde{f_i}$ live in the same grid space.
+
+Another error estimate could be the absolut total error:
+
+\begin{equation}
+    \text{tot} = \sum^N_i |f_i|
+\end{equation}
+
+\begin{equation}
+    \text{rote} = \sum^N_i |f_i - \widetilde{f_i}|
+\end{equation}
+
+\begin{equation}
+    \text{relative tote} = \frac{\text{tote}}{\text{tot}} 
+\end{equation}
+
+In most cases the total absolute error yields smaller results, since runaways
+get weighted more in the rmse case. A proper handling of runaways especially in
+interpolation of shocks is still an open question.
