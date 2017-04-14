@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.24)  13 APR 2017 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.24)  14 APR 2017 18:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -832,7 +832,10 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@width=\dimen161
 )
 \c@mydef=\count125
-) (out/main.aux
+) (aux/main.aux
+
+LaTeX Warning: Label `eq-tensor-ansatz' multiply defined.
+
 
 LaTeX Warning: Label `eq:ekindisp2' multiply defined.
 
@@ -901,7 +904,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
 LaTeX Info: Redefining \nameref on input line 3.
- (out/main.out) (out/main.out)
+ (aux/main.out) (aux/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -943,7 +946,7 @@ LaTeX Info: Redefining \nameref on input line 3.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 (./frp/frontpage.tex
-<./frp/uni_koeln_logo.jpg, id=92, 626.5809pt x 118.7637pt>
+<./frp/uni_koeln_logo.jpg, id=112, 626.5809pt x 118.7637pt>
 File: ./frp/uni_koeln_logo.jpg Graphic file (type jpg)
 
 <use ./frp/uni_koeln_logo.jpg>
@@ -957,39 +960,39 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 8.
 
 (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (out/main.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 3.
+) (aux/main.toc
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 3.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 3.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 3.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 3.
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+(Font)              <6> on input line 4.
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1000,21 +1003,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 
-] (./sec/intro.tex)
-(./sec/theory/main.tex (./sec/theory/equation.texpdfTeX warning (ext4): destina
-tion with the same identifier (name{page.1}) has been already used, duplicate i
-gnored
+] (./sec/intro.tex
+Overfull \hbox (8.52884pt too wide) in paragraph at lines 53--61
+[]\T1/lmr/m/n/12 More in-for-ma-tion can be found in Bernardo Cock-burn George 
+E. Kar-ni-adakis Chi-WangShu(Eds.)
+ []
+
+<./fig/DG-work-over-periods.png, id=155, 722.7pt x 746.79pt>
+File: ./fig/DG-work-over-periods.png Graphic file (type png)
+
+<use ./fig/DG-work-over-periods.png>
+Package pdftex.def Info: ./fig/DG-work-over-periods.png used on input line 72.
+(pdftex.def)             Requested size: 290.22105pt x 299.89578pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 72.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 \end{align}
-                 [1
+l.73 
+      [1
 
 
-]
+]) (./sec/theory/main.tex (./sec/theory/equation.tex [2 <./fig/DG-work-over-per
+iods.png>] [3]
 
-LaTeX Warning: Citation `Horedt2004' on page 2 undefined on input line 91.
+LaTeX Warning: Citation `Horedt2004' on page 4 undefined on input line 91.
 
-[2] [3]
+[4]
 Overfull \hbox (17.79341pt too wide) in paragraph at lines 168--171
 \T1/lmr/m/n/12 Defining a vector-valued test func-tion $[] \OT1/lmr/m/n/12 = (0
 \OML/lmm/m/it/12 ; ::; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 ; ^^^[]; \OT1/lmr/m/n/
@@ -1022,43 +1038,113 @@ Overfull \hbox (17.79341pt too wide) in paragraph at lines 168--171
 t/12 i \OMS/lmsy/m/n/12 2 []$\T1/lmr/m/n/12 ), mul-ti-ply-ing component-
  []
 
-) (./sec/theory/solvers.tex [4] [5]) (./sec/theory/turbulence.tex
-Overfull \hbox (6.63467pt too wide) in paragraph at lines 22--24
+[5]) (./sec/theory/solvers.tex) (./sec/theory/polynome-ansatz.tex [6]
+<./fig/lagrange-interpolation-1d.png, id=242, 841.1425pt x 453.695pt>
+File: ./fig/lagrange-interpolation-1d.png Graphic file (type png)
+
+<use ./fig/lagrange-interpolation-1d.png>
+Package pdftex.def Info: ./fig/lagrange-interpolation-1d.png used on input line
+ 49.
+(pdftex.def)             Requested size: 386.95894pt x 208.71608pt.
+ [7 <./fig/lagrange-interpolation-1d.png>]
+Overfull \hbox (4.28166pt too wide) in paragraph at lines 100--100
+[] 
+ []
+
+
+Overfull \hbox (24.38773pt too wide) in paragraph at lines 126--126
+[] 
+ []
+
+[8]) (./sec/theory/flux.tex) (./sec/theory/interpolation.tex
+
+LaTeX Warning: Reference `fig-grid-spaces.png' on page 9 undefined on input lin
+e 6.
+
+<./fig/grid-spaces.png, id=265, 349.7868pt x 252.2223pt>
+File: ./fig/grid-spaces.png Graphic file (type png)
+
+<use ./fig/grid-spaces.png>
+Package pdftex.def Info: ./fig/grid-spaces.png used on input line 19.
+(pdftex.def)             Requested size: 290.22105pt x 209.27133pt.
+ [9]
+
+LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
+(Font)              using `T1/lmss/bx/n' instead on input line 23.
+
+[10 <./fig/grid-spaces.png>]) (./sec/theory/forcing.tex
+
+LaTeX Warning: Citation `schmidt2009' on page 11 undefined on input line 12.
+
+) (./sec/theory/shocks.tex [11]
+<./fig/burger-characteristics.png, id=298, 542.025pt x 334.24875pt>
+File: ./fig/burger-characteristics.png Graphic file (type png)
+
+<use ./fig/burger-characteristics.png>
+Package pdftex.def Info: ./fig/burger-characteristics.png used on input line 45
+.
+(pdftex.def)             Requested size: 386.95894pt x 238.63412pt.
+ [12 <./fig/burger-characteristics.png>]) (./sec/theory/time-integration.tex) (
+./sec/theory/shockcapturing.tex
+
+LaTeX Warning: Citation `jameson1981' on page 13 undefined on input line 27.
+
+
+LaTeX Warning: Citation `ducros1999' on page 13 undefined on input line 28.
+
+
+LaTeX Warning: Citation `persson2006' on page 13 undefined on input line 29.
+
+<./fig/expansion-modes.png, id=308, 635.37375pt x 509.905pt>
+File: ./fig/expansion-modes.png Graphic file (type png)
+
+<use ./fig/expansion-modes.png>
+Package pdftex.def Info: ./fig/expansion-modes.png used on input line 43.
+(pdftex.def)             Requested size: 290.22105pt x 232.91745pt.
+ [13]
+
+LaTeX Warning: Citation `derigs2016' on page 14 undefined on input line 67.
+
+
+LaTeX Warning: Citation `gassner2016' on page 14 undefined on input line 69.
+
+[14 <./fig/expansion-modes.png>]) (./sec/theory/turbulence.tex
+Overfull \hbox (6.59094pt too wide) in paragraph at lines 40--42
+[]\T1/lmr/m/n/12 Three solv-ing strate-gies: di-rect nu-mer-i-cal sim-u-la-tion
+ large eddy sim-u-la-tion and RANS (Reynolds-
+ []
+
+[15]
+Overfull \hbox (6.63467pt too wide) in paragraph at lines 86--88
 []\T1/lmr/m/n/12 see SCAL-ING RE-LA-TIONS OF SU-PER-SONIC TUR-BU-LENCE IN STAR-
 FORMING MOLEC-
  []
 
-) (./sec/theory/quantities.tex [6]) (./sec/theory/forcing.tex
+<./fig/energy-cascade-schematic.png, id=333, 903.375pt x 626.34pt>
+File: ./fig/energy-cascade-schematic.png Graphic file (type png)
 
-LaTeX Warning: Citation `schmidt2009' on page 7 undefined on input line 9.
-
-[7]) (./sec/theory/shockcapturing.tex
-
-LaTeX Warning: Citation `jameson1981' on page 8 undefined on input line 13.
-
-
-LaTeX Warning: Citation `ducros1999' on page 8 undefined on input line 14.
+<use ./fig/energy-cascade-schematic.png>
+Package pdftex.def Info: ./fig/energy-cascade-schematic.png used on input line 
+92.
+(pdftex.def)             Requested size: 386.95894pt x 268.29832pt.
 
 
-LaTeX Warning: Citation `persson2006' on page 8 undefined on input line 15.
+LaTeX Warning: Citation `MueBiskl2003' on page 16 undefined on input line 92.
 
-
-LaTeX Warning: Citation `derigs2016' on page 8 undefined on input line 49.
-
-[8]
-
-LaTeX Warning: Citation `gassner2016' on page 9 undefined on input line 51.
-
-)) (./sec/setup/main.tex) (./sec/results/main.tex) (./sec/discussion/main.tex)
-(./sec/conclusion.tex)
+[16]) (./sec/theory/quantities.tex [17 <./fig/energy-cascade-schematic.png (PNG
+ copy)>])) (./sec/setup/main.tex [18]) (./sec/results/main.tex)
+(./sec/discussion/main.tex) (./sec/conclusion.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
- [9] [10]
+ [19]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
- (out/main.aux)
+ (aux/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
@@ -1069,31 +1155,34 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25.
  ) 
 Here is how much of TeX's memory you used:
- 11555 strings out of 493013
- 178844 string characters out of 6139316
- 358301 words of memory out of 5000000
- 14760 multiletter control sequences out of 15000+600000
- 77571 words of font info for 52 fonts, out of 8000000 for 9000
+ 11728 strings out of 493013
+ 181873 string characters out of 6139316
+ 364228 words of memory out of 5000000
+ 14855 multiletter control sequences out of 15000+600000
+ 87569 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,11n,51p,8832b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,51p,8832b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
 nts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.
 enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-d
 ist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts/type1/public/
-lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
-></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/
-fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lm
-r6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-
-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public
-/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
-share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/t
+lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pf
+b></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dis
+t/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/
+lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.p
+fb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on out/main.pdf (12 pages, 439768 bytes).
+Output written on aux/main.pdf (21 pages, 686607 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 314 compressed objects within 4 object streams
- 116 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 427 compressed objects within 5 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,3 +6,83 @@ close to reality as possible has driven many generations of scientists to
 develop better algorithms.
 
 %% \image{0.7}{TGV-quiver.png}{Initial Velocity Field: Slice through periodic box.}
+
+There are three distinct streams of numerical solution techniques: finite difference,
+finite element and spectral methods. Finite Volume Methods are a specialization of
+finite difference methods wheras DG methods belong the the family of finite element
+methods.
+
+A numerical solving algorithm consists of three parts:
+
+- Integration of the governing equations of fluid flow over the control volume
+
+- Discretization of the integral into a system of algebraic equations
+
+- iterative time stepping method
+
+
+Advantage of polynomial methods: exact interpolation -> arbitrary high information
+density ... space savings
+
+Since discontinuous Galerkin (DG) methods assume 
+discontinuous approximate solutions, they can be considered as generalizations
+of finite volume methods.
+
+Owing to their finite element nature, the DG methods have the following
+main advantages over classical finite volume and finite difference methods:
+— The actual order of accuracy of DG methods solely depends on the 
+exact solution; DG methods of arbitrarily high formal order of accuracy
+can be obtained by suitably choosing the degree of the approximating
+polynomials.
+— DG methods are highly parallelizable. Since the elements are 
+discontinuous, the mass matrix is block diagonal and since the size of the blocks
+is equal to the number of degrees of freedom inside the corresponding
+elements, the blocks can be inverted by hand (or by using a symbolic
+manipulator) once and for all.
+— DG methods are very well suited to handling complicated geometries
+and require an extremely simple treatment of the boundary conditions in
+order to achieve uniformly high-order accuracy.
+— DG methods can easily handle adaptivity strategies since refinement or
+unrefinement of the grid can be achieved without taking into account
+the continuity restrictions typical of conforming finite element 
+methods. Moreover, the degree of the approximating polynomial can be easily
+changed from one element to the other. Adaptivity is of particular 
+importance in hyperbolic problems given the complexity of the structure of
+the discontinuities.
+
+More information can be found in 
+Bernardo Cockburn
+George E. Karniadakis
+Chi-WangShu(Eds.)
+Discontinuous
+Galerkin Methods
+Theory, Computation
+and Applicationsi
+
+
+They provide fast convergence, small
+diffusion and dispersion errors, easier implementation of the inf-sup condition for
+incompressible Navier-Stokes, better data volume-over-surface ratio for efficient
+parallel processing, and better input/output handling due to the smaller volume
+of data.
+
+\image{0.6}{DG-work-over-periods.png}{Computational work (number of
+floating-point operations) required to integrate a linear advection equation
+for $M$ periods while maintaining a cumulative phase error of e = 10\%. Source: \cite{},p.10
+}
+
+\paragraph{hp Convergence}
+The mathematical theory of finite elements in the 1970s has established rigor-
+ously the convergence of the h-version of the finite element. The error in the
+numerical solution decays algebraically by refining the mesh, that is, introduc-
+ing more elements while keeping the (low) order of the interpolating polynomial
+fixed. An alternative approach is to keep the number of subdomains fixed and
+increase the order of the interpolating polynomials in order to reduce the error in
+the numerical solution. This is called p-type refinement and is typical of polyno-
+mial spectral methods [101]. For infinitely smooth solutions p-refinement usually
+leads to an exponential decay of the numerical error.
+
+Source Spectral/hp Element Methods for CFD 1999
+
+
+

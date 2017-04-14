@@ -4,6 +4,20 @@ In hypersonic simulations the solver has to deal with strong shocks in an
 accurate and robust manner. The utilized shock capturing strategy consists of
 two parts: sensoring and capturing.
 
+This endeavor, however, is far from trivial because of two main reasons.
+The first is that the exact solution of (nonlinear) purely convective problems
+develops discontinuities in finite time; the second is that these solutions might
+display a very rich and complicated structure near such discontinuities. Thus,
+when constructing numerical methods for these problems, it must be 
+guaranteed that the discontinuities of the approximate solution are the physically
+relevant ones. Also, it must be ensured that the appearance of a discontinuity
+in the approximate solution does not induce spurious oscillations that spoil
+the quality of the approximation; on the other hand, while ensuring this, the
+method must remain sufficiently accurate near that discontinuity in order to
+capture the possibly rich structure of the exact solution.
+
+
+
 \subsubsection{Sensoring}
 
 Many shock sensors have been developed. Within \FLEXI following indicators
@@ -25,7 +39,11 @@ an orthogonal basis as
     u = \sum^{N(p)}_{i=1} u_i \psi_i,
 \end{equation}
 where $N(p)$ is the total number of terms in the expansion and $\psi_i$ are the
-\textsc{Legendre} basis functions. Now we only consider the terms up to order $p-1$,
+\textsc{Legendre} basis functions.
+\image{0.6}{expansion-modes.png}{Expansion modes for the Lagrange and the Legendre Basis.}
+
+
+Now we only consider the terms up to order $p-1$,
 that is
 \begin{equation}
     \hat{u} = \sum^{N(p)}_{i=1} u_i \psi_i,

@@ -1,18 +1,19 @@
 \subsection{Turbulent Forcing}
 
-Inducing natural looking turbulence with the desired properties is not a
-trivial task. One commonly used method is by exploiting the intermittent
-behaviour of random walks, in particular the \textsc{Ornstein-Uhlenbeck process}.
+In equation ... a \emph{source} respectively \emph{forcing} term was introduced
+into the Euler equations. Perpetually, at each time step a varying force field
+$\vec{F}(t,x,y,z)$ in time and space injects kinetic energy over the whole
+physical domain. Inducing natural looking turbulence with the desired
+properties is not a trivial task. One commonly used method is by exploiting the
+intermittent behaviour of random walks, in particular the
+\textsc{Ornstein-Uhlenbeck process}. Since we deploy pseudo-random numbers
+the forcing is replicable.
 
-It has the advantage of being replicable but irregular at the same time.
-
-Following \cite{schmidt2009} we formulate
-
+Based on \cite{schmidt2009} we formulate
 \begin{align}
   \hat{d\mathbf{f}}(\mathbf{k},t) &= \frac{3}{\sqrt{1-2\zeta+3\zeta^2\,}}\;\left[-\hat{\mathbf{f}}(\mathbf{k},t)\frac{dt}{T} + F_0 \left(\frac{2\sigma^2(\mathbf{k})}{T}\right)^{1/2}\mathbf{P}_\zeta(\mathbf{k})\cdot d\mathbf{W}_t\right]\\
   (P_{ij})(\mathbf{k}) &= \zeta\,P_{ij}^\perp(\mathbf{k}) + (1-\zeta) P_{ij}^\parallel =\zeta\,\delta_{ij} + (1-2\,\zeta) \frac{k_i k_j}{k^2}\\
 \end{align}
-
 This acceleration field in fourier space allows us to precisely specify at
 which spatial scales we want to apply the forcing as well as the ratio of
 compressive and solenoidal modes.
@@ -21,3 +22,6 @@ The projection parameter $\zeta \in [0,1]$ sets the relative contribution of
 compressible and solenoidal injection rates. If not stated otherwise $\zeta$ is
 set to $0.5$. Turning time $T$ and base forcing $F_0$ depend on the general
 simulation setup.
+
+The goal is a fully developed turbulence where the turbulent system has reached dynamical equillibrium between
+energy inflow, supplied by forcing and outflow caused by small-scale dissipation and shock capturing.
