@@ -1,0 +1,151 @@
+\documentclass[
+	12pt,			% 
+	a4paper,		% DIN A4
+	%draft,
+]{scrartcl}		% Zweiseitig
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{
+	calc,			
+	color,			
+	float,			
+	mdwlist,		
+	%scrdate,		
+	%scrtime,		
+    %supertabular,	
+	%tabularx,		
+	marvosym,		
+}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage[amsmath,thmmarks,amsthm]{ntheorem}
+
+%\newtheorem{proof}{Beweis}
+
+%\usepackage[]{units}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{lscape}
+%\usepackage{bbold}
+\usepackage{mathtools}
+
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{geometry}
+\geometry{textwidth=17cm}
+\geometry{textheight=25cm}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage[ngerman]{babel}
+%\usepackage[autostyle=true,german=quotes]{csquotes}
+
+\usepackage[
+    justification=justified,
+    singlelinecheck=false,
+    font=small,
+    format=plain,
+    labelfont=bf,
+    up,
+    aboveskip=0pt,
+    center,
+    skip=0pt
+]{caption}
+\usepackage{graphicx}
+
+%\usepackage{stmaryrd}
+\usepackage{float}
+%\usepackage{algpseudocode}
+
+\newtheorem{mydef}{Definition}[section]
+\newtheorem{lemma}[mydef]{Lemma}
+\newtheorem{satz}[mydef]{Satz}
+\newtheorem{kor}[mydef]{Korollar}
+\newtheorem{prop}[mydef]{Proposition}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+\newcommand{\fig}[1]
+{
+    fig. \ref{fig:#1}
+}
+
+\newcommand{\image}[3]
+{
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=#1\textwidth]{./fig/#2}
+    \vspace*{2mm}
+    \caption{#3}
+    \label{fig:#2}
+    \end{figure}
+}
+% usage: \image{1.0}{blubb.png}{This is the caption.}
+
+\newcommand{\eref}[1]{(\ref{eq:#1})}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\renewcommand{\vec}[1]{\underline{#1}}
+\newcommand{\mat}[1]{\underline{\underline{#1}}}
+%\renewcommand{\qed}[0]{$\square$}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+
+\newcommand{\remark}{\emph{Remark} }
+\newcommand{\rmsv}{\text{rmsv}}
+
+\newcommand{\avg}[1]{\langle#1\rangle}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\mach}{\mathcal{M}}
+\newcommand{\Mach}{\mathcal{M}}
+\newcommand{\ekindisp}{\epsilon} % kinetic energy dissipation rate
+
+\newcommand{\br}{\\[0.4cm]}
+
+\newcommand{\ener}{E} % energy
+\newcommand{\enst}{\mathcal{E}} % enstrophy
+\newcommand{\vort}{\vec{\omega}} % vorticity
+\newcommand{\dens}{\rho}
+\newcommand{\pres}{p}
+\newcommand{\vels}{u}
+\newcommand{\velv}{\vec{u}}
+
+\newcommand{\vol}{V} % volume
+\newcommand{\clen}{L} % characteristic length
+\newcommand{\shearvisc}{\mu} % dynamic shear viscosity
+\newcommand{\bulkvisc}{\mu_v} % dynamic bulk viscosity
+
+\newcommand{\reynold}{R} % Reynolds number
+
+\newcommand{\prandtl}{Pr} % Prandtl number
+
+\newcommand{\adiabconst}{\gamma}
+\newcommand{\heatconduct}{\kappa_H}
+\newcommand{\heatcapP}{c_p}
+\newcommand{\heatcapV}{c_v}
+\newcommand{\mass}{m}
+
+\newcommand{\sndsped}{c}
+\newcommand{\temp}{T}
+
+\newcommand{\strainT}{\mat{S}}
+\newcommand{\Eint}{\mathcal{I}}
+\newcommand{\Ekin}{\mathcal{K}}
+\newcommand{\ekin}{\mathcal{K}}
+\newcommand{\Ener}{E}
+\newcommand{\SET}{\mathbb{T}}
+
+\newcommand{\Partial}[2]{\frac{\partial #1}{\partial #2}}
+
+
+\newcommand{\curdensv}{\vec{J}}
+\newcommand{\magdensv}{\vec{B}}
+\newcommand{\elefield}{\vec{E}}
+\newcommand{\vip}[1]{\textsc{#1}}
+
+\setcounter{section}{0}
+
+\newcommand{\FLEXI}{\textsc{FLEXI}}
+
+\raggedbottom

@@ -1,0 +1,27 @@
+1. Introduction
+    - what, why and how?
+
+2. Theory
+    - euler, navierstokes and mhd equations
+    - compressible supersonic turbulences, shocks
+    - statistics about turbulences
+    - creating turbulences, OU-process strirring
+    - FV methods, Bouchut solver
+    - DG methods, Flexi, shock capturing, shock indicators
+
+3. Setup / Simulation
+    - very brief about Flash and Flexi
+    - periodic box, grid, grid spaces, nodes
+    - initial setup: why and how
+    - fixed quantities: box size, crossing time, etc.
+    - expectations, envisaged results
+
+4. Discussion
+    - flash vs flexi
+    - decaying turb. vs forced turb.
+    - spectras, time series, QR plots, ...
+
+5. Conclusion
+    - happy or sad, expectations vs reality
+    - problems, fallacies, pitfalls
+    - what could be done next?

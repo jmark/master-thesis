@@ -1,0 +1,84 @@
+\subsection{Global Quantities}
+
+\paragraph{Mach Number $\mach$}
+
+\begin{equation}
+\label{eq:mach}
+    \mach = \sqrt{\frac{\int_\Omega \dens \; \velv^2 \; d\Omega}{\int_\Omega \dens \; d\Omega}}
+\end{equation}
+
+\paragraph{Total Kinetic Energy $\ekin$}
+
+\begin{equation}
+\label{eq:ekin}
+    \ekin = \frac{\int_\Omega \frac{\dens}{2} \; \velv^2 \; d\Omega}{\int_\Omega \dens \; d\Omega}
+\end{equation}
+
+\paragraph{Kinetic Energy Dissipation Rate $\ekindisp$}
+
+\begin{equation}
+\label{eq:ekindisp}
+    \ekindisp = -\frac{d\ekin}{dt} 
+\end{equation}
+
+\begin{equation}
+\label{eq:straintensor}
+    (\strainT)_{ij} = \Partial{\vels_i}{x_j} + \Partial{\vels_j}{x_i} - \lambda \delta_{ij} \Partial{\vels_k}{x_k}
+\end{equation}
+
+Bulk viscosity coefficient $\lambda := 2/3$
+
+\begin{equation}
+\label{eq:ekindisp1}
+    \ekindisp_1 = 2\,\frac{\shearvisc}{\dens_0\,\Omega} \; \int_\Omega \strainT : \strainT \, d\Omega
+\end{equation}
+
+\begin{equation}
+\label{eq:ekindisp2}
+    \ekindisp_2 = 2\,\frac{\bulkvisc}{\dens_0\,\Omega} \; \int_\Omega (\nabla \cdot \velv)^2 \, d\Omega
+\end{equation}
+
+\begin{equation}
+\label{eq:ekindisp3}
+    \ekindisp_3 = -\frac{1}{\dens_0\,\Omega} \; \int_\Omega \pres \, \nabla \cdot \velv \, d\Omega
+\end{equation}
+
+\paragraph{Total Enstrophy $\enst$}
+
+\begin{equation}
+\label{eq:vort}
+    \vort = \nabla \times \velv
+\end{equation}
+
+\begin{equation}
+\label{eq:enst}
+    \enst = \frac{\int_\Omega \frac{\dens}{2} \; \vort^2 d\Omega}{\int_\Omega \dens \; d\Omega}
+\end{equation}
+
+For subsonic mach numbers:
+\begin{equation}
+\label{eq:ekindisp2}
+    \ekindisp \approx 2 \frac{\shearvisc}{\dens_0} \; \enst
+\end{equation}
+
+\paragraph{Reynolds Number}
+
+\begin{equation}
+\label{eq:reynold}
+    \reynold = \frac{\dens_0\;\vol_0\;\clen}{\shearvisc}
+\end{equation}
+
+\paragraph{Adiabatic Constant}
+\begin{equation}
+\label{eq:adiabconst}
+    \adiabconst = \frac{\heatcapP}{\heatcapV}
+\end{equation}
+
+\paragraph{Prandtl Number}
+\begin{equation}
+\label{eq:prandtl}
+    \prandtl = \frac{\shearvisc \; \heatcapP}{\heatconduct}
+\end{equation}
+
+\paragraph{Kinetic Dissipation}
+\subsection{Local Quantities}

@@ -1,0 +1,39 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Theory}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Governing equations}{1}{subsection.2.1}
+\contentsline {paragraph}{\nonumberline Ideal Magneto-Hydrodynamic Equations}{1}{section*.2}
+\contentsline {paragraph}{\nonumberline Compressible Euler Equations}{1}{section*.3}
+\contentsline {paragraph}{\nonumberline Equation of State}{2}{section*.4}
+\contentsline {paragraph}{\nonumberline Dimensionless Euler Equations}{2}{section*.5}
+\contentsline {paragraph}{\nonumberline Choice of parameters}{3}{section*.6}
+\contentsline {subsection}{\numberline {2.2}Weak Formulation}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Finite Element Scheme}{5}{subsection.2.3}
+\contentsline {paragraph}{\nonumberline Flux Functions}{6}{section*.7}
+\contentsline {subsection}{\numberline {2.4}Turbulences}{6}{subsection.2.4}
+\contentsline {paragraph}{\nonumberline Energy Cascade}{6}{section*.8}
+\contentsline {paragraph}{\nonumberline Density and Velocity Distribution}{6}{section*.9}
+\contentsline {subsection}{\numberline {2.5}Global Quantities}{6}{subsection.2.5}
+\contentsline {paragraph}{\nonumberline Mach Number $\mathcal {M}$}{6}{section*.10}
+\contentsline {paragraph}{\nonumberline Total Kinetic Energy $\mathcal {K}$}{6}{section*.11}
+\contentsline {paragraph}{\nonumberline Kinetic Energy Dissipation Rate $\epsilon $}{6}{section*.12}
+\contentsline {paragraph}{\nonumberline Total Enstrophy $\mathcal {E}$}{7}{section*.13}
+\contentsline {paragraph}{\nonumberline Reynolds Number}{7}{section*.14}
+\contentsline {paragraph}{\nonumberline Adiabatic Constant}{7}{section*.15}
+\contentsline {paragraph}{\nonumberline Prandtl Number}{7}{section*.16}
+\contentsline {paragraph}{\nonumberline Kinetic Dissipation}{7}{section*.17}
+\contentsline {subsection}{\numberline {2.6}Local Quantities}{7}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Turbulent Forcing}{7}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Shock Capturing}{8}{subsection.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}Sensoring}{8}{subsubsection.2.8.1}
+\contentsline {subsubsection}{\numberline {2.8.2}Capturing}{9}{subsubsection.2.8.2}
+\contentsline {section}{\numberline {3}Numerical Setup}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}FLASH framework}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}FLEXI framework}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Grids and Meshes}{9}{subsection.3.3}
+\contentsline {paragraph}{\nonumberline Periodic Box}{9}{section*.18}
+\contentsline {subsection}{\numberline {3.4}Initial conditions}{10}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Stirred Turbulence}{10}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Decaying Turbulence}{10}{subsection.3.6}
+\contentsline {section}{\numberline {4}Results}{10}{section.4}
+\contentsline {section}{\numberline {5}Discussion}{10}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}
