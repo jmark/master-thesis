@@ -1,7 +1,7 @@
 # Master Thesis
 
-- aux/ --> auxiliary files produced by 'pdflatex'
-- fig/ --> figures
-- frp/ --> frontpage
-- sec/ --> sections
-- tbl/ --> tables in 'tex' format
+- aux/   auxiliary files produced by 'pdflatex'
+- fig/   figures
+- frp/   frontpage
+- sec/   sections
+- tbl/   tables in 'tex' format
