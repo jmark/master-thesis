@@ -66,11 +66,6 @@
 \newtheorem{prop}[mydef]{Proposition}
 \newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
 
-\newcommand{\fig}[1]
-{
-    fig. \ref{fig:#1}
-}
-
 \newcommand{\image}[3]
 {
     \begin{figure}[H]
@@ -83,8 +78,25 @@
 }
 % usage: \image{1.0}{blubb.png}{This is the caption.}
 
-\newcommand{\eref}[1]{(\ref{eq:#1})}
+%% ========================================================================= %%
+%% Reference commands
+
+\newcommand{\eref}[1]{eqn. (\ref{eq:#1})}
+\newcommand{\eqn}[1]{(eqn. \ref{eqn:#1})}
+\newcommand{\Eqn}[1]{(Eqn. \ref{eqn:#1})}
+
+\newcommand{\fig}[1]{fig. \ref{fig:#1}}
+\newcommand{\Fig}[1]{Fig. \ref{fig:#1}}
+
+\renewcommand{\sec}[1]{section \ref{sec:#1}}
+\newcommand{\Sec}[1]{Section \ref{sec:#1}}
+
+\newcommand{\tbl}[1]{table \ref{tbl:#1}}
+\newcommand{\Tbl}[1]{Table \ref{tbl:#1}}
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%% ========================================================================= %%
 
 \renewcommand{\vec}[1]{\underline{#1}}
 \newcommand{\mat}[1]{\underline{\underline{#1}}}
@@ -94,7 +106,7 @@
 \newcommand{\remark}{\emph{Remark} }
 \newcommand{\rmsv}{\text{rmsv}}
 
-\newcommand{\avg}[1]{\langle#1\rangle}
+\newcommand{\avg}[1]{\left\langle#1\right\rangle}
 \newcommand{\ceil}[1]{\lceil #1 \rceil}
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\mach}{\mathcal{M}}
@@ -136,16 +148,26 @@
 \newcommand{\Ener}{E}
 \newcommand{\SET}{\mathbb{T}}
 
-\newcommand{\Partial}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\bulk}{\vec{\mathcal{P}}}
 
+\newcommand{\Partial}[2]{\frac{\partial #1}{\partial #2}}
 
 \newcommand{\curdensv}{\vec{J}}
 \newcommand{\magdensv}{\vec{B}}
 \newcommand{\elefield}{\vec{E}}
 \newcommand{\vip}[1]{\textsc{#1}}
 
-\setcounter{section}{0}
+\newcommand{\errorrms}{\Delta_{\text{RMS}}}
+\newcommand{\errorrmsrel}{\Delta_{\text{RMS,rel.}}}
 
+\newcommand{\errorabs}{\Delta_{\text{ABS}}}
+\newcommand{\errorabsrel}{\Delta_{\text{ABS,rel.}}}
+
+
+
+\newcommand{\FLASH}{\textsc{FLASH}}
 \newcommand{\FLEXI}{\textsc{FLEXI}}
+
+\setcounter{section}{0}
 
 \raggedbottom

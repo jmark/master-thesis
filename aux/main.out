@@ -1,27 +1,24 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Theory}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Governing equations}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Weak Formulation}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Finite Element Scheme}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Polynome Ansatz}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Flux Functions}{section.2}% 7
-\BOOKMARK [3][-]{subsubsection.2.5.1}{Grid Spaces and Transformation}{subsection.2.5}% 8
-\BOOKMARK [2][-]{subsection.2.6}{Turbulent Forcing}{section.2}% 9
-\BOOKMARK [2][-]{subsection.2.7}{Shocks}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.8}{Time Integration}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.9}{Shock Capturing}{section.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.9.1}{Sensoring}{subsection.2.9}% 13
-\BOOKMARK [3][-]{subsubsection.2.9.2}{Capturing}{subsection.2.9}% 14
-\BOOKMARK [2][-]{subsection.2.10}{Turbulences}{section.2}% 15
-\BOOKMARK [2][-]{subsection.2.11}{Global Quantities}{section.2}% 16
-\BOOKMARK [2][-]{subsection.2.12}{Local Quantities}{section.2}% 17
-\BOOKMARK [1][-]{section.3}{Numerical Setup}{}% 18
-\BOOKMARK [2][-]{subsection.3.1}{FLASH framework}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.2}{FLEXI framework}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Grids and Meshes}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.4}{Initial conditions}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.5}{Stirred Turbulence}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.6}{Decaying Turbulence}{section.3}% 24
-\BOOKMARK [1][-]{section.4}{Results}{}% 25
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 26
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 27
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Compressible Euler Equations}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Weak Formulation}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Finite Element Scheme}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Polynome Ansatz}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Grid Spaces and Transformation}{subsection.2.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Flux Functions}{subsection.2.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Time Integration}{subsection.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{Supersonic Turbulences}{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Turbulent Forcing}{subsection.2.3}% 12
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Shocks}{subsection.2.3}% 13
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Shock Capturing}{subsection.2.3}% 14
+\BOOKMARK [1][-]{section.3}{Numerical Setup}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Periodic Box and Initial Conditions}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.2}{CFD Frameworks}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Turbulent Forcing}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.4}{Indicator}{section.3}% 19
+\BOOKMARK [2][-]{subsection.3.5}{Polynomial Interpolation}{section.3}% 20
+\BOOKMARK [1][-]{section.4}{Results \046 Discussion}{}% 21
+\BOOKMARK [2][-]{subsection.4.1}{Decaying Turbulence}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.2}{Driven Turbulence}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 24

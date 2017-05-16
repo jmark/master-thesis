@@ -1,0 +1,62 @@
+\section{Conclusion}
+
+
+
+The high-resolution finite methods discussed in these lectures can be used
+very successfully for a wide range of problems. They are not foolproof, how-
+however, and one should never accept computed results without a critical study
+of their accuracy. This is often hard to assess for complex problems where
+the exact solution is not known, but the following techniques can help:
+- Investigate simple cases where exact solutions might be known, or at least
+the correct qualitative behavior of the solution is well understood.
+— Reduce the number of space dimensions by considering radially symmetric
+solutions, for example. Then a fine-grid solution in one space dimension
+can be used as a reference solution for the multi-dimensional solution.
+- Perform grid refinement studies on the real problem of interest. If you
+refine the grid does the solution remain basically the same? If not, then
+you probably cannot trust either solution. (If so, both solutions may still
+be completely incorrect. An error in the code that changes the equations
+might lead to a method that converges very nicely to a solution of the
+wrong equation.)
+A number of specific difficulties that can arise in solving the Euler equa-
+equations have already been mentioned, such as
+— The use of a nonconservative method can give shocks that look reasonable
+but which travel at the wrong speed (Sect. 4.3).
+— Stiff source terms can lead to similar results (Sect. 5.4).
+- The computed solution may not satisfy the entropy condition, leading to
+discontinuities where there should be a smooth rarefaction (Sect. 4.6.4).
+
+This same sort of artifact is also often seen when two shocks collide or when a
+shock reflects off a solid wall. Consider two identical shocks approaching each
+other with zero velocity in between (which also models reflection at a wall
+halfway between the shocks — see Sect. 4.9.3). Each shock may have settled
+down to some numerical traveling wave that does not appear to generate any
+noise. But when the shocks collide, the result is two new out-going shocks
+with a different state in between than before the collision, with higher density
+and pressure but still zero velocity. During the interaction phase considerable
+noise will be generated in the other families, and in particular a spurious
+entropy wave will be generated which is then stationary in the zero-velocity
+region between the out-going shocks. This wave yields a dip in the density.
+The pressure, however, is nearly constant and so this dip in density results
+in an increase in the temperature T — p/TZg. The gas appears to have been
+heated at the point where the collision occurs.
+In particular, in computing the reflection of a shock off a solid wall, this
+spurious temperature rise occurs at the wall itself. This phenomenon is fre-
+frequently observed in numerical simulations where shocks reflect off physical
+boundaries, and is known as wall heating in the literature. See, for example,
+[73], [175].
+
+
+7.7 Grid-Aligned Shocks
+In a multi-dimensional calculation it may seem advantageous to have a shock
+aligned with the grid so that Riemann problems normal to the cell edges
+are also in the physically correct direction. However, a shock that is nearly
+aligned with the grid can also suffer certain numerical instabilities that have
+no analog in one-dimensional calculations. Figure 7.3 shows density contours
+at a sequence of times for a colliding flow problem. Initially g = p = 1,
+v = 0 everywhere, while the a;-velocity is u = +20 on the left half of the
+domain and u = -20 on the right. This colliding flow should give rise to two
+symmetric shock waves propagating outwards. If the initial data is exactly
+uniform then the calculation will yield a reasonable approximation to this.
+For the calculation in Fig. 7.3, however, the density was initially perturbed
+

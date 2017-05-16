@@ -1,0 +1,20 @@
+\subsection{Periodic Box and Initial Conditions}
+
+The turbulence simulations live within a three-dimensional periodic box of
+equal length in all dimensions. It means the state is a closed system where
+mass, momentum and energy are conserved. Via active forcing kinetic energy
+enters the medium on large scales and leaves it as internal energy via active
+cooling on small scales. This way a stationary flow of momentum gets pumped
+through the system. In conjunction with \emph{bulk motion correction}
+hyper-sonic turbulence emerges which presents a stress test for every numerical
+scheme.
+
+include some fancy schmancy 3d picture 
+
+Based on considerations in \sec{governing-equations} we initialize the state
+as listed in \tbl{initial-state}. 
+\input{tables/setup/initial-state}
+
+\remark Some numerical schemes actually solve the magneto-hydrodynamics
+equations. By setting the initial magnetic density flux field $\magdensv_0 = 0$,
+the MHD equations resemble the compressible Euler equations.

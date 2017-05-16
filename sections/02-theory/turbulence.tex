@@ -1,0 +1,240 @@
+\subsection{Supersonic Turbulences}
+
+Turbulences are very common phenomena in nature. They can be desired as well as
+unsoliceted. In astrophysics turbulence are suspected to play a major role in
+star formation in interstellar clouds. Hence, a good understanding of the
+underlying mechanics is crucial in order to model them correctly in numerical
+simulations. While turbulences in incompressible media has been thoroughly
+studied in the past, there is still an on-going debate about what additional
+dynamics compressibility brings especially in supersonic setups where shocks
+emerge.
+
+Grid point requirement
+\begin{equation}
+    N \varpropto Re^{9/4}
+\end{equation}
+can be relaxed since most dissipation takes places 5 to 15 times the
+Kolmogorov length scale $\eta$. See Moin and Mahesh, 1998
+
+There is a wide range of time scales in a turbulent flow, so the system of
+equations is stiff. Implicit time advancement and large time steps are
+routinely used for stiff systems in general-purpose CFD, but these are
+unsuitable in DNS because complete time resolution is needed to describe
+the energy dissipation process accurately. Specially designed implicit and
+explicit methods have been developed to ensure time accuracy and stability
+(see e.g. Verstappen and Veldman, 1997).
+
+Reynolds (in Lumley, 1989) noted that it is essential to have accurate time
+resolution of all the scales of turbulent motion. The time steps must be3.10 SUMMARY
+113
+adjusted so that fluid particles do not move more than one mesh spacing.
+Moin and Mahesh (1998) demonstrated the strong influence of time step size
+on small-scale amplitude and phase error.
+
+
+Laminar flow becomes unstable above a certain Reynolds number $R = u L/\nu$
+
+Say something about fluctuation property around mean
+see Hydrodynamic and MHD Turbulent Flows Chapter 1
+
+Three solving strategies: direct numerical simulation
+large eddy simulation and RANS (Reynolds-averaged Navier-Stokes) simulation.
+
+Turbulences is characterized by a random fluctuation of flow variable in time
+meassured at a fixed point in space. Hence, the time evolution can be described
+via the \emph{Helmholtz decomposition}.
+\begin{equation}
+    q(t) = \avg{q}_t + \tilde{q}(t), \ \ \avg{\tilde{q}} \equiv 0
+\end{equation}
+where 
+\begin{equation}
+    \avg{q}_t = \frac{\int_{t_0}^{t1} q(t) dt}{t_1 - t_0}
+\end{equation}
+is the time-average of the flow property $q(t)$. A turbulent flow can be
+globally described in terms of the mean values of the flow properties like
+density, velocity and pressure. In the following pages important turbulence
+measures are introduced and briefly explained.
+
+\paragraph{Reynolds Number}
+
+\begin{equation}
+\label{eq:reynold}
+    \reynold = \frac{\dens_0\;\vol_0\;\clen}{\shearvisc}
+\end{equation}
+
+\paragraph{Mach Number $\mach$}
+
+\begin{equation}
+\label{eq:mach}
+    \mach = \sqrt{\frac{\int_\Omega \dens \; \velv^2 \; d\Omega}{\int_\Omega \dens \; d\Omega}}
+\end{equation}
+
+\paragraph{Bulk Motion $\bulk$}
+
+\begin{equation}
+\label{eq:bulk-motion}
+    \bulk = \int_{\Omega} \dens\,\velv \; d\Omega
+\end{equation}
+
+\paragraph{Kinetic Energy $\ekin$}
+
+\begin{equation}
+\label{eq:ekin}
+    \ekin = \int_\Omega \frac{\dens}{2} \; \velv^2 \; d\Omega
+\end{equation}
+
+\paragraph{Kinetic Energy Dissipation $\ekindisp$}
+
+\begin{equation}
+\label{eq:ekindisp}
+    \ekindisp = -\frac{d\ekin}{dt} 
+\end{equation}
+
+\begin{equation}
+\label{eq:straintensor}
+    (\strainT)_{ij} = \Partial{\vels_i}{x_j} + \Partial{\vels_j}{x_i} - \lambda \delta_{ij} \Partial{\vels_k}{x_k}
+\end{equation}
+
+Bulk viscosity coefficient $\lambda := 2/3$
+
+\begin{equation}
+\label{eq:ekindisp1}
+    \ekindisp_1 = 2\,\frac{\shearvisc}{\dens_0\,\Omega} \; \int_\Omega \strainT : \strainT \, d\Omega
+\end{equation}
+
+\begin{equation}
+\label{eq:ekindisp2}
+    \ekindisp_2 = 2\,\frac{\bulkvisc}{\dens_0\,\Omega} \; \int_\Omega (\nabla \cdot \velv)^2 \, d\Omega
+\end{equation}
+
+\begin{equation}
+\label{eq:ekindisp3}
+    \ekindisp_3 = -\frac{1}{\dens_0\,\Omega} \; \int_\Omega \pres \, \nabla \cdot \velv \, d\Omega
+\end{equation}
+
+\paragraph{Vorticity $\omega$ and Enstrophy $\enst$}
+
+\begin{equation}
+\label{eq:vort}
+    \vort = \nabla \times \velv
+\end{equation}
+
+\begin{equation}
+\label{eq:enst}
+    \enst = \frac{\int_\Omega \frac{\dens}{2} \; \vort^2 d\Omega}{\int_\Omega \dens \; d\Omega}
+\end{equation}
+
+For subsonic mach numbers:
+\begin{equation}
+\label{eq:ekindisp2}
+    \ekindisp \approx 2 \frac{\shearvisc}{\dens_0} \; \enst
+\end{equation}
+
+\paragraph{Energy Cascade}
+
+Turbulent flows always show a three-dimensional character and they lead to
+rotational flow structures, called turbulent eddies, with a wide range of
+length and energy scales.
+
+Fluid particles which were initially separated by a large distance can be
+brought close together by eddying motions. Consequently, mass, heat and momentum
+are very effectively exchanged. It is an established fact that this
+property has a profound influence in birth of stars, solar systems and cosmic
+structures.
+
+The largest turbulent eddies interact and transfer energy from the mean flow.
+Since large eddies are of the same order as the characteristic length and
+velocity scale the flow is inviscid and their dynamics are dominated by
+inertial effects. They transfer kinetic energy down to smaller eddies via
+\emph{vortex stretching}. This way an energy cascade emerges from largest to
+smallest scales.
+
+The spatial wavenumber $k$ of an eddy of wavelength $\lambda$ is defined as
+\begin{equation}
+    k = \frac{2\pi}{\lambda}
+\end{equation}
+and the \emph{spectral energy} $E(k)$ is a function of $k$.
+
+see Kolmogorov-Burgers Model for Star-forming Turbulence
+    - inertial range -> Kolmogorov scaling since large scales
+    - dissipative range -> Burgers scale
+    - theoretical ground
+
+see SCALING RELATIONS OF SUPERSONIC TURBULENCE IN STAR-FORMING MOLECULAR CLOUDS
+    - numerical validation of theory in above paper
+
+
+\image{0.8}{energy-cascade-schematic.png}{
+Schematic representation of the K41 picture of turbulence showing the spatial
+energy spectrum as an example. Source: \cite{MueBiskl2003}, p6}
+
+
+The smallest length scales $\eta$ of motion are dominated by viscous effects
+where their Reynolds number is equal to 1. $Re_{\eta} = \vels \eta / \shearvisc = 1$,
+so inertia and viscous effects are of equal strength. The kinetic energy
+gets dissipated and converted into thermal energy. These so called
+\vip{Kolmogorov} \emph{microscales} are therefore a meassure for the spatial
+resolution characteristics and the diffusive order of numerical schemes of equal
+h-refinement.
+
+A detailed discussion of turbulences can be found in:
+H K Versteeg and W Malalasekera: An Introduction to Computational Fluid Dynamics
+
+AKlRA YOSHIZAWA: HydrodynaIllic and MagnetohydrodynaIllic Turbulent Flows Modelling and
+Statistical Theory
+
+\paragraph{Velocity Powerspectrum}
+The velocity power spectrum is calculated as follows. For each velocity
+component we take the Fourier transform of the velocity field $\velv =
+(\vels_1, \vels_2, \vels_3)^T$. We denote these Fourier transforms as
+$\hat{\velv} = (\hat{\vels}_1, \hat{\vels}_2, \hat{\vels}_3)^T$. Using these
+definitions the volume-weighted velocity power spectrum is defined as
+\begin{equation}
+    P(\vec{k}) = \frac{1}{2} \; \hat{\velv} \cdot \hat{\velv}^{\dagger},
+\end{equation}
+where $\hat{\velv}^{\dagger} = (\hat{\vels}_1^{\dagger},
+\hat{\vels}_2^{\dagger}, \hat{\vels}_3^{\dagger})^T$ is the complex conjugate
+of the transformed velocity and $\vec{k} = (k_1,k_2,k_3)^T$ is the spatial wave
+number vector. Taking the three-dimensional shell-average over $P(\vec{k})$ we
+get the familiar log-log-scale powerspectrum shown in
+\fig{energy-cascade-schematic.png}. It reads
+
+\begin{equation}
+    \tilde{P}(k)\,dk = 4 \pi\,k^2 \;\; \frac{1}{2} \; \hat{\velv} \cdot \hat{\velv}^{\dagger}\,dk,
+\end{equation}
+where the pre-factor $4 \pi\,k^2$ is a contribution from the differential
+volume of a thin sphere at radius $k = |\vec{k}| \ge 0$.
+
+\paragraph{Kinetic Energy Powerspectrum}
+The area under the shell-averaged transformed kinetic energy powerspectrum
+
+\begin{equation}
+    \tilde{E}(k) = \frac{1}{V_{\Omega}} \; \int_0^\infty 4\pi\,k^2 \; \hat{\ekin} \cdot \hat{\ekin}^{\dagger} dk
+\end{equation}
+is the total of the squared kinetic energy $\ekin$ within the system in accordance
+with \vip{Parseval}'s theorem
+
+\begin{equation}
+    \int_{-\infty}^{\infty} |Y(x)|^2 \, dx = \frac{1}{2\pi} \; \int_{-\infty}^{\infty} |\hat{Y}(k)|^2 \,dk.
+\end{equation}
+
+\paragraph{Probability Distribution Functions}
+
+Using all the cells in our grid, we obtain the cumulative distri-
+butions, F, of the following quantities: logarithm of the density,
+the three velocity components v i with i = 1, 2, 3, the logarithm
+of the trace free rate of strain, |S|, and the logarithm of vortic-
+ity, $\vort$. To obtain these distributions, the corresponding
+quantities are binned linearly.
+
+% probability distribution function (PDF)
+
+The share of a density range from $\dens_A$ to $\dens_B$ can then be calculated by
+\begin{equation}
+    \text{Pr}[\dens_A \le \dens' \le \dens_B] = \int_{\dens_A}^{\dens_B} \text{PDF}[\dens](\dens') \, d\dens'
+\end{equation}
+
+According to various studies ... fully developed turbulence models
+yield a nearly log-log normal density distribution.
+
+Explain skewness fit, log, log-log scale ???

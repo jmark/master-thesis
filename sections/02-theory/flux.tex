@@ -1,0 +1,106 @@
+\subsubsection{Flux Functions}
+\label{sec:flux-functions}
+Defining consistent, accurate and stable flux functions is a huge numerical
+discipline of itself and an active field of research.
+
+\paragraph{Riemann Problem}
+Many of the methods are based on solving the \vip{Riemann} problem between the
+states $q_L$ and $q_R$ in order to define the numerical flux $F^*(q_L,q_R)$.
+For one way to approach this, it is useful to view the data $Q^n$ at time $t_n$
+as defining a piecewise constant function $q^n(t_n,x)$ which has the value
+$Q^n_i$ for all $x$ in the interval $C_i$. Suppose we could solve the
+conservation law exactly over the time interval $[t_n, t_{n+1}]$ with initial
+data  $q^n(t_n,x)$. We call the resulting function $q_n(t,x)$ for $t_n < t <
+t_{n+1}$. Then we might consider defining the numerical flux $F^{*n}_i$ by
+\begin{equation}
+    F^{*n}_i = \frac{1}{k} \int_{t_n}^{t_{n+1}} f(q^n(t,x_i))\,dt
+\end{equation}
+This integral is trivial to compute, at least provided the time step $k$ is
+small enough, because of the fact that with piecewise constant initial data we
+can find the exact solution easily by simply piecing together the solutions to
+each Riemann problem defined by the jump at each interface.
+
+The method above is known as \vip{Godunov}'s method, which was already mentioned
+at the beginning of the section, as an approach to solving the Euler equations
+of gas dynamics in the presence of shock waves.
+
+A wide variety of approximate Riemann solvers have been proposed
+that can be applied much more cheaply than the exact Riemann solver and yet
+give results that in many cases are equally good when used in the Godunov or
+high-resolution methods. In brief, we will look at some possibilities.
+
+\paragraph{All-Shock Solver}
+In solving a nonlinear Riemann problem we must worry about whether the wave in
+each family should be a shock or rarefaction so that we know whether to use the
+Hugoniot locus or integral curve correspondingly. One simplification that can
+be made to the Riemann solver is to ignore the possibility of rarefaction waves
+and simply find a Riemann solution in which each pair of states is
+connected along the Hugoniot locus. The solution then consists entirely of
+discontinuities that satisfies the Rankine-Hugoniot conditions and is a weak
+solution of the conservation law.  This approach is discussed by Colella [54]
+for gas dynamics. The all-shock solver is particularly valuable for problems
+where the Riemann problem is harder to solve, such as in problems where a more
+complicated equation of state than a gamma-law gas must be used. This occurs at
+high temperatures, or in relativistic flow, for example.
+
+A potential problem with this approach, of course, is that by using a solution
+to the Riemann problem that does not satisfy the entropy condicondition, we
+might obtain a numerical solution which does not approximate the correct weak
+solution. Actually, however, in most cases (except for transonic rarefactions),
+Godunov's method with the Riemann solver will typically work well even if the
+correct solution involves rarefaction waves. This is because of the numerical
+dissipation that is introduced in every step of Godunov's method through the
+averaging process. Although the discontinuous solution used in the solution of
+a particular Riemann problem may not be correct, by averaging this solution
+over the grid cell at the end of the time step the discondiscontinuity is
+smeared out and after many time steps a good approximation to the correct
+rarefaction wave will be computed. The all-shock approximation will typically
+be inadequate in the case of a transonic rarefaction. Such a discontinuity
+tends to persist and results in the computation of an entropy-violating weak
+solution. An \emph{entropy fix} is often used to eliminate this problem.
+
+\paragraph {HLLE (Harten-Luv-Lax Entropy-fix) flux}
+Another approach is to approximate the full Riemann solution by a single
+intermediate state bounded by two waves moving at speeds $s_1$ and $s_2$. The
+wave speeds should be some approximations to the minimum and maximum wave
+speeds that would arise from this particular Riemann data and the intermediate
+state can then be calculated by the condition of conservation. This
+approach is developed by Harten, Lax, and van Leer originally [108] and
+improved by Einfeldt [78].
+
+\paragraph {PPM Solver}
+
+\paragraph {Bouchut5 Solver}
+
+
+\paragraph{Higher-order Flux}
+Regardless of what Riemann solver is used, Godunov's method will be at best
+first-order accurate on smooth solutions and generally gives very smeared
+approximations to shock waves or other discontinuities. The key is to use a
+better representation of the solution, say piecewise linear instead of the
+piecewise constant representation used in Godunov's method, but to form
+this reconstruction carefully by paying attention to how the data behaves
+nearby. In smooth regions the finite-difference approximation to the slope
+can be used to obtain better accuracy, but near a discontinuity the \emph{slope}
+computed by subtracting two values of $Q$ and dividing by $h$ may be huge and
+meaningless. Using it blindly in a difference approximation will introduce
+oscillations into the numerical solution.
+
+\paragraph{Limiter Function}
+Near a discontinuity we may want to limit this slope, using
+a value that is smaller in magnitude in order to avoid oscillations. Methods
+based on this idea are known as slope-limiter methods. This approach was
+introduced by van Leer in a series of papers [246] through [248], where he
+developed the MUSCL scheme for nonlinear conservation laws (Monotonic
+Upstream-centered Scheme for Conservation Laws). The same idea in the
+context of flux limiting, reducing the magnitude of the numerical flux to
+avoid oscillations, was introduced in the flux-corrected transport (FCT)
+algorithms of Boris and Book [37]. We can view this as creating a hybrid algo-
+algorithm that is second order accurate in smooth regions but which reduces to a
+more robust first-order algorithm near discontinuities. This idea of hybridiza-
+hybridization was also used in early work of Harten and Zwas [110]. An enormous va-
+variety of methods based on these principles have been developed in the past
+two decades. One of the algorithms of this type that is best known in the
+astrophysics community is the piecewise parabolic method (PPM) of
+Woodward and Colella [59], which uses a piecewise quadratic reconstruction,
+with appropriate limiting.

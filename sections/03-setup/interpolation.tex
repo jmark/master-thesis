@@ -1,0 +1,36 @@
+\subsection{Polynomial Interpolation}
+
+For analysis and defining initial conditions with DG based code interpolation
+techniques for translating correct state values between different grid spaces
+are necessary. See \sec{theory-interpolation} for theoretical disuccusion.
+In this section we want to present observations and draw important conclusions
+on how to correctly interpret the simulation data. Furthermore, the correctness
+of the interpolation code is shown and hence its produced results can be trusted.
+
+When all data points represent a smooth pathway and are sufficiently close
+together an interpolating polyonme can resemble the original function very
+precisely. \Fig{2d-third-order.png} gives an example of this well-behaving
+case.
+\image{1.0}{plots/interpolation/2d-third-order.png}{
+Two-dimensional third-order interpolation of a second-order function.
+relative rms error = 0.000000\%
+}
+However, since we want to work with hyper-sonic shocks, discontinuities are
+present throughout the data. Spurious oscillations and severely erranous
+approximations are the consequence. An artificial stress test
+see \fig{2d-third-order-2.png}, reveals the strength of the DG method. Since,
+the interpolation is always limited on small patches of the whole domain
+the global features still get represented at the cost of considerable deviations
+at smaller scales.
+\image{1.0}{plots/interpolation/2d-third-order-2.png}{
+Stress test: 3D superposed sines and cosines with random noise: Third-order 3d interpolation of
+finite volume data to DG data (Gauss-Lobatto nodes).
+relative rms error = 14.987457\%
+}
+When transferring real-world data from \FLASH (finite-volume) to \FLEXI (DG) we get
+following results.
+
+
+
+
+\image{1.0}{plots/interpolation/density-ray.png}{Foobar fo bar}

@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.24)  14 APR 2017 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  16 MAY 2017 11:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2016/03/31> patch level 3
+LaTeX2e <2017/01/01> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (./preamble.tex (/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
-Document Class: scrartcl 2016/06/14 v3.21 KOMA-Script document class (article)
+Document Class: scrartcl 2017/01/03 v3.22 KOMA-Script document class (article)
 (/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2016/06/14 v3.21 KOMA-Script package (KOMA-Script-dependent b
+Package: scrkbase 2017/01/03 v3.22 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2016/06/14 v3.21 KOMA-Script package (KOMA-Script-independent 
+Package: scrbase 2017/01/03 v3.22 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
@@ -21,13 +21,13 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2016/06/14 v3.21 KOMA-Script package (loading files)
+Package: scrlfile 2017/01/03 v3.22 KOMA-Script package (loading files)
 
-Package scrlfile, 2016/06/14 v3.21 KOMA-Script package (loading files)
+Package scrlfile, 2017/01/03 v3.22 KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
 ))) (/usr/share/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2016/06/14 v3.21 KOMA-Script package (handling toc-files)
+Package: tocbasic 2017/01/03 v3.22 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
 )
@@ -47,16 +47,16 @@ Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             you'd have to use `fontsize=12pt' there
 (scrartcl)             instead of `12pt', too.
 Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 2052.
+ine 2053.
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2016/06/14 v3.21 KOMA-Script font size class option (12pt
+File: scrsize12pt.clo 2017/01/03 v3.22 KOMA-Script font size class option (12pt
 )
 )
 (/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2016/06/14 v3.21 KOMA-Script package (type area)
+Package: typearea 2017/01/03 v3.22 KOMA-Script package (type area)
 
-Package typearea, 2016/06/14 v3.21 KOMA-Script package (type area)
+Package typearea, 2017/01/03 v3.22 KOMA-Script package (type area)
                   Copyright (C) Frank Neukam, 1992-1994
                   Copyright (C) Markus Kohm, 1994-
 
@@ -88,7 +88,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1529.
+(typearea)              on input line 1583.
 )
 \c@part=\count80
 \c@section=\count81
@@ -102,13 +102,13 @@ Package typearea Info: These are the values describing the layout:
 \scr@dte@subsubsection@maxnumwidth=\skip50
 \scr@dte@paragraph@maxnumwidth=\skip51
 \scr@dte@subparagraph@maxnumwidth=\skip52
-LaTeX Info: Redefining \textsubscript on input line 4036.
+LaTeX Info: Redefining \textsubscript on input line 4076.
 \abovecaptionskip=\skip53
 \belowcaptionskip=\skip54
 \c@pti@nb@sid@b@x=\box27
 \c@figure=\count86
 \c@table=\count87
-Class scrartcl Info: Redefining `\numberline' on input line 5049.
+Class scrartcl Info: Redefining `\numberline' on input line 5125.
 \bibindent=\dimen102
 ) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -116,14 +116,14 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@posthook=\toks16
 
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -335,6 +335,8 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
@@ -355,12 +357,14 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -401,7 +405,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -446,7 +450,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 147.
 
 (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -471,7 +475,7 @@ Package: mdwlist 1996/05/02 1.1 Various list-related things
 Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/06/28 v2.15d AMS math features
+Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
@@ -491,20 +495,20 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count93
-LaTeX Info: Redefining \frac on input line 199.
+LaTeX Info: Redefining \frac on input line 213.
 \uproot@=\count94
 \leftroot@=\count95
-LaTeX Info: Redefining \overline on input line 297.
+LaTeX Info: Redefining \overline on input line 375.
 \classnum@=\count96
 \DOTSCASE@=\count97
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box30
 \strutbox@=\box31
 \big@size=\dimen107
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count98
 \c@MaxMatrixCols=\count99
 \dotsspace@=\muskip10
@@ -525,8 +529,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \multlinegap=\skip59
 \multlinetaggap=\skip60
 \mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
 (/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2015/03/04 v2.20.2
@@ -574,7 +578,7 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen127
 \extrarowheight=\dimen128
 \NC@list=\toks30
@@ -593,7 +597,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -624,7 +628,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_shortintertext_sep=\dimen140
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -640,7 +644,7 @@ Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -648,7 +652,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -684,7 +688,7 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@pagecounter=\count112
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -693,33 +697,33 @@ Now handling font encoding PD1 ...
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4486.
-Package hyperref Info: Link nesting OFF on input line 4491.
-Package hyperref Info: Hyper index ON on input line 4494.
-Package hyperref Info: Plain pages OFF on input line 4501.
-Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4735.
+Package hyperref Info: Bookmarks ON on input line 4751.
 \c@Hy@tempcnt=\count114
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5088.
+LaTeX Info: Redefining \url on input line 5104.
 \XeTeXLinkMargin=\dimen142
 \Fld@menulength=\count115
 \Field@Width=\dimen143
 \Fld@charsize=\dimen144
-Package hyperref Info: Hyper figures OFF on input line 6342.
-Package hyperref Info: Link nesting OFF on input line 6347.
-Package hyperref Info: Hyper index ON on input line 6350.
-Package hyperref Info: backreferencing OFF on input line 6357.
-Package hyperref Info: Link coloring OFF on input line 6362.
-Package hyperref Info: Link coloring with OCG OFF on input line 6367.
-Package hyperref Info: PDF/A mode OFF on input line 6372.
-LaTeX Info: Redefining \ref on input line 6412.
-LaTeX Info: Redefining \pageref on input line 6416.
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
 \Hy@abspage=\count116
 \c@Item=\count117
 \c@Hfootnote=\count118
@@ -728,7 +732,7 @@ LaTeX Info: Redefining \pageref on input line 6416.
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
 \Fld@listcount=\count119
 \c@bookmark@seq@number=\count120
 
@@ -801,10 +805,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
 
 (/usr/share/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
+File: t1enc.def 2017/02/22 v2.0g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texmf-dist/tex/latex/caption/caption.sty
@@ -832,14 +836,7 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@width=\dimen161
 )
 \c@mydef=\count125
-) (aux/main.aux
-
-LaTeX Warning: Label `eq-tensor-ansatz' multiply defined.
-
-
-LaTeX Warning: Label `eq:ekindisp2' multiply defined.
-
-)
+) (aux/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -857,7 +854,8 @@ LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 3.
- (/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
+
+(/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -945,8 +943,7 @@ LaTeX Info: Redefining \nameref on input line 3.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./frp/frontpage.tex
-<./frp/uni_koeln_logo.jpg, id=112, 626.5809pt x 118.7637pt>
+(./frp/frontpage.tex <./frp/uni_koeln_logo.jpg, id=8, 626.5809pt x 118.7637pt>
 File: ./frp/uni_koeln_logo.jpg Graphic file (type jpg)
 
 <use ./frp/uni_koeln_logo.jpg>
@@ -960,186 +957,476 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 8.
 
 (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (aux/main.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
-
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) (aux/main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [1
 
 
-] (./sec/intro.tex
+]
+(./sections/01-intro/main.tex
 Overfull \hbox (8.52884pt too wide) in paragraph at lines 53--61
 []\T1/lmr/m/n/12 More in-for-ma-tion can be found in Bernardo Cock-burn George 
 E. Kar-ni-adakis Chi-WangShu(Eds.)
  []
 
-<./fig/DG-work-over-periods.png, id=155, 722.7pt x 746.79pt>
+<./fig/DG-work-over-periods.png, id=24, 722.7pt x 746.79pt>
 File: ./fig/DG-work-over-periods.png Graphic file (type png)
 
 <use ./fig/DG-work-over-periods.png>
 Package pdftex.def Info: ./fig/DG-work-over-periods.png used on input line 72.
 (pdftex.def)             Requested size: 290.22105pt x 299.89578pt.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 72.
+
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 72.
+
+(/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 72.
+
+
+(/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 72.
+
+
+(/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 72.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 72.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 72.
+LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.73 
       [1
 
 
-]) (./sec/theory/main.tex (./sec/theory/equation.tex [2 <./fig/DG-work-over-per
-iods.png>] [3]
+]) (./sections/02-theory/main.tex (./sections/02-theory/equation.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 18.
 
-LaTeX Warning: Citation `Horedt2004' on page 4 undefined on input line 91.
+[2 <./fig/DG-work-over-periods.png>] [3]
+
+LaTeX Warning: Citation `Horedt2004' on page 4 undefined on input line 111.
 
 [4]
-Overfull \hbox (17.79341pt too wide) in paragraph at lines 168--171
+
+LaTeX Warning: Reference `eq:comp-euler' on page 5 undefined on input line 160.
+
+
+[5]
+Overfull \hbox (17.79341pt too wide) in paragraph at lines 211--214
 \T1/lmr/m/n/12 Defining a vector-valued test func-tion $[] \OT1/lmr/m/n/12 = (0
 \OML/lmm/m/it/12 ; ::; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 ; ^^^[]; \OT1/lmr/m/n/
 12 0\OML/lmm/m/it/12 ; :::; \OT1/lmr/m/n/12 0)[]$ \T1/lmr/m/n/12 ($\OML/lmm/m/i
 t/12 i \OMS/lmsy/m/n/12 2 []$\T1/lmr/m/n/12 ), mul-ti-ply-ing component-
  []
 
-[5]) (./sec/theory/solvers.tex) (./sec/theory/polynome-ansatz.tex [6]
-<./fig/lagrange-interpolation-1d.png, id=242, 841.1425pt x 453.695pt>
+) (./sections/02-theory/finite-element-scheme.tex [6])
+(./sections/02-theory/polynome-ansatz.tex
+
+LaTeX Warning: Reference `eqn:eq:weak-formulation' on page 7 undefined on input
+ line 28.
+
+
+Overfull \hbox (0.2357pt too wide) in paragraph at lines 37--37
+[] 
+ []
+
+[7] <./fig/lagrange-interpolation-1d.png, id=116, 841.1425pt x 453.695pt>
 File: ./fig/lagrange-interpolation-1d.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-1d.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-1d.png used on input line
- 49.
+ 53.
 (pdftex.def)             Requested size: 386.95894pt x 208.71608pt.
- [7 <./fig/lagrange-interpolation-1d.png>]
-Overfull \hbox (4.28166pt too wide) in paragraph at lines 100--100
+ [8 <./fig/lagrange-interpolation-1d.png>]
+Overfull \hbox (4.28166pt too wide) in paragraph at lines 101--101
 [] 
  []
 
 
-Overfull \hbox (24.38773pt too wide) in paragraph at lines 126--126
+Overfull \hbox (24.38773pt too wide) in paragraph at lines 127--127
 [] 
  []
 
-[8]) (./sec/theory/flux.tex) (./sec/theory/interpolation.tex
+[9]) (./sections/02-theory/interpolation.tex
 
-LaTeX Warning: Reference `fig-grid-spaces.png' on page 9 undefined on input lin
-e 6.
+LaTeX Warning: Reference `fig-grid-spaces.png' on page 10 undefined on input li
+ne 7.
 
-<./fig/grid-spaces.png, id=265, 349.7868pt x 252.2223pt>
+<./fig/grid-spaces.png, id=139, 349.7868pt x 252.2223pt>
 File: ./fig/grid-spaces.png Graphic file (type png)
 
 <use ./fig/grid-spaces.png>
-Package pdftex.def Info: ./fig/grid-spaces.png used on input line 19.
+Package pdftex.def Info: ./fig/grid-spaces.png used on input line 20.
 (pdftex.def)             Requested size: 290.22105pt x 209.27133pt.
- [9]
+
 
 LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
-(Font)              using `T1/lmss/bx/n' instead on input line 23.
+(Font)              using `T1/lmss/bx/n' instead on input line 24.
 
-[10 <./fig/grid-spaces.png>]) (./sec/theory/forcing.tex
+[10 <./fig/grid-spaces.png>]) (./sections/02-theory/flux.tex [11] [12])
+(./sections/02-theory/time-integration.tex
 
-LaTeX Warning: Citation `schmidt2009' on page 11 undefined on input line 12.
-
-) (./sec/theory/shocks.tex [11]
-<./fig/burger-characteristics.png, id=298, 542.025pt x 334.24875pt>
-File: ./fig/burger-characteristics.png Graphic file (type png)
-
-<use ./fig/burger-characteristics.png>
-Package pdftex.def Info: ./fig/burger-characteristics.png used on input line 45
-.
-(pdftex.def)             Requested size: 386.95894pt x 238.63412pt.
- [12 <./fig/burger-characteristics.png>]) (./sec/theory/time-integration.tex) (
-./sec/theory/shockcapturing.tex
-
-LaTeX Warning: Citation `jameson1981' on page 13 undefined on input line 27.
+LaTeX Warning: Reference `sec:polyonome-ansatz' on page 13 undefined on input l
+ine 3.
 
 
-LaTeX Warning: Citation `ducros1999' on page 13 undefined on input line 28.
+LaTeX Warning: Reference `eq:semi-discrete-weak-formulation' on page 13 undefin
+ed on input line 3.
 
-
-LaTeX Warning: Citation `persson2006' on page 13 undefined on input line 29.
-
-<./fig/expansion-modes.png, id=308, 635.37375pt x 509.905pt>
-File: ./fig/expansion-modes.png Graphic file (type png)
-
-<use ./fig/expansion-modes.png>
-Package pdftex.def Info: ./fig/expansion-modes.png used on input line 43.
-(pdftex.def)             Requested size: 290.22105pt x 232.91745pt.
- [13]
-
-LaTeX Warning: Citation `derigs2016' on page 14 undefined on input line 67.
-
-
-LaTeX Warning: Citation `gassner2016' on page 14 undefined on input line 69.
-
-[14 <./fig/expansion-modes.png>]) (./sec/theory/turbulence.tex
+[13]) (./sections/02-theory/turbulence.tex [14]
 Overfull \hbox (6.59094pt too wide) in paragraph at lines 40--42
 []\T1/lmr/m/n/12 Three solv-ing strate-gies: di-rect nu-mer-i-cal sim-u-la-tion
  large eddy sim-u-la-tion and RANS (Reynolds-
  []
 
 [15]
-Overfull \hbox (6.63467pt too wide) in paragraph at lines 86--88
+Overfull \hbox (6.63467pt too wide) in paragraph at lines 163--165
 []\T1/lmr/m/n/12 see SCAL-ING RE-LA-TIONS OF SU-PER-SONIC TUR-BU-LENCE IN STAR-
 FORMING MOLEC-
  []
 
-<./fig/energy-cascade-schematic.png, id=333, 903.375pt x 626.34pt>
+<./fig/energy-cascade-schematic.png, id=210, 903.375pt x 626.34pt>
 File: ./fig/energy-cascade-schematic.png Graphic file (type png)
 
 <use ./fig/energy-cascade-schematic.png>
 Package pdftex.def Info: ./fig/energy-cascade-schematic.png used on input line 
-92.
+169.
 (pdftex.def)             Requested size: 386.95894pt x 268.29832pt.
 
 
-LaTeX Warning: Citation `MueBiskl2003' on page 16 undefined on input line 92.
+LaTeX Warning: Citation `MueBiskl2003' on page 16 undefined on input line 169.
 
-[16]) (./sec/theory/quantities.tex [17 <./fig/energy-cascade-schematic.png (PNG
- copy)>])) (./sec/setup/main.tex [18]) (./sec/results/main.tex)
-(./sec/discussion/main.tex) (./sec/conclusion.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
+[16]
+
+LaTeX Warning: Reference `fig:energy-cascade-schematic.png' on page 17 undefine
+d on input line 200.
+
+
+Overfull \hbox (5.19711pt too wide) in paragraph at lines 194--201
+\T1/lmr/m/n/12 where $[][] \OT1/lmr/m/n/12 = ([]\OML/lmm/m/it/12 ; []; []\OT1/l
+mr/m/n/12 )[]$ \T1/lmr/m/n/12 is the com-plex con-ju-gate of the trans-formed v
+e-loc-ity and $[] \OT1/lmr/m/n/12 = (\OML/lmm/m/it/12 k[]; k[]; k[]\OT1/lmr/m/n
+/12 )[]$
+ []
+
+[17 <./fig/energy-cascade-schematic.png (PNG copy)>])
+(./sections/02-theory/forcing.tex
+
+LaTeX Warning: Citation `schmidt2009' on page 18 undefined on input line 13.
+
+) (./sections/02-theory/shocks.tex [18]
+
+LaTeX Warning: Reference `eq:charact-x-t' on page 19 undefined on input line 56
+.
+
+[19] <./fig/burger-characteristics.png, id=260, 542.025pt x 334.24875pt>
+File: ./fig/burger-characteristics.png Graphic file (type png)
+
+<use ./fig/burger-characteristics.png>
+Package pdftex.def Info: ./fig/burger-characteristics.png used on input line 85
+.
+(pdftex.def)             Requested size: 386.95894pt x 238.63412pt.
+ [20 <./fig/burger-characteristics.png>]) (./sections/02-theory/shockcapturing.
+tex
+
+LaTeX Warning: Citation `jameson1981' on page 21 undefined on input line 24.
+
+[21]
+
+LaTeX Warning: Citation `ducros1999' on page 22 undefined on input line 25.
+
+
+LaTeX Warning: Citation `persson2006' on page 22 undefined on input line 26.
+
+<./fig/expansion-modes.png, id=277, 635.37375pt x 509.905pt>
+File: ./fig/expansion-modes.png Graphic file (type png)
+
+<use ./fig/expansion-modes.png>
+Package pdftex.def Info: ./fig/expansion-modes.png used on input line 40.
+(pdftex.def)             Requested size: 290.22105pt x 232.91745pt.
+ [22 <./fig/expansion-modes.png>]
+
+LaTeX Warning: Citation `derigs2016' on page 23 undefined on input line 61.
+
+
+LaTeX Warning: Citation `gassner2016' on page 23 undefined on input line 63.
+
+)) (./sections/03-setup/main.tex (./sections/03-setup/box.tex
+
+LaTeX Warning: Reference `sec:governing-equations' on page 23 undefined on inpu
+t line 14.
+
+
+LaTeX Warning: Reference `tbl:initial-state' on page 23 undefined on input line
+ 15.
+
+(./tables/setup/initial-state.tex) [23]) (./sections/03-setup/frameworks.tex
+
+LaTeX Warning: Reference `sec:flux-functions' on page 24 undefined on input lin
+e 38.
+
+[24]) (./sections/03-setup/forcing.tex
+
+LaTeX Warning: Reference `Stirred Turbulence' on page 25 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `fig:example-forcing.png' on page 25 undefined on inpu
+t line 21.
+
+
+LaTeX Warning: Reference `fig:example-forcing-powerspectrum.png' on page 25 und
+efined on input line 22.
+
+<./fig/example-forcing.png, id=306, 540.0175pt x 470.75874pt>
+File: ./fig/example-forcing.png Graphic file (type png)
+
+<use ./fig/example-forcing.png>
+Package pdftex.def Info: ./fig/example-forcing.png used on input line 28.
+(pdftex.def)             Requested size: 386.95894pt x 337.337pt.
+
+<./fig/example-forcing-powerspectrum.png, id=307, 731.73375pt x 388.45125pt>
+File: ./fig/example-forcing-powerspectrum.png Graphic file (type png)
+
+<use ./fig/example-forcing-powerspectrum.png>
+Package pdftex.def Info: ./fig/example-forcing-powerspectrum.png used on input 
+line 30.
+(pdftex.def)             Requested size: 483.69684pt x 256.78166pt.
+
+
+LaTeX Warning: Reference `fig:example-forcing.png' on page 25 undefined on inpu
+t line 30.
+
+[25]) (./sections/03-setup/indicator.tex
+
+LaTeX Warning: Reference `sec:shock-capturing' on page 26 undefined on input li
+ne 2.
+
+[26 <./fig/example-forcing.png> <./fig/example-forcing-powerspectrum.png>]
+
+LaTeX Warning: Reference `eq:smoothness-indicator' on page 27 undefined on inpu
+t line 6.
+
+
+LaTeX Warning: Reference `fig:indicator-column.png' on page 27 undefined on inp
+ut line 23.
+
+
+LaTeX Warning: Reference `fig:indicator-slice.png' on page 27 undefined on inpu
+t line 23.
+
+
+LaTeX Warning: Reference `fig:indicator-pdf.png' on page 27 undefined on input 
+line 26.
+
+<./fig/indicator-column.png, id=322, 1025.8325pt x 859.21pt>
+File: ./fig/indicator-column.png Graphic file (type png)
+
+<use ./fig/indicator-column.png>
+Package pdftex.def Info: ./fig/indicator-column.png used on input line 27.
+(pdftex.def)             Requested size: 386.95894pt x 324.10397pt.
+
+<./fig/indicator-slice.png, id=323, 1016.79875pt x 859.21pt>
+File: ./fig/indicator-slice.png Graphic file (type png)
+
+<use ./fig/indicator-slice.png>
+Package pdftex.def Info: ./fig/indicator-slice.png used on input line 28.
+(pdftex.def)             Requested size: 386.95894pt x 326.98828pt.
+
+<./fig/indicator-pdf.png, id=324, 730.73pt x 376.40625pt>
+File: ./fig/indicator-pdf.png Graphic file (type png)
+
+<use ./fig/indicator-pdf.png>
+Package pdftex.def Info: ./fig/indicator-pdf.png used on input line 29.
+(pdftex.def)             Requested size: 483.69684pt x 249.15831pt.
+ [27 <./fig/indicator-column.png>]
+
+LaTeX Warning: Reference `fig:indicator-column.png' on page 28 undefined on inp
+ut line 31.
+
+
+LaTeX Warning: Reference `eq:indicator-A' on page 28 undefined on input line 35
+.
+
+
+LaTeX Warning: Reference `fig:indicator-pdf.png' on page 28 undefined on input 
+line 36.
+
+) (./sections/03-setup/interpolation.tex [28 <./fig/indicator-slice.png> <./fig
+/indicator-pdf.png>]
+
+LaTeX Warning: Reference `sec:theory-interpolation' on page 29 undefined on inp
+ut line 5.
+
+
+LaTeX Warning: Reference `fig:2d-third-order.png' on page 29 undefined on input
+ line 12.
+
+
+<./fig/plots/interpolation/2d-third-order.png, id=343, 1420.30624pt x 440.64626
+pt>
+File: ./fig/plots/interpolation/2d-third-order.png Graphic file (type png)
+ <use ./fig/plots/interpolation/2d-third-order.png>
+Package pdftex.def Info: ./fig/plots/interpolation/2d-third-order.png used on i
+nput line 17.
+(pdftex.def)             Requested size: 483.69684pt x 150.06651pt.
+
+
+LaTeX Warning: Reference `fig:2d-third-order-2.png' on page 29 undefined on inp
+ut line 21.
+
+
+<./fig/plots/interpolation/2d-third-order-2.png, id=344, 953.5625pt x 425.59pt>
+File: ./fig/plots/interpolation/2d-third-order-2.png Graphic file (type png)
+<use ./fig/plots/interpolation/2d-third-order-2.png>
+Package pdftex.def Info: ./fig/plots/interpolation/2d-third-order-2.png used on
+ input line 29.
+(pdftex.def)             Requested size: 483.69684pt x 215.88559pt.
+ [29 <./fig/plots/interpolation/2d-third-order.png>]
+<./fig/plots/interpolation/density-ray.png, id=353, 727.7589pt x 394.5942pt>
+File: ./fig/plots/interpolation/density-ray.png Graphic file (type png)
+
+<use ./fig/plots/interpolation/density-ray.png>
+Package pdftex.def Info: ./fig/plots/interpolation/density-ray.png used on inpu
+t line 36.
+(pdftex.def)             Requested size: 483.69684pt x 262.26335pt.
+))
+(./sections/04-results/main.tex (./sections/04-results/decaying.tex
+<./fig/plots/decayturb/evol-sonic-mach.png, id=354, 723.70375pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-sonic-mach.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-sonic-mach.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-sonic-mach.png used on inpu
+t line 3.
+(pdftex.def)             Requested size: 483.69684pt x 259.62675pt.
+
+<./fig/plots/decayturb/evol-timestep.png, id=355, 739.76375pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-timestep.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-timestep.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-timestep.png used on input 
+line 4.
+(pdftex.def)             Requested size: 483.69684pt x 253.98991pt.
+ [30 <./fig/plots/interpolation/2d-third-order-2.png> <./fig/plots/interpolatio
+n/density-ray.png>]
+<./fig/plots/decayturb/evol-eint.png, id=364, 737.75626pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-eint.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-eint.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-eint.png used on input line
+ 5.
+(pdftex.def)             Requested size: 483.69684pt x 254.67747pt.
+
+<./fig/plots/decayturb/evol-ekin-diss.png, id=365, 740.7675pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-ekin-diss.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-ekin-diss.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-ekin-diss.png used on input
+ line 6.
+(pdftex.def)             Requested size: 483.69684pt x 253.64613pt.
+ [31 <./fig/plots/decayturb/evol-sonic-mach.png> <./fig/plots/decayturb/evol-ti
+mestep.png>]
+<./fig/plots/decayturb/evol-enstrophy.png, id=376, 741.77126pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-enstrophy.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-enstrophy.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-enstrophy.png used on input
+ line 7.
+(pdftex.def)             Requested size: 483.69684pt x 253.30827pt.
+
+<./fig/plots/decayturb/evol-relative-runtime.png, id=377, 726.715pt x 388.45125
+pt>
+File: ./fig/plots/decayturb/evol-relative-runtime.png Graphic file (type png)
+ <use ./fig/plots/decayturb/evol-relative-runtime.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-relative-runtime.png used o
+n input line 8.
+(pdftex.def)             Requested size: 483.69684pt x 258.55391pt.
+ [32 <./fig/plots/decayturb/evol-eint.png> <./fig/plots/decayturb/evol-ekin-dis
+s.png>]
+<./fig/plots/decayturb/evol-cum-runtime.png, id=386, 726.715pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-cum-runtime.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-cum-runtime.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-cum-runtime.png used on inp
+ut line 9.
+(pdftex.def)             Requested size: 483.69684pt x 258.55391pt.
+
+<./fig/plots/decayturb/evol-fv.png, id=387, 733.74126pt x 388.45125pt>
+File: ./fig/plots/decayturb/evol-fv.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-fv.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-fv.png used on input line 1
+0.
+(pdftex.def)             Requested size: 483.69684pt x 256.07631pt.
+ [33 <./fig/plots/decayturb/evol-enstrophy.png> <./fig/plots/decayturb/evol-rel
+ative-runtime.png>]
+<./fig/plots/decayturb/runtime-vs-ekin-diss.png, id=396, 726.715pt x 388.45125p
+t>
+File: ./fig/plots/decayturb/runtime-vs-ekin-diss.png Graphic file (type png)
+ <use ./fig/plots/decayturb/runtime-vs-ekin-diss.png>
+Package pdftex.def Info: ./fig/plots/decayturb/runtime-vs-ekin-diss.png used on
+ input line 11.
+(pdftex.def)             Requested size: 483.69684pt x 258.55391pt.
+
+<./fig/plots/decayturb/pws-ekin-dyntime-25.png, id=397, 723.70375pt x 421.575pt
+>
+File: ./fig/plots/decayturb/pws-ekin-dyntime-25.png Graphic file (type png)
+ <use ./fig/plots/decayturb/pws-ekin-dyntime-25.png>
+Package pdftex.def Info: ./fig/plots/decayturb/pws-ekin-dyntime-25.png used on 
+input line 12.
+(pdftex.def)             Requested size: 483.69684pt x 281.76547pt.
+ [34 <./fig/plots/decayturb/evol-cum-runtime.png> <./fig/plots/decayturb/evol-f
+v.png>])
+(./sections/04-results/driven.tex
+<./fig/plots/stirturb/pdf-vels-dyntime-5.png, id=406, 729.72626pt x 388.45125pt
+>
+File: ./fig/plots/stirturb/pdf-vels-dyntime-5.png Graphic file (type png)
+ <use ./fig/plots/stirturb/pdf-vels-dyntime-5.png>
+Package pdftex.def Info: ./fig/plots/stirturb/pdf-vels-dyntime-5.png used on in
+put line 3.
+(pdftex.def)             Requested size: 483.69684pt x 257.48108pt.
+
+<./fig/plots/stirturb/pdf-vels-dyntime-6.png, id=407, 729.72626pt x 388.45125pt
+>
+File: ./fig/plots/stirturb/pdf-vels-dyntime-6.png Graphic file (type png)
+ <use ./fig/plots/stirturb/pdf-vels-dyntime-6.png>
+Package pdftex.def Info: ./fig/plots/stirturb/pdf-vels-dyntime-6.png used on in
+put line 4.
+(pdftex.def)             Requested size: 483.69684pt x 257.48108pt.
+ [35 <./fig/plots/decayturb/runtime-vs-ekin-diss.png> <./fig/plots/decayturb/pw
+s-ekin-dyntime-25.png>]))
+(./sections/05-conclusion/main.tex [36 <./fig/plots/stirturb/pdf-vels-dyntime-5
+.png> <./fig/plots/stirturb/pdf-vels-dyntime-6.png>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 24.
+ [37]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 24.
  (aux/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 24.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 24.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
@@ -1150,39 +1437,44 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25.
- ) 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 24.
+ )
+(\end occurred inside a group at level 2)
+
+### simple group (level 2) entered at line 123 ({)
+### simple group (level 1) entered at line 120 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 11728 strings out of 493013
- 181873 string characters out of 6139316
- 364228 words of memory out of 5000000
- 14855 multiletter control sequences out of 15000+600000
+ 11964 strings out of 493013
+ 189381 string characters out of 6139317
+ 363676 words of memory out of 5000000
+ 14994 multiletter control sequences out of 15000+600000
  87569 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,51p,8832b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.
-enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts/type1/public/
-lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pf
-b></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dis
-t/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/
-lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/te
-xmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.p
-fb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on aux/main.pdf (21 pages, 686607 bytes).
+ 43i,12n,51p,8832b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
+/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/d
+vips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr
+/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts
+/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12
+.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf
+-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/f
+onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
+.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-
+dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on aux/main.pdf (39 pages, 2471242 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 167 named destinations out of 1000 (max. 500000)
- 252 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 435 compressed objects within 5 object streams
+ 226 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

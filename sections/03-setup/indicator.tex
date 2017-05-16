@@ -1,0 +1,45 @@
+\subsection{Indicator}
+In \sec{shock-capturing} we discussed ways of how to detect and handle shocks.
+Here we perform a comparing study of two manifestations of the \vip{Persson}
+indicator and clarify the advantages over the other.
+
+We remember the definition of the smoothness indicator, \eref{smoothness-indicator},
+\begin{equation}
+    s = \log_{10} \frac{\langle u - u_{-1}, u - u_{-1} \rangle}{\langle u, u \rangle},
+\end{equation}
+which is the classical indicator given per Persson.
+The first variation of it, called \emph{indicator A}, reads
+\begin{equation}
+\label{eqn:indicator-A}
+    s_A = \log_{10} \max \left(
+        \frac{\avg{u^2 - u_{N_p--1}^2}}{\avg{u^2}},
+        \frac{\avg{u_{N_p-1}^2 - u_{N_p-2}^2}}{\avg{u^2 - u_{N_p-1}^2}}
+    \right)
+\end{equation}
+And the second, called \emph{indicator B},
+\begin{equation}
+    s_B = \log_{10} \max_q \frac{\avg{u - u_{N_p-q}}^2}{\avg{u_{N_p-q}}^2}
+\end{equation}
+\Fig{indicator-column.png} and \fig{indicator-slice.png} show a fully
+developed turbulence with shocks and their associated heat maps of indicator
+values calculated from the pressure variable. A normalized frequency
+distribution (PDF) of indicator values $s$ is plotted in \fig{indicator-pdf.png}.
+\image{0.8}{indicator-column.png}{Snapshot of hyper-sonic turbulence.}
+\image{0.8}{indicator-slice.png}{Slice with thickness of one element.}
+\image{1.0}{indicator-pdf.png}{Probability Distribution of calculated indicator values.}
+
+On average, \fig{indicator-column.png}, both versions yield a similar picture.
+But taking out a slice of the turbulent box we get very differing results.  The
+most prominent feature is the higher sensitivity of indicator A and its
+limitation to only negative values. The latter is a result of the normalizing
+fractions in \eref{indicator-A}. Both variants trail the shock fronts with
+sufficient accuracy. Considering the PDF in \fig{indicator-pdf.png}, one can
+observe spikes in both curves in the interval between -1 and 0. They herald the
+realm of strong shocks. The broad hill around -2.5 contains the majority of
+stressed elements which were affected by a recently pervading shock front.  The
+little spike at -4.5 stems from a bias introduced the indicator A. Numerous
+tests revealed a necessary threshold value of -4.5 where the switch from DG
+ode to FV mode takes place. Clearly, indicator A unambiguously signalizes
+elements with unresolvable discontinuities. This opens the possibility to
+further strengthen the DG scheme for a broader coverage of the lower stressed
+domain and hand over shock ridden elements to specialized treatment.
