@@ -43,18 +43,20 @@
 \contentsline {paragraph}{\nonumberline Method of Characteristics}{19}{section*.35}
 \contentsline {paragraph}{\nonumberline Shock Formation}{20}{section*.36}
 \contentsline {paragraph}{\nonumberline Entropy Increase}{21}{section*.38}
+\contentsline {paragraph}{\nonumberline Sod Shock Tube Problem}{21}{section*.39}
 \contentsline {subsubsection}{\numberline {2.3.3}Shock Capturing}{21}{subsubsection.2.3.3}
-\contentsline {paragraph}{\nonumberline Sensoring}{22}{section*.39}
-\contentsline {paragraph}{\nonumberline Capturing}{23}{section*.41}
+\contentsline {paragraph}{\nonumberline Sensoring}{22}{section*.40}
+\contentsline {paragraph}{\nonumberline Capturing}{23}{section*.42}
 \contentsline {section}{\numberline {3}Numerical Setup}{23}{section.3}
 \contentsline {subsection}{\numberline {3.1}Periodic Box and Initial Conditions}{23}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}CFD Frameworks}{24}{subsection.3.2}
-\contentsline {paragraph}{\nonumberline \textsc {FLASH}}{24}{section*.43}
-\contentsline {paragraph}{\nonumberline \textsc {FLEXI}}{25}{section*.44}
+\contentsline {paragraph}{\nonumberline \textsc {FLASH}}{24}{section*.44}
+\contentsline {paragraph}{\nonumberline \textsc {FLEXI}}{25}{section*.45}
 \contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{25}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Indicator}{27}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Polynomial Interpolation}{29}{subsection.3.5}
-\contentsline {section}{\numberline {4}Results \& Discussion}{31}{section.4}
-\contentsline {subsection}{\numberline {4.1}Decaying Turbulence}{31}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{36}{subsection.4.2}
-\contentsline {section}{\numberline {5}Conclusion}{37}{section.5}
+\contentsline {subsection}{\numberline {3.6}Sod-Shock}{31}{subsection.3.6}
+\contentsline {section}{\numberline {4}Results \& Discussion}{37}{section.4}
+\contentsline {subsection}{\numberline {4.1}Decaying Turbulence}{37}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{42}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusion}{51}{section.5}
