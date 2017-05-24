@@ -1,4 +1,4 @@
-\subsubsection{Shocks}
+\subsection{Supersonic Shocks}
 Shocks, or in more technical terms singular compression waves, are escalating
 highly localized spikes in density and pressure due to nonlinear dynamics
 encoded in the Euler equation. When a shock wave is emerging the velocity
@@ -26,10 +26,33 @@ discontinuity matters less.
 
 
 Solving Riemann problem.
-
 Due to the nonlinearity of the Euler equations 
 
-\paragraph{Method of Characteristics}
+\subsubsection{Shock Formation}
+For larger t the equation C.10) may not have a
+unique solution. This happens when the characteristics cross, as will even-
+eventually happen if qx(x,0) is negative at any point. At the time Tb where the
+characteristics first cross, the function q(x, t) has an infinite slope — the wave
+"breaks" and a shock forms. Beyond this point there is no classical solution of
+the PDE, and the weak solution we wish to determine becomes discontinuous.
+
+\begin{equation}
+   \vels_{shock} = \frac{\vels_L + \vels_R}{2}
+\end{equation}
+is the shock speed, the speed at which the discontinuity travels.
+
+When we set following initial condition:
+\begin{equation}
+    U(0,x) = 
+    \begin{cases}
+        1 \ \ \text{if} \ \ x < 0 \\
+        0 \ \ \text{if} \ \ 0 \leq x < 1 \\
+        2 \ \ \text{if} \ \ 1 \leq x < 2 \\
+        0 \ \ \text{if} \ \ x > 2    
+    \end{cases}
+\end{equation}
+
+\subsubsection{Method of Characteristics}
 
 The prototype for all ODEs of second order is the \vip{Burger}'s equation.
 This is about the simplest model that includes the nonlinear and viscous
@@ -55,30 +78,6 @@ and along each characterstic $q$ is constant, since
 Moreover, since q is constant on each characteristic, the slope $x'(t)$ is constant
 by \eref{charact-x-t} and so the characteristics are straight lines, determined by the initial
 data.
-
-\paragraph{Shock Formation}
-For larger t the equation C.10) may not have a
-unique solution. This happens when the characteristics cross, as will even-
-eventually happen if qx(x,0) is negative at any point. At the time Tb where the
-characteristics first cross, the function q(x, t) has an infinite slope — the wave
-"breaks" and a shock forms. Beyond this point there is no classical solution of
-the PDE, and the weak solution we wish to determine becomes discontinuous.
-
-\begin{equation}
-   \vels_{shock} = \frac{\vels_L + \vels_R}{2}
-\end{equation}
-is the shock speed, the speed at which the discontinuity travels.
-
-When we set following initial condition:
-\begin{equation}
-    U(0,x) = 
-    \begin{cases}
-        1 \ \ \text{if} \ \ x < 0 \\
-        0 \ \ \text{if} \ \ 0 \leq x < 1 \\
-        2 \ \ \text{if} \ \ 1 \leq x < 2 \\
-        0 \ \ \text{if} \ \ x > 2    
-    \end{cases}
-\end{equation}
 
 \image{0.8}{burger-characteristics.png}{
 Source: https://calculus7.org/2015/11/27/rarefaction-colliding-with-two-shocks/
@@ -129,7 +128,7 @@ eigenvalue. For a linear system, these eigenvalues are the characteristic speeds
 of the system. Thus discontinuities can propagate only along characteristics,
 just as for the scalar advection equation.
 
-\paragraph{Entropy Increase}
+\subsubsection{Entropy Increase}
 
 The second law of thermodynamics requires that entropy must increase across a normal shock
 wave.
@@ -139,8 +138,3 @@ wave.
 \end{equation}
 
 This discussion is important on defining Flux functions.
-
-\paragraph{Sod Shock Tube Problem}
-
-Some workds about sod shock. Derivation why in isothermal case the
-contact disccontinuity disappears.

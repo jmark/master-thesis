@@ -1,4 +1,4 @@
-\subsection{Supersonic Turbulences}
+\subsection{Astrophysical Turbulence}
 
 Turbulences are very common phenomena in nature. They can be desired as well as
 unsoliceted. In astrophysics turbulence are suspected to play a major role in
@@ -16,7 +16,7 @@ Grid point requirement
 can be relaxed since most dissipation takes places 5 to 15 times the
 Kolmogorov length scale $\eta$. See Moin and Mahesh, 1998
 
-There is a wide range of time scales in a turbulent flow, so the system of
+There are a wide range of time scales in a turbulent flow, so the system of
 equations is stiff. Implicit time advancement and large time steps are
 routinely used for stiff systems in general-purpose CFD, but these are
 unsuitable in DNS because complete time resolution is needed to describe
@@ -54,6 +54,8 @@ is the time-average of the flow property $q(t)$. A turbulent flow can be
 globally described in terms of the mean values of the flow properties like
 density, velocity and pressure. In the following pages important turbulence
 measures are introduced and briefly explained.
+
+\subsubsection{Mean Values}
 
 \paragraph{Reynolds Number}
 
@@ -130,7 +132,7 @@ For subsonic mach numbers:
     \ekindisp \approx 2 \frac{\shearvisc}{\dens_0} \; \enst
 \end{equation}
 
-\paragraph{Energy Cascade}
+\subsubsection{Energy Cascade}
 
 Turbulent flows always show a three-dimensional character and they lead to
 rotational flow structures, called turbulent eddies, with a wide range of
@@ -218,7 +220,7 @@ with \vip{Parseval}'s theorem
     \int_{-\infty}^{\infty} |Y(x)|^2 \, dx = \frac{1}{2\pi} \; \int_{-\infty}^{\infty} |\hat{Y}(k)|^2 \,dk.
 \end{equation}
 
-\paragraph{Probability Distribution Functions}
+\subsubsection{Probability Distribution Functions (PDF)}
 
 Using all the cells in our grid, we obtain the cumulative distri-
 butions, F, of the following quantities: logarithm of the density,

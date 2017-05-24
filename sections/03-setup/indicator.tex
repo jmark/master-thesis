@@ -1,4 +1,100 @@
-\subsection{Indicator}
+\subsection{Shock Capturing}
+\label{sec:shock-capturing}
+In hypersonic simulations the solver has to deal with strong shocks in an
+accurate and robust manner. The utilized shock capturing strategy consists of
+two parts: sensoring and capturing.
+
+This endeavor, however, is far from trivial because of two main reasons.
+The first is that the exact solution of (nonlinear) purely convective problems
+develops discontinuities in finite time; the second is that these solutions might
+display a very rich and complicated structure near such discontinuities. Thus,
+when constructing numerical methods for these problems, it must be 
+guaranteed that the discontinuities of the approximate solution are the physically
+relevant ones. Also, it must be ensured that the appearance of a discontinuity
+in the approximate solution does not induce spurious oscillations that spoil
+the quality of the approximation; on the other hand, while ensuring this, the
+method must remain sufficiently accurate near that discontinuity in order to
+capture the possibly rich structure of the exact solution.
+
+\paragraph{Sensoring}
+Many shock sensors have been developed. Within \FLEXI following indicators
+are available.
+
+\begin{description}
+    \item[Jameson]\cite{jameson1981}
+    \item[Ducros] \cite{ducros1999}
+    \item[Persson] \cite{persson2006}
+\end{description}
+
+Based on the \textsc{Persson} indicator we develop a \emph{smoothness} sensor.
+The basic idea is to find a meassure for the variance of the highest
+frequencies in modal space of the polynome.
+
+First we express the solution of order $p$ within each eleement in terms of
+an orthogonal basis as
+\begin{equation}
+    u = \sum^{N_p}_{i=1} u_i \psi_i,
+\end{equation}
+where $N(p)$ is the total number of terms in the expansion and $\psi_i$ are the
+\textsc{Legendre} basis functions.
+\image{0.6}{expansion-modes.png}{Expansion modes for the Lagrange and the Legendre Basis.}
+
+Now we only consider the terms up to order $p-1$, that is
+\begin{equation}
+    u_{N_p-1} = \sum^{N_p-1}_{i=1} u_i \psi_i,
+\end{equation}
+Whithin each element $\Omega$ we define the following \emph{smoothness} indicator
+\begin{equation}
+\label{eq:smoothnes-indicator}
+    s = \log_{10} \frac{\langle u - u_{N_p-1}, u - u_{N_p-1} \rangle}{\langle u, u \rangle},
+\end{equation}
+where $\langle \cdot,\cdot \rangle$ is the standard inner product in $L_2(\Omega)$.
+
+The smaller the indicator $s$, the smoother is the approximating solution.  By
+setting a specific threshold for $s$ one can decide when to switch between DG
+and FV mode. This procedure is done at every timestep hence the elements in FV mode
+should follow along the shock waves throughout the domain.
+
+\paragraph{Capturing}
+\begin{description}
+    \item[Entropy Stable Flux] \cite{derigs2016}
+    \item[Local Finite Volume] 
+    \item[Split Schemes] See \cite{gassner2016} for further details.
+    \item[Artificial Viscosity] ...
+\end{description}
+
+\begin{equation}
+\label{eq:persson-indicator-gov-equ}
+    \frac{\partial\vec{U}}{\partial t} + \nabla \cdot \vec{F} = \nabla \cdot (\epsilon \nabla U)
+\end{equation}
+
+The amount of viscosity varies for each element depending on the current shock
+strength. We have to consider two cases.
+
+If the element is in FV mode the AV is set quadratic proportional to the
+maximal RMS $v_{rmsv}$ within the element.
+\begin{equation}
+    \epsilon = \epsilon_0 \cdot \max(v_{rmsv})^2    
+\end{equation}
+This step is necessary for FV schemes who do not handle strong shocks via their
+flux schemes.
+
+In case of DG mode the amount of AV is based on the \emph{Persson Indicator}
+introduced above.
+\begin{equation}
+    \epsilon = \begin{cases}
+        0 & \text{if}\;\;\; s < s_0 - \kappa \\
+        \epsilon_0 & \text{if}\;\;\; s > s_0 + \kappa \\
+        \frac{\epsilon_0}{2} \left ( 1 + \sin\frac{\pi(s-s_0)}{2\kappa} \right ) & \text{else}
+    \end{cases}
+\end{equation}
+The parameters $\epsilon_0$ and $\kappa$ are chosen empirically.  Since we do
+not have any natural viscosity the artifical one must be as small as possible;
+just enough for diffusing velocity spikes in the presence of shocks. Typical
+values are around $\epsilon_0 \propto 10^{-10}$.
+
+
+
 In \sec{shock-capturing} we discussed ways of how to detect and handle shocks.
 Here we perform a comparing study of two manifestations of the \vip{Persson}
 indicator and clarify the advantages over the other.

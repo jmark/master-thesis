@@ -10,53 +10,62 @@
 \contentsline {paragraph}{\nonumberline Dimensionless Euler Equations}{4}{section*.8}
 \contentsline {paragraph}{\nonumberline Choice of parameters}{5}{section*.9}
 \contentsline {subsubsection}{\numberline {2.1.2}Weak Formulation}{5}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Finite Element Scheme}{6}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Polynome Ansatz}{7}{subsubsection.2.2.1}
-\contentsline {paragraph}{\nonumberline Lagrange Polynome}{8}{section*.10}
-\contentsline {paragraph}{\nonumberline Galerkin Method}{9}{section*.12}
-\contentsline {subsubsection}{\numberline {2.2.2}Grid Spaces and Transformation}{10}{subsubsection.2.2.2}
-\contentsline {paragraph}{\nonumberline Transformation from \textsc {FLASH} to \textsc {FLEXI}}{10}{section*.14}
-\contentsline {paragraph}{\nonumberline Interpolation Error Estimate}{11}{section*.15}
-\contentsline {subsubsection}{\numberline {2.2.3}Flux Functions}{11}{subsubsection.2.2.3}
-\contentsline {paragraph}{\nonumberline Riemann Problem}{12}{section*.16}
-\contentsline {paragraph}{\nonumberline All-Shock Solver}{12}{section*.17}
-\contentsline {paragraph}{\nonumberline HLLE (Harten-Luv-Lax Entropy-fix) flux}{12}{section*.18}
-\contentsline {paragraph}{\nonumberline PPM Solver}{13}{section*.19}
-\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{13}{section*.20}
-\contentsline {paragraph}{\nonumberline Higher-order Flux}{13}{section*.21}
-\contentsline {paragraph}{\nonumberline Limiter Function}{13}{section*.22}
-\contentsline {subsubsection}{\numberline {2.2.4}Time Integration}{13}{subsubsection.2.2.4}
-\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{14}{section*.23}
-\contentsline {subsection}{\numberline {2.3}Supersonic Turbulences}{14}{subsection.2.3}
-\contentsline {paragraph}{\nonumberline Reynolds Number}{15}{section*.24}
-\contentsline {paragraph}{\nonumberline Mach Number $\mathcal {M}$}{15}{section*.25}
-\contentsline {paragraph}{\nonumberline Bulk Motion $\relax $\@@underline {\hbox {\mathcal {P}}}\mathsurround \z@ $\relax $}{15}{section*.26}
-\contentsline {paragraph}{\nonumberline Kinetic Energy $\mathcal {K}$}{15}{section*.27}
-\contentsline {paragraph}{\nonumberline Kinetic Energy Dissipation $\epsilon $}{15}{section*.28}
-\contentsline {paragraph}{\nonumberline Vorticity $\omega $ and Enstrophy $\mathcal {E}$}{16}{section*.29}
-\contentsline {paragraph}{\nonumberline Energy Cascade}{16}{section*.30}
-\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{17}{section*.32}
-\contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{18}{section*.33}
-\contentsline {paragraph}{\nonumberline Probability Distribution Functions}{18}{section*.34}
-\contentsline {subsubsection}{\numberline {2.3.1}Turbulent Forcing}{18}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Shocks}{19}{subsubsection.2.3.2}
-\contentsline {paragraph}{\nonumberline Method of Characteristics}{19}{section*.35}
-\contentsline {paragraph}{\nonumberline Shock Formation}{20}{section*.36}
-\contentsline {paragraph}{\nonumberline Entropy Increase}{21}{section*.38}
-\contentsline {paragraph}{\nonumberline Sod Shock Tube Problem}{21}{section*.39}
-\contentsline {subsubsection}{\numberline {2.3.3}Shock Capturing}{21}{subsubsection.2.3.3}
-\contentsline {paragraph}{\nonumberline Sensoring}{22}{section*.40}
-\contentsline {paragraph}{\nonumberline Capturing}{23}{section*.42}
-\contentsline {section}{\numberline {3}Numerical Setup}{23}{section.3}
-\contentsline {subsection}{\numberline {3.1}Periodic Box and Initial Conditions}{23}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}CFD Frameworks}{24}{subsection.3.2}
-\contentsline {paragraph}{\nonumberline \textsc {FLASH}}{24}{section*.44}
-\contentsline {paragraph}{\nonumberline \textsc {FLEXI}}{25}{section*.45}
-\contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{25}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Indicator}{27}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Polynomial Interpolation}{29}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Sod-Shock}{31}{subsection.3.6}
-\contentsline {section}{\numberline {4}Results \& Discussion}{37}{section.4}
-\contentsline {subsection}{\numberline {4.1}Decaying Turbulence}{37}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{42}{subsection.4.2}
-\contentsline {section}{\numberline {5}Conclusion}{51}{section.5}
+\contentsline {subsection}{\numberline {2.2}Astrophysical Turbulence}{6}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Mean Values}{7}{subsubsection.2.2.1}
+\contentsline {paragraph}{\nonumberline Reynolds Number}{7}{section*.10}
+\contentsline {paragraph}{\nonumberline Mach Number $\mathcal {M}$}{7}{section*.11}
+\contentsline {paragraph}{\nonumberline Bulk Motion $\relax $\@@underline {\hbox {\mathcal {P}}}\mathsurround \z@ $\relax $}{7}{section*.12}
+\contentsline {paragraph}{\nonumberline Kinetic Energy $\mathcal {K}$}{7}{section*.13}
+\contentsline {paragraph}{\nonumberline Kinetic Energy Dissipation $\epsilon $}{8}{section*.14}
+\contentsline {paragraph}{\nonumberline Vorticity $\omega $ and Enstrophy $\mathcal {E}$}{8}{section*.15}
+\contentsline {subsubsection}{\numberline {2.2.2}Energy Cascade}{8}{subsubsection.2.2.2}
+\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{9}{section*.17}
+\contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{10}{section*.18}
+\contentsline {subsubsection}{\numberline {2.2.3}Probability Distribution Functions (PDF)}{10}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{10}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Shock Formation}{11}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Method of Characteristics}{11}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Entropy Increase}{13}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Finite Element Scheme}{13}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Galerkin Method}{14}{subsubsection.2.4.1}
+\contentsline {paragraph}{\nonumberline Lagrange Polynome}{14}{section*.20}
+\contentsline {paragraph}{\nonumberline Galerkin Method}{15}{section*.22}
+\contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{16}{subsubsection.2.4.2}
+\contentsline {paragraph}{\nonumberline Riemann Problem}{17}{section*.23}
+\contentsline {paragraph}{\nonumberline All-Shock Solver}{17}{section*.24}
+\contentsline {paragraph}{\nonumberline HLLE (Harten-Luv-Lax Entropy-fix) flux}{17}{section*.25}
+\contentsline {paragraph}{\nonumberline PPM Solver}{18}{section*.26}
+\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{18}{section*.27}
+\contentsline {paragraph}{\nonumberline Higher-order Flux}{18}{section*.28}
+\contentsline {paragraph}{\nonumberline Limiter Function}{18}{section*.29}
+\contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{18}{subsubsection.2.4.3}
+\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{19}{section*.30}
+\contentsline {section}{\numberline {3}Numerical Setup}{19}{section.3}
+\contentsline {subsection}{\numberline {3.1}Simulation Frameworks}{19}{subsection.3.1}
+\contentsline {paragraph}{\nonumberline \textsc {FLASH}}{19}{section*.31}
+\contentsline {paragraph}{\nonumberline \textsc {FLEXI}}{20}{section*.32}
+\contentsline {subsection}{\numberline {3.2}Periodic Box and Initial Conditions}{20}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{21}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Shock Capturing}{23}{subsection.3.4}
+\contentsline {paragraph}{\nonumberline Sensoring}{23}{section*.36}
+\contentsline {paragraph}{\nonumberline Capturing}{24}{section*.38}
+\contentsline {subsection}{\numberline {3.5}Grid Spaces and Transformation}{27}{subsection.3.5}
+\contentsline {paragraph}{\nonumberline Transformation from \textsc {FLASH} to \textsc {FLEXI}}{28}{section*.43}
+\contentsline {paragraph}{\nonumberline Interpolation Error Estimate}{28}{section*.44}
+\contentsline {section}{\numberline {4}Results \& Discussion}{31}{section.4}
+\contentsline {subsection}{\numberline {4.1}\textsc {Sod} Shock Tube Problem}{31}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic}{31}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Adiabatic with Strong Shock}{33}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Isothermal}{35}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Isothermal with Strong Shock}{36}{subsubsection.4.1.4}
+\contentsline {subsection}{\numberline {4.2}Decaying Turbulence}{39}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Evolution}{39}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Powerspectra}{42}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Probability Distributions}{42}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Performance}{43}{subsubsection.4.2.4}
+\contentsline {subsection}{\numberline {4.3}Driven Turbulence}{44}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Evolution}{44}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Powerspectra}{49}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Probability Distributions}{53}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Performance}{54}{subsubsection.4.3.4}
+\contentsline {section}{\numberline {5}Conclusion}{55}{section.5}
