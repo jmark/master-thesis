@@ -106,15 +106,34 @@ RK-3  Hybrid 	& -1.4(3) & 15.1(2) & 0.285(1) & 0.29(1) \\
 \label{tab:pws-ekin}
 \end{table}
 
-
-
-
-
-
 \subsubsection{Probability Distributions}
-\image{1.0}{plots/stirturb/pdfs/dens-vw-dyntime-35.png}{Foobar fo bar}
+\image{1.0}{plots/stirturb/pdfs/dens-vw-dyntime-20:40.png}{Foobar fo bar}
+
+\begin{table}[H]
+\fontsize{3mm}{3mm}\selectfont
+\captionsetup{width=.8\textwidth}
+\caption{Gaussian Fitting Parameters of the Lognormal Density PDF}
+\centering
+\begin{tabular}{lccc}
+\toprule
+Solver & Mean $s_0$ & Std. Deviation $\sigma_s$ & Sonic Mach Number $\mach$ \\
+\midrule
+Bouchut3	    & -0.310 $\pm$ 0.050    & 0.580 $\pm$ 0.050	& 2.50 $\pm$ 0.40\\
+Bouchut5	    & -0.290 $\pm$ 0.050    & 0.570 $\pm$ 0.080	& 2.40 $\pm$ 0.60\\
+PPM     	    & -0.320 $\pm$ 0.050    & 0.590 $\pm$ 0.060	& 2.60 $\pm$ 0.50\\
+Midp. Fin-Vo	& -0.310 $\pm$ 0.040    & 0.600 $\pm$ 0.090	& 2.70 $\pm$ 0.70\\
+Midp. Hybrid	& -0.320 $\pm$ 0.050    & 0.560 $\pm$ 0.070	& 2.40 $\pm$ 0.50\\
+RK-3  Fin-Vo	& -0.261 $\pm$ 0.019	& 0.498 $\pm$ 0.033	& 1.95 $\pm$ 0.21\\
+RK-3  Hybrid	& -0.257 $\pm$ 0.026	& 0.480 $\pm$ 0.040	& 1.87 $\pm$ 0.24\\
+\bottomrule
+\end{tabular}
+\label{tab:pdf-dens-vw}
+\end{table}
+
 \image{1.0}{plots/stirturb/pdfs/vels-dyntime-5.png}{Foobar fo bar}
 \image{1.0}{plots/stirturb/pdfs/vels-dyntime-6.png}{Foobar fo bar}
+
+
 
 \subsubsection{Performance}
 \image{1.0}{plots/stirturb/evolutions/timestep.png}{Foobar}

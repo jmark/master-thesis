@@ -9,6 +9,17 @@ studied in the past, there is still an on-going debate about what additional
 dynamics compressibility brings especially in supersonic setups where shocks
 emerge.
 
+It may be prudent to remind ourselves that real ISM turbulence is
+neither isothermal, nor polytropic. Three important factors: 1)
+Equation of state / energy equation: The real ISM has a local
+temperature that is not a simple function of density but results from
+the evolution of the thermal energy. 2) Magnetic elds: The e ective
+gamma of the magnetic eld is two for compression across the eld, and
+zero for compression along the eld. What might the e ect on the PDF
+be? 3) Gravity: Gravity takes over control over the most dense
+regions. This might be expected to in uence the dense side of the PDF
+signi cantly.
+
 Grid point requirement
 \begin{equation}
     N \varpropto Re^{9/4}
@@ -231,7 +242,8 @@ quantities are binned linearly.
 
 % probability distribution function (PDF)
 
-The share of a density range from $\dens_A$ to $\dens_B$ can then be calculated by
+The share of a density range from $\dens_A$ to $\dens_B$ can then be calculated
+by
 \begin{equation}
     \text{Pr}[\dens_A \le \dens' \le \dens_B] = \int_{\dens_A}^{\dens_B} \text{PDF}[\dens](\dens') \, d\dens'
 \end{equation}
@@ -239,4 +251,19 @@ The share of a density range from $\dens_A$ to $\dens_B$ can then be calculated 
 According to various studies ... fully developed turbulence models
 yield a nearly log-log normal density distribution.
 
-Explain skewness fit, log, log-log scale ???
+The PDF is assumed to follow a lognormal analytical form
+\begin{equation}
+P_s(s) = \frac{1}{\sqrt{2\pi}\sigma_s} \exp\left[-\frac{(s-s_0)^2}{2\sigma_s^2}\right],
+\end{equation}
+where $s = \ln(\dens/\dens_0)$. Via the standard deviation $\sigma_s$ of
+the distribution one can derive the mean sonic Mach number of the
+turbulence via this relation
+\begin{equation}
+\sigma_s^2 = \ln(1 + b^2\,\mach^2)
+\end{equation}
+The proportionality constant $b$ is dependent on the ratio of compressible to
+solenoidal forcing $\zeta \in [0,1]$, see ..., and the number of spatial
+dimensions $D = 1,2,3$.
+\begin{equation}
+b = 1 + (D^{-1} - 1) \, \zeta
+\end{equation}
