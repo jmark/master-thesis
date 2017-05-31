@@ -1,49 +1,85 @@
 \subsection{Driven Turbulence}
 
 \subsubsection{Time Evolution}
-\image{1.0}{plots/stirturb/evolutions/sonic-mach.png}{Foobar}
-\image{1.0}{plots/stirturb/evolutions/timestep.png}{Foobar}
+\image{1.0}{plots/stirturb/evolutions/sonic-mach.png}{Time evolution of the
+root-mean-square mach number. Additionally, the turbulent sonic mach number
+evaluated from the width of the density PDF is shown for comparison.}
+\image{1.0}{plots/stirturb/evolutions/timestep.png}{Time evolution of the timestep $dt$.
+The CFL Numbers are listed in \tbl{tab:decayturb-cfl}.}
+\begin{table}[H]
+\fontsize{3mm}{3mm}\selectfont
+\captionsetup{width=.8\textwidth}
+\caption{CFL-Numbers}
+\centering
+\begin{tabular}{l| cccc cccc}
+\toprule
+Solver & \bouT & \bouF & \fppm & \eufv & \mpfv & \mphy & \rkfv & \rkhy \\
+\midrule
+CFL    & 0.8 & 0.8 & 0.8 & 0.4 & 0.8 & 0.6 & 0.9 & 1.2 \\
+\bottomrule
+\end{tabular}
+\label{tab:decayturb-cfl}
+\end{table}
+\image{1.0}{plots/stirturb/evolutions/ener.png}{Time evolution of the energy
+in the system. The total energy $\ener$ is the sum of the kinetic $\ekin$ and
+internal energy $\eint$: $\ener = \eint + \ekin$.}
 
-\image{1.0}{plots/stirturb/evolutions/ener.png}{Foobar}
-\image{1.0}{plots/stirturb/evolutions/eint.png}{Foobar}
+\image{1.0}{plots/stirturb/evolutions/eint.png}{Time evolution of the internal
+energy $\eint$ under polytropic cooling. The quantifiable deviation of the
+internal energy from the anticipated constant $\eint_{0} = 0.9$ is discussed in
+the text.}
 
-\image{1.0}{plots/stirturb/evolutions/ekin-dissipation.png}{Foobar}
-\image{1.0}{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}{Foobar}
+\image{1.0}{plots/stirturb/evolutions/ekin-dissipation.png}{Time evolution of
+the kinetic energy dissipation $\ekindiss$.}
 
-\image{1.0}{plots/stirturb/evolutions/enstrophy.png}{Foobar}
-\image{1.0}{plots/stirturb/evolutions/rmsv-max.png}{Foobar}
-\image{1.0}{plots/stirturb/evolutions/ratio-fv-dg.png}{Foobar}
+\image{1.0}{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}{Cumulated dissipated
+kinetic energy deprived out of the system by polytropic cooling.}
+
+\image{1.0}{plots/stirturb/evolutions/enstrophy}{Time evolution of the
+mean enstrophy $\enst$.}
+
+\image{1.0}{plots/stirturb/evolutions/rmsv-max.png}{Maximum root-mean-square velocity
+over time.}
+
+\image{1.0}{plots/stirturb/evolutions/ratio-fv-dg.png}{Time evolution of the fraction of
+Finite-Volume Elements to the total number of elements. \remark The other
+solvers would stay at 100\% since they operate solely with Finite-Volumes.}
 
 \subsubsection{Powerspectra}
 
-\image{1.0}{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}{Foobar}
-\image{1.0}{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png}{Foobar}
+\image{1.0}{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}{Powerspectra of
+the volume-weighted velocity field for the turbulent phase $t_d = [2,4]$
+(time-average) and at the end of the decaying phase $t_d = 6.0$.}
 
-\image{1.0}{plots/stirturb/powerspectra/evol-slopes-vw-velocity.png}{Foobar}
-\image{1.0}{plots/stirturb/powerspectra/evol-slopes-mw-velocity.png}{Foobar}
+\image{1.0}{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png}{Powerspectra of
+the mass-weighted velocity field for the turbulent phase $t_d = [2,4]$
+(time-average) and at the end of the decaying phase $t_d = 6.0$.}
 
-\image{1.0}{plots/stirturb/powerspectra/ekin-dyntimes.png}{Foobar}
-\image{1.0}{plots/stirturb/powerspectra/evol-ekin-small-scales.png}{Foobar}
+\image{1.0}{plots/stirturb/powerspectra/evol-slopes-vw-velocity.png}{Time evolution of the
+inertial range's slope of the volume-weighted velocity powerspectra. Examples
+are presented in \fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}.}
 
-\newcommand{\bouT}{Bouchut3}
-\newcommand{\bouF}{Bouchut5}
-\newcommand{\fppm}{PPM}
-\newcommand{\eufv}{Euler Fin-Vo.}
-\newcommand{\mpfv}{Midp. Fin-Vo.}
-\newcommand{\mphy}{Midp. Hybrid }
-\newcommand{\rkfv}{RK-3  Fin-Vo.}
-\newcommand{\rkhy}{RK-3  Hybrid}
+\image{1.0}{plots/stirturb/powerspectra/evol-slopes-mw-velocity.png}{Time evolution of the
+inertial range's slope of the mass-weighted velocity powerspectra. Examples
+are presented in \fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}.}
+
+\image{1.0}{plots/stirturb/powerspectra/ekin-dyntimes.png}{Powerspectra of the
+volume-weighted mean kinetic energy field shown for the turbulent phase $t_d = [2,4]$
+(time-average) and two stages of the decaying phase: $t_d = 4.5$ and $t_d = 6.0$.}
+
+\image{1.0}{plots/stirturb/powerspectra/evol-ekin-small-scales.png}{Amount of
+small-scale energies prevailing in the dissipative length scales over time.}
 
 \begin{table}[H]
 \fontsize{3mm}{4mm}\selectfont
 \captionsetup{width=.8\textwidth}
-\caption{Data Powerspectra Volume-weighted Velocity Field}
+\caption{Comparison of the three types of powerspectra averaged over the turbulent phase: $t_d = [2,4]$}
 \centering
 \begin{tabular}{l|cc|cccc}
 \toprule
 Solver & Slope $m$ & Offset $n$ & Mean Squ. $\avg{\cdot^2}$ & Area $A$ & Diss. Area $A_{diss}$ & $A_{diss}/A$ [\%] \\
 \midrule
-\multicolumn{7}{c}{Volume-weighted Kinetic Energy} \\
+\multicolumn{7}{c}{Volume-weighted Mean Kinetic Energy} \\
 \midrule
 \bouT & -1.16 $\pm$ 0.05 & 17.19 $\pm$ 0.24 & 39 $\pm$ 4 & 37 $\pm$ 8 & 2.00 $\pm$ 0.60 & 5.4 $\pm$ 1.7 \\
 \bouF & -1.19 $\pm$ 0.10 & 17.22 $\pm$ 0.30 & 40 $\pm$ 5 & 37 $\pm$ 8 & 2.10 $\pm$ 0.70 & 5.7 $\pm$ 1.8 \\
@@ -81,15 +117,21 @@ Solver & Slope $m$ & Offset $n$ & Mean Squ. $\avg{\cdot^2}$ & Area $A$ & Diss. A
 \end{table}
 
 \subsubsection{Probability Distributions}
-\image{1.0}{plots/stirturb/pdfs/vels-vw-dyntimes.png}{Foobar fo bar}
-\image{1.0}{plots/stirturb/pdfs/dens-vw-dyntimes.png}{Foobar fo bar}
-\image{1.0}{plots/stirturb/pdfs/evol-sonic-mach.png}{Foobar fo bar}
-
+\image{1.0}{plots/stirturb/pdfs/vels-vw-dyntimes.png}{Volume-weighted velocity
+PDFs for the turbulent phase $t_d = [2,4]$ (time-average) and two stages of the
+decaying phase: $t_d = 4.7$ and $t_d = 6.0$.}
+\image{1.0}{plots/stirturb/pdfs/dens-vw-dyntimes.png}{Volume-weighted density
+PDFs for the turbulent phase $t_d = [2,4]$ (time-average) and two stages of the
+decaying phase: $t_d = 4.7$ and $t_d = 6.0$.}
+\image{1.0}{plots/stirturb/pdfs/evol-sonic-mach.png}{Time evolution of the
+sonic mach number derived from the width of the volume-weighted density PDFs
+over time.}
 
 \begin{table}[H]
 \fontsize{3mm}{4mm}\selectfont
 \captionsetup{width=.8\textwidth}
-\caption{Gaussian Fitting Parameters of the Log-normal Density PDF}
+\caption{Comparison of Gaussian Fitting Results of the Log-normal Density PDF
+averaged over the turbulent phase: $t_d = [2,4]$}
 \centering
 \begin{tabular}{lcccc}
 \toprule
@@ -108,8 +150,17 @@ Solver & Mean $s_0$ & Std. Deviation $\sigma_s$ & RMS Mach $\mach_{RMS}$ & PDF M
 \label{tab:pdf-dens-vw}
 \end{table}
 
-
-
 \subsubsection{Performance}
-\image{1.0}{plots/stirturb/evolutions/runtime-cumsum.png}{Foobar}
-\image{1.0}{plots/stirturb/evolutions/runtime-relative.png}{Foobar}
+
+\image{1.0}{plots/stirturb/evolutions/runtime-cumsum.png}{Cumulative runtime of
+the different runs. For example, the PPM solver needs two hours to get half-way
+through the simulation at $t_d = 3.0$. \remark The contribution of input-output
+operations and unintended interuptions are already substracted out.}
+
+\image{1.0}{plots/stirturb/evolutions/runtime-relative.png}{Time derivative of
+cumulative runtime (see \fig{plots/stirturb/evolutions/runtime-cumsum.png}).
+For example, the run with the PPM solver would have lasted roughly 6 hours with
+the rate at around $t_d = 3.0$: \\ 1 h $\cdot$ 6 = 6 h.}
+
+\image{1.0}{plots/stirturb/runtime-vs-ekin-dissipation}{Relative Runtime vs Kinetic
+Energy Dissipation Rate.}

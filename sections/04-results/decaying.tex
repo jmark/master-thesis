@@ -1,28 +1,84 @@
 \subsection{Decaying Turbulence}
 \subsubsection{Time Evolution}
-\image{1.0}{plots/decayturb/evol-sonic-mach}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-timestep}{Foobar fo bar}
+\image{1.0}{plots/decayturb/evol-sonic-mach}{Time evolution of the
+root-mean-square mach number. Additionally, the turbulent sonic mach number
+evaluated from the width of the density PDF is shown for comparison. A detailed
+discussion is provided in \sec{decayturb-PDF}.}
 
-\image{1.0}{plots/decayturb/evol-ener}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-eint}{Foobar fo bar}
+\image{1.0}{plots/decayturb/evol-timestep}{Time evolution of the timestep $dt$.
+The CFL Numbers are listed in \tbl{tab:decayturb-cfl}.}
+\begin{table}[H]
+\fontsize{3mm}{3mm}\selectfont
+\captionsetup{width=.8\textwidth}
+\caption{Overview CFL Numbers}
+\centering
+\begin{tabular}{l| cccc cccc}
+\toprule
+Solver & \bouT & \bouF & \fppm & \eufv & \mpfv & \mphy & \rkfv & \rkhy \\
+\midrule
+CFL   & 0.8 & 0.8 & 0.1 & 0.4 & 0.8 & 0.9 & 0.9 & 1.2 \\
+\bottomrule
+\end{tabular}
+\label{tab:decayturb-cfl}
+\end{table}
 
-\image{1.0}{plots/decayturb/evol-ekin-diss}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-enstrophy}{Foobar fo bar}
+\image{1.0}{plots/decayturb/evol-ener}{Time evolution of the energy in the
+system. \remark The y-axis is in logarithmic scale. The total energy $\ener$ is
+the sum of the kinetic $\ekin$ and internal energy $\eint$: $\ld(\ener) = \ld(\eint + \ekin)$.}
 
-\image{1.0}{plots/decayturb/evol-fv}{Foobar fo bar}
+\image{1.0}{plots/decayturb/evol-eint}{Time evolution of the internal energy
+$\eint$ under polytropic cooling. The quantifiable deviation of the internal
+energy from the anticipated constant $\eint_{0} = 0.9$ is discussed in the
+text.}
+
+\image{1.0}{plots/decayturb/evol-ekin-diss}{Time evolution of the
+kinetic energy dissipation $\ekindiss$.}
+
+\image{1.0}{plots/decayturb/evol-enstrophy}{Time evolution of the
+mean enstrophy $\enst$.}
+
+\image{1.0}{plots/decayturb/evol-fv}{Time evolution of the fraction of
+Finite-Volume Elements to the total number of elements. \remark The other
+solvers would stay at 100\% since they operate solely with Finite-Volumes.}
 
 \subsubsection{Powerspectra}
-\image{1.0}{plots/decayturb/pws-ekin-dyntimes}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-ekin-small-scale}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-slope-vw-velocity}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-slope-mw-velocity}{Foobar fo bar}
+\image{1.0}{plots/decayturb/pws-ekin-dyntimes}{Powerspectra of the
+mean kinetic energy field shown at three different stages of the
+decaying turbulence.}
+
+\image{1.0}{plots/decayturb/evol-ekin-small-scale}{Amount of small-scale
+energies prevailing in the dissipative length scales over time.}
+
+\image{1.0}{plots/decayturb/evol-slope-vw-velocity}{Time evolution of the
+inertial range's slope of the volume-weighted velocity powerspectra. Examples
+of them are presented in \fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}.}
+
+\image{1.0}{plots/decayturb/evol-slope-mw-velocity}{Time evolution of the
+inertial range's slope of the mass-weighted velocity powerspectra. Examples
+of them are presented in \fig{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png}.}
 
 \subsubsection{Probability Distributions}
-\image{1.0}{plots/decayturb/pdf-vw-vels.png}{Foobar fo bar}
-\image{1.0}{plots/decayturb/pdf-vw-dens.png}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-relative-runtime}{Foobar fo bar}
+\label{decayturb-PDF}
+\image{1.0}{plots/decayturb/pdf-vw-vels.png}{Volume-weighted velocity PDFs
+moving from right to left since the root-mean-square velocity decreases with
+time.}
+
+\image{1.0}{plots/decayturb/pdf-vw-dens.png}{Narrowing volume-weighted density
+PDFs as time increases. The black curve is the intial distribution for all
+runs. Note how due to smoothing the density peaks got truncated.}
 
 \subsubsection{Performance}
-\image{1.0}{plots/decayturb/evol-relative-runtime}{Foobar fo bar}
-\image{1.0}{plots/decayturb/evol-cum-runtime}{Foobar fo bar}
-\image{1.0}{plots/decayturb/runtime-vs-ekin-diss}{Foobar fo bar}
+\image{1.0}{plots/decayturb/evol-cum-runtime}{Cumulative runtime of the
+different runs. For example, the Midpoint Finite-Volume solver needs 30 min to
+get half-way through the simulation at $t_d = 3.0$. The graph for PPM was
+scaled down by a factor of 10. \remark The contribution of input-output operations and
+unintended interuptions are already substracted out.}
+
+\image{1.0}{plots/decayturb/evol-relative-runtime}{Time derivative of
+cumulative runtime (see \fig{plots/decayturb/evol-cum-runtime}). For example,
+the run with the RK3-Hybrid solver would have lasted roughly 3 hours and 36
+minutes with the rate at beginning: \\ 0.6 h $\cdot$ 6 = 3.6 h. The graph for PPM
+was scaled down by a factor of 10.}
+\image{1.0}{plots/decayturb/runtime-vs-ekin-diss}{Relative Runtime vs Kinetic
+Energy Dissipation Rate. The graph for PPM was scaled down by a factor of 10.}
+
