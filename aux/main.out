@@ -23,15 +23,15 @@
 \BOOKMARK [2][-]{subsection.3.5}{Grid Spaces and Transformation}{section.3}% 23
 \BOOKMARK [1][-]{section.4}{Results \046 Discussion}{}% 24
 \BOOKMARK [2][-]{subsection.4.1}{Sod Shock Tube Problem}{section.4}% 25
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Adiabatic \046 Isothermal}{subsection.4.1}% 26
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Classical Adiabatic \046 Isothermal Shock}{subsection.4.1}% 26
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Adiabatic \046 Isothermal with Strong Shock}{subsection.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.2}{Decaying Turbulence}{section.4}% 28
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Evolution}{subsection.4.2}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Time Evolution}{subsection.4.2}% 29
 \BOOKMARK [3][-]{subsubsection.4.2.2}{Powerspectra}{subsection.4.2}% 30
 \BOOKMARK [3][-]{subsubsection.4.2.3}{Probability Distributions}{subsection.4.2}% 31
 \BOOKMARK [3][-]{subsubsection.4.2.4}{Performance}{subsection.4.2}% 32
 \BOOKMARK [2][-]{subsection.4.3}{Driven Turbulence}{section.4}% 33
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Evolution}{subsection.4.3}% 34
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Time Evolution}{subsection.4.3}% 34
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Powerspectra}{subsection.4.3}% 35
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Probability Distributions}{subsection.4.3}% 36
 \BOOKMARK [3][-]{subsubsection.4.3.4}{Performance}{subsection.4.3}% 37

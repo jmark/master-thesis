@@ -1,25 +1,70 @@
 \subsection{\vip{Sod} Shock Tube Problem}
+Before we can reliably discuss the results of the turbulence simulations we
+need to validate the correctness of the solvers especially with regards to the
+modifications presented in the previous chapter. The standard test for the
+correct treatment of shocks is the \vip{Sod} Shock Tube Problem in one
+dimension. At first, we look at the classical adiabatic test case, then
+introduce polytropic cooling (isothermal) and finally apply a strong shock
+sitation by setting the initial left-side velocity to $u_L = 15$. All runs took
+place with a conservative CFL number of $CFL = 0.4$. If not indicated otherwise
+the initial condition is set like follows
+\begin{table}[H]
+%\fontsize{3mm}{3mm}\selectfont
+%\captionsetup{width=.6\textwidth}
+\caption{Sod-Shock: Initial Condition}
+\centering
+\begin{tabular}{llc|lc}
+\toprule
+&
+\multicolumn{2}{c}{Left Side} &
+\multicolumn{2}{c}{Right Side} \\
+\midrule
+Name & Symbol & Value & Symbol & Value\\
+\midrule
+density         & $\dens_{L}$       & 1.0 & $\dens_{R}$ & 0.125 \\ 
+velocity        & $\vels_{L}$       & 0.0 & $\vels_{R}$ & 0.1 \\ 
+pressure        & $\pres_{L}$       & 1.0 & $\pres_{R}$ & 0.0 \\  
+\bottomrule
+\end{tabular}
+\label{tab:initial-state-sod-shock}
+\end{table}
+We suggest a resulution of 512 elements for the whole domain $\Omega = [0,1]$
+since it resembles the same resolution applied on the turbulence simulations.
+This way we get a matchable insight on how well shocks can be resolved within
+the periodic box of the same length.
 
-Some workds about sod shock. Derivation why in isothermal case the
-contact disccontinuity disappears.
+\subsubsection{Classical Adiabatic \& Isothermal Shock}
+\image{1.0}{plots/sod/adiabatic/density.png}{
+Canonical density profile at conventional time $t$ = 0.2 with anticipated
+regions and discontinuities outlined in the plot.}
+\image{1.0}{plots/sod/isothermal/density.png}{
+Isothermal density profile at conventional time $t$ = 0.2 with expected
+regions and discontinuities outlined in the plot. The contact discontinuity
+gets suppressed due to polytropic cooling.}
+In \fig{plots/sod/adiabatic/density.png} all utilized solvers satisfy the
+expected density profile of the classical Sod-Shock problem with varying
+precision. PPM yields the most accurate result while on the other hand
+RK3-Hybrid smears out the discontinuities considerably. Looking closely at the
+zoomed area all hybrid schemes (blue, yellow and green dashed lines) tend to
+oscillate.  The inacceptable ringing of the Euler-Hybrid is a consequence of
+the instability of the Euler Time Integration within the DG operator. TODO:
+Reference. Consequently, Euler-Hybrid is disqualified and will be discarded in
+future discussion. Same assertions can be made for the isothermal case shown in
+\fig{plots/sod/isothermal/density.png}.
 
-Before we can discuss the results we want to validate the solvers
-considered in this work. At first, we look at the classical
-adiabatic one-dimensional Sod-Shock, move on to the isothermal case
-and finally introduce a strong shock sitation by setting the
-initial left-side velocity to $u_L = 15$.
-
-\subsubsection{Adiabatic \& Isothermal}
-\image{1.0}{plots/sod/adiabatic/density.png}{Foobar fo bar}
-\image{1.0}{plots/sod/adiabatic/pressure.png}{Foobar fo bar}
-\image{1.0}{plots/sod/adiabatic/velocity.png}{Foobar fo bar}
-
-\image{1.0}{plots/sod/isothermal/density.png}{Foobar fo bar}
+\image{1.0}{plots/sod/adiabatic/pressure.png}{Canonical pressure profile at conventional time $t$ = 0.2.}
+\image{1.0}{plots/sod/adiabatic/velocity.png}{Canonical velocity profile at conventional time $t$ = 0.2.}
+%The pressure and density profiles \fig{plots/sod/adiabatic/density.png}
+%and \fig{plots/sod/adiabatic/velocity.png} are shown here for completness.
 \image{1.0}{plots/sod/isothermal/velocity.png}{Foobar fo bar}
 
 \subsubsection{Adiabatic \& Isothermal with Strong Shock}
-\image{1.0}{plots/sod/adiabatic-supersonic/density.png}{Foobar fo bar}
-\image{1.0}{plots/sod/adiabatic-supersonic/density-zoom.png}{Foobar fo bar}
+\image{1.0}{plots/sod/adiabatic-supersonic/density.png}{
+Adiabatic density snapshots depicting the movement of a strong shock wave from
+left to right. Note: Only the right half of the domain is shown. The pedestal
+of the rightmost wave ($t_d$ = 0.04) has gone out of visible range.}
+\image{1.0}{plots/sod/adiabatic-supersonic/density-zoom.png}{Zoom at the
+rightmost shock wave in \fig{plots/sod/adiabatic-supersonic/density.png}.}
 \image{1.0}{plots/sod/adiabatic-supersonic/pressure.png}{Foobar fo bar}
 \image{1.0}{plots/sod/adiabatic-supersonic/velocity.png}{Foobar fo bar}
 

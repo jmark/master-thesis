@@ -54,16 +54,16 @@
 \contentsline {paragraph}{\nonumberline Interpolation Error Estimate}{29}{section*.44}
 \contentsline {section}{\numberline {4}Results \& Discussion}{31}{section.4}
 \contentsline {subsection}{\numberline {4.1}\textsc {Sod} Shock Tube Problem}{31}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal}{32}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Classical Adiabatic \& Isothermal Shock}{32}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Adiabatic \& Isothermal with Strong Shock}{34}{subsubsection.4.1.2}
 \contentsline {subsection}{\numberline {4.2}Decaying Turbulence}{38}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Evolution}{38}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1}Time Evolution}{38}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Powerspectra}{41}{subsubsection.4.2.2}
 \contentsline {subsubsection}{\numberline {4.2.3}Probability Distributions}{43}{subsubsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.4}Performance}{45}{subsubsection.4.2.4}
 \contentsline {subsection}{\numberline {4.3}Driven Turbulence}{46}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Evolution}{46}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Powerspectra}{50}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.1}Time Evolution}{46}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Powerspectra}{51}{subsubsection.4.3.2}
 \contentsline {subsubsection}{\numberline {4.3.3}Probability Distributions}{54}{subsubsection.4.3.3}
 \contentsline {subsubsection}{\numberline {4.3.4}Performance}{56}{subsubsection.4.3.4}
-\contentsline {section}{\numberline {5}Conclusion}{57}{section.5}
+\contentsline {section}{\numberline {5}Conclusion}{56}{section.5}
