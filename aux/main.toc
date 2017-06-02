@@ -39,18 +39,18 @@
 \contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{19}{subsubsection.2.4.3}
 \contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{19}{section*.28}
 \contentsline {section}{\numberline {3}Numerical Setup}{20}{section.3}
-\contentsline {subsection}{\numberline {3.1}Simulation Frameworks}{20}{subsection.3.1}
-\contentsline {paragraph}{\nonumberline \textsc {FLASH}}{20}{section*.29}
-\contentsline {paragraph}{\nonumberline \textsc {FLEXI}}{21}{section*.30}
+\contentsline {subsection}{\numberline {3.1}Computational Frameworks}{20}{subsection.3.1}
+\contentsline {paragraph}{\nonumberline FLASH4.3}{20}{section*.29}
+\contentsline {paragraph}{\nonumberline FLEXI}{20}{section*.30}
 \contentsline {subsection}{\numberline {3.2}Periodic Box and Initial Conditions}{21}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{21}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Shock Capturing \& Anti-Aliasing}{24}{subsection.3.4}
-\contentsline {paragraph}{\nonumberline Sensoring}{24}{section*.34}
-\contentsline {paragraph}{\nonumberline Capturing}{25}{section*.36}
-\contentsline {paragraph}{\nonumberline Anti-Aliasing}{27}{section*.39}
-\contentsline {subsection}{\numberline {3.5}Grid Spaces and Transformation}{27}{subsection.3.5}
-\contentsline {paragraph}{\nonumberline Transformation from \textsc {FLASH} to \textsc {FLEXI}}{28}{section*.41}
-\contentsline {paragraph}{\nonumberline Interpolation Error Estimate}{28}{section*.42}
+\contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{22}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Shock Capturing}{24}{subsection.3.4}
+\contentsline {paragraph}{\nonumberline Sensoring}{25}{section*.35}
+\contentsline {paragraph}{\nonumberline Artificial Viscosity}{25}{section*.37}
+\contentsline {paragraph}{\nonumberline Mode Switching}{26}{section*.38}
+\contentsline {subsection}{\numberline {3.5}Grid Spaces and Transformation}{28}{subsection.3.5}
+\contentsline {paragraph}{\nonumberline Transformation from \textsc {FLASH} to \textsc {FLEXI}}{28}{section*.42}
+\contentsline {paragraph}{\nonumberline Interpolation Error Estimate}{29}{section*.43}
 \contentsline {section}{\numberline {4}Results \& Discussion}{31}{section.4}
 \contentsline {subsection}{\numberline {4.1}\textsc {Sod} Shock Tube Problem}{31}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Classical Adiabatic \& Isothermal Shock}{31}{subsubsection.4.1.1}
