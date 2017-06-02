@@ -18,37 +18,38 @@
 \contentsline {paragraph}{\nonumberline Kinetic Energy $\mathcal {K}$}{8}{section*.13}
 \contentsline {paragraph}{\nonumberline Kinetic Energy Dissipation $\epsilon $}{8}{section*.14}
 \contentsline {paragraph}{\nonumberline Vorticity $\omega $ and Enstrophy $\mathcal {E}$}{8}{section*.15}
-\contentsline {subsubsection}{\numberline {2.2.2}Energy Cascade}{8}{subsubsection.2.2.2}
-\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{9}{section*.17}
+\contentsline {subsubsection}{\numberline {2.2.2}Energy Cascade}{9}{subsubsection.2.2.2}
+\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{10}{section*.17}
 \contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{10}{section*.18}
 \contentsline {subsubsection}{\numberline {2.2.3}Probability Distribution Functions (PDF)}{10}{subsubsection.2.2.3}
 \contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{11}{subsection.2.3}
 \contentsline {subsubsection}{\numberline {2.3.1}Shock Formation}{11}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Method of Characteristics}{12}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Entropy Increase}{13}{subsubsection.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Finite Element Scheme}{13}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Galerkin Method}{14}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.3.3}Entropy Increase}{14}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Finite Element Scheme}{14}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Galerkin Method}{15}{subsubsection.2.4.1}
 \contentsline {paragraph}{\nonumberline Lagrange Polynome}{15}{section*.20}
 \contentsline {paragraph}{\nonumberline Galerkin Method}{16}{section*.22}
 \contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{17}{subsubsection.2.4.2}
-\contentsline {paragraph}{\nonumberline Riemann Problem}{17}{section*.23}
-\contentsline {paragraph}{\nonumberline All-Shock Solver}{17}{section*.24}
+\contentsline {paragraph}{\nonumberline Riemann Problem}{18}{section*.23}
+\contentsline {paragraph}{\nonumberline All-Shock Solver}{18}{section*.24}
 \contentsline {paragraph}{\nonumberline HLLE (Harten-Luv-Lax Entropy-fix) flux}{18}{section*.25}
-\contentsline {paragraph}{\nonumberline PPM Solver}{18}{section*.26}
-\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{18}{section*.27}
-\contentsline {paragraph}{\nonumberline Higher-order Flux}{18}{section*.28}
-\contentsline {paragraph}{\nonumberline Limiter Function}{18}{section*.29}
+\contentsline {paragraph}{\nonumberline PPM Solver}{19}{section*.26}
+\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{19}{section*.27}
+\contentsline {paragraph}{\nonumberline Higher-order Flux}{19}{section*.28}
+\contentsline {paragraph}{\nonumberline Limiter Function}{19}{section*.29}
 \contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{19}{subsubsection.2.4.3}
-\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{19}{section*.30}
+\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{20}{section*.30}
 \contentsline {section}{\numberline {3}Numerical Setup}{20}{section.3}
 \contentsline {subsection}{\numberline {3.1}Simulation Frameworks}{20}{subsection.3.1}
 \contentsline {paragraph}{\nonumberline \textsc {FLASH}}{20}{section*.31}
 \contentsline {paragraph}{\nonumberline \textsc {FLEXI}}{21}{section*.32}
 \contentsline {subsection}{\numberline {3.2}Periodic Box and Initial Conditions}{21}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{21}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Shock Capturing}{24}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.3}Turbulent Forcing}{22}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Shock Capturing \& Anti-Aliasing}{24}{subsection.3.4}
 \contentsline {paragraph}{\nonumberline Sensoring}{24}{section*.36}
 \contentsline {paragraph}{\nonumberline Capturing}{25}{section*.38}
+\contentsline {paragraph}{\nonumberline Anti-Aliasing}{28}{section*.41}
 \contentsline {subsection}{\numberline {3.5}Grid Spaces and Transformation}{28}{subsection.3.5}
 \contentsline {paragraph}{\nonumberline Transformation from \textsc {FLASH} to \textsc {FLEXI}}{28}{section*.43}
 \contentsline {paragraph}{\nonumberline Interpolation Error Estimate}{29}{section*.44}
@@ -57,13 +58,13 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Classical Adiabatic \& Isothermal Shock}{32}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Adiabatic \& Isothermal with Strong Shock}{33}{subsubsection.4.1.2}
 \contentsline {subsection}{\numberline {4.2}Decaying Turbulence}{35}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Time Evolution}{35}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1}Time Evolution}{36}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Powerspectra}{39}{subsubsection.4.2.2}
 \contentsline {subsubsection}{\numberline {4.2.3}Probability Distributions}{41}{subsubsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.4}Performance}{42}{subsubsection.4.2.4}
-\contentsline {subsection}{\numberline {4.3}Driven Turbulence}{43}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Time Evolution}{43}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Powerspectra}{48}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}Probability Distributions}{51}{subsubsection.4.3.3}
-\contentsline {subsubsection}{\numberline {4.3.4}Performance}{53}{subsubsection.4.3.4}
-\contentsline {section}{\numberline {5}Conclusion}{54}{section.5}
+\contentsline {subsection}{\numberline {4.3}Driven Turbulence}{44}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Time Evolution}{44}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Powerspectra}{49}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Probability Distributions}{52}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Performance}{54}{subsubsection.4.3.4}
+\contentsline {section}{\numberline {5}Conclusion}{55}{section.5}
