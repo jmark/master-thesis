@@ -25,16 +25,16 @@
 \BOOKMARK [2][-]{subsection.4.1}{Sod Shock Tube Problem}{section.4}% 25
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Adiabatic \046 Isothermal Shock}{subsection.4.1}% 26
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Adiabatic \046 Isothermal Sod with Strong Shock}{subsection.4.1}% 27
-\BOOKMARK [2][-]{subsection.4.2}{Driven \046 Decaying Turbulence}{section.4}% 28
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Time Evolution}{subsection.4.2}% 29
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Probability Distributions}{subsection.4.2}% 30
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Powerspectra}{subsection.4.2}% 31
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Summary}{subsection.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.3}{Decaying Turbulence from Idential State}{section.4}% 33
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Time Evolution}{subsection.4.3}% 34
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Probability Distributions}{subsection.4.3}% 35
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Powerspectra}{subsection.4.3}% 36
-\BOOKMARK [3][-]{subsubsection.4.3.4}{Summary}{subsection.4.3}% 37
-\BOOKMARK [1][-]{section.5}{Conclusion \046 Outlook}{}% 38
-\BOOKMARK [1][-]{section.6}{Appendix}{}% 39
-\BOOKMARK [2][-]{subsection.6.1}{Runtime Performance Discussion}{section.6}% 40
+\BOOKMARK [2][-]{subsection.4.2}{Driven Turbulence}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Evolution of Sonic Mach Number and FV-DG Mode Switching}{subsection.4.2}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Column Mach Number and Density}{subsection.4.2}% 30
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Energy Dissipation}{subsection.4.2}% 31
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Velocity and Density Distributions}{subsection.4.2}% 32
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Velocity and Energy Powerspectra}{subsection.4.2}% 33
+\BOOKMARK [3][-]{subsubsection.4.2.6}{Summary}{subsection.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.3}{Decaying Turbulence from Idential State}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Time Evolution}{subsection.4.3}% 36
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Probability Distributions}{subsection.4.3}% 37
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Powerspectra}{subsection.4.3}% 38
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Summary}{subsection.4.3}% 39
+\BOOKMARK [1][-]{section.5}{Conclusion \046 Outlook}{}% 40
