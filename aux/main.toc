@@ -57,17 +57,18 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{33}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Adiabatic \& Isothermal Sod with Strong Shock}{34}{subsubsection.4.1.2}
 \contentsline {subsection}{\numberline {4.2}Driven Turbulence}{36}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Evolution of Sonic Mach Number}{37}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{37}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}FV-DG Mode Switching}{38}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Column Mach Number and Density}{39}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3}Column Density \& Velocity}{39}{subsubsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{45}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.5}Density Distribution}{47}{subsubsection.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.6}Velocity Distribution}{49}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Velocity and Energy Powerspectra}{52}{subsubsection.4.2.7}
-\contentsline {subsubsection}{\numberline {4.2.8}Summary}{55}{subsubsection.4.2.8}
-\contentsline {subsection}{\numberline {4.3}Decaying Turbulence from Idential State}{55}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Time Evolution}{55}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Probability Distributions}{58}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}Powerspectra}{59}{subsubsection.4.3.3}
-\contentsline {subsubsection}{\numberline {4.3.4}Summary}{61}{subsubsection.4.3.4}
-\contentsline {section}{\numberline {5}Conclusion \& Outlook}{61}{section.5}
+\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{47}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{51}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}Summary}{55}{subsubsection.4.2.7}
+\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{55}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{55}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}FV-DG Mode Switching}{56}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Energy Dissipation}{57}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Density \& Velocity Distributions}{58}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Energy \& Velocity Powerspectra}{60}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Summary}{62}{subsubsection.4.3.6}
+\contentsline {section}{\numberline {5}Conclusion \& Outlook}{62}{section.5}
