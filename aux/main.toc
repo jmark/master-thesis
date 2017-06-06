@@ -65,10 +65,10 @@
 \contentsline {subsubsection}{\numberline {4.2.7}Discussion}{55}{subsubsection.4.2.7}
 \contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{55}{subsection.4.3}
 \contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{56}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{58}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{56}{subsubsection.4.3.2}
 \contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{66}{subsubsection.4.3.3}
 \contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{67}{subsubsection.4.3.4}
 \contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{69}{subsubsection.4.3.5}
-\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{70}{subsubsection.4.3.6}
-\contentsline {subsubsection}{\numberline {4.3.7}Discussion}{71}{subsubsection.4.3.7}
-\contentsline {section}{\numberline {5}Conclusion \& Outlook}{71}{section.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{71}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}Discussion}{73}{subsubsection.4.3.7}
+\contentsline {section}{\numberline {5}Conclusion \& Outlook}{73}{section.5}
