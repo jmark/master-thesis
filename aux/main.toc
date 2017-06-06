@@ -1,48 +1,48 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {paragraph}{\nonumberline hp Convergence}{2}{section*.3}
-\contentsline {section}{\numberline {2}Theory}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Governing equations}{2}{subsection.2.1}
-\contentsline {paragraph}{\nonumberline Ideal Magneto-Hydrodynamic Equations}{2}{section*.4}
-\contentsline {subsubsection}{\numberline {2.1.1}Compressible Euler Equations}{3}{subsubsection.2.1.1}
-\contentsline {paragraph}{\nonumberline Primitive and Consverative Variables}{4}{section*.5}
-\contentsline {paragraph}{\nonumberline Equation of State}{4}{section*.6}
-\contentsline {paragraph}{\nonumberline Dimensionless Euler Equations}{4}{section*.7}
-\contentsline {paragraph}{\nonumberline Choice of parameters}{5}{section*.8}
-\contentsline {subsubsection}{\numberline {2.1.2}Weak Formulation}{5}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Astrophysical Turbulence}{6}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Mean Values}{7}{subsubsection.2.2.1}
-\contentsline {paragraph}{\nonumberline Reynolds Number}{7}{section*.9}
-\contentsline {paragraph}{\nonumberline Mach Number $\mathcal {M}$}{7}{section*.10}
-\contentsline {paragraph}{\nonumberline Bulk Motion $\relax $\@@underline {\hbox {\mathcal {P}}}\mathsurround \z@ $\relax $}{8}{section*.11}
-\contentsline {paragraph}{\nonumberline Kinetic Energy $\mathcal {K}$}{8}{section*.12}
-\contentsline {paragraph}{\nonumberline Kinetic Energy Dissipation $\epsilon $}{8}{section*.13}
-\contentsline {subsubsection}{\numberline {2.2.2}Energy Cascade \& Powerspectrum}{8}{subsubsection.2.2.2}
-\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{9}{section*.15}
-\contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{10}{section*.16}
-\contentsline {subsubsection}{\numberline {2.2.3}Probability Distribution Functions (PDF)}{10}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{11}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Shock Formation}{11}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Method of Characteristics}{11}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Entropy Increase}{13}{subsubsection.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Finite Element Scheme}{13}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Galerkin Method}{14}{subsubsection.2.4.1}
+\contentsline {section}{\numberline {2}Theory}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Governing equations}{1}{subsection.2.1}
+\contentsline {paragraph}{\nonumberline Ideal Magneto-Hydrodynamic Equations}{1}{section*.2}
+\contentsline {subsubsection}{\numberline {2.1.1}Compressible Euler Equations}{2}{subsubsection.2.1.1}
+\contentsline {paragraph}{\nonumberline Primitive and Consverative Variables}{3}{section*.3}
+\contentsline {paragraph}{\nonumberline Equation of State}{3}{section*.4}
+\contentsline {paragraph}{\nonumberline Dimensionless Euler Equations}{3}{section*.5}
+\contentsline {paragraph}{\nonumberline Choice of parameters}{4}{section*.6}
+\contentsline {subsubsection}{\numberline {2.1.2}Weak Formulation}{4}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Astrophysical Turbulence}{5}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Mean Values}{6}{subsubsection.2.2.1}
+\contentsline {paragraph}{\nonumberline Reynolds Number}{6}{section*.7}
+\contentsline {paragraph}{\nonumberline Mach Number $\mathcal {M}$}{6}{section*.8}
+\contentsline {paragraph}{\nonumberline Bulk Motion $\relax $\@@underline {\hbox {\mathcal {P}}}\mathsurround \z@ $\relax $}{7}{section*.9}
+\contentsline {paragraph}{\nonumberline Kinetic Energy $\mathcal {K}$}{7}{section*.10}
+\contentsline {paragraph}{\nonumberline Kinetic Energy Dissipation $\epsilon $}{7}{section*.11}
+\contentsline {subsubsection}{\numberline {2.2.2}Energy Cascade \& Powerspectrum}{7}{subsubsection.2.2.2}
+\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{8}{section*.13}
+\contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{9}{section*.14}
+\contentsline {subsubsection}{\numberline {2.2.3}Probability Distribution Functions (PDF)}{9}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{10}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Shock Formation}{10}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Method of Characteristics}{10}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Entropy Increase}{12}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Finite Element Scheme}{12}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Galerkin Method}{13}{subsubsection.2.4.1}
+\contentsline {paragraph}{\nonumberline hp Convergence}{14}{section*.17}
 \contentsline {paragraph}{\nonumberline Lagrange Polynome}{15}{section*.18}
 \contentsline {paragraph}{\nonumberline Galerkin Method}{16}{section*.20}
 \contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{17}{subsubsection.2.4.2}
 \contentsline {paragraph}{\nonumberline Riemann Problem}{17}{section*.21}
-\contentsline {paragraph}{\nonumberline All-Shock Solver}{17}{section*.22}
+\contentsline {paragraph}{\nonumberline All-Shock Solver}{18}{section*.22}
 \contentsline {paragraph}{\nonumberline HLLE (Harten-Luv-Lax Entropy-fix) flux}{18}{section*.23}
-\contentsline {paragraph}{\nonumberline PPM Solver}{18}{section*.24}
-\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{18}{section*.25}
-\contentsline {paragraph}{\nonumberline Higher-order Flux}{18}{section*.26}
-\contentsline {paragraph}{\nonumberline Limiter Function}{18}{section*.27}
+\contentsline {paragraph}{\nonumberline PPM Solver}{19}{section*.24}
+\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{19}{section*.25}
+\contentsline {paragraph}{\nonumberline Higher-order Flux}{19}{section*.26}
+\contentsline {paragraph}{\nonumberline Limiter Function}{19}{section*.27}
 \contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{19}{subsubsection.2.4.3}
 \contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{20}{section*.28}
 \contentsline {section}{\numberline {3}Numerical Prerequisities}{20}{section.3}
 \contentsline {subsection}{\numberline {3.1}Computational Frameworks}{20}{subsection.3.1}
-\contentsline {paragraph}{\nonumberline FLASH4.3}{20}{section*.29}
+\contentsline {paragraph}{\nonumberline FLASH4.3}{21}{section*.29}
 \contentsline {paragraph}{\nonumberline FLEXI}{21}{section*.30}
-\contentsline {subsection}{\numberline {3.2}Turbulent Forcing}{21}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Turbulent Forcing}{22}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Shock Capturing}{24}{subsection.3.3}
 \contentsline {paragraph}{\nonumberline Sensoring}{25}{section*.34}
 \contentsline {paragraph}{\nonumberline Artificial Viscosity}{25}{section*.36}
@@ -62,7 +62,7 @@
 \contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{45}{subsubsection.4.2.4}
 \contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{47}{subsubsection.4.2.5}
 \contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{51}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Discussion}{55}{subsubsection.4.2.7}
+\contentsline {subsubsection}{\numberline {4.2.7}Summary}{55}{subsubsection.4.2.7}
 \contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{55}{subsection.4.3}
 \contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{56}{subsubsection.4.3.1}
 \contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{56}{subsubsection.4.3.2}
@@ -70,5 +70,5 @@
 \contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{67}{subsubsection.4.3.4}
 \contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{69}{subsubsection.4.3.5}
 \contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{71}{subsubsection.4.3.6}
-\contentsline {subsubsection}{\numberline {4.3.7}Discussion}{73}{subsubsection.4.3.7}
+\contentsline {subsubsection}{\numberline {4.3.7}Summary}{73}{subsubsection.4.3.7}
 \contentsline {section}{\numberline {5}Conclusion \& Outlook}{74}{section.5}
