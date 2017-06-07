@@ -69,6 +69,7 @@
 \newlabel{eqn:density-pdf-mach}{{58}{10}{Probability Distribution Functions (PDF)}{equation.2.58}{}}
 \newlabel{eqn:density-pdf-mach-constant}{{59}{10}{Probability Distribution Functions (PDF)}{equation.2.59}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{10}{subsection.2.3}}
+\newlabel{sec:theory-shocks}{{2.3}{10}{Supersonic Shocks}{subsection.2.3}{}}
 \@writefile{toc}{\contentsline {paragraph}{\nonumberline Method of Characteristics}{10}{section*.18}}
 \newlabel{eqn:burger}{{60}{10}{Method of Characteristics}{equation.2.60}{}}
 \newlabel{eqn:burger-characteristics}{{61}{11}{Method of Characteristics}{equation.2.61}{}}
@@ -81,30 +82,23 @@
 \@writefile{toc}{\contentsline {paragraph}{\nonumberline Gibb's Phenomenon}{11}{section*.22}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Examples of spurious oscillation of the discontinuous Galerkin method solving the one-dimensional advection equations with a discontinuous initial condition. The domain is divided into 50 elements each containing a third-order polymome. Gauss and Gauss-Lobatto are two types of distributing interpolation nodes within each element (cf. section \ref  {sec:trafo}).\relax }}{12}{figure.caption.23}}
 \newlabel{fig:plots/burgers/ringing.png}{{4}{12}{Examples of spurious oscillation of the discontinuous Galerkin method solving the one-dimensional advection equations with a discontinuous initial condition. The domain is divided into 50 elements each containing a third-order polymome. Gauss and Gauss-Lobatto are two types of distributing interpolation nodes within each element (cf. \sec {trafo}).\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Finite Element Scheme}{12}{subsection.2.4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Galerkin Method}{13}{subsubsection.2.4.1}}
-\newlabel{sec:polyonome-ansatz}{{2.4.1}{13}{Galerkin Method}{subsubsection.2.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Computational work (number of floating-point operations) required to integrate a linear advection equation for $M$ periods while maintaining a cumulative phase error of e = 10\%. Source: \cite  {},p.10 \relax }}{14}{figure.caption.24}}
-\newlabel{fig:DG-work-over-periods.png}{{5}{14}{Computational work (number of floating-point operations) required to integrate a linear advection equation for $M$ periods while maintaining a cumulative phase error of e = 10\%. Source: \cite {},p.10 \relax }{figure.caption.24}{}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline hp Convergence}{14}{section*.25}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Lagrange Polynome}{15}{section*.26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces One-dimensinal Lagrange interpolation with four sample nodes.\relax }}{16}{figure.caption.27}}
-\newlabel{fig:lagrange-interpolation-1d.png}{{6}{16}{One-dimensinal Lagrange interpolation with four sample nodes.\relax }{figure.caption.27}{}}
-\newlabel{eq-tensor-ansatz}{{67}{16}{Lagrange Polynome}{equation.2.67}{}}
-\newlabel{eq-tensor-ansatz}{{68}{16}{Lagrange Polynome}{equation.2.68}{}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Galerkin Method}{16}{section*.28}}
-\newlabel{eqn:semi-discrete-weak-formulation}{{74}{17}{Galerkin Method}{equation.2.74}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{17}{subsubsection.2.4.2}}
-\newlabel{sec:flux-functions}{{2.4.2}{17}{Flux Functions}{subsubsection.2.4.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Riemann Problem}{17}{section*.29}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline All-Shock Solver}{18}{section*.30}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline HLLE (Harten-Luv-Lax Entropy-fix) flux}{18}{section*.31}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline PPM Solver}{19}{section*.32}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Bouchut5 Solver}{19}{section*.33}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Higher-order Flux}{19}{section*.34}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Limiter Function}{19}{section*.35}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{19}{subsubsection.2.4.3}}
-\@writefile{toc}{\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{20}{section*.36}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Finite Element Schemes}{12}{subsection.2.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Discontinuous Galerkin Method}{13}{subsubsection.2.4.1}}
+\newlabel{sec:polyonome-ansatz}{{2.4.1}{13}{Discontinuous Galerkin Method}{subsubsection.2.4.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{\nonumberline Lagrange Polynome}{14}{section*.24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces One-dimensinal Lagrange interpolation with four sample nodes.\relax }}{14}{figure.caption.25}}
+\newlabel{fig:lagrange-interpolation-1d.png}{{5}{14}{One-dimensinal Lagrange interpolation with four sample nodes.\relax }{figure.caption.25}{}}
+\newlabel{eq-tensor-ansatz}{{67}{15}{Lagrange Polynome}{equation.2.67}{}}
+\newlabel{eq-tensor-ansatz}{{68}{15}{Lagrange Polynome}{equation.2.68}{}}
+\@writefile{toc}{\contentsline {paragraph}{\nonumberline Galerkin Polyonome}{15}{section*.26}}
+\newlabel{eqn:mass-matrix}{{70}{15}{Galerkin Polyonome}{equation.2.70}{}}
+\@writefile{toc}{\contentsline {paragraph}{\nonumberline Weak Formulation}{16}{section*.27}}
+\newlabel{eqn:semi-discrete-weak-formulation}{{74}{16}{Weak Formulation}{equation.2.74}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{16}{subsubsection.2.4.2}}
+\newlabel{sec:flux-functions}{{2.4.2}{16}{Flux Functions}{subsubsection.2.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{16}{subsubsection.2.4.3}}
+\newlabel{sec:time-integration}{{2.4.3}{16}{Time Integration}{subsubsection.2.4.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{17}{section*.28}}
 \global\@namedef{scr@dte@section@lastmaxnumwidth}{11.8799pt}
 \global\@namedef{scr@dte@subsection@lastmaxnumwidth}{19.71382pt}
 \global\@namedef{scr@dte@subsubsection@lastmaxnumwidth}{28.8528pt}

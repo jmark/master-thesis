@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  7 JUN 2017 16:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  7 JUN 2017 20:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1059,75 +1059,74 @@ File: ./fig/plots/burgers/characteristics.png Graphic file (type png)
 
 <use ./fig/plots/burgers/characteristics.png>
 Package pdftex.def Info: ./fig/plots/burgers/characteristics.png used on input 
-line 48.
+line 49.
 (pdftex.def)             Requested size: 386.95894pt x 89.56534pt.
 
 <./fig/plots/burgers/solution.png, id=237, 572.1375pt x 197.73875pt>
 File: ./fig/plots/burgers/solution.png Graphic file (type png)
 
 <use ./fig/plots/burgers/solution.png>
-Package pdftex.def Info: ./fig/plots/burgers/solution.png used on input line 52
+Package pdftex.def Info: ./fig/plots/burgers/solution.png used on input line 53
 .
 (pdftex.def)             Requested size: 386.95894pt x 133.73944pt.
 
 
 LaTeX Warning: Reference `sec:shock-capturing' on page 11 undefined on input li
-ne 68.
+ne 70.
 
-<./fig/plots/burgers/ringing.png, id=240, 642.4pt x 481.8pt>
+<./fig/plots/burgers/ringing.png, id=241, 642.4pt x 481.8pt>
 File: ./fig/plots/burgers/ringing.png Graphic file (type png)
 
 <use ./fig/plots/burgers/ringing.png>
-Package pdftex.def Info: ./fig/plots/burgers/ringing.png used on input line 73.
+Package pdftex.def Info: ./fig/plots/burgers/ringing.png used on input line 75.
 
 (pdftex.def)             Requested size: 338.5863pt x 253.94861pt.
 
 
-LaTeX Warning: Reference `sec:trafo' on page 11 undefined on input line 73.
+LaTeX Warning: Reference `sec:trafo' on page 11 undefined on input line 75.
 
 ) (./sections/02-theory/04-finite-element-scheme.tex [11 <./fig/plots/burgers/c
-haracteristics.png> <./fig/plots/burgers/solution.png>] [12 <./fig/plots/burger
-s/ringing.png>]) (./sections/02-theory/05-polynome-ansatz.tex
-Overfull \hbox (8.52884pt too wide) in paragraph at lines 48--56
-[]\T1/lmr/m/n/12 More in-for-ma-tion can be found in Bernardo Cock-burn George 
-E. Kar-ni-adakis Chi-WangShu(Eds.)
- []
-
-[13] <./fig/DG-work-over-periods.png, id=268, 722.7pt x 746.79pt>
-File: ./fig/DG-work-over-periods.png Graphic file (type png)
-
-<use ./fig/DG-work-over-periods.png>
-Package pdftex.def Info: ./fig/DG-work-over-periods.png used on input line 67.
-(pdftex.def)             Requested size: 290.22105pt x 299.89578pt.
- [14 <./fig/DG-work-over-periods.png>]
-Overfull \hbox (0.2357pt too wide) in paragraph at lines 120--120
+haracteristics.png> <./fig/plots/burgers/solution.png>])
+(./sections/02-theory/05-polynome-ansatz.tex [12 <./fig/plots/burgers/ringing.p
+ng>]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 28.
+ (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 28.
+ [13]
+Overfull \hbox (0.2357pt too wide) in paragraph at lines 95--95
 [] 
  []
 
-<./fig/lagrange-interpolation-1d.png, id=278, 841.1425pt x 453.695pt>
+<./fig/lagrange-interpolation-1d.png, id=277, 841.1425pt x 453.695pt>
 File: ./fig/lagrange-interpolation-1d.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-1d.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-1d.png used on input line
- 138.
+ 113.
 (pdftex.def)             Requested size: 386.95894pt x 208.71608pt.
- [15]
-Overfull \hbox (4.28166pt too wide) in paragraph at lines 186--186
+ [14 <./fig/lagrange-interpolation-1d.png>]
+Overfull \hbox (4.28166pt too wide) in paragraph at lines 161--161
 [] 
  []
 
 
-Overfull \hbox (24.38773pt too wide) in paragraph at lines 212--212
+Overfull \hbox (24.38773pt too wide) in paragraph at lines 188--188
 [] 
  []
 
-[16 <./fig/lagrange-interpolation-1d.png>]) (./sections/02-theory/06-flux.tex
-[17] [18]) (./sections/02-theory/07-time-integration.tex [19]))
+[15]) (./sections/02-theory/06-flux.tex
+
+LaTeX Warning: Reference `sec:computational-frameworks' on page 16 undefined on
+ input line 20.
+
+) (./sections/02-theory/07-time-integration.tex [16]))
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
- [20]
+ [17]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
-
-(aux/main.aux)
+ (aux/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1142,10 +1141,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25.
  ) 
 Here is how much of TeX's memory you used:
- 11710 strings out of 493013
- 181967 string characters out of 6139317
- 365103 words of memory out of 5000000
- 14871 multiletter control sequences out of 15000+600000
+ 11716 strings out of 493013
+ 182054 string characters out of 6139317
+ 364041 words of memory out of 5000000
+ 14887 multiletter control sequences out of 15000+600000
  91536 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,13n,51p,8832b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1166,10 +1165,10 @@ e1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.p
 fb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-di
 st/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on aux/main.pdf (22 pages, 706517 bytes).
+Output written on aux/main.pdf (19 pages, 686206 bytes).
 PDF statistics:
- 440 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 156 named destinations out of 1000 (max. 500000)
- 140 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
