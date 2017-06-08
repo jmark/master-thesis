@@ -28,18 +28,18 @@
 \contentsline {subsection}{\numberline {2.4}Finite Element Schemes}{12}{subsection.2.4}
 \contentsline {subsubsection}{\numberline {2.4.1}Discontinuous Galerkin Method}{13}{subsubsection.2.4.1}
 \contentsline {paragraph}{\nonumberline Lagrange Polynome}{14}{section*.24}
-\contentsline {paragraph}{\nonumberline Weak Formulation}{16}{section*.26}
+\contentsline {paragraph}{\nonumberline Weak Formulation}{15}{section*.26}
 \contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{16}{subsubsection.2.4.2}
 \contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{16}{subsubsection.2.4.3}
 \contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{17}{section*.27}
 \contentsline {section}{\numberline {3}Numerical Prerequisities}{17}{section.3}
 \contentsline {subsection}{\numberline {3.1}Computational Frameworks}{17}{subsection.3.1}
-\contentsline {paragraph}{\nonumberline FLASH}{18}{section*.28}
+\contentsline {paragraph}{\nonumberline FLASH}{17}{section*.28}
 \contentsline {paragraph}{\nonumberline FLEXI}{18}{section*.29}
 \contentsline {paragraph}{\nonumberline Modifications}{18}{section*.30}
 \contentsline {paragraph}{\nonumberline Riemann solver}{18}{section*.31}
 \contentsline {paragraph}{\nonumberline Time Integration}{18}{section*.32}
-\contentsline {paragraph}{\nonumberline Hybrid Scheme}{19}{section*.33}
+\contentsline {paragraph}{\nonumberline Hybrid Scheme}{18}{section*.33}
 \contentsline {subsection}{\numberline {3.2}Turbulent Forcing}{19}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Shock Capturing}{21}{subsection.3.3}
 \contentsline {paragraph}{\nonumberline Sensoring}{22}{section*.37}

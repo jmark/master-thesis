@@ -1,63 +1,79 @@
 \section{Conclusion \& Outlook}
+The goal of this thesis was to investigate if it is feasible to apply a
+recent third-order discontinuous Galerkin method (FLEXI) to astrophysical
+turbulence simulations and how they compare to established first/second order
+finite volume methods (FLASH). The objective is that DG methods are less
+dissipative and better resolve small scale structures.
 
-A multitude of reasons are conceivable for what systematically prevents FLEXI's
-schemes from pushing energy into small scales. First of all
+The primary focus was to accurately model isothermal turbulences up to Mach 10
+which are, for example, important for simulating star formation rates in
+molecular clouds.
 
-The high-resolution finite methods discussed in these lectures can be used
-very successfully for a wide range of problems. They are not foolproof, how-
-however, and one should never accept computed results without a critical study
-of their accuracy. This is often hard to assess for complex problems where
-the exact solution is not known, but the following techniques can help:
-- Investigate simple cases where exact solutions might be known, or at least
-the correct qualitative behavior of the solution is well understood.
-— Reduce the number of space dimensions by considering radially symmetric
-solutions, for example. Then a fine-grid solution in one space dimension
-can be used as a reference solution for the multi-dimensional solution.
-- Perform grid refinement studies on the real problem of interest. If you
-refine the grid does the solution remain basically the same? If not, then
-you probably cannot trust either solution. (If so, both solutions may still
-be completely incorrect. An error in the code that changes the equations
-might lead to a method that converges very nicely to a solution of the
-wrong equation.)
-A number of specific difficulties that can arise in solving the Euler equa-
-equations have already been mentioned, such as
-— The use of a nonconservative method can give shocks that look reasonable
-but which travel at the wrong speed (Sect. 4.3).
-— Stiff source terms can lead to similar results (Sect. 5.4).
-- The computed solution may not satisfy the entropy condition, leading to
-discontinuities where there should be a smooth rarefaction (Sect. 4.6.4).
+As a first step FLEXI was augmented in order to support isothermal turbulence
+setups in the same way as FLASH does. Modules for polytropic cooling, turbulent
+forcing, bulk motion correction and shock capturing were implemented and
+integrated into FLEXI (cf. \sec{computational-frameworks}). These
+modifications were then tested and verified with the Sod Shock Tube problem
+(cf. \sec{sod-shock-tube}).
 
-This same sort of artifact is also often seen when two shocks collide or when a
-shock reflects off a solid wall. Consider two identical shocks approaching each
-other with zero velocity in between (which also models reflection at a wall
-halfway between the shocks — see Sect. 4.9.3). Each shock may have settled
-down to some numerical traveling wave that does not appear to generate any
-noise. But when the shocks collide, the result is two new out-going shocks
-with a different state in between than before the collision, with higher density
-and pressure but still zero velocity. During the interaction phase considerable
-noise will be generated in the other families, and in particular a spurious
-entropy wave will be generated which is then stationary in the zero-velocity
-region between the out-going shocks. This wave yields a dip in the density.
-The pressure, however, is nearly constant and so this dip in density results
-in an increase in the temperature T — p/TZg. The gas appears to have been
-heated at the point where the collision occurs.
-In particular, in computing the reflection of a shock off a solid wall, this
-spurious temperature rise occurs at the wall itself. This phenomenon is fre-
-frequently observed in numerical simulations where shocks reflect off physical
-boundaries, and is known as wall heating in the literature. See, for example,
-[73], [175].
+Since pure Galerkin schemes cannot cope with discontinuities, shock
+capturing routines try to dampen spurious oscillations and as a last resort,
+locally switch to second-order finite volumes. In theory, this hybrid scheme
+should yield a convergence rate somewhere between 2 to 3, depending on the
+ratio of DG elements to FV elements (cf. \sec{shock-capturing}).
 
+The next step was to conduct driven turbulence simulations of Mach 2.5 with
+three explicit time integration methods of ascending order (first order Euler,
+second order Midpoint and third-order Runge-Kutta) each in combination with
+hybrid and FV-only mode. The same simulation was also performed with three
+solvers from FLASH: PPM, Bouchut3 and Bouchut5. They serve as reference
+(cf. \sec{stirturb}).
 
-7.7 Grid-Aligned Shocks
-In a multi-dimensional calculation it may seem advantageous to have a shock
-aligned with the grid so that Riemann problems normal to the cell edges
-are also in the physically correct direction. However, a shock that is nearly
-aligned with the grid can also suffer certain numerical instabilities that have
-no analog in one-dimensional calculations. Figure 7.3 shows density contours
-at a sequence of times for a colliding flow problem. Initially g = p = 1,
-v = 0 everywhere, while the a;-velocity is u = +20 on the left half of the
-domain and u = -20 on the right. This colliding flow should give rise to two
-symmetric shock waves propagating outwards. If the initial data is exactly
-uniform then the calculation will yield a reasonable approximation to this.
-For the calculation in Fig. 7.3, however, the density was initially perturbed
+In order to check the influence of the turbulent forcing this study was
+concluded by a decaying turbulence setup with identical initial conditions
+among all solvers (cf. \sec{decayturb}).
 
+Side-by-side comparison of column density snapshots at different times and
+methods from turbulence statistics, namely density PDFs and powerspectra,
+gained insights into the quality of the resulting turbulences.
+
+We arrive at following conclusions:
+\begin{itemize}
+\item The evaluation of the simulation data is in good agreement with the
+reference. We have shown that supersonic isothermal turbulent decay is modelled
+correctly by all solvers (cf. \sec{decayturb-column-plots} and
+\sec{decayturb-PDF}). There are no significant differences among dissipation
+rates (cf. \fig{plots/decayturb/evol-ekin-diss}).
+
+\item Turbulent driving for four turning times is too short to reach a
+stationary state and get reliable statistics. (cf.
+\fig{plots/stirturb/evolutions/sonic-mach.png}) This is especially true, when
+comparing two totally different simulation frameworks. In fact, serious driven
+turbulence studies drive more than 10 turning times. 
+
+\item The driven turbulence simulations are substantially influenced by the
+driver. This is, in particular, obvious for the results by the Midpoint
+schemes. It renders the dissipation rates inconclusive. Apparently, turbulent
+driving should be treated with caution as it can lead to unnatural
+pseudo-turbulent flows (cf. \fig{plots/stirturb/snapshots/forcing-stop-02.png}).
+
+\item A grid size of $512^3$ nodes is still too low to recognize any trends for
+certain. A convergence study with higher grid sizes would bring clarity.
+\end{itemize}
+
+The improvement in dissipation rates and resolution capacity, as we had hoped
+for, was not achieved. To be honest, it would have been a suprise anyway. In
+fact, a supersonic isothermal turbulent flow is one of the worst setups one can
+choose to run higher-order Galerkin methods with. 
+
+%A box full of swirling shocks is not a suitable habitat for polyonomes.
+
+In essence, what we have shown is that discontinuous Galerkin methods can work
+in strong shock environments. It makes sense, now, to look for astrophysical
+problems where DG methods indeed have a chance to yield better results
+without worrying that occasional shock conditions crash the simulation.
+
+Protoplanetary disk simulations, for example, still have problems with
+spurious angular momentum dissipation. Higher-order discontinuous
+Galerkin methods, in combination with recent flux functions, might yield
+promising results.

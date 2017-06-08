@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  8 JUN 2017 00:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  8 JUN 2017 15:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1077,47 +1077,48 @@ Package pdftex.def Info: ./fig/plots/burgers/ringing.png used on input line 75.
 racteristics.png> <./fig/plots/burgers/solution.png>])
 (./sections/02-theory/05-polynome-ansatz.tex [12 <./fig/plots/burgers/ringing.p
 ng>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 23.
  (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 28.
- [13]
-Overfull \hbox (0.2357pt too wide) in paragraph at lines 92--92
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 23.
+
+Overfull \hbox (0.2357pt too wide) in paragraph at lines 85--85
 [] 
  []
 
-<./fig/lagrange-interpolation-1d.png, id=414, 841.1425pt x 453.695pt>
+[13] <./fig/lagrange-interpolation-1d.png, id=416, 841.1425pt x 453.695pt>
 File: ./fig/lagrange-interpolation-1d.png Graphic file (type png)
 
 <use ./fig/lagrange-interpolation-1d.png>
 Package pdftex.def Info: ./fig/lagrange-interpolation-1d.png used on input line
- 110.
+ 103.
 (pdftex.def)             Requested size: 386.95894pt x 208.71608pt.
- [14 <./fig/lagrange-interpolation-1d.png>]
-Overfull \hbox (4.28166pt too wide) in paragraph at lines 159--159
+
+Overfull \hbox (4.28166pt too wide) in paragraph at lines 152--152
 [] 
  []
 
+[14 <./fig/lagrange-interpolation-1d.png>]
 
 LaTeX Warning: Reference `sec:interpolation' on page 15 undefined on input line
- 173.
+ 166.
 
 
-Overfull \hbox (24.38773pt too wide) in paragraph at lines 186--186
+Overfull \hbox (24.38773pt too wide) in paragraph at lines 179--179
 [] 
  []
 
-[15]) (./sections/02-theory/06-flux.tex)
+) (./sections/02-theory/06-flux.tex [15])
 (./sections/02-theory/07-time-integration.tex [16]))
 (./sections/03-setup/main.tex (./sections/03-setup/01-frameworks.tex [17])
-(./sections/03-setup/02-forcing.tex [18]
+(./sections/03-setup/02-forcing.tex
 
-LaTeX Warning: Citation `schmidt2009' on page 19 undefined on input line 8.
+LaTeX Warning: Citation `schmidt2009' on page 18 undefined on input line 8.
 
-
-<./fig/plots/forcing/rk3-hy-initial-forcing.png, id=487, 1417.9374pt x 1297.246
+[18]
+<./fig/plots/forcing/rk3-hy-initial-forcing.png, id=488, 1417.9374pt x 1297.246
 5pt>
 File: ./fig/plots/forcing/rk3-hy-initial-forcing.png Graphic file (type png)
  <use ./fig/plots/forcing/rk3-hy-initial-forcing.png>
@@ -1125,7 +1126,7 @@ Package pdftex.def Info: ./fig/plots/forcing/rk3-hy-initial-forcing.png used on
  input line 42.
 (pdftex.def)             Requested size: 386.95894pt x 354.02217pt.
 
-<./fig/plots/forcing/powerspectrum.png, id=488, 859.21pt x 425.59pt>
+<./fig/plots/forcing/powerspectrum.png, id=489, 859.21pt x 425.59pt>
 File: ./fig/plots/forcing/powerspectrum.png Graphic file (type png)
 
 <use ./fig/plots/forcing/powerspectrum.png>
@@ -1209,22 +1210,22 @@ t line 123.
 ain.tex
 (./sections/04-results/01-sod.tex [27 <./fig/plots/interpolation/flexi-column-d
 ensity.png> <./fig/plots/interpolation/density-ray.png>]
-Overfull \hbox (3.2109pt too wide) in paragraph at lines 41--55
+Overfull \hbox (3.2109pt too wide) in paragraph at lines 42--56
  [][] 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 57.
+(Font)              <10> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 57.
+(Font)              <7> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 57.
+(Font)              <5> on input line 58.
 <./fig/plots/sod/adiabatic/density.png, id=599, 726.715pt x 390.45876pt>
 File: ./fig/plots/sod/adiabatic/density.png Graphic file (type png)
 
 <use ./fig/plots/sod/adiabatic/density.png>
 Package pdftex.def Info: ./fig/plots/sod/adiabatic/density.png used on input li
-ne 62.
+ne 63.
 (pdftex.def)             Requested size: 483.69684pt x 259.89012pt.
  [28]
 <./fig/plots/sod/isothermal/density.png, id=610, 726.715pt x 390.45876pt>
@@ -1232,12 +1233,12 @@ File: ./fig/plots/sod/isothermal/density.png Graphic file (type png)
 
 <use ./fig/plots/sod/isothermal/density.png>
 Package pdftex.def Info: ./fig/plots/sod/isothermal/density.png used on input l
-ine 76.
+ine 77.
 (pdftex.def)             Requested size: 483.69684pt x 259.89012pt.
  [29 <./fig/plots/sod/adiabatic/density.png>]
 
 LaTeX Warning: Reference `fig:plots/sod/isothermal-supersonic/density.png' on p
-age 30 undefined on input line 96.
+age 30 undefined on input line 97.
 
 
 <./fig/plots/sod/adiabatic-supersonic/density.png, id=620, 730.73pt x 388.45125
@@ -1245,7 +1246,7 @@ pt>
 File: ./fig/plots/sod/adiabatic-supersonic/density.png Graphic file (type png)
  <use ./fig/plots/sod/adiabatic-supersonic/density.png>
 Package pdftex.def Info: ./fig/plots/sod/adiabatic-supersonic/density.png used 
-on input line 111.
+on input line 112.
 (pdftex.def)             Requested size: 483.69684pt x 257.13136pt.
  [30 <./fig/plots/sod/isothermal/density.png>]
 <./fig/plots/sod/isothermal-supersonic/density.png, id=627, 727.71875pt x 390.4
@@ -1254,7 +1255,7 @@ File: ./fig/plots/sod/isothermal-supersonic/density.png Graphic file (type png)
 
  <use ./fig/plots/sod/isothermal-supersonic/density.png>
 Package pdftex.def Info: ./fig/plots/sod/isothermal-supersonic/density.png used
- on input line 119.
+ on input line 120.
 (pdftex.def)             Requested size: 483.69684pt x 259.5386pt.
 )
 (./sections/04-results/02-driven.tex [31 <./fig/plots/sod/adiabatic-supersonic/
@@ -1550,7 +1551,7 @@ File: ./fig/plots/decayturb/evol-fv.png Graphic file (type png)
 
 <use ./fig/plots/decayturb/evol-fv.png>
 Package pdftex.def Info: ./fig/plots/decayturb/evol-fv.png used on input line 1
-25.
+24.
 (pdftex.def)             Requested size: 483.69684pt x 260.14238pt.
  [62 <./fig/plots/decayturb/decay-03-03.png>] <./fig/plots/decayturb/evol-ener.
 png, id=951, 745.78625pt x 392.46625pt>
@@ -1624,9 +1625,9 @@ Package pdftex.def Info: ./fig/plots/decayturb/pws-mw-vels-dyntimes.png used on
  [68 <./fig/plots/decayturb/pws-ekin-dyntimes.png> <./fig/plots/decayturb/pws-v
 w-vels-dyntimes.png>]))
 (./sections/05-conclusion/main.tex [69 <./fig/plots/decayturb/pws-mw-vels-dynti
-mes.png>])
+mes.png>] [70])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
- [70]
+ [71]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
  (aux/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
@@ -1646,10 +1647,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25.
  ) 
 Here is how much of TeX's memory you used:
- 12427 strings out of 493013
- 202042 string characters out of 6139317
- 383442 words of memory out of 5000000
- 15320 multiletter control sequences out of 15000+600000
+ 12430 strings out of 493013
+ 202094 string characters out of 6139317
+ 382548 words of memory out of 5000000
+ 15322 multiletter control sequences out of 15000+600000
  183821 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,14n,51p,8832b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1673,10 +1674,10 @@ x10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/tex
 mf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/lm/lmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on aux/main.pdf (72 pages, 34641572 bytes).
+Output written on aux/main.pdf (73 pages, 34640175 bytes).
 PDF statistics:
- 1189 PDF objects out of 1200 (max. 8388607)
- 966 compressed objects within 10 object streams
- 312 named destinations out of 1000 (max. 500000)
+ 1206 PDF objects out of 1440 (max. 8388607)
+ 982 compressed objects within 10 object streams
+ 313 named destinations out of 1000 (max. 500000)
  616 words of extra memory for PDF output out of 10000 (max. 10000000)
 
