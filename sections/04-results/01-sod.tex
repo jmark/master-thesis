@@ -54,6 +54,11 @@ CFL    &  0.4 \\
 \end{tabular}
 \label{tab:sod-runs}
 \end{table}
+
+This setup is not a convergence study or similar. The objective is to the thest
+wether FLEXI produces the same results as FLASH under identical initial
+conditions.
+
 \footnotetext{Euler Hybrid was only run for adiabatic and isothermal Sod Shock
 since it is unstable.}
 
@@ -97,11 +102,11 @@ The solutions for the strong shock setup with cooling, see
 notably, the density peaks are of an order higher and the widths are
 considerably narrower than before. There are no recognizable partitions into a
 slow and fast moving wave. Additionally, the solvers do not agree on the shock
-wave speed with the \eufv  being the slowest but resembling a very sharp
-high-rising peak on the other hand. We have no concise explanation for this but
-it should be safe to say that the mean free path of a shock wave in a turbulence
-simulation does not exceed half the size of the box. Hence, the influence of
-the velocity divergence is considered small.
+wave speed with the Euler FV  being the slowest but highest rising one. We do
+not have definite explanation for this, but it should be safe to say that the
+mean free path of a shock wave in a turbulence simulation does not exceed half
+the size of the box. Hence, the influence of the velocity dispersion among the
+solvers is considered neglectible.
 %Taking a closer look at one of the shock waves, for example
 %in \fig{plots/sod/adiabatic-supersonic/density-zoom}, one gets to the same conclusion
 %as in the previous section with PPM yielding the best results.

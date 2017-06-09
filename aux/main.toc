@@ -53,25 +53,25 @@
 \contentsline {paragraph}{\nonumberline Transferring Data from \textsc {FLASH} to \textsc {FLEXI}}{26}{section*.54}
 \contentsline {section}{\numberline {4}Results \& Discussion}{28}{section.4}
 \contentsline {subsection}{\numberline {4.1}\textsc {Sod} Shock Tube Problem}{28}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{29}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{28}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Adiabatic \& Isothermal Sod with Strong Shock}{30}{subsubsection.4.1.2}
 \contentsline {subsubsection}{\numberline {4.1.3}Summary}{31}{subsubsection.4.1.3}
-\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{32}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{33}{subsubsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{31}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{32}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Column Density \& Velocity}{33}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}FV-DG Mode Switching}{40}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{41}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{43}{subsubsection.4.2.5}
-\contentsline {paragraph}{\nonumberline Density Distribution}{43}{section*.76}
-\contentsline {paragraph}{\nonumberline Velocity Distribution}{45}{section*.80}
-\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{47}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Summary}{51}{subsubsection.4.2.7}
-\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{51}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{52}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{52}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{62}{subsubsection.4.3.3}
-\contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{63}{subsubsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{65}{subsubsection.4.3.5}
-\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{67}{subsubsection.4.3.6}
-\contentsline {subsubsection}{\numberline {4.3.7}Summary}{69}{subsubsection.4.3.7}
-\contentsline {section}{\numberline {5}Conclusion \& Outlook}{70}{section.5}
+\contentsline {subsubsection}{\numberline {4.2.3}FV-DG Mode Switching}{39}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{40}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{42}{subsubsection.4.2.5}
+\contentsline {paragraph}{\nonumberline Density Distribution}{42}{section*.76}
+\contentsline {paragraph}{\nonumberline Velocity Distribution}{44}{section*.80}
+\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{46}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}Summary}{50}{subsubsection.4.2.7}
+\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{50}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{51}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{51}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{61}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{62}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{64}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{66}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}Summary}{68}{subsubsection.4.3.7}
+\contentsline {section}{\numberline {5}Conclusion \& Outlook}{69}{section.5}
