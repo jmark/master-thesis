@@ -1,0 +1,69 @@
+\subsection{Computational Frameworks}
+\label{sec:computational-frameworks}
+
+For the turbulence simulations two numerical frameworks, FLASH and FLEXI, are
+compared. A complete set of source code for both frameworks can be examined on
+the attached CD-ROM or downloadable at \cite{}.
+
+\paragraph{FLASH}
+\begin{quote}
+The FLASH code, currently in its 4th version, is a publicly available high
+performance application code which has evolved into a modular, extensible
+software system from a collection of unconnected legacy codes. FLASH consists
+of inter-operable modules that can be combined to generate different
+applications. The FLASH architecture allows arbitrarily many alternative
+implementations of its components to co-exist and interchange with each other.
+A simple and elegant mechanism exists for customization of code functionality
+without the need to modify the core implementation of the source. A built-in
+unit test framework combined with regression tests that run nightly on multiple
+platforms verify the code. 
+\end{quote}
+
+The framework is widely adopted within the astrophysics community and serves as
+reference for testing and comparing the Galerkin schemes provided by FLEXI.
+Following hydrodynamics solvers came into use: PPM, Bouchut 3 (B3) and Bouchut 5
+(B5). Theses solvers were specifically designed for supersonic turbulence
+simulations.
+
+\paragraph{FLEXI}
+\begin{quote}
+Flexi is developed by the team of the Numerics Research Group hosted at the
+Institute of Aero- and Gasdynamics at the University of Stuttgart. We are
+interested in efficient and robust numerical methods for applications in scale
+resolving CFD and we apply these methods to a variety of large scale
+physical and industrial problems.
+\end{quote}
+
+\paragraph{Modifications}
+Flexi provides an implementation of discontinuous Galerkin methods and is
+primarily focused on air flow applications in research and industries. Thus,
+the simulation of isothermal supersonic turbulences was originally not
+supported.  Following contributions to the source code had to be implemented
+beforehand:
+\begin{quote}
+\begin{description}
+    \item [polytropic cooling] (cf. \sec{governing-equations}/\emph{Equation of State})
+    \item [bulk motion correction] (cf. \sec{governing-equations}/\emph{Bulk Motion})
+    \item [turbulent forcing] (cf. \sec{turbuforcing})
+    \item [shock capturing] (cf. \sec{shock-capturing})
+\end{description}
+\end{quote}
+Additionally, analysis and data transfer tools were developed (cf. \sec{trafo}).
+
+\paragraph{Riemann solver}
+Flexi offers a number of approximate Riemann solvers. After many tests we
+settled down to the HLLE (Harten-Luv-Lax Entropy-fix) flux for two reasons.
+First, it is not far from the Bouchut solvers (FLASH) in technical terms and it
+was the only one that did not crash. The latter is the reason a comparing study
+with different flux functions was not possible in this thesis.
+
+\paragraph{Time Integration}
+Three different methods of numerical time integration came into use: Euler (FV),
+Midpoint (MP) and third order Runge-Kutta (RK3) (cf. \sec{time-integration}).
+
+\paragraph{Hybrid Scheme}
+As pointed out in the shock discussion in \sec{theory-shocks}, pure Galerkin schemes
+are not suitable for supersonic turbulence simulations. Therefore, a compromise
+between FV and DG schemes is used (cf. \sec{shock-capturing}) where FV and DG
+are mixed toegether to a hybrid scheme (HY). In order to counter-check this
+same simulations were also done with FV only.

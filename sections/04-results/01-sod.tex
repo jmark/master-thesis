@@ -1,0 +1,142 @@
+\subsection{\vip{Sod} Shock Tube Problem}
+\label{sec:sod-shock-tube}
+Before we can discuss the results of the turbulence simulations, we
+need to validate the correctness of the solvers, considering the
+modifications explained in the previous chapter. The standard test for the
+correct treatment of shocks is the \vip{Sod} Shock Tube Problem in one
+dimension. At first, we look at the classical adiabatic test case, then
+introduce polytropic cooling (isothermal) and finally apply a strong shock
+sitation by setting the initial left-side velocity to $u_L = 15$. All runs took
+place with a conservative CFL number of $CFL = 0.4$.
+If not indicated otherwise the initial conditions were set like follows
+\begin{table}[H]
+%\fontsize{3mm}{3mm}\selectfont
+%\captionsetup{width=.6\textwidth}
+\caption{Sod-Shock: Initial Condition}
+\centering
+\begin{tabular}{llc|lc}
+\toprule
+&
+\multicolumn{2}{c}{Left Side} &
+\multicolumn{2}{c}{Right Side} \\
+\midrule
+Name & Symbol & Value & Symbol & Value\\
+\midrule
+density         & $\dens_{L}$       & 1.0 & $\dens_{R}$ & 0.125 \\ 
+velocity        & $\vels_{L}$       & 0.0 & $\vels_{R}$ & 0.0 \\ 
+pressure        & $\pres_{L}$       & 1.0 & $\pres_{R}$ & 0.1 \\  
+\bottomrule
+\end{tabular}
+\label{tab:initial-state-sod-shock}
+\end{table}
+We set a resolution of 512 cells for the domain $\Omega = [0,1]$, where the
+discontinuity is at $x_0 = 0.5$.  512 cells resembles the same resolution
+applied on the turbulence simulations. This way we get a comparable insight on
+how well shocks can be resolved within a periodic box of equal size.
+Table \tbl{sod-runs} outlines conducted experiments in tabular form.
+\begin{table}[H]
+%\fontsize{4mm}{4mm}\selectfont
+%\captionsetup{width=.8\textwidth}
+\caption{Overview of conducted runs for the Sod Shock Tube Problem}
+\centering
+\begin{tabular}{l|l}
+\toprule
+Setups & Adiabatic, Isothermal, Adiabatic w. Strong Shock,
+Isothermal w. Strong Shock \\ 
+\midrule
+Solvers  & Bouchut 3, Bouchut 5, PPM, Euler FV, Euler Hybrid\footnotemark,\\
+& Midp. FV, Midp. Hybrid, RK3 FV, RK3 Hybrid \\ 
+\midrule
+Resolution & 512 \\
+\midrule
+CFL    &  0.4 \\
+\bottomrule
+\end{tabular}
+\label{tab:sod-runs}
+\end{table}
+\footnotetext{Euler Hybrid was only run for adiabatic and isothermal Sod Shock
+since it is unstable.}
+
+\subsubsection{Adiabatic \& Isothermal Shock}
+\image{1.0}{plots/sod/adiabatic/density.png}{
+Canonical density profile at conventional time $t$ = 0.2 with anticipated
+regions and discontinuities outlined in the plot.}
+In \fig{plots/sod/adiabatic/density.png} all utilized solvers satisfy the
+expected density profile of the classical Sod-Shock problem with varying
+precision. PPM yields the most accurate result while on the other hand
+RK3-Hybrid smears out the discontinuities considerably. Looking closely at the
+zoomed area all hybrid schemes (blue, yellow and green dashed lines) tend to
+oscillate.  The inacceptable ringing of the Euler-Hybrid is a consequence of
+the instability of the Euler Time Integration within the DG operator. TODO:
+Reference. Consequently, Euler-Hybrid is disqualified and will be discarded in
+future discussion. Same assertions can be made for the isothermal case shown in
+\fig{plots/sod/isothermal/density.png}.
+\image{1.0}{plots/sod/isothermal/density.png}{
+Isothermal density profile at conventional time $t$ = 0.2 with expected
+regions and discontinuities outlined in the plot. The contact discontinuity
+gets suppressed due to polytropic cooling.}
+%\image{1.0}{plots/sod/adiabatic/pressure.png}{Canonical pressure profile at conventional time $t$ = 0.2.}
+%\image{1.0}{plots/sod/adiabatic/velocity.png}{Canonical velocity profile at conventional time $t$ = 0.2.}
+%The pressure and density profiles \fig{plots/sod/adiabatic/density.png}
+%and \fig{plots/sod/adiabatic/velocity.png} are shown here for completness.
+%\image{1.0}{plots/sod/isothermal/velocity.png}{Foobar fo bar}
+
+\subsubsection{Adiabatic \& Isothermal Sod with Strong Shock}
+Now we want to compare how the solvers cope with a strong shock situation ($u_L
+= 15$) first in the adiabatic and then in isothermal setting with polytropic
+cooling.
+
+Considering \fig{plots/sod/adiabatic-supersonic/density} all solutions yield a
+quite similar profile. The shock waves build up rapidly up to a certain
+height travel at a constant speed from left to right and widen with increasing
+time. One can recognize two distinct parts. A fast traveling pedestal moving at
+the speed of the initial velocity $u_{fast} = u_L = 15$ and a slow moving
+shot up rear at the speed of around two third of the fast wave $u_{slow} \approx
+2/3\,u_{fast} = 10$. 
+The solutions for the strong shock setup with cooling, see
+\fig{plots/sod/isothermal-supersonic/density.png}, are quite different. Most
+notably, the density peaks are of an order higher and the widths are
+considerably narrower than before. There are no recognizable partitions into a
+slow and fast moving wave. Additionally, the solvers do not agree on the shock
+wave speed with the \eufv  being the slowest but resembling a very sharp
+high-rising peak on the other hand. We have no concise explanation for this but
+it should be safe to say that the mean free path of a shock wave in a turbulence
+simulation does not exceed half the size of the box. Hence, the influence of
+the velocity divergence is considered small.
+%Taking a closer look at one of the shock waves, for example
+%in \fig{plots/sod/adiabatic-supersonic/density-zoom}, one gets to the same conclusion
+%as in the previous section with PPM yielding the best results.
+\image{1.0}{plots/sod/adiabatic-supersonic/density}{
+Adiabatic density snapshots depicting the movement of a strong shock wave from
+left to right. Note: Only the right half of the domain is shown. The pedestal
+of the rightmost wave ($t_d$ = 0.04) has gone out of visible range.}
+%\image{1.0}{plots/sod/adiabatic-supersonic/density-zoom}{Zoom at the rightmost
+%shock wave in \fig{plots/sod/adiabatic-supersonic/density.png}. The grid
+%spacing of the x axis resemble the width of a finite volume.}
+
+
+\image{1.0}{plots/sod/isothermal-supersonic/density}{Isothermal density
+snapshots depicting the movement of a strong shock wave from left to right.
+Note: Only the right half of the domain is shown.}
+
+
+%% It probably makes no sense commenting about the details of the curve shapes,
+%% see \fig{plots/sod/isothermal-supersonic/velocity-zoom}, since at least around
+%% 16 cells (four elements of four nodes) are trying to resolve the shock wave.
+%% This is an unsufficient resolution compared to the adiabatic case where a shock
+%% wave is four to five times broader. Consequently, isothermal turbulence
+%% simulations are severely under-resolved.
+%\image{1.0}{plots/sod/isothermal-supersonic/velocity-zoom}{Zoom at the
+%rightmost shock wave in \fig{plots/sod/isothermal-supersonic/density.png}. The
+%grid spacing of the x axis resemble the width of a finite volume.}
+%\image{1.0}{plots/sod/adiabatic-supersonic/pressure.png}{Foobar fo bar}
+%\image{1.0}{plots/sod/adiabatic-supersonic/velocity.png}{Foobar fo bar}
+%\image{1.0}{plots/sod/isothermal-supersonic/velocity.png}{Foobar fo bar}
+
+\subsubsection{Summary}
+We conducted four different Sod shock tube tests in order to validate the
+correct treatment of shocks by the FLEXI code. The Euler Hybrid scheme rendered
+invalid since it showed spurious oscillations. Special attention should be
+given to the Euler FV since it drifted away somewhat from the other solvers
+for the supersonic strong shock test (cf.
+\fig{plots/sod/isothermal-supersonic/density}).

@@ -1,0 +1,21 @@
+\subsubsection{Flux Functions}
+\label{sec:flux-functions}
+Finite Element methods must solve the Riemann problem (cf. \sec{theory-shocks})
+at the element boundaries in order to exchange information.  The
+\emph{Rankine–Hugoniot conditions} or \emph{shock jump conditions} require that
+mass, momentum and energy must be conserved when crossing the boundaries. The
+theoretical framework of the Rieamnn problem knows a procedure that provides an
+exact solution to a given shock problem. Unfortunately, an exact Riemann solver
+is in most cases hard to construct and even harder to compute due to bad
+convergences rates.
+
+Hence, a wide variety of approximate Riemann solvers or \emph{flux functions}
+have been proposed that can be applied much more cheaply than the exact Riemann
+solver and yet give results that in many cases are equally good when used in
+high-resolution finite element methods. 
+
+A detailed discussion of the theory of flux functions would go beyond the scope
+of this thesis and has been done extensively elsewhere. For reasons given in
+\sec{computational-frameworks}) we do/cannot not study the influence of flux
+functions on the simulations separately. Hence, in this work, flux functions are
+just considered an integral part of the numerical scheme.

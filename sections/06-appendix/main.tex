@@ -1,0 +1,40 @@
+\section{Appendix}
+
+% --------------------------------------------------------------------------- %
+% Influence of Ratio FV/DG
+
+\subsection{Runtime Performance}
+
+\image{1.0}{plots/stirturb/evolutions/timestep.png}{Time evolution of the timestep $dt$.
+The CFL Numbers are listed in \tbl{tab:decayturb-cfl}.}
+
+\image{1.0}{plots/stirturb/evolutions/runtime-cumsum.png}{Cumulative runtime of
+the different runs. For example, the PPM solver needs two hours to get half-way
+through the simulation at $t_d = 3.0$. \remark The contribution of input-output
+operations and unintended interuptions are already substracted out.}
+
+\image{1.0}{plots/stirturb/evolutions/runtime-relative.png}{Time derivative of
+cumulative runtime (see \fig{plots/stirturb/evolutions/runtime-cumsum.png}).
+For example, the run with the PPM solver would have lasted roughly 6 hours with
+the rate at around $t_d = 3.0$: \\ 1 h $\cdot$ 6 = 6 h.}
+
+\image{1.0}{plots/stirturb/runtime-vs-ekin-dissipation}{Relative Runtime vs Kinetic
+Energy Dissipation Rate.}
+
+\image{1.0}{plots/decayturb/evol-timestep}{Time evolution of the timestep $dt$.
+The CFL Numbers are listed in \tbl{tab:decayturb-cfl}.}
+
+\image{1.0}{plots/decayturb/evol-cum-runtime}{Cumulative runtime of the
+different runs. For example, the Midpoint Finite-Volume solver needs 30 min to
+get half-way through the simulation at $t_d = 3.0$. The graph for \fppm was
+scaled down by a factor of 10. \remark The contribution of input-output operations and
+unintended interuptions are already substracted out.}
+
+\image{1.0}{plots/decayturb/evol-relative-runtime}{Time derivative of
+cumulative runtime (see \fig{plots/decayturb/evol-cum-runtime}). For example,
+the run with the RK3-Hybrid solver would have lasted roughly 3 hours and 36
+minutes with the rate at beginning: \\ 0.6 h $\cdot$ 6 = 3.6 h. The graph for PPM
+was scaled down by a factor of 10.}
+
+\image{1.0}{plots/decayturb/runtime-vs-ekin-diss}{Relative Runtime vs Kinetic
+Energy Dissipation Rate. The graph for PPM was scaled down by a factor of 10.}

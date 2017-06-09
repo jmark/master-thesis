@@ -1,0 +1,53 @@
+\subsection{Finite Element Schemes}
+
+Under the motto ``Divide and Conquer'' the physical domain is cut into smaller
+subdomains or finite elements.  All finite elements methods (FEM) contain
+multiple stages of operation and are explained briefly.
+
+\begin{description}
+\item [Meshing] Divide the problem domain into adjunct self-contained
+sub-domains, called elements or cells. Depending on the scheme and requirements
+this step can happen periodically. Via \emph{Adaptive Mesh Refinement} (AMR) small
+scale phenomena within the simulation can be resolved where needed without
+degrading the overall performance disproportionately. AMR is not part of
+any simulation conducted in this thesis.
+
+\item [Reconstruction] Approximate the exact solution in every element by a
+piecewise constant function (finite volume scheme) or polynome of order $N_p$
+(Galerkin scheme): \sec{polyonome-ansatz}
+
+\item [Evolution] Based on the current set of variables the governing equations
+(compressible Euler equations) yield a new state which gets evolved one
+timestep into the future: \sec{flux-functions}.
+
+\item [Averaging/Propagation] Flux functions solve the \vip{Riemann} problem
+and communicate the lately acquired state across boundaries and propagate the
+new information throughout the element: \sec{time-integration}.
+\end{description}
+
+% The last three actions are commonly grouped together under the term \emph{REA
+% algorithm} which is typical for \vip{Godunov}-type methods.  Finite volumes are
+% a specialization of elements in the sense that they approximate the exact
+% solution by a mean value.
+
+
+
+%% Since following terms are mentioned on a regular basis througout this document
+%% we give brief definitions.
+%% \begin{description}
+%% \item[Mesh/Grid] A mesh consists of either cells or elements. The mesh can be
+%% structured or unstructured. It contains the necessary information where to find
+%% cells/elements and what their (spatial) relationship to neighbors are.
+%% 
+%% \item[Grid] Regular/Irregular, grid spaces, array of points/nodes.
+%% 
+%% \item[Cell] The atomic container type of a grid. They contain the actual data
+%% which can be a scalar, arrays of scalars, vectors, tensors, etc. What cells
+%% distinguish from points is that they have an expanse. Hence, one must specificy
+%% if the data is defined in the cell-center, at their corners or at their faces.
+%% 
+%% \item[Element] Elements are spatially extended objects like cells. However,
+%% they group a list of points called \emph{nodes} on which the data is pinned on.
+%% When an element interacts with the outside world it must extract the necessary
+%% values from these nodes via polynomial interpolation.
+%% \end{description}

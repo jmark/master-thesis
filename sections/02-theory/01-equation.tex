@@ -1,0 +1,262 @@
+\subsection{Governing equations}
+\label{sec:governing-equations}
+
+%% \paragraph{Ideal Magneto-Hydrodynamic Equations}
+%% The magneto-hydrodynamic equations (MHD) are a corner stone of theoretical
+%% astrophysics.  They model the fluid mechanics of ionized interstellar media in
+%% an idealized form. In CGS unit they read as follows.
+%% 
+%% % \begin{align}
+%% % \partial_t\dens + \nabla \cdot (\dens\,\velv)   &=  0 \\
+%% % \dens\, \partial_t \velv + \dens(\velv \cdot \nabla) \velv + \nabla \pres &= \frac{\curdensv \times \magdensv}{c} + \dens \vec{g} + \vec{F} \\
+%% % \nabla \times \magdensv &= \frac{4\;\pi}{c} \curdensv \\
+%% % \nabla \times \elefield &= -\frac{1}{c} \partial_t \magdensv \\
+%% % \nabla \cdot  \magdensv &= 0 \\
+%% % \curdensv               &= \sigma \left ( \elefield + \frac{\velv \times \magdensv}{c} \right )
+%% % \end{align}
+%% 
+%% \begin{equation*}
+%%     \frac{1}{\partial t} \left[ \begin{array}{c}
+%%         \rho \\
+%%         \rho\,\vec{v} \\
+%%         E \\
+%%         \vec{B}
+%%     \end{array} \right] +
+%%     \nabla \cdot \left[ \begin{array}{c}
+%%         \rho\,\vec{v}\\
+%%         \rho\,(\vec{v}\otimes\vec{v}) + (p + \frac{1}{2} ||\vec{B}||^2)I - \vec{B} \otimes \vec{B} \\
+%%         \vec{v}(E + p + \frac{1}{2} ||\vec{B}||^2) - \vec{B} (\vec{v}\cdot\vec{B}) \\
+%%         \vec{v} \otimes \vec{B} - \vec{B} \otimes \vec{v}
+%%     \end{array} \right] + \text{forcing} = 0, \;\; \nabla \cdot \vec{B} = 0,
+%% \end{equation*}
+%% where $\mat{a} \otimes \mat{b}$ is the \vip{Kronecker} product between two
+%% matrices $\mat{a}$ and $\mat{b}$. For vectors it can also be written as
+%% $\vec{a}\,\vec{b}^T$.
+%% 
+%% TODO: Explain above equations in detail. Name -> physical meaning ...
+%% 
+%% We want to keep the simulation simple and do not include electric current
+%% ($\sigma = \infty$) and gravity in our model. Hence, $\curdensv = 0$ and
+%% $\vec{g} = 0$. This simplifies above equations to the ideal MHD equations.
+%% They are valid for dynamics in interstellar clouds where we have huge
+%% spatial dimensions of several parsecs and consequently long crossing times.
+%% 
+%% TODO: More arguments why ideal MHD equations are valid for ISM simulations
+%% 
+%% TODO: Insert ideal MHD equations
+%% 
+%% When we set the initial magnetic field strength to zero $\magdensv = 0$ no
+%% magnetic dynamics come into play and the equations reduces further to the
+%% compressible Euler equations.
+
+In astrophysics, the \emph{interstellar medium} (ISM) is the matter that exists
+in the space between the star systems in a galaxy. It contains gas in ionic,
+atomic, and molecular form, as well as dust and cosmic rays. ISM fills
+interstellar space and blends smoothly into the surrounding intergalactic
+space. The medium is composed primarily of atomic hydrogen followed by helium
+with traces of carbon, oxygen, and nitrogen. Magnetic fields and turbulent
+motions also provide pressure in the ISM, and are typically more important
+dynamically than the thermal pressure.
+
+Many theoretical models for ISM are basesd on the ideal
+\emph{Magneto-Hydrodynamic equations} which are a blend of the \emph{compressible
+Euler equations} and of the \emph{Maxwell equations}, describing the hydrodynamics
+and (electro-)magnetodynamics, respectively.
+
+In this thesis we solely focus on the hydrodynamics.
+
+\subsubsection{Compressible Euler Equations}
+
+%% euler quation primitive form
+
+%% \begin{align}
+%% \label{eqn:comp-euler}
+%% \partial_t\dens + \nabla \cdot (\dens\,\velv)   &=  0 \\
+%% \dens\, \partial_t \velv + \dens(\velv \cdot \nabla) \velv + \nabla \pres &= \vec{F} \\
+%% \partial_t \ener + \nabla \cdot (\ener\,\velv - ...)   &=  0,
+%% \end{align}
+
+In 1757 \vip{Leonhard Euler} (1707-1783) published a set of equations for
+inviscid flow, known as the Euler equations. They are hyperbolic
+conservation equations which model perfect fluids without any interaction of their
+constituents.  Hence, we assume no
+heat conduction ($\SET^{i0} = \SET^{0i} = 0$), no viscosity
+($\SET^{ij} = p\,\mathbb{I}$, $\mu_d = 0$) and no gravity $g = 0$. 
+Within the comoving frame the
+\emph{stress-energy tensor} $\SET$ reads:
+\begin{equation}
+\SET^{\alpha\beta} = \text{diag}(\dens\sndsped^2,\pres,\pres,\pres) = \left(\dens + \frac{\pres}{\sndsped^2}\right) \vels^\alpha\vels^\beta + p\,\mathbb{G}^{\alpha\beta}.
+\end{equation}
+In flat spacetime the \emph{metric tensor} is set to $\mathbb{G} = \text{diag}(-1,1,1,1)$. The total energy
+and the number of particles are conserved.
+\begin{align}
+\partial_\nu \SET^{\mu\nu}  &= 0\\
+\partial_\mu (n\,\vels^\mu) &= 0
+\end{align}
+Taking the non-relativistic limit, we arrive at the conservative form of the
+Euler equations.
+\begin{align}
+\label{eqn:comp-euler-conservative}
+\partial_t\dens + \nabla \cdot (\dens\,\velv)   &=  0 \;\; &\text{\emph{mass conservation}}\\[0.4cm]
+\partial_t(\dens\,\velv) + \nabla\cdot(\dens\velv\velv^T) + \nabla \pres &= \vec{F}  \;\;&\text{\emph{momentum conservation}}\\[0.4cm]
+\partial_t \Ener + \nabla \cdot (\velv\,(\ener + \pres)) &=  0,\;\;&\text{\emph{energy conservation}}
+\end{align}
+where the total energy $\Ener$ is composed of the internal energy $\Eint$ and
+the kinetic energy $\Ekin$.
+\begin{equation}
+\Ener = \Eint + \Ekin = \frac{\pres}{\gamma -1} + \frac{\dens}{2}\vels^2,
+\end{equation}
+with $\adiabconst$ being the \emph{adiabatic constant}.
+
+The source term $\vec{F}$ (F for forcing) allows us to perpetually inject a
+force field which gets important in the discussion of driven turbulence later
+on. See \sec{turbuforcing}.
+
+% \paragraph{Primitive and Consverative Variables}
+
+\paragraph{Equation of State}
+If not stated otherwise all simulations follow the \emph{ideal gas law}.
+\begin{equation}
+\pres = \frac{\sndsped^2}{\gamma} \, \dens = R\,T\,\dens = \frac{R}{c_v} \Eint = (\gamma - 1) \Eint,
+\end{equation}
+where $R$ is the specific ideal gas constant, $T$ is the gas temperature and $c_v
+= \frac{\gamma - 1}{R}$ is the specific heat capacity at constant volume. 
+
+The  $\adiabconst$ is set to
+\begin{equation}
+\label{eqn:adiabconst}
+    \adiabconst = \frac{\heatcapP}{\heatcapV} := \frac{5}{3},
+\end{equation}
+which represents a mono-atomic gas without interacting forces.
+
+The speed of sound $\sndsped$ is a direct consequence of the ideal gas
+equation.  \begin{equation} c^2 = \gamma \frac{\pres}{\dens} := C_P = \text{const.} \end{equation}
+
+During the numerical simulation the equation of state is enforced via the
+\emph{polytropic process} (also called \emph{polytropic cooling}) at
+every timestep.
+\begin{equation}
+\pres = C_P \, \dens^\Gamma,
+\end{equation}
+where the \emph{polytropic exponent} is set to $\Gamma := 1$ which is
+equivalent to an isothermal process. A thorough derivation can be found in
+\cite{Horedt2004}, p.2-7.
+
+% \paragraph{Prandtl Number}
+% \begin{equation}
+% \label{eqn:prandtl}
+%     \prandtl = \frac{\shearvisc \; \heatcapP}{\heatconduct}
+% \end{equation}
+
+\paragraph{Dimensionless Euler Equations} We want to show that the Euler
+equations are invariant to changes of units. This discussion is useful since
+most numerical frameworks do not support physical units and rescaled phyiscal
+quantities avoid truncation errors due to the limits of floating point
+operations. For this, we choose a characteristic length $l_r$, a characteristic
+velocity $\vels_r$ and a characterstic density $\dens_r$. Multiplying suitable 
+combinations of these constants with the Euler equations yields
+\begin{align}
+\left[\partial_t\dens + \nabla \cdot (\dens\,\velv)\right] \cdot \frac{l_r}{\dens_r\,\vels_r} &=  0\\[0.4cm]
+\left[\partial_t(\dens\,\velv) + \nabla\cdot(\dens\velv\velv^T) + \nabla \pres - \vec{F}\right] \cdot \frac{l_r}{\dens_r\,\vels_r^2} &= 0\\[0.4cm]
+\left[\partial_t \Ener + \nabla \cdot (\velv\,(\ener + \pres))\right] \cdot \frac{l_r}{\dens_r\,\vels_r^3} &=  0
+\end{align}
+We simplify and get
+\begin{align}
+\partial_{\tilde{t}} \tilde{\dens} + \tilde{\nabla} \cdot (\tilde{\dens}\,\tilde{\velv})   &=  0\\[0.4cm]
+\partial_{\tilde{t}}(\tilde{\dens} \,\tilde{\velv}) +      \tilde{\nabla}\cdot(\tilde{\dens}\tilde{\velv}\tilde{\velv}^T) + \tilde{\nabla} \tilde{\pres} - \tilde{\vec{F}}&= 0\\[0.4cm]
+\partial_{\tilde{t}} \tilde{\Ener} + \tilde{\nabla} \cdot (\tilde{\velv}\,(\tilde{\ener} + \tilde{\pres})) &=  0,
+\end{align}
+where $t_r = \frac{l_r}{\vels_r}$ (characteristic time) and
+\begin{equation}
+\tilde{t} = \frac{t}{t_r},\ 
+\tilde{\dens} = \frac{\dens}{\dens_r},\
+\tilde{\velv} = \frac{\velv}{\vels_r},\ 
+\tilde{\nabla} = l_r\,\nabla,\ 
+\tilde{\Ener} = \frac{\Ener}{\dens_r\,\vels_r^2},\ 
+\tilde{\pres} = \frac{\pres}{\dens_r\,\vels_r^2},\ 
+\tilde{\vec{F}} = \vec{F} \, \frac{l_r}{\dens_r\,\vels_r^2}.
+\end{equation}
+Conseqently, the dimensionless Euler equations do not change under unit transformation. If not
+stated otherwise we drop the tilde sign ($\tilde{\cdot}$) and assume always
+dimensionless quantites from now on.
+
+\paragraph{Choice of parameters} One consequence of dimensionless units is the
+free choice of parameters. We want to use this feature in choose a sensible set
+of parameters.  Considering the Euler equations in conservative form,
+\eqn{comp-euler-conservative}, their functions of space and time
+\begin{equation}
+\dens = \dens(t,x,y,z), \;\;(\dens\velv) = (\dens\velv)(t,x,y,z),\;\;\Ener = \Ener(t,x,y,z)
+\end{equation}
+are completed with
+\begin{equation}
+\label{eqn:parameter-choice-completion}
+\gamma := 5/3,\;\;R := 1, \langle\dens\rangle := 1,\langle\sndsped\rangle := 1,
+\end{equation}
+From that we derive
+\begin{equation}
+C_P = \frac{\sndsped_0^2}{\gamma} = 3/5 = 0.6,\;\;
+\langle\pres\rangle = C_P\cdot\langle\dens\rangle = 0.6,\;\;
+\langle\Ener\rangle = \frac{\langle\pres\rangle}{\gamma -1} = 0.9,\;\;
+\langle\temp\rangle = \frac{\avg{\sndsped}^2}{\gamma\,R} = 0.6,
+\end{equation}
+where $\avg{\cdot}$ is the \emph{volume-weighted average} or \emph{mean value}
+over the domain $\Omega$
+\begin{equation}
+\label{eqn:domain-average}
+    \avg{q} = \frac{\int_\Omega\,q\,d\Omega}{\int_\Omega\,d\Omega}
+\end{equation}
+
+If not state otherwise, these set of parameters define the global state at all times.
+
+\subsubsection{Weak Formulation}
+A natural way to define a generalized solution of the Euler equations that does
+not require differentiability is, to go back to the integral form of the
+conservation law,
+
+The basic idea is to take the PDE, multiply it by a smooth \emph{test function},
+integrate one or more times over some domain, and then use integration by parts
+to move derivatives off the function q and onto the smooth test function. The
+result is an equation involving fewer derivatives on q, and hence requiring
+less smoothness.
+
+In this section we want to derive the \emph{weak formulation} of the governing
+equations. This establishes the basis for the polynomial formulation which is
+the core idea of all DG methods.  First, the Euler equations get split up into
+terms resembling the independent one temporal and three spatial
+dimensions with respect to the linear differential operator.
+\begin{equation}
+\partial_t \vec{U} + \partial_x\vec{F}(\vec{U})+ \partial_y\vec{G}(\vec{U}) + \partial_z\vec{H}(\vec{U}) + \vec{S} = 0,
+\end{equation}
+where
+\begin{align}
+    \vec{U} &= (\dens, \dens\vels_1, \dens\vels_2, \dens\vels_3, \Ener)^T\br
+    \vec{F}(\vec{U}) &= (\dens\vels_1, \dens\vels_1^2 + \pres, \dens\vels_1\vels_2, \dens\vels_1\vels_3, \vels_1(\Ener + \pres))^T\br
+    \vec{G}(\vec{U}) &= (\dens\vels_2, \dens\vels_2\vels_1, \dens\vels_2^2 + \pres, \dens\vels_2\vels_3, \vels_2(\Ener + \pres))^T\br
+    \vec{H}(\vec{U}) &= (\dens\vels_3, \dens\vels_3\vels_1, \dens\vels_3\vels_2, \dens\vels_3^2 + \pres, \vels_3(\Ener + \pres))^T\br
+    \vec{S} &= (0,-f_1,-f_2,-f_z,0)^T
+\end{align}
+Defining a vector-valued test function $\vec{\phi} = (0,..,0,\phi_i,0,...,0)^T$ ($i\in{1,...,5}$), multiplying component-wise
+with above equation and integrating over the domain $\Omega$ we get
+\begin{equation}
+    \int_\Omega \left( \partial_tU_i\,\phi^i 
+        + \partial_x F_i(\vec{U})\,\phi^i 
+        + \partial_y G_i(\vec{U})\,\phi^i 
+        + \partial_z H_i(\vec{U})\,\phi^i + S_i \phi^i \right) d^3x = 0
+\end{equation}
+Integration-by-parts rearranges the integral into a \emph{source term}, \emph{volume term} and \emph{surface term}.
+\begin{align}
+\label{eqn:weak-formulation}
+    &\int_\Omega \partial_t U_i\,\psi(x,y,z)^i d^3x + \int_\Omega S_i \psi(x,y,z)^i d^3x = \br
+        & \int_{\partial\Omega} \left(F_i(\vec{U})\,\psi(x,y,z)^i\,n_x + G_i(\vec{U})\,\psi(x,y,z)^i\,n_z + H_i(\vec{U})\,\psi(x,y,z)^i\,n_z \right) d^2x,\nonumber \br
+        -&\int_\Omega \left(F_i(\vec{U})\,\partial_x \psi(x,y,z)^i + G_i(\vec{U})\,\partial_y \psi(x,y,z)^i + H_i(\vec{U})\,\partial_z \psi(x,y,z)^i \right) d^3x
+\end{align}
+where $\vec{n} = (n_x,n_y,n_z)^T$ is the outward surface normal to $\partial\Omega$.
+
+Unfortunately, weak solutions are not unique, and so an additional problem is
+to identify which weak solution is the physically correct vanishing-viscosity
+solution. Again, one would like to avoid working with the viscous equation
+directly, but it turns out that there are other conditions one can impose on
+weak solutions that are easier to check and will also pick out the correct
+solution. These are called \emph{entropy conditions} by analogy with the gas
+dynamics case, where a discontinuity is physically realistic only if the
+entropy of the gas increases as it crosses the shock.

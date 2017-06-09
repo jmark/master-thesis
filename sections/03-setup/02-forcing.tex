@@ -1,0 +1,52 @@
+\subsection{Turbulent Forcing}
+\label{sec:turbuforcing}
+
+In equation \eqn{comp-euler-conservative} a \emph{source} respectively
+\emph{forcing} term was introduced into the Euler equations. At each time step
+a varying force field $\vec{F}(t,x,y,z)$ perpetually injects kinetic energy at
+largest scales (cf. \sec{turbulence}/\emph{Energy Cascade}). Based on
+\cite{schmidt2009} we formulate
+\begin{align}
+  \hat{d\mathbf{f}}(\mathbf{k},t) &= \frac{3}{\sqrt{1-2\zeta+3\zeta^2\,}}\;\left[-\hat{\mathbf{f}}(\mathbf{k},t)\frac{dt}{T} + F_0 \left(\frac{2\sigma^2(\mathbf{k})}{T}\right)^{1/2}\mathbf{P}_\zeta(\mathbf{k})\cdot d\mathbf{W}_t\right]\\
+  (P_{ij})(\mathbf{k}) &= \zeta\,P_{ij}^\perp(\mathbf{k}) + (1-\zeta) P_{ij}^\parallel =\zeta\,\delta_{ij} + (1-2\,\zeta) \frac{k_i k_j}{k^2}
+\end{align}
+The force field in Fourier space allows us to precisely specify at which
+length scales we want to apply the forcing as well as the ratio of
+\emph{compressive} and \emph{solenoidal} modes.
+
+Following parameters are of importance:
+
+\begin{description}
+    \item [rmsv] Desired average \emph{root-mean-square-velocity} of the turbulence. When the
+            specified threshold is reached, small but perpetual injections keep the turbulence
+            in proxmity of the \emph{rmsv}.
+    \item [kmin, kmax] Range of modes where to apply forcing (cf.
+        \sec{turbulence}/\emph{Energy Cascade}). Usually, the range is set from $1$ to
+        $3$. Stirring on only the first mode can be imagined as a force field with
+        distinct features half the size of the box. Higher modes divide the box further
+        down accordingly. Limiting forcing to only first three modes avoids imprinting
+        a factitious powerspectrum on the system.
+    \item [zeta] Parameter between 0 and 1 which sets the ratio of \emph{compressive} 
+            to \emph{solenoidal} forcing. Many studies have shown a universality of 
+            both stirring types ... In this work, \emph{zeta} is set to $0.5$.
+\end{description}
+A depiction of the velocity field after energy injection for the first time on
+an initially constant state is shown in
+\fig{plots/forcing/rk3-hy-initial-forcing} as well as its associated velocity
+powerspectrum (cf. \sec{turbulence}/\emph{Velocity Powerspectrum}) in
+\fig{plots/forcing/powerspectrum}.  Obviously, the majority of kinetic energy
+is crowded on the first three modes: $k = [1,3]$. Gradually, the energy moves
+up to higher modes and creates the desired small scale structures desired for
+driven turbulence simulations. An example of a fully developed turbulence
+is shown in \fig{plots/forcing/b5-full-turbulence}.
+\image{1.0}{plots/forcing/rk3-hy-initial-forcing}{Early-stage snapshot taken
+immediately after first-time turbulent forcing on the first three modes.}
+\image{1.0}{plots/forcing/powerspectrum}{Shell-averaged three-dimensional
+velocity powerspectrum obtained from the velocity (or Mach in this case) field
+in \fig{plots/forcing/rk3-hy-initial-forcing}.}
+\image{1.0}{plots/forcing/b5-full-turbulence}{Fully developed Mach-10
+turbulence snapshot simulated with with Bouchut-5  and Girichidi's Stirred
+Turbulence Module. Forcing was applied on the first three modes and the picture
+was taken after four crossing times. The formerly smooth large scale waves
+in \fig{plots/forcing/rk3-hy-initial-forcing} compress and smash into each
+other yielding tenuous filaments.}
