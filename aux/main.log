@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  8 JUN 2017 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  9 JUN 2017 11:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -836,7 +836,14 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@width=\dimen161
 )
 \c@mydef=\count125
-) (aux/main.aux)
+) (aux/main.aux
+
+LaTeX Warning: Label `eqn:ekindisp' multiply defined.
+
+
+LaTeX Warning: Label `eq-tensor-ansatz' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -854,8 +861,7 @@ LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 3.
-
-(/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -943,14 +949,15 @@ LaTeX Info: Redefining \nameref on input line 3.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./frp/frontpage.tex <./frp/uni_koeln_logo.jpg, id=8, 626.5809pt x 118.7637pt>
+(./frp/frontpage.tex
+<./frp/uni_koeln_logo.jpg, id=164, 626.5809pt x 118.7637pt>
 File: ./frp/uni_koeln_logo.jpg Graphic file (type jpg)
 
 <use ./frp/uni_koeln_logo.jpg>
 Package pdftex.def Info: ./frp/uni_koeln_logo.jpg used on input line 8.
 (pdftex.def)             Requested size: 386.95894pt x 73.34639pt.
 
-<./frp/logo-astrophysik.png, id=9, 307.1475pt x 165.61874pt>
+<./frp/logo-astrophysik.png, id=165, 307.1475pt x 165.61874pt>
 File: ./frp/logo-astrophysik.png Graphic file (type png)
 
 <use ./frp/logo-astrophysik.png>
@@ -1005,52 +1012,643 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3]
-
-LaTeX Warning: Reference `sec:computational-frameworks' on page 4 undefined on 
-input line 75.
-
-
-LaTeX Warning: Reference `sec:sod-shock-tube' on page 4 undefined on input line
- 77.
-
-
-LaTeX Warning: Reference `sec:shock-capturing' on page 4 undefined on input lin
-e 83.
-
-
-LaTeX Warning: Reference `sec:stirturb' on page 4 undefined on input line 90.
-
-
-LaTeX Warning: Reference `sec:computational-frameworks' on page 4 undefined on 
-input line 107.
-
-
-LaTeX Warning: Reference `sec:sod-shock-tube' on page 4 undefined on input line
- 109.
-
-
-LaTeX Warning: Reference `sec:shock-capturing' on page 4 undefined on input lin
-e 115.
-
-
-LaTeX Warning: Reference `sec:stirturb' on page 4 undefined on input line 122.
-
-[4] [5]) (aux/main.toc)
+) [3] [4] [5]) (aux/main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1] (./sections/01-intro/main.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+
+[1] (./sections/01-intro/main.tex) (./sections/02-theory/main.tex
+(./sections/02-theory/01-equation.texpdfTeX warning (ext4): destination with th
+e same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 
+      [1
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.133 ...ns} := C_P = \text{const.} \end{equation}
+                                                   [2]
+
+LaTeX Warning: Citation `Horedt2004' on page 3 undefined on input line 143.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 \end{document}
-                    [1
+l.189 \end{equation}
+                     [3]
+Overfull \hbox (17.79341pt too wide) in paragraph at lines 237--240
+\T1/lmr/m/n/12 Defining a vector-valued test func-tion $[] \OT1/lmr/m/n/12 = (0
+\OML/lmm/m/it/12 ; ::; \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 ; ^^^[]; \OT1/lmr/m/n/
+12 0\OML/lmm/m/it/12 ; :::; \OT1/lmr/m/n/12 0)[]$ \T1/lmr/m/n/12 ($\OML/lmm/m/i
+t/12 i \OMS/lmsy/m/n/12 2 []$\T1/lmr/m/n/12 ), mul-ti-ply-ing component-
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.252 \end{align}
+                  [4]) (./sections/02-theory/02-turbulence.texpdfTeX warning (e
+xt4): destination with the same identifier (name{page.5}) has been already used
+, duplicate ignored
+<to be read again> 
+                   \relax 
+l.52 
+      [5] [6] [7]
+<./fig/energy-cascade-schematic.png, id=355, 903.375pt x 626.34pt>
+File: ./fig/energy-cascade-schematic.png Graphic file (type png)
+
+<use ./fig/energy-cascade-schematic.png>
+Package pdftex.def Info: ./fig/energy-cascade-schematic.png used on input line 
+199.
+(pdftex.def)             Requested size: 386.95894pt x 268.29832pt.
 
 
-]
+LaTeX Warning: Citation `MueBiskl2003' on page 8 undefined on input line 199.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 199.
+[8 <./fig/energy-cascade-schematic.png (PNG copy)>] [9])
+(./sections/02-theory/03-shocks.tex [10]
+<./fig/plots/burgers/characteristics.png, id=398, 568.1225pt x 131.49126pt>
+File: ./fig/plots/burgers/characteristics.png Graphic file (type png)
+
+<use ./fig/plots/burgers/characteristics.png>
+Package pdftex.def Info: ./fig/plots/burgers/characteristics.png used on input 
+line 48.
+(pdftex.def)             Requested size: 386.95894pt x 89.56534pt.
+
+<./fig/plots/burgers/solution.png, id=402, 572.1375pt x 197.73875pt>
+File: ./fig/plots/burgers/solution.png Graphic file (type png)
+
+<use ./fig/plots/burgers/solution.png>
+Package pdftex.def Info: ./fig/plots/burgers/solution.png used on input line 52
+.
+(pdftex.def)             Requested size: 386.95894pt x 133.73944pt.
+
+<./fig/plots/burgers/ringing.png, id=407, 642.4pt x 481.8pt>
+File: ./fig/plots/burgers/ringing.png Graphic file (type png)
+
+<use ./fig/plots/burgers/ringing.png>
+Package pdftex.def Info: ./fig/plots/burgers/ringing.png used on input line 74.
+
+(pdftex.def)             Requested size: 338.5863pt x 253.94861pt.
+ [11 <./fig/plots/burgers/characteristics.png> <./fig/plots/burgers/solution.pn
+g>])
+(./sections/02-theory/04-finite-element-scheme.tex)
+(./sections/02-theory/05-polynome-ansatz.tex [12 <./fig/plots/burgers/ringing.p
+ng>]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 23.
+ (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 23.
+
+Overfull \hbox (0.2357pt too wide) in paragraph at lines 85--85
+[] 
+ []
+
+[13] <./fig/lagrange-interpolation-1d.png, id=448, 841.1425pt x 453.695pt>
+File: ./fig/lagrange-interpolation-1d.png Graphic file (type png)
+
+<use ./fig/lagrange-interpolation-1d.png>
+Package pdftex.def Info: ./fig/lagrange-interpolation-1d.png used on input line
+ 106.
+(pdftex.def)             Requested size: 386.95894pt x 208.71608pt.
+
+Overfull \hbox (4.28166pt too wide) in paragraph at lines 149--149
+[] 
+ []
+
+[14 <./fig/lagrange-interpolation-1d.png>]
+Overfull \hbox (24.38773pt too wide) in paragraph at lines 176--176
+[] 
+ []
+
+) (./sections/02-theory/06-flux.tex [15])
+(./sections/02-theory/07-time-integration.tex [16]))
+(./sections/03-setup/main.tex (./sections/03-setup/01-frameworks.tex [17])
+(./sections/03-setup/02-forcing.tex
+
+LaTeX Warning: Citation `schmidt2009' on page 18 undefined on input line 8.
+
+[18]
+<./fig/plots/forcing/rk3-hy-initial-forcing.png, id=521, 1417.9374pt x 1297.246
+5pt>
+File: ./fig/plots/forcing/rk3-hy-initial-forcing.png Graphic file (type png)
+ <use ./fig/plots/forcing/rk3-hy-initial-forcing.png>
+Package pdftex.def Info: ./fig/plots/forcing/rk3-hy-initial-forcing.png used on
+ input line 43.
+(pdftex.def)             Requested size: 386.95894pt x 354.02217pt.
+
+<./fig/plots/forcing/powerspectrum.png, id=522, 859.21pt x 425.59pt>
+File: ./fig/plots/forcing/powerspectrum.png Graphic file (type png)
+
+<use ./fig/plots/forcing/powerspectrum.png>
+Package pdftex.def Info: ./fig/plots/forcing/powerspectrum.png used on input li
+ne 46.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+ [19]
+<./fig/plots/forcing/b5-full-turbulence.png, id=535, 1417.9374pt x 1297.2465pt>
+File: ./fig/plots/forcing/b5-full-turbulence.png Graphic file (type png)
+<use ./fig/plots/forcing/b5-full-turbulence.png>
+Package pdftex.def Info: ./fig/plots/forcing/b5-full-turbulence.png used on inp
+ut line 52.
+(pdftex.def)             Requested size: 386.95894pt x 354.02217pt.
+)
+(./sections/03-setup/03-capturing.tex [20 <./fig/plots/forcing/rk3-hy-initial-f
+orcing.png> <./fig/plots/forcing/powerspectrum.png>] [21 <./fig/plots/forcing/b
+5-full-turbulence.png>]
+<./fig/expansion-modes.png, id=552, 635.37375pt x 509.905pt>
+File: ./fig/expansion-modes.png Graphic file (type png)
+
+<use ./fig/expansion-modes.png>
+Package pdftex.def Info: ./fig/expansion-modes.png used on input line 40.
+(pdftex.def)             Requested size: 290.22105pt x 232.91745pt.
+ [22 <./fig/expansion-modes.png>]
+<./fig/indicator-slice.png, id=569, 1016.79875pt x 859.21pt>
+File: ./fig/indicator-slice.png Graphic file (type png)
+
+<use ./fig/indicator-slice.png>
+Package pdftex.def Info: ./fig/indicator-slice.png used on input line 118.
+(pdftex.def)             Requested size: 386.95894pt x 326.98828pt.
+
+<./fig/indicator-pdf.png, id=570, 730.73pt x 376.40625pt>
+File: ./fig/indicator-pdf.png Graphic file (type png)
+
+<use ./fig/indicator-pdf.png>
+Package pdftex.def Info: ./fig/indicator-pdf.png used on input line 120.
+(pdftex.def)             Requested size: 483.69684pt x 249.15831pt.
+ [23]) (./sections/03-setup/04-interpolation.tex
+[24 <./fig/indicator-slice.png> <./fig/indicator-pdf.png>]
+<./fig/grid-spaces.png, id=592, 349.7868pt x 252.2223pt>
+File: ./fig/grid-spaces.png Graphic file (type png)
+
+<use ./fig/grid-spaces.png>
+Package pdftex.def Info: ./fig/grid-spaces.png used on input line 23.
+(pdftex.def)             Requested size: 241.84842pt x 174.39148pt.
+
+
+LaTeX Warning: Citation `Abram1972' on page 25 undefined on input line 34.
+
+
+<./fig/plots/interpolation/2d-third-order.png, id=594, 1420.30624pt x 440.64626
+pt>
+File: ./fig/plots/interpolation/2d-third-order.png Graphic file (type png)
+ <use ./fig/plots/interpolation/2d-third-order.png>
+Package pdftex.def Info: ./fig/plots/interpolation/2d-third-order.png used on i
+nput line 43.
+(pdftex.def)             Requested size: 483.69684pt x 150.06651pt.
+ [25 <./fig/grid-spaces.png>]
+
+LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
+(Font)              using `T1/lmss/bx/n' instead on input line 81.
+
+
+<./fig/plots/interpolation/flexi-column-density.png, id=610, 750.8853pt x 337.5
+009pt>
+File: ./fig/plots/interpolation/flexi-column-density.png Graphic file (type png
+)
+ <use ./fig/plots/interpolation/flexi-column-density.png>
+Package pdftex.def Info: ./fig/plots/interpolation/flexi-column-density.png use
+d on input line 115.
+(pdftex.def)             Requested size: 483.69684pt x 217.40575pt.
+
+<./fig/plots/interpolation/density-ray.png, id=613, 718.3638pt x 394.5942pt>
+File: ./fig/plots/interpolation/density-ray.png Graphic file (type png)
+
+<use ./fig/plots/interpolation/density-ray.png>
+Package pdftex.def Info: ./fig/plots/interpolation/density-ray.png used on inpu
+t line 123.
+(pdftex.def)             Requested size: 386.95894pt x 212.55988pt.
+ [26 <./fig/plots/interpolation/2d-third-order.png>])) (./sections/04-results/m
+ain.tex
+(./sections/04-results/01-sod.tex [27 <./fig/plots/interpolation/flexi-column-d
+ensity.png> <./fig/plots/interpolation/density-ray.png>]
+Overfull \hbox (3.2109pt too wide) in paragraph at lines 42--56
+ [][] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 58.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 58.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 58.
+<./fig/plots/sod/adiabatic/density.png, id=634, 726.715pt x 390.45876pt>
+File: ./fig/plots/sod/adiabatic/density.png Graphic file (type png)
+
+<use ./fig/plots/sod/adiabatic/density.png>
+Package pdftex.def Info: ./fig/plots/sod/adiabatic/density.png used on input li
+ne 63.
+(pdftex.def)             Requested size: 483.69684pt x 259.89012pt.
+ [28]
+<./fig/plots/sod/isothermal/density.png, id=645, 726.715pt x 390.45876pt>
+File: ./fig/plots/sod/isothermal/density.png Graphic file (type png)
+
+<use ./fig/plots/sod/isothermal/density.png>
+Package pdftex.def Info: ./fig/plots/sod/isothermal/density.png used on input l
+ine 77.
+(pdftex.def)             Requested size: 483.69684pt x 259.89012pt.
+ [29 <./fig/plots/sod/adiabatic/density.png>]
+
+LaTeX Warning: Reference `fig:plots/sod/isothermal-supersonic/density.png' on p
+age 30 undefined on input line 97.
+
+
+<./fig/plots/sod/adiabatic-supersonic/density.png, id=654, 730.73pt x 388.45125
+pt>
+File: ./fig/plots/sod/adiabatic-supersonic/density.png Graphic file (type png)
+ <use ./fig/plots/sod/adiabatic-supersonic/density.png>
+Package pdftex.def Info: ./fig/plots/sod/adiabatic-supersonic/density.png used 
+on input line 112.
+(pdftex.def)             Requested size: 483.69684pt x 257.13136pt.
+ [30 <./fig/plots/sod/isothermal/density.png>]
+<./fig/plots/sod/isothermal-supersonic/density.png, id=661, 727.71875pt x 390.4
+5876pt>
+File: ./fig/plots/sod/isothermal-supersonic/density.png Graphic file (type png)
+
+ <use ./fig/plots/sod/isothermal-supersonic/density.png>
+Package pdftex.def Info: ./fig/plots/sod/isothermal-supersonic/density.png used
+ on input line 120.
+(pdftex.def)             Requested size: 483.69684pt x 259.5386pt.
+)
+(./sections/04-results/02-driven.tex [31 <./fig/plots/sod/adiabatic-supersonic/
+density.png> <./fig/plots/sod/isothermal-supersonic/density.png>]
+
+LaTeX Warning: Reference `sec:governing-equation' on page 32 undefined on input
+ line 7.
+
+[32]
+<./fig/plots/stirturb/evolutions/sonic-mach.png, id=685, 729.72626pt x 392.4662
+5pt>
+File: ./fig/plots/stirturb/evolutions/sonic-mach.png Graphic file (type png)
+ <use ./fig/plots/stirturb/evolutions/sonic-mach.png>
+Package pdftex.def Info: ./fig/plots/stirturb/evolutions/sonic-mach.png used on
+ input line 96.
+(pdftex.def)             Requested size: 483.69684pt x 260.14238pt.
+ [33 <./fig/plots/stirturb/evolutions/sonic-mach.png>]
+<./fig/plots/stirturb/snapshots/forcing-stop-01.png, id=700, 1417.9374pt x 1949
+.1219pt>
+File: ./fig/plots/stirturb/snapshots/forcing-stop-01.png Graphic file (type png
+)
+ <use ./fig/plots/stirturb/snapshots/forcing-stop-01.png>
+Package pdftex.def Info: ./fig/plots/stirturb/snapshots/forcing-stop-01.png use
+d on input line 134.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [34]
+<./fig/plots/stirturb/snapshots/forcing-stop-02.png, id=710, 1417.9374pt x 1949
+.1219pt>
+File: ./fig/plots/stirturb/snapshots/forcing-stop-02.png Graphic file (type png
+)
+ <use ./fig/plots/stirturb/snapshots/forcing-stop-02.png>
+Package pdftex.def Info: ./fig/plots/stirturb/snapshots/forcing-stop-02.png use
+d on input line 137.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [35 <./fig/plots/stirturb/snapshots/forcing-stop-01.png>]
+<./fig/plots/stirturb/snapshots/forcing-stop-03.png, id=716, 1417.9374pt x 1299
+.4146pt>
+File: ./fig/plots/stirturb/snapshots/forcing-stop-03.png Graphic file (type png
+)
+ <use ./fig/plots/stirturb/snapshots/forcing-stop-03.png>
+Package pdftex.def Info: ./fig/plots/stirturb/snapshots/forcing-stop-03.png use
+d on input line 140.
+(pdftex.def)             Requested size: 483.69684pt x 443.26236pt.
+ [36 <./fig/plots/stirturb/snapshots/forcing-stop-02.png>]
+<./fig/plots/stirturb/snapshots/decay-01.png, id=722, 1417.9374pt x 1949.1219pt
+>
+File: ./fig/plots/stirturb/snapshots/decay-01.png Graphic file (type png)
+ <use ./fig/plots/stirturb/snapshots/decay-01.png>
+Package pdftex.def Info: ./fig/plots/stirturb/snapshots/decay-01.png used on in
+put line 143.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [37 <./fig/plots/stirturb/snapshots/forcing-stop-03.png>]
+<./fig/plots/stirturb/snapshots/decay-02.png, id=730, 1417.9374pt x 1949.1219pt
+>
+File: ./fig/plots/stirturb/snapshots/decay-02.png Graphic file (type png)
+ <use ./fig/plots/stirturb/snapshots/decay-02.png>
+Package pdftex.def Info: ./fig/plots/stirturb/snapshots/decay-02.png used on in
+put line 146.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [38 <./fig/plots/stirturb/snapshots/decay-01.png>]
+<./fig/plots/stirturb/snapshots/decay-03.png, id=736, 1417.9374pt x 1299.4146pt
+>
+File: ./fig/plots/stirturb/snapshots/decay-03.png Graphic file (type png)
+ <use ./fig/plots/stirturb/snapshots/decay-03.png>
+Package pdftex.def Info: ./fig/plots/stirturb/snapshots/decay-03.png used on in
+put line 149.
+(pdftex.def)             Requested size: 483.69684pt x 443.26236pt.
+ [39 <./fig/plots/stirturb/snapshots/decay-02.png>] [40 <./fig/plots/stirturb/s
+napshots/decay-03.png>]
+<./fig/plots/stirturb/evolutions/ratio-fv-dg.png, id=752, 738.76pt x 392.46625p
+t>
+File: ./fig/plots/stirturb/evolutions/ratio-fv-dg.png Graphic file (type png)
+ <use ./fig/plots/stirturb/evolutions/ratio-fv-dg.png>
+Package pdftex.def Info: ./fig/plots/stirturb/evolutions/ratio-fv-dg.png used o
+n input line 183.
+(pdftex.def)             Requested size: 483.69684pt x 256.96246pt.
+
+<./fig/plots/stirturb/evolutions/ener.png, id=754, 720.6925pt x 392.46625pt>
+File: ./fig/plots/stirturb/evolutions/ener.png Graphic file (type png)
+
+<use ./fig/plots/stirturb/evolutions/ener.png>
+Package pdftex.def Info: ./fig/plots/stirturb/evolutions/ener.png used on input
+ line 195.
+(pdftex.def)             Requested size: 483.69684pt x 263.40613pt.
+ [41 <./fig/plots/stirturb/evolutions/ratio-fv-dg.png>]
+<./fig/plots/stirturb/evolutions/ekin-dissipation.png, id=765, 727.71875pt x 39
+2.46625pt>
+File: ./fig/plots/stirturb/evolutions/ekin-dissipation.png Graphic file (type p
+ng)
+ <use ./fig/plots/stirturb/evolutions/ekin-dissipation.png>
+Package pdftex.def Info: ./fig/plots/stirturb/evolutions/ekin-dissipation.png u
+sed on input line 227.
+(pdftex.def)             Requested size: 483.69684pt x 260.87299pt.
+
+<./fig/plots/stirturb/evolutions/ekin-dissipation-cumsum.png, id=766, 731.73375
+pt x 392.46625pt>
+File: ./fig/plots/stirturb/evolutions/ekin-dissipation-cumsum.png Graphic file 
+(type png)
+
+<use ./fig/plots/stirturb/evolutions/ekin-dissipation-cumsum.png>
+Package pdftex.def Info: ./fig/plots/stirturb/evolutions/ekin-dissipation-cumsu
+m.png used on input line 233.
+(pdftex.def)             Requested size: 483.69684pt x 259.43573pt.
+ [42 <./fig/plots/stirturb/evolutions/ener.png>]
+<./fig/plots/stirturb/pdfs/dens-vw-dyntimes.png, id=781, 859.21pt x 425.59pt>
+File: ./fig/plots/stirturb/pdfs/dens-vw-dyntimes.png Graphic file (type png)
+
+<use ./fig/plots/stirturb/pdfs/dens-vw-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/stirturb/pdfs/dens-vw-dyntimes.png used on
+ input line 275.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+ [43 <./fig/plots/stirturb/evolutions/ekin-dissipation.png> <./fig/plots/stirtu
+rb/evolutions/ekin-dissipation-cumsum.png>]
+<./fig/plots/stirturb/pdfs/evol-sonic-mach.png, id=799, 719.68875pt x 392.46625
+pt>
+File: ./fig/plots/stirturb/pdfs/evol-sonic-mach.png Graphic file (type png)
+ <use ./fig/plots/stirturb/pdfs/evol-sonic-mach.png>
+Package pdftex.def Info: ./fig/plots/stirturb/pdfs/evol-sonic-mach.png used on 
+input line 302.
+(pdftex.def)             Requested size: 483.69684pt x 263.78342pt.
+LaTeX Font Info:    Calculating math sizes for size <11.38109> on input line 31
+1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11.38109> on input line 311.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.96672> on input line 311.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.69054> on input line 311.
+ [44 <./fig/plots/stirturb/pdfs/dens-vw-dyntimes.png>]
+
+LaTeX Warning: Reference `sec:sec:computational-frameworks' on page 45 undefine
+d on input line 336.
+
+<./fig/plots/stirturb/pdfs/vels-vw-dyntimes.png, id=813, 859.21pt x 425.59pt>
+File: ./fig/plots/stirturb/pdfs/vels-vw-dyntimes.png Graphic file (type png)
+
+<use ./fig/plots/stirturb/pdfs/vels-vw-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/stirturb/pdfs/vels-vw-dyntimes.png used on
+ input line 353.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+ [45 <./fig/plots/stirturb/pdfs/evol-sonic-mach.png>]
+<./fig/plots/stirturb/evolutions/rmsv-max.png, id=824, 730.73pt x 392.46625pt>
+File: ./fig/plots/stirturb/evolutions/rmsv-max.png Graphic file (type png)
+
+<use ./fig/plots/stirturb/evolutions/rmsv-max.png>
+Package pdftex.def Info: ./fig/plots/stirturb/evolutions/rmsv-max.png used on i
+nput line 357.
+(pdftex.def)             Requested size: 483.69684pt x 259.78905pt.
+ [46 <./fig/plots/stirturb/pdfs/vels-vw-dyntimes.png> <./fig/plots/stirturb/evo
+lutions/rmsv-max.png>]
+<./fig/plots/stirturb/pdfs/vels-mw-turb-phase.png, id=834, 859.21pt x 425.59pt>
+File: ./fig/plots/stirturb/pdfs/vels-mw-turb-phase.png Graphic file (type png)
+<use ./fig/plots/stirturb/pdfs/vels-mw-turb-phase.png>
+Package pdftex.def Info: ./fig/plots/stirturb/pdfs/vels-mw-turb-phase.png used 
+on input line 376.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+
+<./fig/plots/stirturb/powerspectra/ekin-dyntimes.png, id=842, 871.255pt x 425.5
+9pt>
+File: ./fig/plots/stirturb/powerspectra/ekin-dyntimes.png Graphic file (type pn
+g)
+ <use ./fig/plots/stirturb/powerspectra/ekin-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/stirturb/powerspectra/ekin-dyntimes.png us
+ed on input line 410.
+(pdftex.def)             Requested size: 483.69684pt x 236.27017pt.
+ [47 <./fig/plots/stirturb/pdfs/vels-mw-turb-phase.png>]
+<./fig/plots/stirturb/powerspectra/rmsv-vw-dyntimes.png, id=857, 871.255pt x 42
+5.59pt>
+File: ./fig/plots/stirturb/powerspectra/rmsv-vw-dyntimes.png Graphic file (type
+ png)
+ <use ./fig/plots/stirturb/powerspectra/rmsv-vw-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/stirturb/powerspectra/rmsv-vw-dyntimes.png
+ used on input line 436.
+(pdftex.def)             Requested size: 483.69684pt x 236.27017pt.
+
+<./fig/plots/stirturb/powerspectra/rmsv-mw-dyntimes.png, id=858, 871.255pt x 42
+5.59pt>
+File: ./fig/plots/stirturb/powerspectra/rmsv-mw-dyntimes.png Graphic file (type
+ png)
+ <use ./fig/plots/stirturb/powerspectra/rmsv-mw-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/stirturb/powerspectra/rmsv-mw-dyntimes.png
+ used on input line 439.
+(pdftex.def)             Requested size: 483.69684pt x 236.27017pt.
+ [48 <./fig/plots/stirturb/powerspectra/ekin-dyntimes.png>]
+<./fig/plots/stirturb/powerspectra/evol-slopes-vw-velocity.png, id=867, 738.76p
+t x 392.46625pt>
+File: ./fig/plots/stirturb/powerspectra/evol-slopes-vw-velocity.png Graphic fil
+e (type png)
+
+<use ./fig/plots/stirturb/powerspectra/evol-slopes-vw-velocity.png>
+Package pdftex.def Info: ./fig/plots/stirturb/powerspectra/evol-slopes-vw-veloc
+ity.png used on input line 442.
+(pdftex.def)             Requested size: 483.69684pt x 256.96246pt.
+ [49 <./fig/plots/stirturb/powerspectra/rmsv-vw-dyntimes.png> <./fig/plots/stir
+turb/powerspectra/rmsv-mw-dyntimes.png>]
+LaTeX Font Info:    Calculating math sizes for size <8.53581> on input line 456
+.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.53581> on input line 456.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.97504> on input line 456.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.2679> on input line 456.
+ [50 <./fig/plots/stirturb/powerspectra/evol-slopes-vw-velocity.png>]) (./secti
+ons/04-results/03-decaying.tex [51]
+<./fig/plots/decayturb/evol-sonic-mach.png, id=899, 725.71124pt x 392.46625pt>
+File: ./fig/plots/decayturb/evol-sonic-mach.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-sonic-mach.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-sonic-mach.png used on inpu
+t line 47.
+(pdftex.def)             Requested size: 483.69684pt x 261.5916pt.
+
+
+LaTeX Warning: Reference `sec:theory-powerspectrum' on page 52 undefined on inp
+ut line 60.
+
+[52 <./fig/plots/decayturb/evol-sonic-mach.png>]
+<./fig/plots/decayturb/decay-01-01.png, id=914, 1417.9374pt x 1949.1219pt>
+File: ./fig/plots/decayturb/decay-01-01.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-01-01.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-01-01.png used on input li
+ne 79.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [53]
+<./fig/plots/decayturb/decay-01-02.png, id=920, 1417.9374pt x 1949.1219pt>
+File: ./fig/plots/decayturb/decay-01-02.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-01-02.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-01-02.png used on input li
+ne 83.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [54 <./fig/plots/decayturb/decay-01-01.png>]
+<./fig/plots/decayturb/decay-01-03.png, id=926, 1417.9374pt x 1299.4146pt>
+File: ./fig/plots/decayturb/decay-01-03.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-01-03.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-01-03.png used on input li
+ne 87.
+(pdftex.def)             Requested size: 483.69684pt x 443.26236pt.
+ [55 <./fig/plots/decayturb/decay-01-02.png>]
+<./fig/plots/decayturb/decay-02-01.png, id=934, 1417.9374pt x 1949.1219pt>
+File: ./fig/plots/decayturb/decay-02-01.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-02-01.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-02-01.png used on input li
+ne 91.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [56 <./fig/plots/decayturb/decay-01-03.png>]
+<./fig/plots/decayturb/decay-02-02.png, id=940, 1417.9374pt x 1949.1219pt>
+File: ./fig/plots/decayturb/decay-02-02.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-02-02.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-02-02.png used on input li
+ne 95.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [57 <./fig/plots/decayturb/decay-02-01.png>]
+<./fig/plots/decayturb/decay-02-03.png, id=947, 1417.9374pt x 1299.4146pt>
+File: ./fig/plots/decayturb/decay-02-03.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-02-03.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-02-03.png used on input li
+ne 99.
+(pdftex.def)             Requested size: 483.69684pt x 443.26236pt.
+ [58 <./fig/plots/decayturb/decay-02-02.png>]
+<./fig/plots/decayturb/decay-03-01.png, id=955, 1417.9374pt x 1949.1219pt>
+File: ./fig/plots/decayturb/decay-03-01.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-03-01.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-03-01.png used on input li
+ne 103.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [59 <./fig/plots/decayturb/decay-02-03.png>]
+<./fig/plots/decayturb/decay-03-02.png, id=962, 1417.9374pt x 1949.1219pt>
+File: ./fig/plots/decayturb/decay-03-02.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-03-02.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-03-02.png used on input li
+ne 107.
+(pdftex.def)             Requested size: 483.69684pt x 664.89354pt.
+ [60 <./fig/plots/decayturb/decay-03-01.png>]
+<./fig/plots/decayturb/decay-03-03.png, id=969, 1417.9374pt x 1299.4146pt>
+File: ./fig/plots/decayturb/decay-03-03.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/decay-03-03.png>
+Package pdftex.def Info: ./fig/plots/decayturb/decay-03-03.png used on input li
+ne 111.
+(pdftex.def)             Requested size: 483.69684pt x 443.26236pt.
+ [61 <./fig/plots/decayturb/decay-03-02.png>]
+<./fig/plots/decayturb/evol-fv.png, id=979, 729.72626pt x 392.46625pt>
+File: ./fig/plots/decayturb/evol-fv.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-fv.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-fv.png used on input line 1
+24.
+(pdftex.def)             Requested size: 483.69684pt x 260.14238pt.
+ [62 <./fig/plots/decayturb/decay-03-03.png>] <./fig/plots/decayturb/evol-ener.
+png, id=987, 745.78625pt x 392.46625pt>
+File: ./fig/plots/decayturb/evol-ener.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-ener.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-ener.png used on input line
+ 136.
+(pdftex.def)             Requested size: 483.69684pt x 254.54309pt.
+ [63 <./fig/plots/decayturb/evol-fv.png>] <./fig/plots/decayturb/evol-ekin-diss
+.png, id=996, 730.73pt x 392.46625pt>
+File: ./fig/plots/decayturb/evol-ekin-diss.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/evol-ekin-diss.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-ekin-diss.png used on input
+ line 160.
+(pdftex.def)             Requested size: 483.69684pt x 259.78905pt.
+ [64 <./fig/plots/decayturb/evol-ener.png>]
+
+LaTeX Warning: Reference `sec:sec:stirturb-pdf' on page 65 undefined on input l
+ine 183.
+
+<./fig/plots/decayturb/pdf-vw-dens.png, id=1008, 859.21pt x 425.59pt>
+File: ./fig/plots/decayturb/pdf-vw-dens.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/pdf-vw-dens.png>
+Package pdftex.def Info: ./fig/plots/decayturb/pdf-vw-dens.png used on input li
+ne 191.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+
+<./fig/plots/decayturb/evol-sonic-mach-pdf.png, id=1011, 725.71124pt x 392.4662
+5pt>
+File: ./fig/plots/decayturb/evol-sonic-mach-pdf.png Graphic file (type png)
+ <use ./fig/plots/decayturb/evol-sonic-mach-pdf.png>
+Package pdftex.def Info: ./fig/plots/decayturb/evol-sonic-mach-pdf.png used on 
+input line 200.
+(pdftex.def)             Requested size: 483.69684pt x 261.5916pt.
+ [65 <./fig/plots/decayturb/evol-ekin-diss.png>]
+<./fig/plots/decayturb/pdf-vw-vels.png, id=1019, 859.21pt x 425.59pt>
+File: ./fig/plots/decayturb/pdf-vw-vels.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/pdf-vw-vels.png>
+Package pdftex.def Info: ./fig/plots/decayturb/pdf-vw-vels.png used on input li
+ne 206.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+ [66 <./fig/plots/decayturb/pdf-vw-dens.png> <./fig/plots/decayturb/evol-sonic-
+mach-pdf.png>]
+<./fig/plots/decayturb/pws-ekin-dyntimes.png, id=1031, 859.21pt x 425.59pt>
+File: ./fig/plots/decayturb/pws-ekin-dyntimes.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/pws-ekin-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/decayturb/pws-ekin-dyntimes.png used on in
+put line 225.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+ [67 <./fig/plots/decayturb/pdf-vw-vels.png>]
+<./fig/plots/decayturb/pws-vw-vels-dyntimes.png, id=1042, 859.21pt x 425.59pt>
+File: ./fig/plots/decayturb/pws-vw-vels-dyntimes.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/pws-vw-vels-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/decayturb/pws-vw-vels-dyntimes.png used on
+ input line 240.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+
+<./fig/plots/decayturb/pws-mw-vels-dyntimes.png, id=1043, 859.21pt x 425.59pt>
+File: ./fig/plots/decayturb/pws-mw-vels-dyntimes.png Graphic file (type png)
+
+<use ./fig/plots/decayturb/pws-mw-vels-dyntimes.png>
+Package pdftex.def Info: ./fig/plots/decayturb/pws-mw-vels-dyntimes.png used on
+ input line 246.
+(pdftex.def)             Requested size: 483.69684pt x 239.5886pt.
+ [68 <./fig/plots/decayturb/pws-ekin-dyntimes.png> <./fig/plots/decayturb/pws-v
+w-vels-dyntimes.png>]))
+(./sections/05-conclusion/main.tex [69 <./fig/plots/decayturb/pws-mw-vels-dynti
+mes.png>] [70])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
+ [71]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
  (aux/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 27.
@@ -1059,27 +1657,48 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 27.
  ) 
 Here is how much of TeX's memory you used:
- 11389 strings out of 493013
- 176165 string characters out of 6139317
- 354813 words of memory out of 5000000
- 14727 multiletter control sequences out of 15000+600000
- 59995 words of font info for 46 fonts, out of 8000000 for 9000
+ 12446 strings out of 493013
+ 202476 string characters out of 6139317
+ 382928 words of memory out of 5000000
+ 15327 multiletter control sequences out of 15000+600000
+ 183821 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,7n,51p,8832b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf-dist/fo
-nts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmc
-sc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/tex
-mf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/lm/lmssbx10.pfb>
-Output written on aux/main.pdf (7 pages, 321486 bytes).
+ 43i,14n,51p,8832b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fo
+nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts/type1/public/
+lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pf
+b></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dis
+t/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/
+lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/share/te
+xmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type
+1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
+r/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/font
+s/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssb
+x10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/lm/lmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
+10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on aux/main.pdf (77 pages, 34678263 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 19 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1242 PDF objects out of 1440 (max. 8388607)
+ 1011 compressed objects within 11 object streams
+ 320 named destinations out of 1000 (max. 500000)
+ 621 words of extra memory for PDF output out of 10000 (max. 10000000)
 
