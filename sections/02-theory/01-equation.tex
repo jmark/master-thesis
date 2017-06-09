@@ -140,7 +140,7 @@ every timestep.
 \end{equation}
 where the \emph{polytropic exponent} is set to $\Gamma := 1$ which is
 equivalent to an isothermal process. A thorough derivation can be found in
-\cite{Horedt2004}, p.2-7.
+\cite[p. 2 ff.]{horedt2004polytropes}.
 
 % \paragraph{Prandtl Number}
 % \begin{equation}
@@ -225,7 +225,7 @@ the core idea of all DG methods.  First, the Euler equations get split up into
 terms resembling the independent one temporal and three spatial
 dimensions with respect to the linear differential operator.
 \begin{equation}
-\partial_t \vec{U} + \partial_x\vec{F}(\vec{U})+ \partial_y\vec{G}(\vec{U}) + \partial_z\vec{H}(\vec{U}) + \vec{S} = 0,
+\partial_t \vec{U} + \partial_x\vec{F}(\vec{U})+ \partial_y\vec{G}(\vec{U}) + \partial_z\vec{H}(\vec{U}) = \vec{S},
 \end{equation}
 where
 \begin{align}
@@ -233,7 +233,7 @@ where
     \vec{F}(\vec{U}) &= (\dens\vels_1, \dens\vels_1^2 + \pres, \dens\vels_1\vels_2, \dens\vels_1\vels_3, \vels_1(\Ener + \pres))^T\br
     \vec{G}(\vec{U}) &= (\dens\vels_2, \dens\vels_2\vels_1, \dens\vels_2^2 + \pres, \dens\vels_2\vels_3, \vels_2(\Ener + \pres))^T\br
     \vec{H}(\vec{U}) &= (\dens\vels_3, \dens\vels_3\vels_1, \dens\vels_3\vels_2, \dens\vels_3^2 + \pres, \vels_3(\Ener + \pres))^T\br
-    \vec{S} &= (0,-f_1,-f_2,-f_z,0)^T
+    \vec{S} &= (0,f_1,f_2,f_z,0)^T
 \end{align}
 Defining a vector-valued test function $\vec{\phi} = (0,..,0,\phi_i,0,...,0)^T$ ($i\in{1,...,5}$), multiplying component-wise
 with above equation and integrating over the domain $\Omega$ we get
@@ -243,12 +243,13 @@ with above equation and integrating over the domain $\Omega$ we get
         + \partial_y G_i(\vec{U})\,\phi^i 
         + \partial_z H_i(\vec{U})\,\phi^i + S_i \phi^i \right) d^3x = 0
 \end{equation}
-Integration-by-parts rearranges the integral into a \emph{source term}, \emph{volume term} and \emph{surface term}.
+Integration-by-parts rearranges the integral into a \emph{source term},
+\emph{surface term} and \emph{volume term}.
 \begin{align}
 \label{eqn:weak-formulation}
-    &\int_\Omega \partial_t U_i\,\psi(x,y,z)^i d^3x + \int_\Omega S_i \psi(x,y,z)^i d^3x = \br
-        & \int_{\partial\Omega} \left(F_i(\vec{U})\,\psi(x,y,z)^i\,n_x + G_i(\vec{U})\,\psi(x,y,z)^i\,n_z + H_i(\vec{U})\,\psi(x,y,z)^i\,n_z \right) d^2x,\nonumber \br
-        -&\int_\Omega \left(F_i(\vec{U})\,\partial_x \psi(x,y,z)^i + G_i(\vec{U})\,\partial_y \psi(x,y,z)^i + H_i(\vec{U})\,\partial_z \psi(x,y,z)^i \right) d^3x
+    \int_\Omega \partial_t U_i\,\phi^i d^3x = \;\;\;\;\;\;\;&\int_\Omega S_i \phi^i d^3x \br
+    +& \int_{\partial\Omega} \left(F_i(\vec{U})\,\phi^i\,n_x + G_i(\vec{U})\,\phi^i\,n_z + H_i(\vec{U})\,\phi^i\,n_z \right) d^2x,\nonumber \br
+    -& \int_\Omega \left(F_i(\vec{U})\,\partial_x \phi^i + G_i(\vec{U})\,\partial_y \phi^i + H_i(\vec{U})\,\partial_z \phi^i \right) d^3x
 \end{align}
 where $\vec{n} = (n_x,n_y,n_z)^T$ is the outward surface normal to $\partial\Omega$.
 

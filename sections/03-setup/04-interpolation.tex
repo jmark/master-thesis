@@ -10,7 +10,9 @@ live on a BCG while the Galerkin polyonomes are anchored on either GNG or LNG.
 Gauss and Gauss-Lobatto nodes are the roots of special polynomials.  See
 \fig{grid-spaces.png}. They minimize the errors of the \emph{Gauss quadrature}
 (numerical integration) which is one of the corner stones in the development
-Galerkin methods (cf. \sec{polynome-ansatz}).
+Galerkin methods (cf. \sec{polyonome-ansatz}). Cf. 
+\cite{gassner2011comparison} for a comparative study on the differences between
+GNG and LNG.
 
 \image{0.5}{grid-spaces.png}{Two finite elements containing
 four cells/volumes. From top to bottom: Gauss-Lobatto nodes ($N_p$ =
@@ -42,7 +44,7 @@ polynomial function $f(x)$ of order $M \le N$.
 \begin{equation}
     R(x) = L(x) \; f^{(N+1)}|_{\zeta}, \;\;\;\; x_0 \le \zeta \le x_N,
 \end{equation}
-using Taylor series analysis (cf. \cite{Abram1972}, p. 878). $x_0,...,x_N$ are
+using Taylor series analysis (cf. \cite[p. 878]{Abram1972}). $x_0,...,x_N$ are
 the interpolation nodes and $f^{(N+1)}(x)$ is the (N+1)-th derivative of $f(x)$.
 Since $M \le N$, $f^{(N+1)}(x) = 0 \; \Rightarrow R(x) = 0,\; \forall x$. $\square$
 

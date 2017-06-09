@@ -7,11 +7,12 @@ and contrasts \emph{laminar} flow which occurs when a fluid flows in parallel
 layers with no disruption between them.
 
 In astrophysics turbulence is suspected to play a major role in star formation
-within interstellar media (ISM).  Hence, a theoretical understanding of the
-underlying mechanics is crucial in order correctly model turbulences in
-numerical simulations. While the problem for incompressible media has been
-thoroughly studied in the past (\emph{Kolmogorov scaling}), the additional
-dynamics introduced by compressibility are still an active field of research.
+within interstellar media (ISM). Cf. \cite{klessen2016physical}.  Hence, a
+theoretical understanding of the underlying mechanics is crucial in order
+correctly model turbulences in numerical simulations. While the problem for
+incompressible media has been thoroughly studied in the past (\emph{Kolmogorov
+scaling}), the additional dynamics introduced by compressibility are still an
+active field of research.
 
 It is important not to forget that real ISM turbulence is neither isothermal,
 nor polytropic. The real ISM has a local temperature that is not a simple
@@ -163,8 +164,9 @@ structures.
 
 \vip{Andrey Kolmogorov} (1903-1987) was a pioneering mathematician who provided
 a statistical treatment of turbulent flows, the \emph{Kolmogorov picture}, with
-methods from \emph{dimensional analysis}. The spatial wavenumber $k$ for an
-eddy of diameter $\lambda$ is defined as
+methods from \emph{dimensional analysis}. Cf. \cite[p. 33ff]{yoshizawa2013hydrodynamic},
+\cite[p. 26ff]{biskamp2003magnetohydrodynamic}.
+The spatial wavenumber $k$ for an eddy of diameter $\lambda$ is defined as
 \begin{equation}
 \label{eqn:wave-number}
     k = \frac{2\pi}{\lambda}.
@@ -177,7 +179,7 @@ velocity scale $\rmsv$ the flow is inviscid and their dynamics are dominated by
 inertial effects. At the \emph{inertial range} kinetic energy gets transferred
 down to smaller eddies via \emph{vortex stretching}. An \emph{energy cascade}
 from larger to smaller length scales takes shape. The so called
-\emph{Kolmogorov microscales}, denoting the smallest scales in the spectrum,
+\emph{Kolmogorov microscales} (cf. \cite{kolmogorov1991dissipation}), denoting the smallest scales in the spectrum,
 form the \emph{viscous} or \emph{dissipative sublayer range} where the energy
 input from nonlinear interactions and the energy drain from viscous dissipation
 are in exact balance. The Reynolds number is 1 (\eqn{reynold}) and the
@@ -192,16 +194,16 @@ where $\dens$ is the ambient density and $\varepsilon$ is the
 kinetic energy dissipation rate defined in \eqn{ekindisp}.
 \Fig{energy-cascade-schematic.png} gives an illustration of the energy
 spectrum of a turbulent flow as just described.
-\image{0.8}{energy-cascade-schematic.png}{
-Schematic Source: \cite{MueBiskl2003}, p6 of the Kolmogorov picture of
-turbulence showing the spatial energy powerspectrum over $k$. The mathematical
-definition is given by \eqn{pws-ekin}. The physical meaning of the marked
-ranges are detailed in the text.}
+\image{0.8}{energy-cascade-schematic.png}{Source: \cite[p.
+8]{muller2003evolving}. Schematic of the Kolmogorov picture
+of turbulence showing the spatial energy powerspectrum over $k$. The
+mathematical definition is given by \eqn{pws-ekin}.  The physical meaning of
+the marked ranges are detailed in the text.}
 
-\paragraph{Numerical Viscosity}
-By the very definition of the Euler equations there is no viscosity:
-$\visc \equiv 0$. This would mean turbulent flow all the way down. The
-dissipation range is non existent. It is rather evident that no physical
+\paragraph{Numerical Viscosity} By the very definition of the Euler equations
+there is no viscosity: $\visc \equiv 0$. This would mean turbulent flow all the
+way down. The dissipation range is non existent. It is rather evident that no
+physical
 simulation, running on a machine with computing power and memory limits, is
 able to model this flow. The profound consequence is that ISM simulations are,
 no matter what, always underresolved.
@@ -212,7 +214,7 @@ scale this scheme is still capabable to resolve. The exact amount of
 $\mu_{\text{n-visc}}$ is in general unknown but should be unique for every
 numerical method. For grid based schemes it is possible to estimate a 
 lower limit of the length scale $\eta$. The \emph{Nyquist–Shannon sampling
-theorem} states that:
+theorem} (cf. \cite{shannon1949communication}) states that:
 \begin{quote}
 If a function $x(t)$ contains no frequencies higher than $B$ Hertz, it is
 completely determined by giving its ordinates at a series of points spaced
@@ -274,9 +276,10 @@ accordance with \vip{Parseval}'s theorem
 \paragraph{Velocity Powerspectrum}
 \newcommand{\pvels}{P_{\vels}}
 \newcommand{\pmvels}{P_{m\vels}}
-It has been shown that the descent of the energy cascade among turbulences
-is universal. By determining the slope of log-log scale velocity powerspectra
-one can determine if the turbulence is modelled correctly.
+It has been shown that the descent of the energy cascade among turbulences is
+universal. Cf. \cite{federrath2013universality,she1994universal,boldyrev2002scaling,kitsionas2009algorithmic}.
+By determining the slope of log-log scale velocity powerspectra one can
+determine if the turbulence is modelled correctly.
 
 For each velocity component we take the Fourier transform of the velocity field
 $\velv = (\vels_1, \vels_2, \vels_3)^T$.
@@ -296,21 +299,24 @@ mass-weighting the velocity beforehand, $\dens^{1/2}\,\velv$, we get the
 \begin{equation}
     \overline{\pmvels}\,dk = 4 \pi\,k^2 \;\; \frac{1}{2} \; \widehat{(\dens^{1/2}\,\velv)} \cdot \widehat{(\dens^{1/2}\,\velv)}^{\dagger}\,dk
 \end{equation}
-The slopes for the volume-weighted and mass-weighted powerspectra
-should amount to -19/9 and -5/3, respectively.
+According to \cite{kitsionas2009algorithmic} the slopes of the inertial range
+for the volume-weighted and mass-weighted powerspectra should amount to
+$m_{vw}$ = -19/9 and $m_{mw}$ = -5/3, respectively.
 
 \subsubsection{Probability Distribution Functions (PDF)}
 \label{sec:theory-density-pdf}
 Another tool to verify the properness of a turbulence simulation are density
-and velocity distributions. According to various studies ... fully developed
-turbulence models yield a nearly log-normal density distribution.
+and velocity distributions. According to various studies
+\cite{federrath_klessen_schmidt_2008,hopkins_2013,1999intu.conf21,0004-637X-761-2-149},
+a fully developed turbulence models yield a nearly log-normal density
+distribution.
 \begin{equation}
 \label{eqn:density-pdf}
 P_s(s) = \frac{1}{\sqrt{2\pi}\sigma_s} \exp\left[-\frac{(s-s_0)^2}{2\sigma_s^2}\right],
 \end{equation}
 where $s = \ln(\dens/\dens_0)$. The standard deviation $\sigma_s$ of
 the distribution is related to the sonic Mach number $\mach$ of the
-turbulence via
+turbulence via (cf. \cite{federrath_klessen_schmidt_2008,0004-637X-761-2-149})
 \begin{equation}
 (2\,\sigma_s)^2 = \ln(1 + b^2\,\mach^2)
 \end{equation}
@@ -320,7 +326,7 @@ Reording yields an explicit expression for the Mach number
 \mach_{PDF} = \frac{\sqrt{\exp((2\,\sigma_s)^2) - 1}}{b}
 \end{equation}
 The proportionality constant $b$ dependents on the ratio of compressible to
-solenoidal forcing $\zeta \in [0,1]$, see ..., and the number of spatial
+solenoidal forcing $\zeta \in [0,1]$ and the number of spatial
 dimensions $D = 1,2,3$.
 \begin{equation}
 \label{eqn:density-pdf-mach-constant}

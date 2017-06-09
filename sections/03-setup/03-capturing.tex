@@ -16,7 +16,9 @@ discontinuity in the approximate solution does not induce spurious
 oscillations, see \fig{plots/burgers/ringing.png}, which spoil the quality of
 the approximation; on the other hand, while ensuring this, the method must
 remain sufficiently accurate near shocks in order to capture the possibly rich
-structure of the exact solution (cf.  \sec{theory-shocks}).
+structure of the exact solution (cf.  \sec{theory-shocks}). Finding a good
+balance between accuracy and stabglity is an active field of research. Cf.
+\cite{atkins2011robust,lo2010high,kurganov2012new}.
 
 Within the scope of this work three intertwining concepts are developed.  First
 we must detect (\emph{sensoring}) a discontinuity and dampen (\emph{artificial
@@ -25,11 +27,11 @@ element switches to FV mode (\emph{switching}) and endures the troubling
 phase till it can safely reverts back to DG mode.
 
 \paragraph{Sensoring}
-Based on the \textsc{Persson} indicator we develop a \emph{smoothness} operator
-which meassures the variance of the highest frequencies in modal space of the
-Galerkin polynome. In other words we build an oscillation detector.  First we
-express the solution of order $N_p$ within each eleement in terms of an
-orthogonal basis as
+Based on the \textsc{Persson} indicator (cf. \cite{persson_peraire_2006}) we
+develop a \emph{smoothness} operator which meassures the variance of the
+highest frequencies in modal space of the Galerkin polynome. In other words we
+build an oscillation detector.  First we express the solution of order $N_p$
+within each eleement in terms of an orthogonal basis as
 \begin{equation}
     u = \sum^{N_p}_{i=1} u_i \psi_i,
 \end{equation}
@@ -93,12 +95,13 @@ and diffuse them into neighboring elements. Besides that, there is no measurable
 effect on the simulation.
 
 \paragraph{FV-DG Mode Switching}
-By setting a specific threshold for the \emph{smoothness indicator} $s$, one can
-decide when to switch back and forth between DG and FV mode. This procedure is
-done at every timestep, hence the elements in FV mode should follow along the
-shock waves throughout the domain.  We propose two modifications of the Persson
-indicator, perform a comparing study and clarify the advantages over the other.
-Based on \eqn{smoothness-indicator} the first variation, called \emph{indicator
+By setting a specific threshold for the \emph{smoothness indicator} $s$, one
+can decide when to switch back and forth between DG and FV mode. This procedure
+is done at every timestep, hence the elements in FV mode should follow along
+the shock waves throughout the domain.  We propose a modifications of the
+indicator original to FLEXI, perform a comparative study and clarify the
+advantages over the other.  Based on \eqn{smoothness-indicator} the first
+variant, called \emph{indicator
 A}, reads
 \begin{equation}
 \label{eqn:indicator-A}
@@ -112,6 +115,11 @@ where $\fnorm{\cdot} = \sqrt{\avg{\cdot,\cdot}}$.  The second version, called
 \begin{equation}
     s_B = \log_{10} \max_M \frac{\fnorm{u - u_{N_p-M}}^2}{\fnorm{u_{N_p-M}}^2}
 \end{equation}
+The code, that switches between DG and FV elements, is already present in the
+original FLEXI source code. The study in \cite{balsara2007sub}, published by
+the developers of FLEXI, sets the basis for their implementation. Our
+contribution here is the change from indicator B (original) to indicator A.
+
 \Fig{indicator-slice.png} shows a fully developed turbulence with shocks and
 their associated heat maps of indicator values calculated from the pressure.  A
 normalized distribution (PDF) of indicator values $s$ is plotted in

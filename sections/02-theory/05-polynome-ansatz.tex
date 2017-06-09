@@ -15,14 +15,14 @@ Traditionally, numerical steps in space or time are labeled with the letter
 
 An alternative approach is to keep the number of subdomains fixed and increase
 the order of the interpolating polynomials. This is called \emph{p-refinement}.
-For infinitely smooth solutions p-refinement can lead to exponential convergent
-rates!
+For infinitely smooth solutions p-refinement can even lead to exponential
+convergent rates. Cf. \cite{tugnoli2016locally}.
 
 DG methods have the following main advantages over finite volume methods:
 \begin{itemize}
 \item The order of accuracy only depends on the physical solution. By suitably
 choosing the degree of the approximating polynomials they can obtain an
-arbitrarily high order of accuracy.
+arbitrarily high order of accuracy. (cf. \cite{yu2013accuracy})
 
 \item They are highly parallelizable. Since the elements are discontinuous and
 transformed to a reference element, the mass matrix (\eqn{mass-matrix}) becomes
@@ -76,8 +76,8 @@ formulation, \eqn{weak-formulation}, of the solution integral,
 \begin{align}
 \label{eqn:weak-formulation-galerkin}
     &\int_\Omega \left(\sum^{N_p}_{j=0} (\partial_t U^j(t)) \, \Psi^j(\vec{x})\right)\,\phi(\vec{x}) d^3x 
-        + \int_\Omega S(t) \, \phi(\vec{x}) d^3x = \nonumber \br
-         &\int_{\partial\Omega} \left[F(t)\,\phi(\vec{x})\,n_x + G(t)\,\phi(\vec{x})\,n_z + H(t)\,\phi(\vec{x})\,n_z \right] d^2x, \br
+        = \int_\Omega S(t) \, \phi(\vec{x}) d^3x \nonumber \br
+        +&\int_{\partial\Omega} \left[F(t)\,\phi(\vec{x})\,n_x + G(t)\,\phi(\vec{x})\,n_z + H(t)\,\phi(\vec{x})\,n_z \right] d^2x, \br
         -&\int_\Omega \left[
               \left(\sum^{N_p}_{j=0} F^j(t)\,\Psi^j(\vec{x})\right)\,\partial_x \phi(\vec{x}) 
             + \left(\sum^{N_p}_{j=0} G^j(t)\,\Psi^j(\vec{x})\right)\,\partial_y \phi(\vec{x})
@@ -140,8 +140,8 @@ Going back to \eqn{weak-formulation-galerkin} and replacing $\Psi^{\vec{j}}$
 and $\phi$ with Lagrange polynomes $\LI$, we get an explicit ansatz, called
 \emph{Galerkin polynome}.
 \begin{align}
-     &\int_\Omega \left(\sumJ \UJ \, \LJ \right) \, \LI d^3x + \int_\Omega \STX \, \LI d^3x = \nonumber \br
-     &\int_{\partial\Omega} \bigg[ F(t) \, \nx + G(t) \, \ny + H(t)\, \nz \bigg]\,\LI\, d^2x \br
+     &\int_\Omega \left(\sumJ \UJ \, \LJ \right) \, \LI d^3x = \int_\Omega \STX \, \LI d^3x \nonumber \br
+    +&\int_{\partial\Omega} \bigg[ F(t) \, \nx + G(t) \, \ny + H(t)\, \nz \bigg]\,\LI\, d^2x \br
     -&\int_\Omega \left[
           \left(\sumJ \FJ \, \LJ \right) \, \partial_x \LI 
         + \left(\sumJ \HJ \, \LJ \right) \, \partial_y \LI
@@ -167,8 +167,8 @@ Evaluating above formula at discrete nodes $\vec{x}_{\vec{i}}$ (cf.
 \end{equation}
 we can discretize the continuous integrals.
 \begin{align}
-     &\sumK \left(\sumJ \UJ \, \LJK \right) \, \LIK \,\wK + \sumK \STXK \, \LIK \wK = \nonumber \br
-     &\bigg[ F^*(t) + G^*(t) + H^*(t)\bigg] \, L_{\vec{j}}\bigg|_{\partial\Omega} \br
+     &\sumK \left(\sumJ \UJ \, \LJK \right) \, \LIK \,\wK = \sumK \STXK \, \LIK \wK \nonumber \br
+    +&\bigg[ F^*(t) + G^*(t) + H^*(t)\bigg] \, L_{\vec{j}}\bigg|_{\partial\Omega} \br
     -&\sumK \left[
           \left(\sumJ \FJ \, \LJK \right) \, \LXIK 
         + \left(\sumJ \HJ \, \LJK \right) \, \LYIK
@@ -197,8 +197,8 @@ discontinuous Galerkin method which can be directly translated to computer
 code.
 \begin{align}
 \label{eqn:semi-discrete-weak-formulation}
-     &\sumK \left(\sumJ \UJ \, \LJK \right) \, \LIK \,\wK + \sumK \STXK \, \LIK \wK = \nonumber \br
-     &\bigg[ F^*(t) + G^*(t) + H^*(t)\bigg]\, L_{\vec{j}}\bigg|_{\partial\Omega} \br
+     &\sumK \left(\sumJ \UJ \, \LJK \right) \, \LIK \,\wK = \sumK \STXK \, \LIK \wK \nonumber \br
+    +&\bigg[ F^*(t) + G^*(t) + H^*(t)\bigg]\, L_{\vec{j}}\bigg|_{\partial\Omega} \br
     -&\sumK \left[
           \left(\sumJ \FJ \, \LJK \right) \, \DXKI 
         + \left(\sumJ \HJ \, \LJK \right) \, \DYKI

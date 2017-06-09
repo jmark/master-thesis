@@ -1,29 +1,32 @@
 \subsection{Driven Turbulence}
 \label{sec:stirturb}
 
-We conduct turb sim in periodic box.
-The isothermal driven turbulence simulation consists of two phases. At the
-beginning of the run turbulent forcing, explained in \sec{turbuforcing}, stirs
-the medium up to a certain root-mean-square velocity which is equivalent to the
-sonic Mach number $\mach_{\text{forcing}}$ (cf. \sec{governing-equation}/Choice
-of Parameters). For now FLEXI solver can only bear driven Mach numbers up to
-Mach 3. Consequently we settled to $\mach_{\text{forcing}} = 2.5$, retaining a
-small safety gap. One crossing time becomes $T_d = L/\mach = 1/2.5 = 0.4$.
-When reaching $\mach = 2.5$ as fast as possible but slow enough not to crash
-the solver the stirring module perpetually injects just enough energy to stay
-in proximity of $\mach_{\text{forcing}}$. The turbulence is given four crossing
-times to fully develop after which forcing is deactivated. We will call this
-the \emph{turbulent phase}. During the \emph{decay phase} it takes another two
-turning times to let the turbulence drop below the supersonic barrier.
+We conduct an isothermal driven supersonic turbulence simulation in a
+three-dimensional periodic box of unit length. This kind of setup is very
+common in ISM simulations and has been studied extensively in the past. Cf.
+\cite{schmidt2009numerical,kitsionas2009algorithmic,0004-637X-665-1-416,mac1998kinetic}.
 
-The turbulence simulations live within a three-dimensional periodic box of
-equal length in all dimensions. It means the state is a closed system where
-mass, momentum and energy are conserved. Via active forcing kinetic energy
-enters the medium on large scales and leaves it as internal energy via active
-cooling on small scales. This way a stationary flow of momentum gets pumped
-through the system. In conjunction with \emph{bulk motion correction}
-hyper-sonic turbulence emerges which presents a stress test for every numerical
-scheme.
+Originating from the driver, kinetic energy enters the box on large scales
+and leaves it as internal energy via active cooling on small scales. This way a
+stationary flow of momentum gets pumped through the system.  In conjunction
+with \emph{bulk motion correction} hyper-sonic turbulence emerges which
+presents a stress test for every numerical scheme.
+
+The simulation consists of three phases. At the beginning of the run, turbulent
+forcing (cf. \sec{turbuforcing}) stirs the medium up to a certain
+root-mean-square velocity, which is equivalent to the sonic Mach number
+$\mach_{\text{forcing}}$ (cf. \sec{governing-equations}/Choice of Parameters).
+Prior tests have shown that FLEXI becomes unstable for driven turbulences with
+Mach numbers beyond 3.  Consequently, we settled to $\mach_{\text{forcing}} =
+2.5$, keeping a small safety gap.
+
+One crossing time amounts to $T_d = L/\mach = 1/2.5 = 0.4$.  When reaching
+$\mach = 2.5$ as fast as possible, but slow enough not to overstrain the solver, the
+stirring module perpetually injects just enough energy to stay in proximity of
+$\mach_{\text{forcing}}$. The turbulence is given four crossing times to fully
+develop, after which forcing is deactivated.  We will call this the
+\emph{turbulent phase}. During the \emph{decay phase} it takes another two
+turning times to let the turbulence drop below the supersonic barrier.
 
 Based on considerations in \sec{governing-equations} we initialize the state
 as listed in \tbl{initial-state}. 
@@ -31,7 +34,7 @@ as listed in \tbl{initial-state}.
 %\fontsize{3mm}{3mm}\selectfont
 %\captionsetup{width=.6\textwidth}
 \caption{Overview of initial values set for all turbulence simulations. While FLASH is
-using primitive variables FLEXI uses conservative variables.}
+using primitive variables, FLEXI uses conservative variables.}
 \centering
 \begin{tabular}{llc|llc}
 \toprule
@@ -48,13 +51,14 @@ pressure        & $\pres_{x,0}$       & 0.6 & total energy    & $\ener_{x,0}$   
 \bottomrule
 \end{tabular}
 \label{tab:initial-state}
-\end{table}\remark Some numerical schemes actually solve the magneto-hydrodynamics
-equations. By setting the initial magnetic density flux field $\magdensv_0 = 0$,
-the MHD equations resemble the compressible Euler equations.
+\end{table}\remark Bouchut 3 and Bouchut 5 actually solve the ideal
+magneto-hydrodynamics (MHD) equations. By setting the initial magnetic density
+flux $\magdensv_0 = 0$, the MHD equations reduce to the compressible Euler
+equations.
 
 Next to the Mach number, the course of energy and energy dissipation
 are meassured. Additionally, we look at selected density distributions and
-powerspectra in the turbulent and decay phase. Checkpoints for analysis and
+powerspectra during the turbulent and decay phase. Checkpoints for analysis and
 plotting are saved ten times per crossing time. \Tbl{setup-stirturb} gives an
 overview of the conducted experiments.
 \begin{table}[H]

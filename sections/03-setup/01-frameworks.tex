@@ -1,11 +1,13 @@
 \subsection{Computational Frameworks}
 \label{sec:computational-frameworks}
-
-For the turbulence simulations two numerical frameworks, FLASH and FLEXI, are
-compared. A complete set of source code for both frameworks can be examined on
-the attached CD-ROM or downloadable at \cite{}.
+The analyzed numerical solvers are part of simulation frameworks, FLASH and
+FLEXI. Since both frameworks have been modified, a complete set of source code
+is attached, available on the CD-ROM where the electronic version of this
+thesis is stored.  Any changes on the source code were logged by the version
+control system \emph{git} (https://git-scm.com).
 
 \paragraph{FLASH}
+The project page (http://flash.uchicago.edu/site/flashcode/, \today) says:
 \begin{quote}
 The FLASH code, currently in its 4th version, is a publicly available high
 performance application code which has evolved into a modular, extensible
@@ -21,11 +23,13 @@ platforms verify the code.
 
 The framework is widely adopted within the astrophysics community and serves as
 reference for testing and comparing the Galerkin schemes provided by FLEXI.
-Following hydrodynamics solvers came into use: PPM, Bouchut 3 (B3) and Bouchut 5
-(B5). Theses solvers were specifically designed for supersonic turbulence
-simulations.
+Following hydrodynamics solvers came into use: PPM (cf.
+\cite{colella1984piecewise}), Bouchut 3 and Bouchut 5 (cf.
+\cite{bouchut2007multiwave,bouchut2010multiwave}). Theses solvers were
+specifically designed for supersonic turbulence simulations.
 
 \paragraph{FLEXI}
+The project page (http//www.flexi-project.org, \today) says:
 \begin{quote}
 Flexi is developed by the team of the Numerics Research Group hosted at the
 Institute of Aero- and Gasdynamics at the University of Stuttgart. We are
@@ -52,10 +56,11 @@ Additionally, analysis and data transfer tools were developed (cf. \sec{trafo}).
 
 \paragraph{Riemann solver}
 Flexi offers a number of approximate Riemann solvers. After many tests we
-settled down to the HLLE (Harten-Luv-Lax Entropy-fix) flux for two reasons.
-First, it is not far from the Bouchut solvers (FLASH) in technical terms and it
-was the only one that did not crash. The latter is the reason a comparing study
-with different flux functions was not possible in this thesis.
+settled down to the HLLE (Harten-Luv-Lax Entropy-fix) (cf. \cite{balsara_2010})
+flux for two reasons.  First, it is not far from the Bouchut solvers (FLASH) in
+technical terms and it was the only one that did not crash. The latter is the
+reason a comparing study with different flux functions was not possible in this
+thesis.
 
 \paragraph{Time Integration}
 Three different methods of numerical time integration came into use: Euler (FV),

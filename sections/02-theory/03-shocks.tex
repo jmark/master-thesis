@@ -8,8 +8,9 @@ in front of it. The media gets highly compressed untill an unphysical state is
 reached. The velocity \emph{characteristics} begin to cross. Nature solves this
 dilemma by introducing additional physics like extreme heat radiation,
 explosions, bangs or detachement of fluid. Either way, it involves an increase
-of entropy according to the second law of thermodynamics. A numerical solver
-has to capture this kind of physics in order to prevent unphysical solutions. 
+of entropy according to the second law of thermodynamics. Cf. \cite{Salas1996}. A
+numerical solver has to capture this kind of physics in order to prevent
+unphysical solutions. 
 
 \paragraph{Method of Characteristics}
 The prototype for second order, hence nonlinear, differential equations is the
@@ -37,7 +38,7 @@ Now, if we set the initial condition to $u(x,0) = 1 - \cos(x)$ and plot the
 solution of characteristics (cf. \fig{plots/burgers/characteristics.png}), we
 get intersecting lines which is unphysical because the velocity-time
 function (cf. \fig{plots/burgers/solution.png}) would yield multi-valued solutions.
-\image{0.8}{plots/burgers/characteristics.png}{
+\image{0.8}{plots/burgers/characteristics.png}{Source: \cite{LeonBurgers}.
 Intersecting characteristics (\eqn{burger-characteristics}) of the inviscid
 Burger's equation in \eqn{burger} are symptoms of a shock wave. The left area
 where lines diverge from each other is called \emph{rarefaction} fan.
@@ -46,10 +47,10 @@ intersection marks the shock discontinuity where the solution (cf.
 \fig{plots/burgers/solution.png}) gets multi-valued.
 %http://www.eng.famu.fsu.edu/~dommelen/pdes/style\_a/burgers
 }
-\image{0.8}{plots/burgers/solution.png}{Multiple snapshots at successive
-timesteps of the initial condition $u(x,0) = 1 - \cos(x)$ evolving under the
-inviscid Burger's equation (\eqn{burger}). It eventually develops a shock and
-becomes multi-valued which is unphysical.}
+\image{0.8}{plots/burgers/solution.png}{Source: \cite{LeonBurgers}. Multiple
+snapshots at successive timesteps of the initial condition $u(x,0) = 1 -
+\cos(x)$ evolving under the inviscid Burger's equation (\eqn{burger}). It
+eventually develops a shock and becomes multi-valued which is unphysical.}
 
 \paragraph{Riemann Problem}
 The correct modelling of shocks is summarized under the term \emph{Riemann
