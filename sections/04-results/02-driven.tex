@@ -1,6 +1,7 @@
 \subsection{Driven Turbulence}
 \label{sec:stirturb}
 
+We conduct turb sim in periodic box.
 The isothermal driven turbulence simulation consists of two phases. At the
 beginning of the run turbulent forcing, explained in \sec{turbuforcing}, stirs
 the medium up to a certain root-mean-square velocity which is equivalent to the
@@ -182,6 +183,8 @@ switching works both ways otherwise the plots would reach 100\%. At $t_d = 4$
 the driving stops and the amount of FV elements declines. \remark The other
 solvers would stay at 100\% since they operate with Finite-Volumes only.}
 
+\newpage
+
 \subsubsection{Energy Dissipation}
 \label{sec:stirturb-energy-dissipation}
 In order to keep the temperature constant polytropic cooling deprives the exact
@@ -251,6 +254,8 @@ the simulation circa 10 times the average energy (cf.
 % in the system (cf. \sec{turbulence}/Mean Values}. It shows how much energy
 
 % --------------------------------------------------------------------------- %
+
+\newpage
 
 \subsubsection{Density \& Velocity Distributions}
 \label{sec:stirturb-pdf}

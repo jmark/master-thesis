@@ -110,6 +110,8 @@ the root-mean-square mach number has fallen to $\mach = 1.9$}
 Column Sonic Mach Number and column density along z-axis at $t_d = 3.0$ when
 the root-mean-square mach number has fallen to $\mach = 1.9$}
 
+\newpage
+
 \subsubsection{FV-DG Mode Switching}
 In \fig{plots/decayturb/evol-fv} the initially smoothed turbulence immediately
 shapes strong shocks everywhere, hence the sudden jump to over 95\% FV
@@ -128,31 +130,24 @@ solvers would stay at 100\% since they operate solely with Finite-Volumes.}
 The course of the total energy \fig{plots/decayturb/evol-ener} is plotted in
 logarithmic scale so that the kinetic energy can be visually distinguished from
 the total energy. Polytropic cooling keeps the system at constant temperature
-hence the internal energy stays steady over time. There is no obvious 
-difference among the solvers.
+hence the internal energy stays steady over time. There is no obvious
+difference among the solvers.  The deprived internal energy is equivalent to
+the dissipated kinetic energy (\fig{plots/decayturb/evol-ekin-diss}). See
+discussion under \sec{stirturb-energy-dissipation}. Right after simulation has
+started strong shocks emerge and the dissipation rate shoots up to its highest
+peak.  By applying numerical integration under the averaged plot of the solvers
+$\int dt_d \; -\frac{d\ekin}{dt_d} = 48.251 \pm 0.007$  the initial kinetic
+energy is recovered $\ekin_0 = 48.75 \pm 0.03$ besides a tiny fractioni of
+$\Delta \ekin = 0.5 \pm 0.03$ still left in the system. This little calculation
+reveals two insights. First, there are no noticable energy sources or sinks
+besides polytropic cooling. Thus, the energy accounting is balanced. Second,
+the variation in dissipated energy among solvers is neglectible. Conclusively,
+there is no difference in dissipation with this setup which contradicts the
+results of the driven turbulence.
 \image{1.0}{plots/decayturb/evol-ener}{Time evolution of the energy. The
 logarithmic scaling helps to visually distinguish to course of total and
 kinetic energy. The total energy $\ener$ is the sum of the kinetic
 $\ekin$ and internal energy $\eint$: $\ld(\ener) = \ld(\eint + \ekin)$.}
-
-% \image{1.0}{plots/decayturb/evol-eint}{Time evolution of the internal energy
-% $\eint$ before applying polytropic cooling. The quantifiable deviation of the internal
-% energy from the anticipated constant $\eint_{0} = 0.9$ is discussed in the
-% text.}
-
-The deprived internal energy is equivalent to the dissipated kinetic energy
-(\fig{plots/decayturb/evol-ekin-diss}). See discussion under
-\sec{stirturb-energy-dissipation}. Right after simulation has started
-strong shocks emerge and the dissipation rate shoots up to its highest peak.
-By applying numerical integration under the averaged plot of the solvers $\int
-dt_d \; -\frac{d\ekin}{dt_d} = 48.251 \pm 0.007$  the initial kinetic energy is
-recovered $\ekin_0 = 48.75 \pm 0.03$ besides a tiny fractioni of $\Delta \ekin
-= 0.5 \pm 0.03$ still left in the system. This little calculation reveals two
-insights. First, there are no noticable energy sources or sinks besides
-polytropic cooling. Thus, the energy accounting is balanced. Second, the
-variation in dissipated energy among solvers is neglectible. Conclusively,
-there is no difference in dissipation with this setup which contradicts 
-the results of the driven turbulence.
 \image{1.0}{plots/decayturb/evol-ekin-diss}{Time evolution of the
 kinetic energy dissipation in logarithmic scale $\ld(-\frac{d\ekin}{dt_d})$.
 The averaged area (numerical integration) under the plots amounts to
@@ -168,6 +163,8 @@ the initial kinetic energy: $\ekin_0 = 48.75 \pm 0.03$.}
 % small scales due to many more passes per physical time.
 % \image{1.0}{plots/decayturb/evol-enstrophy}{Time evolution of the
 % mean enstrophy $\enst$.}
+
+\newpage
 
 \subsubsection{Density \& Velocity Distributions}
 \label{sec:decayturb-PDF}
@@ -252,6 +249,8 @@ the result of the applied Gaussian blur on the initial state.}
 % \image{1.0}{plots/decayturb/evol-slope-mw-velocity}{Time evolution of the
 % inertial range's slope of the mass-weighted velocity powerspectra. Examples
 % of them are presented in \fig{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png}.}
+
+\newpage
 
 \subsubsection{Summary}
 The decaying turbulence setup was conducted in analogy with the driven

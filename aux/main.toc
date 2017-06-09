@@ -1,77 +1,79 @@
-\contentsline {paragraph}{\nonumberline Abstract}{4}{section*.4}
-\contentsline {paragraph}{\nonumberline Zusammenfassung}{4}{section*.5}
+\contentsline {paragraph}{\nonumberline Declaration of Authorship}{3}{section*.3}
+\contentsline {paragraph}{\nonumberline Selbstst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{3}{section*.4}
+\contentsline {paragraph}{\nonumberline Abstract}{4}{section*.6}
+\contentsline {paragraph}{\nonumberline Zusammenfassung}{5}{section*.7}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {section}{\numberline {2}Theory}{1}{section.2}
-\contentsline {subsection}{\numberline {2.1}Governing equations}{1}{subsection.2.1}
+\contentsline {section}{\numberline {2}Theory}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Governing equations}{2}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Compressible Euler Equations}{2}{subsubsection.2.1.1}
-\contentsline {paragraph}{\nonumberline Equation of State}{2}{section*.9}
-\contentsline {paragraph}{\nonumberline Dimensionless Euler Equations}{3}{section*.10}
-\contentsline {paragraph}{\nonumberline Choice of parameters}{4}{section*.11}
+\contentsline {paragraph}{\nonumberline Equation of State}{3}{section*.11}
+\contentsline {paragraph}{\nonumberline Dimensionless Euler Equations}{3}{section*.12}
+\contentsline {paragraph}{\nonumberline Choice of parameters}{4}{section*.13}
 \contentsline {subsubsection}{\numberline {2.1.2}Weak Formulation}{4}{subsubsection.2.1.2}
 \contentsline {subsection}{\numberline {2.2}Turbulence Statistics}{5}{subsection.2.2}
-\contentsline {paragraph}{\nonumberline Reynolds Number}{5}{section*.12}
-\contentsline {paragraph}{\nonumberline Reynolds Decomposition}{6}{section*.13}
-\contentsline {paragraph}{\nonumberline Root-mean-square Velocity}{6}{section*.14}
-\contentsline {paragraph}{\nonumberline Sonic Mach Number}{6}{section*.15}
-\contentsline {paragraph}{\nonumberline Turning time}{6}{section*.16}
-\contentsline {paragraph}{\nonumberline Dynamic time}{7}{section*.17}
-\contentsline {paragraph}{\nonumberline Bulk Motion}{7}{section*.18}
-\contentsline {paragraph}{\nonumberline Total Kinetic Energy}{7}{section*.19}
-\contentsline {paragraph}{\nonumberline Total Kinetic Energy Dissipation Rate}{7}{section*.20}
+\contentsline {paragraph}{\nonumberline Reynolds Number}{5}{section*.14}
+\contentsline {paragraph}{\nonumberline Reynolds Decomposition}{6}{section*.15}
+\contentsline {paragraph}{\nonumberline Root-mean-square Velocity}{6}{section*.16}
+\contentsline {paragraph}{\nonumberline Sonic Mach Number}{6}{section*.17}
+\contentsline {paragraph}{\nonumberline Turning time}{7}{section*.18}
+\contentsline {paragraph}{\nonumberline Dynamic time}{7}{section*.19}
+\contentsline {paragraph}{\nonumberline Bulk Motion}{7}{section*.20}
+\contentsline {paragraph}{\nonumberline Total Kinetic Energy}{7}{section*.21}
+\contentsline {paragraph}{\nonumberline Total Kinetic Energy Dissipation Rate}{7}{section*.22}
 \contentsline {subsubsection}{\numberline {2.2.1}Energy Cascade \& Powerspectrum}{7}{subsubsection.2.2.1}
-\contentsline {paragraph}{\nonumberline Numerical Viscosity}{8}{section*.22}
-\contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{9}{section*.23}
-\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{9}{section*.24}
+\contentsline {paragraph}{\nonumberline Numerical Viscosity}{9}{section*.24}
+\contentsline {paragraph}{\nonumberline Kinetic Energy Powerspectrum}{10}{section*.25}
+\contentsline {paragraph}{\nonumberline Velocity Powerspectrum}{10}{section*.26}
 \contentsline {subsubsection}{\numberline {2.2.2}Probability Distribution Functions (PDF)}{10}{subsubsection.2.2.2}
-\contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{10}{subsection.2.3}
-\contentsline {paragraph}{\nonumberline Method of Characteristics}{11}{section*.25}
-\contentsline {paragraph}{\nonumberline Riemann Problem}{11}{section*.28}
-\contentsline {paragraph}{\nonumberline Gibb's Phenomenon}{12}{section*.29}
-\contentsline {subsection}{\numberline {2.4}Finite Element Schemes}{12}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.3}Supersonic Shocks}{11}{subsection.2.3}
+\contentsline {paragraph}{\nonumberline Method of Characteristics}{11}{section*.27}
+\contentsline {paragraph}{\nonumberline Riemann Problem}{12}{section*.30}
+\contentsline {paragraph}{\nonumberline Gibb's Phenomenon}{12}{section*.31}
+\contentsline {subsection}{\numberline {2.4}Finite Element Schemes}{13}{subsection.2.4}
 \contentsline {subsubsection}{\numberline {2.4.1}Discontinuous Galerkin Method}{13}{subsubsection.2.4.1}
-\contentsline {paragraph}{\nonumberline Lagrange Polynome}{14}{section*.31}
-\contentsline {paragraph}{\nonumberline Weak Formulation}{15}{section*.33}
+\contentsline {paragraph}{\nonumberline Lagrange Polynome}{15}{section*.33}
+\contentsline {paragraph}{\nonumberline Weak Formulation}{16}{section*.35}
 \contentsline {subsubsection}{\numberline {2.4.2}Flux Functions}{16}{subsubsection.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{16}{subsubsection.2.4.3}
-\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{17}{section*.34}
-\contentsline {section}{\numberline {3}Numerical Prerequisities}{17}{section.3}
-\contentsline {subsection}{\numberline {3.1}Computational Frameworks}{17}{subsection.3.1}
-\contentsline {paragraph}{\nonumberline FLASH}{17}{section*.35}
-\contentsline {paragraph}{\nonumberline FLEXI}{18}{section*.36}
-\contentsline {paragraph}{\nonumberline Modifications}{18}{section*.37}
-\contentsline {paragraph}{\nonumberline Riemann solver}{18}{section*.38}
-\contentsline {paragraph}{\nonumberline Time Integration}{18}{section*.39}
-\contentsline {paragraph}{\nonumberline Hybrid Scheme}{18}{section*.40}
+\contentsline {subsubsection}{\numberline {2.4.3}Time Integration}{17}{subsubsection.2.4.3}
+\contentsline {paragraph}{\nonumberline Courant-Friedrichs-Lewy condition}{18}{section*.36}
+\contentsline {section}{\numberline {3}Numerical Prerequisities}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}Computational Frameworks}{18}{subsection.3.1}
+\contentsline {paragraph}{\nonumberline FLASH}{18}{section*.37}
+\contentsline {paragraph}{\nonumberline FLEXI}{19}{section*.38}
+\contentsline {paragraph}{\nonumberline Modifications}{19}{section*.39}
+\contentsline {paragraph}{\nonumberline Riemann solver}{19}{section*.40}
+\contentsline {paragraph}{\nonumberline Time Integration}{19}{section*.41}
+\contentsline {paragraph}{\nonumberline Hybrid Scheme}{19}{section*.42}
 \contentsline {subsection}{\numberline {3.2}Turbulent Forcing}{19}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Shock Capturing}{21}{subsection.3.3}
-\contentsline {paragraph}{\nonumberline Sensoring}{21}{section*.44}
-\contentsline {paragraph}{\nonumberline Artificial Viscosity}{22}{section*.46}
-\contentsline {paragraph}{\nonumberline FV-DG Mode Switching}{23}{section*.47}
+\contentsline {paragraph}{\nonumberline Sensoring}{22}{section*.46}
+\contentsline {paragraph}{\nonumberline Artificial Viscosity}{23}{section*.48}
+\contentsline {paragraph}{\nonumberline FV-DG Mode Switching}{23}{section*.49}
 \contentsline {subsection}{\numberline {3.4}Interpolation \& Data Transfer}{25}{subsection.3.4}
-\contentsline {paragraph}{\nonumberline Grid Spaces}{25}{section*.50}
-\contentsline {paragraph}{\nonumberline Interpolation Error}{25}{section*.52}
-\contentsline {paragraph}{\nonumberline Transferring Data from \textsc {FLASH} to \textsc {FLEXI}}{26}{section*.54}
+\contentsline {paragraph}{\nonumberline Grid Spaces}{25}{section*.52}
+\contentsline {paragraph}{\nonumberline Interpolation Error}{26}{section*.54}
+\contentsline {paragraph}{\nonumberline Transferring Data from \textsc {FLASH} to \textsc {FLEXI}}{27}{section*.56}
 \contentsline {section}{\numberline {4}Results \& Discussion}{28}{section.4}
 \contentsline {subsection}{\numberline {4.1}\textsc {Sod} Shock Tube Problem}{28}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{28}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{29}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Adiabatic \& Isothermal Sod with Strong Shock}{30}{subsubsection.4.1.2}
 \contentsline {subsubsection}{\numberline {4.1.3}Summary}{31}{subsubsection.4.1.3}
-\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{31}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{32}{subsubsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{32}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{33}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Column Density \& Velocity}{33}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}FV-DG Mode Switching}{39}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{40}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{42}{subsubsection.4.2.5}
-\contentsline {paragraph}{\nonumberline Density Distribution}{42}{section*.76}
-\contentsline {paragraph}{\nonumberline Velocity Distribution}{44}{section*.80}
-\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{46}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Summary}{50}{subsubsection.4.2.7}
-\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{50}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{51}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{51}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{61}{subsubsection.4.3.3}
-\contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{62}{subsubsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{64}{subsubsection.4.3.5}
-\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{66}{subsubsection.4.3.6}
-\contentsline {subsubsection}{\numberline {4.3.7}Summary}{68}{subsubsection.4.3.7}
+\contentsline {subsubsection}{\numberline {4.2.3}FV-DG Mode Switching}{40}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{42}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{44}{subsubsection.4.2.5}
+\contentsline {paragraph}{\nonumberline Density Distribution}{44}{section*.78}
+\contentsline {paragraph}{\nonumberline Velocity Distribution}{45}{section*.82}
+\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{47}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}Summary}{51}{subsubsection.4.2.7}
+\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{52}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{52}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{53}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{63}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{63}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{65}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{67}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}Summary}{69}{subsubsection.4.3.7}
 \contentsline {section}{\numberline {5}Conclusion \& Outlook}{69}{section.5}
