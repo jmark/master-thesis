@@ -44,7 +44,7 @@
 \contentsline {paragraph}{\nonumberline Hybrid Scheme}{18}{section*.40}
 \contentsline {subsection}{\numberline {3.2}Turbulent Forcing}{19}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Shock Capturing}{21}{subsection.3.3}
-\contentsline {paragraph}{\nonumberline Sensoring}{22}{section*.44}
+\contentsline {paragraph}{\nonumberline Sensoring}{21}{section*.44}
 \contentsline {paragraph}{\nonumberline Artificial Viscosity}{22}{section*.46}
 \contentsline {paragraph}{\nonumberline FV-DG Mode Switching}{23}{section*.47}
 \contentsline {subsection}{\numberline {3.4}Interpolation \& Data Transfer}{25}{subsection.3.4}
