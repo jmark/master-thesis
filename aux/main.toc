@@ -51,29 +51,29 @@
 \contentsline {paragraph}{\nonumberline FV-DG Mode Switching}{23}{section*.50}
 \contentsline {subsection}{\numberline {3.4}Interpolation \& Data Transfer}{25}{subsection.3.4}
 \contentsline {paragraph}{\nonumberline Grid Spaces}{25}{section*.53}
-\contentsline {paragraph}{\nonumberline Interpolation Error}{26}{section*.55}
-\contentsline {paragraph}{\nonumberline Transferring Data from \textsc {FLASH} to \textsc {FLEXI}}{27}{section*.57}
+\contentsline {paragraph}{\nonumberline Interpolation Error}{25}{section*.55}
+\contentsline {paragraph}{\nonumberline Transferring Data from \textsc {FLASH} to \textsc {FLEXI}}{26}{section*.57}
 \contentsline {section}{\numberline {4}Results \& Discussion}{28}{section.4}
 \contentsline {subsection}{\numberline {4.1}\textsc {Sod} Shock Tube Problem}{28}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{29}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Adiabatic \& Isothermal Shock}{28}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Adiabatic \& Isothermal Sod with Strong Shock}{30}{subsubsection.4.1.2}
 \contentsline {subsubsection}{\numberline {4.1.3}Summary}{31}{subsubsection.4.1.3}
-\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{32}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{33}{subsubsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2}Driven Turbulence}{31}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Mach Number Evolution}{32}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Column Density \& Velocity}{33}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}FV-DG Mode Switching}{40}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{42}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{44}{subsubsection.4.2.5}
-\contentsline {paragraph}{\nonumberline Density Distribution}{44}{section*.79}
-\contentsline {paragraph}{\nonumberline Velocity Distribution}{45}{section*.83}
-\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{47}{subsubsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.7}Summary}{51}{subsubsection.4.2.7}
-\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{52}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{52}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{53}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{63}{subsubsection.4.3.3}
-\contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{63}{subsubsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{65}{subsubsection.4.3.5}
-\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{67}{subsubsection.4.3.6}
-\contentsline {subsubsection}{\numberline {4.3.7}Summary}{69}{subsubsection.4.3.7}
-\contentsline {section}{\numberline {5}Conclusion \& Outlook}{69}{section.5}
+\contentsline {subsubsection}{\numberline {4.2.3}FV-DG Mode Switching}{39}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Energy Dissipation}{41}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Density \& Velocity Distributions}{43}{subsubsection.4.2.5}
+\contentsline {paragraph}{\nonumberline Density Distribution}{43}{section*.79}
+\contentsline {paragraph}{\nonumberline Velocity Distribution}{44}{section*.83}
+\contentsline {subsubsection}{\numberline {4.2.6}Energy \& Velocity Powerspectra}{46}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}Summary}{50}{subsubsection.4.2.7}
+\contentsline {subsection}{\numberline {4.3}Decaying Turbulence}{51}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Mach Number Evolution}{51}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Column Density \& Velocity}{52}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}FV-DG Mode Switching}{62}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Energy Dissipation}{62}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Density \& Velocity Distributions}{64}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Energy \& Velocity Powerspectra}{66}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}Summary}{68}{subsubsection.4.3.7}
+\contentsline {section}{\numberline {5}Conclusion \& Outlook}{68}{section.5}
