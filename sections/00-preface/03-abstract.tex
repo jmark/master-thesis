@@ -17,15 +17,15 @@ higher resolution capabilities. However, FV methods provide limited space for
 improvement due to their lack in degrees-of-freedom.
 
 By contrast to FV schems, modern higher-order discontinuous Galerkin methods
-promise to provide faster convergence rates, smaller diffusion and dispersion
-errors, better data volume-over-surface ratio for efficient parallel processing
-and better input/output handling due to the smaller volume of data. Their
-drawback is the impracticality in resolving shocks. In this work, we propose a
-hybrid scheme which combines the accuracy of DG with the stability of FV
-schemes. In order to provide a proof-of-concept, the DG implementation FLEXI,
-developed at the \vip{Institute of Aerodynamics and Gas Dynamics} (University
-of Stuttgart), is augmented to support supersonic isothermal turbulence
-simulations, governed by the compressible Euler equations.
+(DG) promise to provide faster convergence rates, smaller diffusion and
+dispersion errors, better data volume-over-surface ratio for efficient parallel
+processing and better input/output handling due to the smaller volume of data.
+Their drawback is the impracticality in resolving shocks. In this work, we
+propose a hybrid scheme which combines the accuracy of DG with the stability of
+FV schemes. In order to provide a proof-of-concept, the DG implementation
+FLEXI, developed at the \vip{Institute of Aerodynamics and Gas Dynamics}
+(University of Stuttgart), is augmented to support supersonic isothermal
+turbulence simulations, governed by the compressible Euler equations.
 
 A comparative study of driven and decaying turbulence setups ensures that the
 hybrid scheme models turbulent flows correctly. Widely adopted methods of
@@ -54,8 +54,8 @@ verstehen, hat Generationen von Wissenschaftlern angetrieben, immer bessere und
 genauere numerischen Verfahren zu entwickeln. Allerdings bieten FV-Verfahren
 auf Grund ihrer eingeschränkten Flexibilität wenig Spielraum für Verbesserungen.
 
-Im Gegensatz zu FV-Verfahren, versprechen modere schrittweise glatte
-Galerkin-Methoden schnellere Konvergenz, weniger Diffusion und Dispersion,
+Im Gegensatz zu FV-Verfahren, versprechen moderne schrittweise glatte
+Galerkin-Methoden (DG) schnellere Konvergenz, weniger Diffusion und Dispersion,
 günstigere Volumen-zu-Oberflächen-Verhältnisse, gut geeignet zur parallelen
 Verarbeitung, und bessere Lese-/Schreibraten durch geringeres Datenaufkommen.
 Allerdings sind sie nicht zur Darstellung von Schockwellen geeignet. Im Rahmen

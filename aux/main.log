@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  10 JUN 2017 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.13)  10 JUN 2017 11:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1016,6 +1016,12 @@ hren (FV) sind ein etablierter nu-merischer Lö-sungsansatz
  []
 
 
+Overfull \hbox (20.67194pt too wide) in paragraph at lines 57--68
+\T1/lmr/m/n/12 (DG) schnellere Kon-ver-genz, weniger Dif-fu-sion und Dis-per-si
+on, gün-stigere Volumen-zu-Oberflächen-
+ []
+
+
 Overfull \hbox (6.42265pt too wide) in paragraph at lines 57--68
 \T1/lmr/m/n/12 gerin-geres Date-naufkom-men. Allerd-ings sind sie nicht zur Dar
 stel-lung von Schock-wellen geeignet.
@@ -1655,7 +1661,7 @@ x10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/tex
 mf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/lm/lmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on aux/main.pdf (85 pages, 33263319 bytes).
+Output written on aux/main.pdf (85 pages, 33263336 bytes).
 PDF statistics:
  1642 PDF objects out of 1728 (max. 8388607)
  1400 compressed objects within 14 object streams
