@@ -123,9 +123,9 @@ stated otherwise we drop the tilde sign ($\tilde{\cdot}$) and assume always
 dimensionless quantites from now on.
 
 \paragraph{Choice of parameters} One consequence of dimensionless units is the
-free choice of parameters. We want to use this feature in choose a sensible set
-of parameters.  Considering the Euler equations in conservative form,
-\eqn{comp-euler-conservative}, their functions of space and time
+free choice of parameters. We want to use this feature in order to choose a
+sensible set of parameters.  Considering the Euler equations in conservative
+form (\eqn{comp-euler-conservative}), their functions in space and time
 \begin{equation}
 \dens = \dens(t,x,y,z), \;\;(\dens\velv) = (\dens\velv)(t,x,y,z),\;\;\Ener = \Ener(t,x,y,z)
 \end{equation}
@@ -138,7 +138,7 @@ From that we derive
 \begin{equation}
 C_P = \frac{\sndsped_0^2}{\gamma} = 3/5 = 0.6,\;\;
 \langle\pres\rangle = C_P\cdot\langle\dens\rangle = 0.6,\;\;
-\langle\Ener\rangle = \frac{\langle\pres\rangle}{\gamma -1} = 0.9,\;\;
+\langle\eint\rangle = \frac{\langle\pres\rangle}{\gamma -1} = 0.9,\;\;
 \langle\temp\rangle = \frac{\avg{\sndsped}^2}{\gamma\,R} = 0.6,
 \end{equation}
 where $\avg{\cdot}$ is the \emph{volume-weighted average} or \emph{mean value}
@@ -153,13 +153,13 @@ If not state otherwise, these set of parameters define the global state at all t
 \subsubsection{Weak Formulation}
 A natural way to define a generalized solution of the Euler equations that does
 not require differentiability is, to go back to the integral form of the
-conservation law,
+conservation law.
 
-The basic idea is to take the PDE, multiply it by a smooth \emph{test function},
-integrate one or more times over some domain, and then use integration by parts
-to move derivatives off the function q and onto the smooth test function. The
-result is an equation involving fewer derivatives on q, and hence requiring
-less smoothness.
+The basic idea is to take the PDE, multiply it by a smooth \emph{test
+function}, integrate one or more times over some domain, and then use
+integration-by-parts to move derivatives off the function $q$ and onto some
+smooth test function $\phi$. The result is an equation involving fewer
+derivatives on $q$, and hence requiring less smoothness.
 
 In this section we want to derive the \emph{weak formulation} of the governing
 equations. This establishes the basis for the polynomial formulation which is
@@ -177,8 +177,9 @@ where
     \vec{H}(\vec{U}) &= (\dens\vels_3, \dens\vels_3\vels_1, \dens\vels_3\vels_2, \dens\vels_3^2 + \pres, \vels_3(\Ener + \pres))^T\br
     \vec{S} &= (0,f_1,f_2,f_z,0)^T
 \end{align}
-Defining a vector-valued test function $\vec{\phi} = (0,..,0,\phi_i,0,...,0)^T$ ($i\in{1,...,5}$), multiplying component-wise
-with above equation and integrating over the domain $\Omega$ we get
+Defining a vector-valued test function $\vec{\phi} = (0,..,0,\phi_i,0,...,0)^T$
+($i\in{1,...,5}$), multiplying component-wise with above equation and
+integrating over the domain $\Omega$, we get
 \begin{equation}
     \int_\Omega \left( \partial_tU_i\,\phi^i 
         + \partial_x F_i(\vec{U})\,\phi^i 

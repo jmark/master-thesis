@@ -55,7 +55,7 @@ CFL    &  0.4 \\
 \label{tab:sod-runs}
 \end{table}
 
-This setup is not a convergence study or similar. The objective is to the thest
+This setup is not a convergence study or similar. The objective is to the test
 wether FLEXI produces the same results as FLASH under identical initial
 conditions.
 
@@ -69,7 +69,7 @@ precision. PPM yields the most accurate result while on the other hand
 RK3-Hybrid smears out the discontinuities considerably. Looking closely at the
 zoomed area all hybrid schemes (blue, yellow and green dashed lines) tend to
 oscillate.  The inacceptable ringing of the Euler-Hybrid is a consequence of
-the instability of the Euler Time Integration within the DG operator.
+the instability of the Euler time integration within the DG operator.
 Consequently, Euler-Hybrid is disqualified and is discarded.  Same assertions
 can be made for the isothermal case shown in
 \fig{plots/sod/isothermal/density.png}.
@@ -103,8 +103,8 @@ The solutions for the strong shock setup with cooling, see
 notably, the density peaks are of an order higher and the widths are
 considerably narrower than before. There are no recognizable partitions into a
 slow and fast moving wave. Additionally, the solvers do not agree on the shock
-wave speed with the Euler FV  being the slowest but highest rising one. We do
-not have definite explanation for this, but it should be safe to say that the
+wave speed, with the Euler FV  being the slowest but highest rising one. We do
+not have a definite explanation for this, but it should be safe to say that the
 mean free path of a shock wave in a turbulence simulation does not exceed half
 the size of the box. Hence, the influence of the velocity dispersion among the
 solvers is considered neglectible.

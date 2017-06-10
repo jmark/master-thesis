@@ -33,8 +33,8 @@ as listed in \tbl{initial-state}.
 \begin{table}[H]
 %\fontsize{3mm}{3mm}\selectfont
 %\captionsetup{width=.6\textwidth}
-\caption{Overview of initial values set for all turbulence simulations. While FLASH is
-using primitive variables, FLEXI uses conservative variables.}
+\caption{Overview of initial values set for all driven turbulence simulations.
+While FLASH is using primitive variables, FLEXI uses conservative variables.}
 \centering
 \begin{tabular}{llc|llc}
 \toprule
@@ -166,7 +166,7 @@ stir-up phase the FV elements quickly dominate and settle down on a range
 between 65\% and 75\%. After four crossing times when forcing is
 stopped the overall shock situation in the turbulence is relieved and fewer FV
 elements are needed. It finally reaches a balance of 50-50.  If the simulation
-would go on, the amount of FV elements is expected to eventually fall down 0\%.
+would go on, the amount of FV elements is expected to eventually fall down to 0\%.
 
 The mode switching routines follow the Mach number with some latency. This make
 sense since the amount of FV elements are kind of an indicator for the
@@ -266,9 +266,9 @@ the simulation circa 10 times the average energy (cf.
 \paragraph{Density Distribution}
 Fully developed supersonic turbulences are expected to reveal a lognormal
 density distribution (cf. \sec{theory-density-pdf}). Additionally, it gives
-an insight of the distribution of mass from smallest to largest scales.
+an insight into the distribution of mass from smallest to largest scales.
 All log-log-scale density PDFs in \fig{plots/stirturb/pdfs/dens-vw-dyntimes.png}
-show good indications for the presence of turbulence. The dotted lines are a
+show good indications for the presence of turbulence. The dotted lines are
 log-normal fits of \eqn{density-pdf} under \sec{theory-density-pdf}. The notorious
 underestimation of the fits on large scales is caused by the underresolvement
 of the setup. While during the turbulent phase
@@ -388,22 +388,21 @@ mass distribution in the high-velocity range.}
 
 \subsubsection{Energy \& Velocity Powerspectra}
 \label{sec:stirturb-pws}
-Powerspectra give an insight of the distribution of a physical quantity from large to
+Powerspectra give an insight into the distribution of a physical quantity from large to
 small spatial scales. In this section we discuss the energy and velocity powerspectra
 which were introduced in \sec{theory-powerspectra}. The powerspectrum is
-divided in three ranges. In the driving or large scale range the energy
+divided into three ranges. In the driving or large scale range the energy
 injection from the turbulent driver takes place. It spans over the first three
 to four modes.  From there the energy trickles down to smaller and smaller
 scales, called energy cascade, which takes place in the inertial range. Finally
 it reaches the dissipative range which begins in our case at roughly $k = 32$.
-Here the kinetic energy dissipates and gets transformed in to internal energy.
+Here the kinetic energy dissipates and gets transformed into internal energy.
 In the powerspectrum of the kinetic energy,
 \fig{plots/stirturb/powerspectra/ekin-dyntimes.png}, the boundaries of the
 mentioned ranges are drawn in. According to Parseval's theorem the normed area
-under the powerspectrum is equal to the total square of the real-valued
-quantitiy (cf. \sec{theory-powerspectra}). In
-\fig{plots/stirturb/powerspectra/ekin-dyntimes.png} it then be the total
-squared kinetic energy. \Tbl{stirturb-pws} proofs via numerical integration
+under the kinetic energy powerspectrum is equal to the total squared real-valued
+kinetic energy in the box. (cf. \sec{theory-powerspectra}).
+\Tbl{stirturb-pws} proofs via numerical integration
 that this is indeed true within the margins of error.  In agreement with the
 discussion of column densities and the density distributions in the previous
 sections the solutions provided by FLASH's solvers contain more energy on small
@@ -422,12 +421,12 @@ Besides the lognormality of the density PDF (\sec{stirturb-pdf}) the
 slopes of the inertial range of velocity powerspectra are well-established
 indicators for the accurate modelling of turbulences. According to the theory
 (cf.  \sec{theory-powerspectra}) we expect slopes of $m_{vw} =
--2.1$ and $m_{mw} = -5/3$ for the volume-weighted and mass-weighted
+-2.1$ and $m_{mw} = -1.6667$ for the volume-weighted and mass-weighted
 powerspectra of the three-dimensional velocity field, respectively.
 \Fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png} and
 \fig{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png} indeed reproduce
 given slopes for the time-averaged powerspectrum of the turbulent phase.  The
-spectra at the end of the simulation when the turbulent decay as progressed
+spectra at the end of the simulation when the turbulent decay has progressed
 considerably are plotted as well. Obviously, the inertial range has levelled
 down. This makes sense considering the fact that the supply of kinetic energy
 was cut off. Hence the large scale structures gradually dissolve and
@@ -519,9 +518,9 @@ By analyzing density/velocity distributions and powerspectra it was confirmed
 that all solvers modelled a supersonic turbulence correctly. They confirmed a
 lognormal density profile and their inertial ranges descended with the correct
 slopes. However there are differences regarding energy dissipation rates and
-resolution of smallest scales revealing an inverse relationship. As cumulated
+resolution of smallest scales revealing an inverse relationship. As the cumulated
 energy budget in \fig{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}
-suggests Euler FV burnt the least amount of kinetic energy contrasting PPM,
+suggests, Euler FV burnt the least amount of kinetic energy contrasting PPM,
 Bouchut 3 and Bouchut 5 who consumed roughly 15 to 20\% more.  On the other
 hand the latter yield more details on small scales which becomes clearly
 evident in the mass-weighted velocity distribution in
