@@ -1,54 +1,6 @@
 \subsection{Governing equations}
 \label{sec:governing-equations}
 
-%% \paragraph{Ideal Magneto-Hydrodynamic Equations}
-%% The magneto-hydrodynamic equations (MHD) are a corner stone of theoretical
-%% astrophysics.  They model the fluid mechanics of ionized interstellar media in
-%% an idealized form. In CGS unit they read as follows.
-%% 
-%% % \begin{align}
-%% % \partial_t\dens + \nabla \cdot (\dens\,\velv)   &=  0 \\
-%% % \dens\, \partial_t \velv + \dens(\velv \cdot \nabla) \velv + \nabla \pres &= \frac{\curdensv \times \magdensv}{c} + \dens \vec{g} + \vec{F} \\
-%% % \nabla \times \magdensv &= \frac{4\;\pi}{c} \curdensv \\
-%% % \nabla \times \elefield &= -\frac{1}{c} \partial_t \magdensv \\
-%% % \nabla \cdot  \magdensv &= 0 \\
-%% % \curdensv               &= \sigma \left ( \elefield + \frac{\velv \times \magdensv}{c} \right )
-%% % \end{align}
-%% 
-%% \begin{equation*}
-%%     \frac{1}{\partial t} \left[ \begin{array}{c}
-%%         \rho \\
-%%         \rho\,\vec{v} \\
-%%         E \\
-%%         \vec{B}
-%%     \end{array} \right] +
-%%     \nabla \cdot \left[ \begin{array}{c}
-%%         \rho\,\vec{v}\\
-%%         \rho\,(\vec{v}\otimes\vec{v}) + (p + \frac{1}{2} ||\vec{B}||^2)I - \vec{B} \otimes \vec{B} \\
-%%         \vec{v}(E + p + \frac{1}{2} ||\vec{B}||^2) - \vec{B} (\vec{v}\cdot\vec{B}) \\
-%%         \vec{v} \otimes \vec{B} - \vec{B} \otimes \vec{v}
-%%     \end{array} \right] + \text{forcing} = 0, \;\; \nabla \cdot \vec{B} = 0,
-%% \end{equation*}
-%% where $\mat{a} \otimes \mat{b}$ is the \vip{Kronecker} product between two
-%% matrices $\mat{a}$ and $\mat{b}$. For vectors it can also be written as
-%% $\vec{a}\,\vec{b}^T$.
-%% 
-%% TODO: Explain above equations in detail. Name -> physical meaning ...
-%% 
-%% We want to keep the simulation simple and do not include electric current
-%% ($\sigma = \infty$) and gravity in our model. Hence, $\curdensv = 0$ and
-%% $\vec{g} = 0$. This simplifies above equations to the ideal MHD equations.
-%% They are valid for dynamics in interstellar clouds where we have huge
-%% spatial dimensions of several parsecs and consequently long crossing times.
-%% 
-%% TODO: More arguments why ideal MHD equations are valid for ISM simulations
-%% 
-%% TODO: Insert ideal MHD equations
-%% 
-%% When we set the initial magnetic field strength to zero $\magdensv = 0$ no
-%% magnetic dynamics come into play and the equations reduces further to the
-%% compressible Euler equations.
-
 In astrophysics, the \emph{interstellar medium} (ISM) is the matter that exists
 in the space between the star systems in a galaxy. It contains gas in ionic,
 atomic, and molecular form, as well as dust and cosmic rays. ISM fills
@@ -66,15 +18,6 @@ and (electro-)magnetodynamics, respectively.
 In this thesis we solely focus on the hydrodynamics.
 
 \subsubsection{Compressible Euler Equations}
-
-%% euler quation primitive form
-
-%% \begin{align}
-%% \label{eqn:comp-euler}
-%% \partial_t\dens + \nabla \cdot (\dens\,\velv)   &=  0 \\
-%% \dens\, \partial_t \velv + \dens(\velv \cdot \nabla) \velv + \nabla \pres &= \vec{F} \\
-%% \partial_t \ener + \nabla \cdot (\ener\,\velv - ...)   &=  0,
-%% \end{align}
 
 In 1757 \vip{Leonhard Euler} (1707-1783) published a set of equations for
 inviscid flow, known as the Euler equations. They are hyperbolic
@@ -121,14 +64,13 @@ If not stated otherwise all simulations follow the \emph{ideal gas law}.
 \end{equation}
 where $R$ is the specific ideal gas constant, $T$ is the gas temperature and $c_v
 = \frac{\gamma - 1}{R}$ is the specific heat capacity at constant volume. 
-
 The  $\adiabconst$ is set to
 \begin{equation}
 \label{eqn:adiabconst}
     \adiabconst = \frac{\heatcapP}{\heatcapV} := \frac{5}{3},
 \end{equation}
-which represents a mono-atomic gas without interacting forces.
-
+which represents a mono-atomic gas without interacting forces. $c_p$ is the
+specific heat capacity at constant pressure.
 The speed of sound $\sndsped$ is a direct consequence of the ideal gas
 equation.  \begin{equation} c^2 = \gamma \frac{\pres}{\dens} := C_P = \text{const.} \end{equation}
 

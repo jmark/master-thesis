@@ -113,6 +113,7 @@ A}, reads
 where $\fnorm{\cdot} = \sqrt{\avg{\cdot,\cdot}}$.  The second version, called
 \emph{indicator B}, reads
 \begin{equation}
+\label{eqn:indicator-B}
     s_B = \log_{10} \max_M \frac{\fnorm{u - u_{N_p-M}}^2}{\fnorm{u_{N_p-M}}^2}
 \end{equation}
 The code, that switches between DG and FV elements, is already present in the
@@ -140,9 +141,9 @@ the domain above $s_0 = -4.5$.
 \image{0.8}{indicator-slice.png}{Pressure and Mach Number slices of a Mach-10
 driven turbulence similar to \fig{plots/forcing/b5-full-turbulence}. Below are
 the \emph{smoothness} indicators $s_A$ (\eqn{indicator-A} and $s_B$
-(\eqn{indicator-B} derived from the pressure.}
+(\eqn{indicator-B}) derived from the pressure.}
 \image{0.9}{indicator-pdf.png}{Probability Distribution of \emph{smoothness}
-indicators $s_A$ (\eqn{indicator-A} and $s_B$ (\eqn{indicator-B} in a Mach-10
+indicators $s_A$ (\eqn{indicator-A} and $s_B$ (\eqn{indicator-B}) in a Mach-10
 driven turbulence shown in \fig{indicator-slice.png}. Due to the high spike
 of indicator A, it is well-suited for distinguishing strong shocks in the
 pressure field. A more detailed explaination is provided in the text.}

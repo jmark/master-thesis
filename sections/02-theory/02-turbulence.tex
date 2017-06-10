@@ -274,6 +274,7 @@ accordance with \vip{Parseval}'s theorem
 \end{equation}
 
 \paragraph{Velocity Powerspectrum}
+\label{sec:theory-powerspectrum}
 \newcommand{\pvels}{P_{\vels}}
 \newcommand{\pmvels}{P_{m\vels}}
 It has been shown that the descent of the energy cascade among turbulences is
@@ -303,16 +304,16 @@ According to \cite{kitsionas2009algorithmic} the slopes of the inertial range
 for the volume-weighted and mass-weighted powerspectra should amount to
 $m_{vw}$ = -19/9 and $m_{mw}$ = -5/3, respectively.
 
-\subsubsection{Probability Distribution Functions (PDF)}
+\subsubsection{Probability Distribution Functions}
 \label{sec:theory-density-pdf}
 Another tool to verify the properness of a turbulence simulation are density
 and velocity distributions. According to various studies
-\cite{federrath_klessen_schmidt_2008,hopkins_2013,1999intu.conf21,0004-637X-761-2-149},
+\cite{federrath_klessen_schmidt_2008,hopkins_2013,1999intuconf218N,0004-637X-761-2-149},
 a fully developed turbulence models yield a nearly log-normal density
 distribution.
 \begin{equation}
 \label{eqn:density-pdf}
-P_s(s) = \frac{1}{\sqrt{2\pi}\sigma_s} \exp\left[-\frac{(s-s_0)^2}{2\sigma_s^2}\right],
+PDF_s(s) = \frac{1}{\sqrt{2\pi}\sigma_s} \exp\left[-\frac{(s-s_0)^2}{2\sigma_s^2}\right],
 \end{equation}
 where $s = \ln(\dens/\dens_0)$. The standard deviation $\sigma_s$ of
 the distribution is related to the sonic Mach number $\mach$ of the
