@@ -7,12 +7,12 @@ element. Four types of node configurations are of importance here:
 \emph{Face-centered grid} (FCG), \emph{body-centered grid} (BCG), \emph{Gauss
 nodal grid} (GNG) and \emph{Gauss-Lobatto nodal grid} (LNG). Finite Volumes
 live on a BCG while the Galerkin polyonomes are anchored on either GNG or LNG.
-Gauss and Gauss-Lobatto nodes are the roots of special polynomials.  See
+Gauss and Gauss-Lobatto nodes are the roots of special polynomials. See
 \fig{grid-spaces.png}. They minimize the errors of the \emph{Gauss quadrature}
-(numerical integration) which is one of the corner stones in the development
-Galerkin methods (cf. \sec{polyonome-ansatz}). Cf. 
-\cite{gassner2011comparison} for a comparative study on the differences between
-GNG and LNG.
+(numerical integration) which is one of the corner stones in the derivation of the
+Galerkin method as we have done \sec{polyonome-ansatz}). See
+\cite{gassner2011comparison} for a comparative study of GNG and LNG and further
+information about this subject.
 
 \image{0.5}{grid-spaces.png}{Two finite elements containing
 four cells/volumes. From top to bottom: Gauss-Lobatto nodes ($N_p$ =
@@ -113,9 +113,9 @@ which is useful for analysis and visualization.
 \fig{plots/interpolation/density-ray.png} show practical results of a data
 transfer from FLASH to FLEXI. They confirm the applicability of the transfer
 procedure within acceptable error margins. Unavoidable is the truncation of
-sharp spikes in the data. Evidently, critical information in the proxmity of
+sharp spikes in the data. Evidently, critical information in the proximity of
 strong shocks gets lost. Considering this, it is advisable to apply a
-Gaussian blur before interpolation step. This way, almost equal initial
+Gaussian blur before the interpolation step. This way, almost equal initial
 states in FLASH and FLEXI are ensured.
 
 \image{1.0}{plots/interpolation/flexi-column-density.png}{

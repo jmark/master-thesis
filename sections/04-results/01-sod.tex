@@ -33,7 +33,7 @@ We set a resolution of 512 cells for the domain $\Omega = [0,1]$, where the
 discontinuity is at $x_0 = 0.5$.  512 cells resembles the same resolution
 applied on the turbulence simulations. This way we get a comparable insight on
 how well shocks can be resolved within a periodic box of equal size.
-Table \tbl{sod-runs} outlines conducted experiments in tabular form.
+\Tbl{sod-runs} outlines the conducted experiments in tabular form.
 \begin{table}[H]
 %\fontsize{4mm}{4mm}\selectfont
 %\captionsetup{width=.8\textwidth}
@@ -55,7 +55,7 @@ CFL    &  0.4 \\
 \label{tab:sod-runs}
 \end{table}
 
-This setup is not a convergence study or similar. The objective is to the test
+This setup is not a convergence study or similar. The objective is to test
 wether FLEXI produces the same results as FLASH under identical initial
 conditions.
 
@@ -100,14 +100,14 @@ peak at the speed of around two third of the fast wave $u_{slow} \approx
 2/3\,u_{fast} = 10$. 
 The solutions for the strong shock setup with cooling, see
 \fig{plots/sod/isothermal-supersonic/density}, are quite different. Most
-notably, the density peaks are of an order higher and the widths are
-considerably narrower than before. There are no recognizable partitions into a
+notably, the density peaks are about a factor of 10 higher and the widths are
+considerably more narrow than before. There are no recognizable partitions into a
 slow and fast moving wave. Additionally, the solvers do not agree on the shock
 wave speed, with the Euler FV  being the slowest but highest rising one. We do
 not have a definite explanation for this, but it should be safe to say that the
 mean free path of a shock wave in a turbulence simulation does not exceed half
 the size of the box. Hence, the influence of the velocity dispersion among the
-solvers is considered neglectible.
+solvers is considered negligible.
 %Taking a closer look at one of the shock waves, for example
 %in \fig{plots/sod/adiabatic-supersonic/density-zoom}, one gets to the same conclusion
 %as in the previous section with PPM yielding the best results.

@@ -1,7 +1,7 @@
 \subsubsection{Discontinuous Galerkin Method}
 \label{sec:polyonome-ansatz}
 
-By refining the mesh the error in the numerical approximation of the physical
+By refining the mesh, the error in the numerical approximation of the physical
 solution decays algebraically, that is, introducing more elements.
 Traditionally, numerical steps in space or time are labeled with the letter
 ``h''. Hence, mesh refinement is also known as \emph{h-refinement}.
@@ -16,7 +16,12 @@ Traditionally, numerical steps in space or time are labeled with the letter
 An alternative approach is to keep the number of subdomains fixed and increase
 the order of the interpolating polynomials. This is called \emph{p-refinement}.
 For infinitely smooth solutions p-refinement can even lead to exponential
-convergent rates. Cf. \cite{tugnoli2016locally}.
+convergence rates (cf. \cite{tugnoli2016locally}).
+
+Discontinuous Galerkin methods combine h- and p-refinement by defining
+higher-order polynomial functions in each finite element to approximate the
+exact solutions. This way, they are able to model discontinuities by solving
+the Riemann problem at the boundaries of each element.
 
 DG methods have the following main advantages over finite volume methods:
 \begin{itemize}
@@ -87,8 +92,8 @@ we put the time variable into the coefficients $S,F,G,H$ and the space
 variables into the basis functions $\Psi$ and test functions $\phi$.
 
 \paragraph{Lagrange Polynome}
-If we associate the basis functions $\Psi^{\vec{J}} := L^{\vec{J}}$ and the
-test functions $\phi := L^{\vec{I}}$ with \vip{Lagrange} polyonmes of equal
+If we associate the basis functions $\Psi^{\vec{j}} := L^{\vec{j}}$ and the
+test functions $\phi := L^{\vec{i}}$ with \vip{Lagrange} polyonmes of equal
 order $N_p$, we can formulate an interpolation and integration scheme
 (\emph{collocation}) over the domain $\Omega$. The polynome in one dimension
 reads as follows
@@ -172,11 +177,11 @@ we can discretize the continuous integrals.
     -&\sumK \left[
           \left(\sumJ \FJ \, \LJK \right) \, \LXIK 
         + \left(\sumJ \HJ \, \LJK \right) \, \LYIK
-        + \left(\sumJ \GJ \, \LJK \right) \, \LZIK \right] \wK \nonumber
+        + \left(\sumJ \GJ \, \LJK \right) \, \LZIK \right] \wK, \nonumber
 \end{align}
-
-The partial differential
-$\partial_x$ turns into a discrete linear operator.
+where $\sumK A_{\vec{i}\vec{k}} \, B_{\vec{k}\vec{j}}$ is the \emph{tensor
+contraction} operation.  The partial differential
+$\partial_x$ turned into a discrete linear operator.
 \newcommand{\DXKI}{D^{(x)}_{\vec{k}\vec{i}}}
 \newcommand{\DYKI}{D^{(y)}_{\vec{k}\vec{i}}}
 \newcommand{\DZKI}{D^{(z)}_{\vec{k}\vec{i}}}

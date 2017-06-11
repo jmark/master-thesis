@@ -6,9 +6,9 @@ in the space between the star systems in a galaxy. It contains gas in ionic,
 atomic, and molecular form, as well as dust and cosmic rays. ISM fills
 interstellar space and blends smoothly into the surrounding intergalactic
 space. The medium is composed primarily of atomic hydrogen followed by helium
-with traces of carbon, oxygen, and nitrogen. Magnetic fields and turbulent
-motions also provide pressure in the ISM, and are typically more important
-dynamically than the thermal pressure.
+with traces of carbon, oxygen, nitrogen and metals. Magnetic fields and
+turbulent motions also provide pressure in the ISM, and are typically more
+important dynamically than the thermal pressure.
 
 Many theoretical models for ISM are basesd on the ideal
 \emph{Magneto-Hydrodynamic equations} which are a blend of the \emph{compressible
@@ -23,34 +23,39 @@ In 1757 \vip{Leonhard Euler} (1707-1783) published a set of equations for
 inviscid flow, known as the Euler equations. They are hyperbolic
 conservation equations which model perfect fluids without any interaction of their
 constituents.  Hence, we assume no
-heat conduction ($\SET^{i0} = \SET^{0i} = 0$), no viscosity
-($\SET^{ij} = p\,\mathbb{I}$, $\mu_d = 0$) and no gravity $g = 0$. 
+heat conduction ($\SET^{i0} = \SET^{0i} := 0, \;\;i = \{1,2,3\}$), no viscosity
+($\SET^{ij} := p\,\mathbb{I}, \;\;i,j = \{1,2,3\}$) and no gravity $g = 0$. 
 Within the comoving frame the
-\emph{stress-energy tensor} $\SET$ reads:
+\emph{stress-energy tensor} $\SET \in \mathbb{R}^{4x4}$ then reads:
 \begin{equation}
-\SET^{\alpha\beta} = \text{diag}(\dens\sndsped^2,\pres,\pres,\pres) = \left(\dens + \frac{\pres}{\sndsped^2}\right) \vels^\alpha\vels^\beta + p\,\mathbb{G}^{\alpha\beta}.
+\SET^{\alpha\beta} = \text{diag}(\dens\sndsped^2,\pres,\pres,\pres) = \left(\dens + \frac{\pres}{\sndsped^2}\right) \vels^\alpha\vels^\beta + p\,\mathbb{G}^{\alpha\beta} \;\;\; \text{with}  \;\;\; \alpha, \beta \in \{0,1,2,3\},
 \end{equation}
-In flat spacetime the \emph{metric tensor} is set to $\mathbb{G} = \text{diag}(-1,1,1,1)$. The total energy
-and the number of particles are conserved.
+where $\rho$, $\pres$, $\vels$, $\sndsped$ and $\mathbb{G}$ are the
+density, pressure, velocity, speed of sound and the \emph{metric tensor}.
+In flat spacetime the metric tensor is set to $\mathbb{G} =
+\text{diag}(-1,1,1,1)$. The total energy $\ener$ and the number of particles $n$ are
+conserved.
 \begin{align}
-\partial_\nu \SET^{\mu\nu}  &= 0\\
-\partial_\mu (n\,\vels^\mu) &= 0
+\partial_\beta \SET^{\alpha\beta}  &= 0\\
+\partial_\alpha (n\,\vels^\beta) &= 0
 \end{align}
-Taking the non-relativistic limit, we arrive at the conservative form of the
-Euler equations.
+Taking the non-relativistic limit, we arrive at the conservative differential
+form of the Euler equations.
 \begin{align}
 \label{eqn:comp-euler-conservative}
 \partial_t\dens + \nabla \cdot (\dens\,\velv)   &=  0 \;\; &\text{\emph{mass conservation}}\\[0.4cm]
 \partial_t(\dens\,\velv) + \nabla\cdot(\dens\velv\velv^T) + \nabla \pres &= \vec{F}  \;\;&\text{\emph{momentum conservation}}\\[0.4cm]
 \partial_t \Ener + \nabla \cdot (\velv\,(\ener + \pres)) &=  0,\;\;&\text{\emph{energy conservation}}
 \end{align}
-where the total energy $\Ener$ is composed of the internal energy $\Eint$ and
-the kinetic energy $\Ekin$.
+
+where $\partial_t$ is the partial derivative in time, $\nabla =
+(\partial_x,\partial_y,\partial_z)^T$ is the \emph{Nabla-operator} and
+$\velv = (\vels^x,\vels^y,\vels^z)^T$ is the velocity vector. The total energy $\Ener$ is
+the sum of the internal energy $\Eint$ and the kinetic energy $\Ekin$.
 \begin{equation}
 \Ener = \Eint + \Ekin = \frac{\pres}{\gamma -1} + \frac{\dens}{2}\vels^2,
 \end{equation}
 with $\adiabconst$ being the \emph{adiabatic constant}.
-
 The source term $\vec{F}$ (F for forcing) allows us to perpetually inject a
 force field which gets important in the discussion of driven turbulence later
 on. See \sec{turbuforcing}.
@@ -58,8 +63,9 @@ on. See \sec{turbuforcing}.
 % \paragraph{Primitive and Consverative Variables}
 
 \paragraph{Equation of State}
-If not stated otherwise all simulations follow the \emph{ideal gas law}.
+All simulations follow the \emph{ideal gas law}.
 \begin{equation}
+\label{eqn:ideal-gas-law}
 \pres = \frac{\sndsped^2}{\gamma} \, \dens = R\,T\,\dens = \frac{R}{c_v} \Eint = (\gamma - 1) \Eint,
 \end{equation}
 where $R$ is the specific ideal gas constant, $T$ is the gas temperature and $c_v
@@ -70,19 +76,23 @@ The  $\adiabconst$ is set to
     \adiabconst = \frac{\heatcapP}{\heatcapV} := \frac{5}{3},
 \end{equation}
 which represents a mono-atomic gas without interacting forces. $c_p$ is the
-specific heat capacity at constant pressure.
-The speed of sound $\sndsped$ is a direct consequence of the ideal gas
-equation.  \begin{equation} c^2 = \gamma \frac{\pres}{\dens} := C_P = \text{const.} \end{equation}
-
-During the numerical simulation the equation of state is enforced via the
-\emph{polytropic process} (also called \emph{polytropic cooling}) at
+specific heat capacity at constant pressure.  During the numerical simulation
+the equation of state is enforced via the \emph{polytropic process} (also
+called \emph{polytropic cooling}) at
 every timestep.
 \begin{equation}
-\pres = C_P \, \dens^\Gamma,
+\label{eqn:polytropic-relation}
+\pres = C_P \, \dens^\Gamma \;\;\;(C_P = \text{const}),
 \end{equation}
 where the \emph{polytropic exponent} is set to $\Gamma := 1$ which is
 equivalent to an isothermal process. A thorough derivation can be found in
-\cite[p. 2 ff.]{horedt2004polytropes}.
+\cite[p. 2 ff.]{horedt2004polytropes}. 
+The speed of sound $\sndsped$ is constant due to the polytropic
+relation. Comparing \eqn{ideal-gas-law} with \eqn{polytropic-relation} we get
+the squared \emph{isothermal} speed of sound.
+\begin{equation}
+    C_P = c^2 = \gamma \frac{\pres}{\dens} = \text{const.}
+\end{equation}
 
 % \paragraph{Prandtl Number}
 % \begin{equation}
@@ -123,8 +133,8 @@ stated otherwise we drop the tilde sign ($\tilde{\cdot}$) and assume always
 dimensionless quantites from now on.
 
 \paragraph{Choice of parameters} One consequence of dimensionless units is the
-free choice of parameters. We want to use this feature in order to choose a
-sensible set of parameters.  Considering the Euler equations in conservative
+free choice of parameters. We exploit this feature in order to choose a
+sensible set of parameters. Considering the Euler equations in conservative
 form (\eqn{comp-euler-conservative}), their functions in space and time
 \begin{equation}
 \dens = \dens(t,x,y,z), \;\;(\dens\velv) = (\dens\velv)(t,x,y,z),\;\;\Ener = \Ener(t,x,y,z)
@@ -132,27 +142,25 @@ form (\eqn{comp-euler-conservative}), their functions in space and time
 are completed with
 \begin{equation}
 \label{eqn:parameter-choice-completion}
-\gamma := 5/3,\;\;R := 1, \langle\dens\rangle := 1,\langle\sndsped\rangle := 1,
+    R := 1, \langle\dens\rangle := 1,\langle\sndsped\rangle = c := 1,
 \end{equation}
 From that we derive
 \begin{equation}
-C_P = \frac{\sndsped_0^2}{\gamma} = 3/5 = 0.6,\;\;
-\langle\pres\rangle = C_P\cdot\langle\dens\rangle = 0.6,\;\;
+\langle\pres\rangle = \frac{\sndsped^2}{\gamma}\cdot\langle\dens\rangle = 0.6,\;\;
 \langle\eint\rangle = \frac{\langle\pres\rangle}{\gamma -1} = 0.9,\;\;
 \langle\temp\rangle = \frac{\avg{\sndsped}^2}{\gamma\,R} = 0.6,
 \end{equation}
 where $\avg{\cdot}$ is the \emph{volume-weighted average} or \emph{mean value}
-over the domain $\Omega$
+over the domain $\Omega$.
 \begin{equation}
 \label{eqn:domain-average}
     \avg{q} = \frac{\int_\Omega\,q\,d\Omega}{\int_\Omega\,d\Omega}
 \end{equation}
-
-If not state otherwise, these set of parameters define the global state at all times.
+This set of parameters define the global state at all times.
 
 \subsubsection{Weak Formulation}
 A natural way to define a generalized solution of the Euler equations that does
-not require differentiability is, to go back to the integral form of the
+not require differentiability is going back to the integral form of the
 conservation law.
 
 The basic idea is to take the PDE, multiply it by a smooth \emph{test
@@ -203,4 +211,5 @@ directly, but it turns out that there are other conditions one can impose on
 weak solutions that are easier to check and will also pick out the correct
 solution. These are called \emph{entropy conditions} by analogy with the gas
 dynamics case, where a discontinuity is physically realistic only if the
-entropy of the gas increases as it crosses the shock.
+entropy of the gas increases as it crosses the shock. So called \emph{entropy-stable}
+numerical solver take this into account (cf. \cite{derigs2016novel}).

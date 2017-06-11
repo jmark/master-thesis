@@ -2,11 +2,10 @@
 \label{sec:computational-frameworks}
 The analyzed numerical solvers are part of simulation frameworks, FLASH and
 FLEXI. Since both frameworks have been modified, a complete set of source code
-is attached, available on the CD-ROM where the electronic version of this
-thesis is stored.  Any changes on the source code were logged by the version
-control system \emph{git} (https://git-scm.com).
+is provided, available on the attached DVD. Any changes on the source code were
+logged by the version control system \emph{git} (https://git-scm.com).
 
-\paragraph{FLASH}
+\subsubsection*{FLASH}
 The project page (http://flash.uchicago.edu/site/flashcode/, \today) says:
 \begin{quote}
 The FLASH code, currently in its 4th version, is a publicly available high
@@ -28,7 +27,7 @@ Following hydrodynamics solvers came into use: PPM (cf.
 \cite{bouchut2007multiwave,bouchut2010multiwave}). Theses solvers were
 specifically designed for supersonic turbulence simulations.
 
-\paragraph{FLEXI}
+\subsubsection*{FLEXI}
 The project page (http//www.flexi-project.org, \today) says:
 \begin{quote}
 Flexi is developed by the team of the Numerics Research Group hosted at the
@@ -72,3 +71,21 @@ are not suitable for supersonic turbulence simulations. Therefore, a compromise
 between FV and DG schemes is used (cf. \sec{shock-capturing}) where FV and DG
 are mixed toegether to a hybrid scheme (HY). In order to counter-check this scheme,
 the same simulations were also performed with FV only.
+
+\subsubsection*{ADDITIONAL TOOLS}
+The simulations were run on \vip{CHEOPS} at the RRZK\footnotemark[1] (Univ. of Cologne)
+and on \vip{SuperMUC}\footnotemark[2] at the \vip{Leibniz
+Supercomputing Center}.
+
+For analyzing and visualizing the data we used the \vip{Python} scripting
+language with its large set of scientific libraries\footnotemark[3]: numpy, pandas, h5py, ipython
+and matplotlib.
+
+Batch processing of myriads of small scripts was made possible by \vip{GNU
+Parallel} (cf. \cite{Tange2011a}).
+
+The scripts and tools are also part of the attached DVD.
+
+\footnotetext[1]{http://rrzk.uni-koeln.de}
+\footnotetext[2]{https://www.lrz.de/services/compute/supermuc/}
+\footnotetext[3]{https://scipy.org}

@@ -17,7 +17,7 @@ modifications were then tested and verified with the Sod Shock Tube problem
 (cf. \sec{sod-shock-tube}).
 
 Since pure Galerkin schemes cannot cope with discontinuities, shock
-capturing routines try to dampen spurious oscillations and as a last resort,
+capturing routines try to dampen spurious oscillations and, as a last resort,
 locally switch to second-order finite volumes. In theory, this hybrid scheme
 should yield a convergence rate somewhere between 2 to 3, depending on the
 ratio of DG elements to FV elements (cf. \sec{shock-capturing}).
@@ -40,16 +40,21 @@ gained insights into the quality of the resulting turbulences.
 We arrive at following conclusions:
 \begin{itemize}
 \item The evaluation of the simulation data is in good agreement with the
-reference. We have shown that supersonic isothermal turbulent decay is modelled
-correctly by all solvers (cf. \sec{decayturb-column-plots} and
-\sec{decayturb-PDF}). There are no significant differences among dissipation
-rates (cf. \fig{plots/decayturb/evol-ekin-diss}).
+reference. Supersonic isothermal turbulent decay is modelled
+equally by all analyzed solvers (cf. \sec{decayturb-column-plots} and
+\sec{decayturb-PDF}). No significant difference among dissipation
+rates (cf. \fig{plots/decayturb/evol-ekin-diss}) has been measured.
+
+\item Isothermal turbulent decay in the way applied here, is an unsuitable
+setup to benchmark numerical schemes. Polytropic cooling might have a
+``grinding'' effect which renders higher-order reconstruction and DG schemes
+useless. The conclusion of \sec{decayturb} elaborates on this.
 
 \item Turbulent driving for four turning times is too short to reach a
 stationary state and get reliable statistics. (cf.
 \fig{plots/stirturb/evolutions/sonic-mach.png}) This is especially true, when
 comparing two totally different simulation frameworks. In fact, serious driven
-turbulence studies drive more than 10 turning times. Cf. \cite{konstandin2016mach}.
+turbulence studies drive more than 10 turning times (cf. \cite{konstandin2016mach}).
 
 \item The driven turbulence simulations are substantially influenced by the
 driver. This is, in particular, obvious for the results by the Midpoint
@@ -57,8 +62,13 @@ schemes. It renders our dissipation rates inconclusive. Apparently, turbulent
 driving should be treated with caution as it can lead to unnatural
 pseudo-turbulent flows (cf. \fig{plots/stirturb/snapshots/forcing-stop-02.png}).
 
-\item A grid size of $512^3$ nodes is still too low to recognize any trends for
-certain. A convergence study with higher grid sizes would bring clarity.
+\item A grid size of $512^3$ cells is still rather low to have a good
+approximation of an isothermal turbulent flow. In the powerspectra we
+identified the beginning of the dissipation range at $k_{diss} \approx 25$.
+This means a small structure, say a shock, occupies $512/25 \approx
+21$ cells\footnotemark in one dimension. That is 4\% of the box length. Since
+the Reynolds number is, in theory, zero (cf.  \sec{turbulence}), turbulent flow
+goes beyond $k_{diss}$.  Hence, the simulations are under-resolved.
 \end{itemize}
 
 The improvement in dissipation rates and resolution capacity, as we had hoped
@@ -77,5 +87,9 @@ Protoplanetary disk simulations, for example, still have problems with
 spurious angular momentum dissipation. Higher-order discontinuous
 Galerkin methods, in combination with recent flux functions, might yield
 promising results.
+
+\footnotetext{Counting the cells under the peaks in
+\fig{plots/sod/isothermal-supersonic/density} (isothermal Sod w. strong shock)
+yields the same number, by the way.}
 
 \newpage

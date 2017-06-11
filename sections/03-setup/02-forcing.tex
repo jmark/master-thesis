@@ -1,37 +1,60 @@
 \subsection{Turbulent Forcing}
 \label{sec:turbuforcing}
 
-In equation \eqn{comp-euler-conservative} a \emph{source} respectively
-\emph{forcing} term was introduced into the Euler equations. At each time step
-a varying force field $\vec{F}(t,x,y,z)$ perpetually injects kinetic energy at
-largest scales (cf. \sec{turbulence}/\emph{Energy Cascade}). Based on
-\cite{schmidt2009numerical} we formulate
-\begin{align}
-  \hat{d\mathbf{f}}(\mathbf{k},t) &= \frac{3}{\sqrt{1-2\zeta+3\zeta^2\,}}\;\left[-\hat{\mathbf{f}}(\mathbf{k},t)\frac{dt}{T} + F_0 \left(\frac{2\sigma^2(\mathbf{k})}{T}\right)^{1/2}\mathbf{P}_\zeta(\mathbf{k})\cdot d\mathbf{W}_t\right]\\
-  (P_{ij})(\mathbf{k}) &= \zeta\,P_{ij}^\perp(\mathbf{k}) + (1-\zeta) P_{ij}^\parallel =\zeta\,\delta_{ij} + (1-2\,\zeta) \frac{k_i k_j}{k^2}
-\end{align}
-The force field in Fourier space allows us to precisely specify at which
-length scales we want to apply the forcing as well as the ratio of
-\emph{compressive} and \emph{solenoidal} modes.
+%% \begin{equation}
+%%   d\widehat{\mathbf{f}}(\mathbf{k},t) = \frac{3}{\sqrt{1-2\zeta+3\zeta^2\,}}\;
+%%         \left[-\hat{\mathbf{f}}(\mathbf{k},t)\frac{dt}{T_d} 
+%%         + F_0 \; \sqrt{\frac{2\sigma^2(\mathbf{k})}{T_d}} \; \mathbf{P}(\mathbf{k})\cdot d\mathbf{W}_t\right],
+%% \end{equation}
 
-Following parameters are of importance:
+
+In equation \eqn{comp-euler-conservative}, a \emph{source} respectively
+\emph{forcing} term was introduced into the Euler equations. At each time step
+a varying force field $\vec{f}(t,x,y,z)$ perpetually injects kinetic energy at
+largest scales (cf. \sec{turbulence}/\emph{Energy Cascade}). Based on
+\cite{schmidt2009numerical}, we formulate an \vip{Ornstein-Uhlenbeck} process:
+\begin{equation}
+\label{eqn:ornstein-uhlenbeck}
+  d\widehat{\vec{f}}(\vec{k},t) = F_0
+        \left[-\hat{\vec{f}}(\vec{k},t)\,dt 
+        + \big(\Theta(k_0 - |\vec{k}|) - \Theta(k_1 - |\vec{k}|)\big)\; \vec{P}(\zeta,\vec{k})\cdot d\vec{W}_t \right],
+\end{equation}
+where $\widehat{\vec{f}}$ is the Fourier transformed force field $\vec{f} =
+(f_1,f_2,f_3)^T$, $\vec{k}$ the wave vector (cf.  \sec{theory-powerspectrum}),
+$t$ is the physical time, $k_0,k_1 > 0$ and $F_0 > 0$ parameters, $\Theta(k)$ the
+Heaviside step function and $d\vec{W}_t$ the \vip{Wiener} process. The
+parameter $\zeta = [0,1]$ sets the ratio of \emph{compressive} (curl-free) to
+\emph{solenoidal} (divergence-free) modes in the projection operator
+$\vec{P}(\zeta,\vec{k})$
+\begin{equation}
+  (P_{ij})(\zeta,\vec{k}) = \zeta\,P_{ij}^\perp(\vec{k}) + (1-\zeta) P_{ij}^\parallel =\zeta\,\delta_{ij} + (1-2\,\zeta) \frac{k_i k_j}{k^2},\;\;\;\; i,j = \{1,2,3\}.
+\end{equation}
+For the sake of clarity, \eqn{ornstein-uhlenbeck} strongly simplifies the
+actual implementation in FLEXI. The choice of runtime parameters in the driven
+turbulence setup (cf. \sec{driven}) were set in such a way that the code
+applies the force field as shown in \eqn{ornstein-uhlenbeck}.  Due to the
+Heaviside step functions, a flat energy spectrum from $k_0$ to $k_1$ modes is
+injected. 
+
+Following parameters and their settings are of importance here:
 
 \begin{description}
     \item [rmsv] Desired average \emph{root-mean-square-velocity} of the turbulence. When the
             specified threshold is reached, small but perpetual injections keep the turbulence
-            in proxmity of the \emph{rmsv}.
+            in proximity of the \emph{rmsv} (cf. \sec{stirturb}). The driver modifies
+            the force parameter $F_0$ via heuristics in order to avoid over- or undershoots.
     \item [kmin, kmax] Range of modes where to apply forcing (cf.
-        \sec{turbulence}/\emph{Energy Cascade}). Usually, the range is set from $1$ to
+        \sec{turbulence}/\emph{Energy Cascade}). The range is set from $1$ to
         $3$. Stirring on only the first mode can be imagined as a force field with
         distinct features half the size of the box. Higher modes divide the box further
         down accordingly. Limiting forcing to only first three modes avoids imprinting
         a factitious powerspectrum on the system.
     \item [zeta] Parameter between 0 and 1 which sets the ratio of
-            \emph{compressive} (curl-free) to \emph{solenoidal} (divergence-free)
+            compressive to solenoidal modes 
             forcing. In this work, \emph{zeta} is set to $\zeta = 0.5$. That is,
             equal forcing on both driving mechanisms.
-
 \end{description}
+
 A depiction of the velocity field after energy injection for the first time on
 an initially constant state is shown in
 \fig{plots/forcing/rk3-hy-initial-forcing} as well as its associated velocity
@@ -42,10 +65,14 @@ up to higher modes and creates the desired small scale structures desired for
 driven turbulence simulations. An example of a fully developed turbulence
 is shown in \fig{plots/forcing/b5-full-turbulence}.
 \image{1.0}{plots/forcing/rk3-hy-initial-forcing}{Early-stage snapshot taken
-immediately after first-time turbulent forcing on the first three modes.}
-\image{1.0}{plots/forcing/powerspectrum}{Shell-averaged three-dimensional
-velocity powerspectrum obtained from the velocity (or Mach in this case) field
-in \fig{plots/forcing/rk3-hy-initial-forcing}.}
+immediately after first-time turbulent forcing on the first three modes. The
+simulation was done in dimensionless units.}
+\image{1.0}{plots/forcing/powerspectrum}{Shell-averaged velocity powerspectrum
+(cf. \sec{theory-powerspectrum}) obtained from the velocity (or Mach number in
+this case) field in \fig{plots/forcing/rk3-hy-initial-forcing}. The solvers
+from FLEXI are shown.  Obviously, there is a small difference (consider log-log
+scale!) between the FV-only and hybrid schemes. The distorted
+spectra on larger modes might be a sign of already emerging oscillations.}
 \image{1.0}{plots/forcing/b5-full-turbulence}{Fully developed Mach-10
 turbulence snapshot, simulated with Bouchut5. Forcing was applied on the
 first three modes and the picture was taken after four crossing times. The

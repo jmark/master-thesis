@@ -1,8 +1,8 @@
 \section{Introduction}
 
 Astrophysical turbulence simulations of interstellar gases a play vital role in
-the understanding and modelling of star formation. Cf.
-\cite{mac2004turbulence}. A multitude of numerical schemes and computational
+the understanding and modelling of star formation (cf.
+\cite{mac2004turbulence}). A multitude of numerical schemes and computational
 fluid dynamics software has been developed, each with their own merits and
 drawbacks.
 
@@ -14,40 +14,47 @@ inflation of operational costs passes on a mighty tool to the astrophysics
 community, which opens the door to numerical experiments unfeasible ten years
 ago.
 
-Alongside the advent of new technical possibilities modern numerical schemes
-appear which are better suited for utilizing lates CPU architectures to gain
+Alongside the advent of new technical possibilities, modern numerical schemes
+appear which are better suited for utilizing latest CPU architectures to gain
 better performance. Especially, the aeronautics and car industries push forward
 the development of new simulation software. They are interested in modelling
-flight characteristics for new airplane designs, the airodynamic drag of cars
+flight characteristics for new airplane designs, the aerodynamic drag of cars
 or want to increase the efficiency of combustion engines. Consequently,
 innovative numerical schemes should be highly flexible with regards to meshing
 complex geometries, very accurate, massively parallelizable and blazingly fast.
 The demands for the underlying physical model are rather moderate. The
 Navier-Stokes equations suffice on most occasions. One of the latest specimen
-of their kind is the high-order accurate CFD software FLEXI developed by a
-team, lead by Prof. Claus-Dieter Munz, at the \vip{Institute of Aerodynamics
-and Gas Dynamics} in Stuttgart, Germany.  The basic idea is to introduce
-piecewise polynomial functions of higher order. The scheme is called
-\emph{discontinuous Galerkin method}.
+of their kind is the high-order accurate CFD software FLEXI\footnotemark[1]
+developed by teams at the \vip{Mathematical Institute} (Univ. of Cologne) and
+the \vip{Institute of Aerodynamics and Gas Dynamics} (Univ. of Stuttgart).
+Special credit goes to Prof. Dr.-Ing. Gregor Gassner, who is the initiator of
+the project, and his former supervisor Prof.  Dr. Claus-Dieter Munz. Their idea
+is to introduce piecewise polynomial functions of higher order. The
+underpinning scheme is called \emph{discontinuous Galerkin method}. The
+implementation details of FLEXI are discussed in
+\cite{hindenlang2014mesh,hindenlang2012explicit,gassner2009discontinuous}.
 
 In contrast to air flow models, the demands for turbulence simulations of
-astrophysical gases are quite the opposite. In free space there are no complex
-geometries, at least not in proximity of massive objects like black holes. The
-physical model becomes very complex, when electro-magnetic fields,
-radiation, chemistry and gravity are introduced to the governing equations.
-Furthermore, a huge range of scales in time, space, energy, density and pressure
-must be covered as well. As if this is not enough, high Mach numbers in the flow
-give rise to strong shock conditions or discontinuities, which challenge the
-stability and accuracy of every numerical solver. Up to now, the astrophysics
-community considers finite-volume schemes of first/second order to be the only
-viable method for conducting this kind of simulations. FLASH, originally developed by
-researchers at the University of Chicago, is the name for a well established
-nuclear and astrophysics simulation software with finite volumes as their
-foundational scheme.
+astrophysical gases are quite the opposite. Free space does not imply complex
+geometries. The physical model becomes very complex, when electro-magnetic
+fields, radiation, chemistry and gravity are introduced to the governing
+equations.  Furthermore, a huge range of scales in time, space, energy, density
+and pressure must be covered as well. As if this is not enough, high Mach
+numbers in the flow give rise to strong shock conditions or discontinuities,
+which challenge the stability and accuracy of every numerical solver. Up to
+now, the astrophysics community considers finite-volume schemes of first/second
+order to be the only viable method for conducting this kind of simulations.
+FLASH\footnotemark[2], originally developed by researchers at the University of
+Chicago, is the name for a well established nuclear and astrophysics simulation
+software with \emph{finite volumes} as their foundational scheme. FLASH is, for
+example, discussed in \cite{fryxell2001adaptive,lee2011progress,walch2015silcc}.
 
 This thesis is a first attempt to introduce higher order Galerkin methods to
 astrophysical turbulence simulations. The statistical evaluation of simple
 turbulence setups, run by FLASH and FLEXI, are expected to give an insight into
 the potential, Galerkin schemes might offer to the astrophysics community.
+
+\footnotetext[1]{https://www.flexi-project.org}
+\footnotetext[2]{http://flash.uchicago.edu/site/flashcode/}
 
 \newpage
