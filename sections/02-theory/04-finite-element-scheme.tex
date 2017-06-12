@@ -14,15 +14,15 @@ any simulation conducted in this thesis.
 
 \item [Reconstruction] Approximate the exact solution in every element by a
 piecewise constant function (finite volume scheme) or polynome of order $N_p$
-(Galerkin scheme): \sec{polyonome-ansatz}
+(Galerkin scheme). See \sec{polynome-ansatz}.
 
 \item [Evolution] Based on the current set of variables the governing equations
 (compressible Euler equations) yield a new state which gets evolved one
-timestep into the future: \sec{flux-functions}.
+timestep into the future. See \sec{time-integration}.
 
 \item [Averaging/Propagation] Flux functions solve the \vip{Riemann} problem
 and communicate the lately acquired state across boundaries and propagate the
-new information throughout the element: \sec{time-integration}.
+new information throughout the element See \sec{flux-functions}.
 \end{description}
 
 % The last three actions are commonly grouped together under the term \emph{REA

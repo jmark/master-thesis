@@ -1,6 +1,6 @@
 \subsection{Computational Frameworks}
 \label{sec:computational-frameworks}
-The analyzed numerical solvers are part of simulation frameworks, FLASH and
+The analyzed numerical solvers are part of the simulation frameworks, FLASH and
 FLEXI. Since both frameworks have been modified, a complete set of source code
 is provided, available on the attached DVD. Any changes on the source code were
 logged by the version control system \emph{git} (https://git-scm.com).
@@ -24,7 +24,7 @@ The framework is widely adopted within the astrophysics community and serves as
 reference for testing and comparing the Galerkin schemes provided by FLEXI.
 Following hydrodynamics solvers came into use: PPM (cf.
 \cite{colella1984piecewise}), Bouchut 3 and Bouchut 5 (cf.
-\cite{bouchut2007multiwave,bouchut2010multiwave}). Theses solvers were
+\cite{bouchut2007multiwave,bouchut2010multiwave}). Theses solvers are 
 specifically designed for supersonic turbulence simulations.
 
 \subsubsection*{FLEXI}
@@ -58,7 +58,7 @@ Flexi offers a number of approximate Riemann solvers. After many tests we
 settled down to the HLLE (Harten-Luv-Lax Entropy-fix) (cf. \cite{balsara_2010})
 flux for two reasons.  First, it is not far from the Bouchut solvers (FLASH) in
 technical terms and it was the only one that did not crash. The latter is the
-reason a comparing study with different flux functions was not possible in this
+reason, a comparative study with different flux functions was not possible in this
 thesis.
 
 \paragraph{Time Integration}
@@ -69,8 +69,8 @@ Midpoint (MP) and third order Runge-Kutta (RK3) (cf. \sec{time-integration}).
 As pointed out in the shock discussion in \sec{theory-shocks}, pure Galerkin schemes
 are not suitable for supersonic turbulence simulations. Therefore, a compromise
 between FV and DG schemes is used (cf. \sec{shock-capturing}) where FV and DG
-are mixed toegether to a hybrid scheme (HY). In order to counter-check this scheme,
-the same simulations were also performed with FV only.
+are mixed together to a hybrid scheme (HY). In order to counter-check this scheme,
+the same simulations were also performed with FV only. See \sec{shock-capturing}.
 
 \subsubsection*{ADDITIONAL TOOLS}
 The simulations were run on \vip{CHEOPS} at the RRZK\footnotemark[1] (Univ. of Cologne)
@@ -84,7 +84,7 @@ and matplotlib.
 Batch processing of myriads of small scripts was made possible by \vip{GNU
 Parallel} (cf. \cite{Tange2011a}).
 
-The scripts and tools are also part of the attached DVD.
+The scripts and tools are also placed on the attached DVD.
 
 \footnotetext[1]{http://rrzk.uni-koeln.de}
 \footnotetext[2]{https://www.lrz.de/services/compute/supermuc/}

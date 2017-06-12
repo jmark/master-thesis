@@ -8,7 +8,7 @@ layers with no disruption between them.
 
 In astrophysics turbulence is suspected to play a major role in star formation
 within interstellar media (cf. \cite{klessen2016physical}).  Hence, a
-theoretical understanding of the underlying mechanics is crucial in order
+theoretical understanding of the underlying mechanics is crucial in order to
 correctly model turbulences in numerical simulations. While the problem for
 incompressible media has been thoroughly studied in the past (\emph{Kolmogorov
 scaling}: cf. \sec{theory-powerspectrum}), the additional dynamics introduced
@@ -31,7 +31,7 @@ dense regions. Magnetic fields lead to effects like frozen filaments called
 An important dimensionless quantity in fluid mechanics used to help predict
 flow patterns in different fluid flow situations is the \emph{Reynolds number}
 $\reynold$. The Irish-British physicist \vip{Osborne Reynolds} (1842-1912)
-discovered this fundemental relationship during his famous flow tube
+discovered this fundamental relationship during his famous flow tube
 experiments in the second half of the 19th century. It represents the ratio
 between \emph{inertial} and \emph{viscous} forces and is calculated by
 \begin{equation}
@@ -54,7 +54,7 @@ length scales for large Re.
 
 \paragraph{Reynolds Decomposition}
 Turbulences are characterized by a random fluctuation $q'$ of a flow variable $q$
-(density, pressure, velocity, temperature, etc.) over time, meassured at a
+(density, pressure, velocity, temperature, etc.) over time, measured at a
 fixed point in space. Their evolution can be described with the \emph{Reynolds
 decomposition}.
 \begin{equation}
@@ -172,8 +172,8 @@ structures.
 
 \vip{Andrey Kolmogorov} (1903-1987) was a pioneering mathematician who provided
 a statistical treatment of turbulent flows, the \emph{Kolmogorov picture}, with
-methods from \emph{dimensional analysis}. Cf. \cite[p. 33ff]{yoshizawa2013hydrodynamic},
-\cite[p. 26ff]{biskamp2003magnetohydrodynamic}.
+methods from \emph{dimensional analysis} (cf. \cite[p. 33ff]{yoshizawa2013hydrodynamic},
+\cite[p. 26ff]{biskamp2003magnetohydrodynamic}).
 The spatial wavenumber $k$ for an eddy of diameter $\lambda$ is defined as
 \begin{equation}
 \label{eqn:wave-number}
@@ -184,9 +184,9 @@ tilde and refer to the scaled wave number $k := \tilde{k}$ from now on.
 
 Based on $k$ the eddies in a turbulent flow are arranged into a hierarchy or
 more precisely, a \emph{spectrum}. The largest eddies interact and transfer
-energy from the mean flow.  We call it the range of \emph{large scales}. Since
+energy from the mean flow. We call it the range of \emph{large scales}. Since
 large eddies are of the same order of the characteristic length $L$ and
-velocity scale $\rmsv$ the flow is inviscid and their dynamics are dominated by
+velocity scale $\rmsv$, the flow is inviscid and their dynamics are dominated by
 inertial effects. At the \emph{inertial range} kinetic energy gets transferred
 down to smaller eddies via \emph{vortex stretching}. An \emph{energy cascade}
 from larger to smaller length scales takes shape. The so called
@@ -216,11 +216,11 @@ there is no viscosity: $\visc \equiv 0$. This would mean turbulent flow all the
 way down. The dissipation range is non existent. It is rather evident that no
 physical simulation, running on a machine with computing power and memory
 limits, is able to model this flow. The profound consequence is that ISM
-simulations are, no matter what, always underresolved.
+simulations are, no matter what, always under-resolved.
 
 Every numerical scheme introduces a so called \emph{numerical} viscosity
 $\mu_{\text{n-visc}}$ that marks the very limit of length, time and velocity
-scale this scheme is still capabable to resolve. The exact amount of
+scale this scheme is still capable to resolve. The exact amount of
 $\mu_{\text{n-visc}}$ is in general unknown but should be unique for every
 numerical method. For grid based schemes it is possible to estimate a 
 lower limit of the length scale $\eta$. The \emph{Nyquist–Shannon sampling
@@ -286,7 +286,7 @@ It has been shown that the descent of the energy cascade among turbulences is
 universal. See
 \cite{federrath2013universality,she1994universal,boldyrev2002scaling,kitsionas2009algorithmic}.
 By determining the slope of log-log scale velocity powerspectra one can
-determine if the turbulence is modelled correctly.
+determine if the turbulence is modeled correctly.
 
 For each velocity component we take the Fourier transform of the velocity field
 $\velv = (\vels_1, \vels_2, \vels_3)^T$.
@@ -308,7 +308,7 @@ mass-weighting the velocity beforehand, $\dens^{1/2}\,\velv$, we get the
 \end{equation}
 The study in \cite{kitsionas2009algorithmic} lists slopes for the inertial range
 of the volume-weighted and mass-weighted powerspectra, as they are defined
-here, which amount to $m_{vw}$ = -19/9 and $m_{mw}$ = -5/3, respectively. We
+here. They amount to $m_{vw}$ = -19/9 and $m_{mw}$ = -5/3, respectively. We
 consider these values as reference which we are trying to reproduce in our
 turbulence simulations.
 
@@ -336,7 +336,7 @@ Reordering yields an explicit expression for the Mach number
 \label{eqn:density-pdf-mach}
 \mach_{PDF} = \frac{\sqrt{\exp((2\,\sigma_s)^2) - 1}}{b}
 \end{equation}
-The proportionality constant $b$ dependents on the ratio of compressible to
+The proportionality constant $b$ depends on the ratio of compressible to
 solenoidal forcing $\zeta \in [0,1]$ and the number of spatial
 dimensions $D = 1,2,3$.
 \begin{equation}

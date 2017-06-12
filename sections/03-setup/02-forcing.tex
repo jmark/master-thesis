@@ -34,7 +34,8 @@ actual implementation in FLEXI. The choice of runtime parameters in the driven
 turbulence setup (cf. \sec{driven}) were set in such a way that the code
 applies the force field as shown in \eqn{ornstein-uhlenbeck}.  Due to the
 Heaviside step functions, a flat energy spectrum from $k_0$ to $k_1$ modes is
-injected. 
+injected. Additionally, the physical time $t$ in \eqn{ornstein-uhlenbeck} is
+scaled to the dynamic time $t_d = t/T_d$ beforehand.
 
 Following parameters and their settings are of importance here:
 
@@ -49,10 +50,9 @@ Following parameters and their settings are of importance here:
         distinct features half the size of the box. Higher modes divide the box further
         down accordingly. Limiting forcing to only first three modes avoids imprinting
         a factitious powerspectrum on the system.
-    \item [zeta] Parameter between 0 and 1 which sets the ratio of
-            compressive to solenoidal modes 
-            forcing. In this work, \emph{zeta} is set to $\zeta = 0.5$. That is,
-            equal forcing on both driving mechanisms.
+    \item [zeta] Parameter between 0 and 1 which sets the ratio of compressive
+        to solenoidal forcing. In this work, \emph{zeta} is set to $\zeta = 0.5$. That
+        is, equal forcing on both driving mechanisms.
 \end{description}
 
 A depiction of the velocity field after energy injection for the first time on

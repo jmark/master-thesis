@@ -21,7 +21,7 @@ Mach numbers beyond 3.  Consequently, we settled to $\mach_{\text{forcing}} =
 2.5$, keeping a small safety gap.
 
 One crossing time amounts to $T_d = L/\mach = 1/2.5 = 0.4$.  When reaching
-$\mach = 2.5$ as fast as possible, but slow enough not to overstrain the solver, the
+$\mach = 2.5$ as fast as possible, but slow enough not to over strain the solver, the
 stirring module perpetually injects just enough energy to stay in proximity of
 $\mach_{\text{forcing}}$. The turbulence is given four crossing times to fully
 develop, after which forcing is deactivated.  We will call this the
@@ -84,7 +84,7 @@ $N_{\text{checkpoints}}$    & 60 & 60 & 60 & 60 & 60 & 60 & 60 & 60 \\
 \Fig{plots/stirturb/evolutions/sonic-mach.png} clearly depicts the stir-up,
 turbulent and decay phases. After a steep stirring phase of roughly 0.1 turning
 times the forcing routine keeps the solvers from decaying below $\mach = 2.5$.
-The differences in rising times and sawtooth shapes in the zoomed picture
+The differences in rising times and saw-tooth shapes in the zoomed picture
 (\fig{plots/stirturb/evolutions/sonic-mach.png}) are a result of
 different timesteps.
 
@@ -179,7 +179,7 @@ Having only around 25\% DG elements most of the time means their influence on
 the performance of the hybrid scheme is expected to be rather small.  However
 \fig{plots/stirturb/evolutions/ratio-fv-dg.png} proofs that the mode switching
 code operates as expected. Increasing the spatial resolution should yield
-better ratios in favour of DG elements. The method is a proof-of-concept with
+better ratios in favor of DG elements. The method is a proof-of-concept with
 lots of room for improvement.
 
 \image{1.0}{plots/stirturb/evolutions/ratio-fv-dg.png}{Time evolution of the
@@ -231,7 +231,7 @@ pitched energy dissipation rates for the Midpoint methods is further
 investigated in the next sections.
 
 \image{1.0}{plots/stirturb/evolutions/ekin-dissipation.png}{Time evolution of
-the internal energy deprivation by meassuring the energy loss right before
+the internal energy deprivation by measuring the energy loss right before
 and after polytropic cooling and dividing by the current dynamic timestep.}
 \image{1.0}{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}{Cumulated
 energy deprivation collected by the polytropic cooling module. The plots
@@ -265,7 +265,7 @@ the simulation circa 10 times the average energy (cf.
 \subsubsection{Density \& Velocity Distributions}
 \label{sec:stirturb-pdf}
 \paragraph{Density Distribution}
-Fully developed supersonic turbulences are expected to reveal a lognormal
+Fully developed supersonic turbulences are expected to reveal a normal
 density distribution (cf. \sec{theory-density-pdf}). Additionally, it gives
 an insight into the distribution of mass from smallest to largest scales.
 All log-log-scale density PDFs in \fig{plots/stirturb/pdfs/dens-vw-dyntimes.png}
@@ -309,7 +309,7 @@ seem most promising.
 sonic mach number over time derived from the width of the volume-weighted
 density PDFs via relation \eqn{density-pdf-mach} ($b = 2/3$). The dashed line
 represents the root-mean-square velocity of the PPM solver and serves as a
-reference. Due to the lognormal relationship each individual fit yields very
+reference. Due to the log-normal relationship each individual fit yields very
 low error margins. Hence, the error bars are to small to see.}
 \begin{table}[H]
 \fontsize{4mm}{4mm}\selectfont
@@ -354,7 +354,7 @@ Comparing this plot with the energy dissipation rates in
 \fig{plots/stirturb/evolutions/ekin-dissipation.png} there is a correlation
 between maximum velocity bursts and high pitched dissipation. Obviously, this
 applies only to the Midpoint schemes. The maximum velocity plot indicates only
-a singular value which does not necessarily represents a prevalent phenomen in
+a singular value which does not necessarily represents a prevalent phenomenon in
 the system. In conjunction with the velocity PDF however this can be considered
 true for the Midpoint schemes.
 \image{1.0}{plots/stirturb/pdfs/vels-vw-dyntimes.png}{Volume-weighted velocity
@@ -424,7 +424,7 @@ $k_{diss} \approx 25$ when the spectra start the bend down. The study in
 \cite{kitsionas2009algorithmic} came to the same conclusion for equal grid
 resolution of $512^3$.}
 
-Besides the lognormality of the density PDF (\sec{stirturb-pdf}) the
+Besides the log-normality of the density PDF (\sec{stirturb-pdf}) the
 slopes of the inertial range of velocity powerspectra are well-established
 indicators for the accurate modelling of turbulences. According to the theory
 (cf.  \sec{theory-powerspectra}) we expect slopes of $m_{vw} =
@@ -434,7 +434,7 @@ powerspectra of the velocity field, respectively.
 \fig{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png} indeed reproduce
 given slopes for the time-averaged powerspectrum of the turbulent phase.  The
 spectra at the end of the simulation when the turbulent decay progressed
-considerably, are plotted as well. Obviously, the inertial range has levelled
+considerably, are plotted as well. Obviously, the inertial range has leveled
 down. This makes sense considering the fact that the supply of kinetic energy
 was cut off. Hence the large scale structures gradually dissolve and
 push their energy down the cascade. The change of slope can seen in
@@ -443,7 +443,7 @@ the beginning the inertial range is very steep. The turbulent driver is pumping
 energy into the system on first three modes. As the simulation continues the
 energy cascade builds up and is fully established after two crossing times.
 When entering the decay phase ($t_d = 4$) the slope flattens out.
-\Tbl{stirturb-pws} lists the results of the linear fits of the intertial range
+\Tbl{stirturb-pws} lists the results of the linear fits of the inertial range
 as well as the numerically integrated areas under the time-averaged powerspectra
 of the turbulent phase.
 \image{1.0}{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}{Powerspectra of
@@ -532,8 +532,8 @@ After the turbulent phase, forcing was deactivated and the turbulence
 decayed for another 2 crossing times.
 
 By analyzing density/velocity distributions and powerspectra it was confirmed
-that all solvers modelled a supersonic turbulence correctly. They confirmed a
-lognormal density profile and their inertial ranges descended with the correct
+that all solvers modeled a supersonic turbulence correctly. They confirmed a
+log-normal density profile and their inertial ranges descended with the correct
 slopes. However there are differences regarding energy dissipation rates and
 resolution of smallest scales revealing an inverse relationship. Suggested by
 the cumulative energy budget in
@@ -543,12 +543,12 @@ consumed roughly 15 to 20\% more. On the other hand the latter yield more
 details on small scales which becomes clearly evident in the mass-weighted
 velocity distribution in \fig{plots/stirturb/pdfs/vels-mw-turb-phase.png}.
 Estimating the energy in the dissipative range, see \tbl{stirturb-pws}, does
-not contractict this observation. We will put this into perspective later on.
+not contradict this observation. We will put this into perspective later on.
 
 The behaviour of the Midpoint schemes falls out of place and should discussed
 separately. It seems that the turbulent driver creates a force field in such a
 unique way and over a longer period of time so that the majority of the mass is
-dragged into a lump surounded by highly accelerated regions of very thin
+dragged into a lump surrounded by highly accelerated regions of very thin
 medium. See \fig{plots/stirturb/snapshots/forcing-stop-02.png} for a snapshot.
 The dissolution of those extremely high Mach regions drives up the energy
 dissipation substantially. See

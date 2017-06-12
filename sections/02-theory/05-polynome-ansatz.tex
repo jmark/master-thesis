@@ -1,5 +1,5 @@
 \subsubsection{Discontinuous Galerkin Method}
-\label{sec:polyonome-ansatz}
+\label{sec:polynome-ansatz}
 
 By refining the mesh, the error in the numerical approximation of the physical
 solution decays algebraically, that is, introducing more elements.
@@ -20,7 +20,7 @@ convergence rates (cf. \cite{tugnoli2016locally}).
 
 Discontinuous Galerkin methods combine h- and p-refinement by defining
 higher-order polynomial functions in each finite element to approximate the
-exact solutions. This way, they are able to model discontinuities by solving
+exact solution. This way, they are able to model discontinuities by solving
 the Riemann problem at the boundaries of each element.
 
 DG methods have the following main advantages over finite volume methods:
@@ -62,22 +62,17 @@ $\Omega$ is divided into a \emph{mesh} of adjunct self-contained sub-domains
 $\Omega_l$ ($l \in \mathbb{N}$) with well-defined boundaries. Every
 element $\Omega_l$ gets transformed to the reference space $\hat{\Omega} =
 [-1,1]^3$. For the sake of clarity, we assume a Cartesian grid, drop any
-transformation prefactor and set $\Omega = \Omega_l = \hat{\Omega}$.
+transformation pre-factor and set $\Omega = \Omega_l = \hat{\Omega}$.
 
 The unknown solution $\vec{U}$ is now replaced by polynomes of order $N_p$
 constructed from linear combinations of orthogonal basis functions
-$\vec{\Psi}^j$.
+$\Psi^j$.
 \begin{equation}
-    U_{\vec{i}}(t,x,y,z) \approx p_{\vec{i}}(t,x,y,z) = \sum^{N_p}_{\vec{j}=0} U^{\vec{j}}_{\vec{i}}(t) \, \Psi^j(\vec{x}),
+    U_{i}(t,x,y,z) \approx p_{i}(t,x,y,z) = \sum^{N_p}_{j=0} U^{j}_{i}(t) \, \Psi^j(\vec{x}) \;\;\;\; i \in \{1,2,3,4,5\}
 \end{equation}
-where $\vec{i}$ and $\vec{j}$ are three-dimensional \emph{multi-indices}.
-\begin{equation}
-    \vec{i} = (i,j,k)^T, \;\; i,j,k \in \mathbb{N}_0
-\end{equation}
-
 The following treatment is analog for all five conservative variables of the
 Euler equation, so we ignore the index $i$. Remembering the general weak
-formulation, \eqn{weak-formulation}, of the solution integral,
+formulation in \eqn{weak-formulation} of the solution integral,
 \begin{align}
 \label{eqn:weak-formulation-galerkin}
     &\int_\Omega \left(\sum^{N_p}_{j=0} (\partial_t U^j(t)) \, \Psi^j(\vec{x})\right)\,\phi(\vec{x}) d^3x 
@@ -88,17 +83,17 @@ formulation, \eqn{weak-formulation}, of the solution integral,
             + \left(\sum^{N_p}_{j=0} G^j(t)\,\Psi^j(\vec{x})\right)\,\partial_y \phi(\vec{x})
             + \left(\sum^{N_p}_{j=0} H^j(t)\,\Psi^j(\vec{x})\right)\,\partial_z \phi(\vec{x}) \right] d^3x, \nonumber
 \end{align}
-we put the time variable into the coefficients $S,F,G,H$ and the space
+where we put the time variable into the coefficients $S,F,G,H$ and the space
 variables into the basis functions $\Psi$ and test functions $\phi$.
 
 \paragraph{Lagrange Polynome}
-If we associate the basis functions $\Psi^{\vec{j}} := L^{\vec{j}}$ and the
-test functions $\phi := L^{\vec{i}}$ with \vip{Lagrange} polyonmes of equal
+If we associate the basis functions $\Psi^{j} := L^{j}$ and the
+test functions $\phi := L^{i}$ with \vip{Lagrange} polynomes of equal
 order $N_p$, we can formulate an interpolation and integration scheme
 (\emph{collocation}) over the domain $\Omega$. The polynome in one dimension
 reads as follows
 \begin{equation}
-l_j(x) = \prod^p_{k=0,k\neq j} \frac{x-x_k}{x_j-x_k}, \ j = 0,\dots,p,
+l_j(x) = \prod^p_{k=0,k\neq j} \frac{x-x_k}{x_j-x_k} \;\;\; j = 0,\dots,p,
 \end{equation}
 with the \vip{Kronecker} property $l_j(x_i) = \delta_{ij}$.
 \Fig{lagrange-interpolation-1d.png} shows a third-order ($N_p = 3$)
@@ -115,7 +110,7 @@ Beyond the fringes the Lagrange polynome goes to infinity.}
 %% the Gauss-Quadrature where the outermost anchor nodes do not lie on the
 %% interval boundaries.
 
-We get to three-dimensional formulation via the \emph{Tensor Product Ansatz}.
+We get to the three-dimensional formulation via the \emph{Tensor Product Ansatz}.
 \newcommand{\LI}{L_{\vec{i}}(\vec{x})}
 \begin{equation}
 \label{eq-tensor-ansatz}
@@ -127,8 +122,13 @@ and write the three-dimensional interpolating polynome as:
 \newcommand{\sumI}{\sum^{N_p}_{\vec{i}=0}}
 \begin{equation}
 \label{eq-tensor-ansatz-interpolant}
-    \PI = \sumI \FI \LI = \sum^{N_p}_{i,j,k = 0} f_{ijk}(t) \cdot l_i(x) \cdot l_j(y) \cdot l_k(z)
+    \PI = \sumI \FI \LI = \sum^{N_p}_{i,j,k = 0} f_{ijk}(t) \cdot l_i(x) \cdot l_j(y) \cdot l_k(z),
 \end{equation}
+where $\vec{i}$ is a three-dimensional \emph{multi-index}.
+\begin{equation}
+    \vec{i} = (i,j,k)^T, \;\; i,j,k \in \mathbb{N}_0
+\end{equation}
+
 Note that the time varying part of the polynome lives in the coefficients.
 Keep this in mind.
 \newcommand{\FJ}{F_{\vec{j}}(t)}
@@ -165,7 +165,7 @@ and $\phi$ with Lagrange polynomes $\LI$, we get an explicit ansatz, called
 \newcommand{\LZIK}{L^{(z)}_{\vec{i}}(\vec{x}_{\vec{k}})}
 
 Evaluating above formula at discrete nodes $\vec{x}_{\vec{i}}$ (cf.
-\sec{trafo}) and introducing \emph{integration weigths}
+\sec{trafo}) and introducing \emph{integration weights}
 \begin{equation}
 \label{eqn:mass-matrix}
     \omega_{\vec{i}} = \int_{\Omega} \LI d^3 x

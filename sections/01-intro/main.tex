@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Astrophysical turbulence simulations of interstellar gases a play vital role in
+Astrophysical turbulence simulations of interstellar gases play a vital role in
 the understanding and modelling of star formation (cf.
 \cite{mac2004turbulence}). A multitude of numerical schemes and computational
 fluid dynamics software has been developed, each with their own merits and
@@ -9,8 +9,8 @@ drawbacks.
 Finding the best numerical solver for a specific problem domain is a vibrant
 field of research as of today, even though the first pioneers began to conduct
 simple physics simulations many decades ago. A lot has changed since these
-days. The present explosion in computing power paralleled by a striking
-inflation of operational costs passes on a mighty tool to the astrophysics
+days. The present explosion in computing power, paralleled by a striking
+inflation of operational costs, passes on a mighty tool to the astrophysics
 community, which opens the door to numerical experiments unfeasible ten years
 ago.
 
@@ -20,8 +20,8 @@ better performance. Especially, the aeronautics and car industries push forward
 the development of new simulation software. They are interested in modelling
 flight characteristics for new airplane designs, the aerodynamic drag of cars
 or want to increase the efficiency of combustion engines. Consequently,
-innovative numerical schemes should be highly flexible with regards to meshing
-complex geometries, very accurate, massively parallelizable and blazingly fast.
+innovative numerical schemes have to be highly flexible with regards to meshing
+complex geometries, high accuracy, massively scalability and blazing performance.
 The demands for the underlying physical model are rather moderate. The
 Navier-Stokes equations suffice on most occasions. One of the latest specimen
 of their kind is the high-order accurate CFD software FLEXI\footnotemark[1]
@@ -36,14 +36,14 @@ implementation details of FLEXI are discussed in
 
 In contrast to air flow models, the demands for turbulence simulations of
 astrophysical gases are quite the opposite. Free space does not imply complex
-geometries. The physical model becomes very complex, when electro-magnetic
+geometries. But the physical model becomes very complex, when electro-magnetic
 fields, radiation, chemistry and gravity are introduced to the governing
 equations.  Furthermore, a huge range of scales in time, space, energy, density
 and pressure must be covered as well. As if this is not enough, high Mach
 numbers in the flow give rise to strong shock conditions or discontinuities,
 which challenge the stability and accuracy of every numerical solver. Up to
-now, the astrophysics community considers finite-volume schemes of first/second
-order to be the only viable method for conducting this kind of simulations.
+now, the astrophysics community considers finite volume schemes of first/second
+order to be the only viable option for conducting this kind of simulation.
 FLASH\footnotemark[2], originally developed by researchers at the University of
 Chicago, is the name for a well established nuclear and astrophysics simulation
 software with \emph{finite volumes} as their foundational scheme. FLASH is, for

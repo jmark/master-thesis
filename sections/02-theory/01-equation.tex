@@ -10,9 +10,9 @@ with traces of carbon, oxygen, nitrogen and metals. Magnetic fields and
 turbulent motions also provide pressure in the ISM, and are typically more
 important dynamically than the thermal pressure.
 
-Many theoretical models for ISM are basesd on the ideal
+Many theoretical models for ISM are based on the ideal
 \emph{Magneto-Hydrodynamic equations} which are a blend of the \emph{compressible
-Euler equations} and of the \emph{Maxwell equations}, describing the hydrodynamics
+Euler equations} and the \emph{Maxwell equations}, describing the hydrodynamics
 and (electro-)magnetodynamics, respectively.
 
 In this thesis we solely focus on the hydrodynamics.
@@ -23,8 +23,8 @@ In 1757 \vip{Leonhard Euler} (1707-1783) published a set of equations for
 inviscid flow, known as the Euler equations. They are hyperbolic
 conservation equations which model perfect fluids without any interaction of their
 constituents.  Hence, we assume no
-heat conduction ($\SET^{i0} = \SET^{0i} := 0, \;\;i = \{1,2,3\}$), no viscosity
-($\SET^{ij} := p\,\mathbb{I}, \;\;i,j = \{1,2,3\}$) and no gravity $g = 0$. 
+heat conduction ($\SET^{i0} = \SET^{0i} := 0, \;\;i \in \{1,2,3\}$), no viscosity
+($\SET^{ij} := p\,\mathbb{I}, \;\;i,j \in \{1,2,3\}$) and no gravity $g = 0$. 
 Within the comoving frame the
 \emph{stress-energy tensor} $\SET \in \mathbb{R}^{4x4}$ then reads:
 \begin{equation}
@@ -102,10 +102,10 @@ the squared \emph{isothermal} speed of sound.
 
 \paragraph{Dimensionless Euler Equations} We want to show that the Euler
 equations are invariant to changes of units. This discussion is useful since
-most numerical frameworks do not support physical units and rescaled phyiscal
+most numerical frameworks do not support physical units and rescaled physical
 quantities avoid truncation errors due to the limits of floating point
 operations. For this, we choose a characteristic length $l_r$, a characteristic
-velocity $\vels_r$ and a characterstic density $\dens_r$. Multiplying suitable 
+velocity $\vels_r$ and a characteristic density $\dens_r$. Multiplying suitable 
 combinations of these constants with the Euler equations yields
 \begin{align}
 \left[\partial_t\dens + \nabla \cdot (\dens\,\velv)\right] \cdot \frac{l_r}{\dens_r\,\vels_r} &=  0\\[0.4cm]
@@ -128,9 +128,9 @@ where $t_r = \frac{l_r}{\vels_r}$ (characteristic time) and
 \tilde{\pres} = \frac{\pres}{\dens_r\,\vels_r^2},\ 
 \tilde{\vec{F}} = \vec{F} \, \frac{l_r}{\dens_r\,\vels_r^2}.
 \end{equation}
-Conseqently, the dimensionless Euler equations do not change under unit transformation. If not
-stated otherwise we drop the tilde sign ($\tilde{\cdot}$) and assume always
-dimensionless quantites from now on.
+Consequently, the dimensionless Euler equations do not change under unit transformation. If not
+stated otherwise, we drop the tilde sign ($\tilde{\cdot}$) and assume always
+dimensionless quantities from now on.
 
 \paragraph{Choice of parameters} One consequence of dimensionless units is the
 free choice of parameters. We exploit this feature in order to choose a
@@ -192,7 +192,7 @@ integrating over the domain $\Omega$, we get
     \int_\Omega \left( \partial_tU_i\,\phi^i 
         + \partial_x F_i(\vec{U})\,\phi^i 
         + \partial_y G_i(\vec{U})\,\phi^i 
-        + \partial_z H_i(\vec{U})\,\phi^i + S_i \phi^i \right) d^3x = 0
+        + \partial_z H_i(\vec{U})\,\phi^i + S_i \phi^i \right) d^3x = 0.
 \end{equation}
 Integration-by-parts rearranges the integral into a \emph{source term},
 \emph{surface term} and \emph{volume term}.
@@ -205,7 +205,7 @@ Integration-by-parts rearranges the integral into a \emph{source term},
 where $\vec{n} = (n_x,n_y,n_z)^T$ is the outward surface normal to $\partial\Omega$.
 
 Unfortunately, weak solutions are not unique, and so an additional problem is
-to identify which weak solution is the physically correct vanishing-viscosity
+to identify which weak solution is the physically correct \emph{vanishing-viscosity}
 solution. Again, one would like to avoid working with the viscous equation
 directly, but it turns out that there are other conditions one can impose on
 weak solutions that are easier to check and will also pick out the correct

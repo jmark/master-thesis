@@ -7,10 +7,10 @@ When a shock wave is emerging, the velocity behind the wave front is higher than
 in front of it. The medium is highly compressed until an unphysical state is
 reached. The velocity \emph{characteristics} begin to cross. Nature solves this
 dilemma by introducing additional physics like extreme heat radiation,
-explosions, bangs or detachement of fluid. Either way, it involves an increase
-of entropy according to the second law of thermodynamics. Cf. \cite{Salas1996}. A
-numerical solver has to capture this kind of physics in order to prevent
-unphysical solutions. 
+explosions, bangs or detachment of fluid. Either way, it involves an increase
+of entropy according to the second law of thermodynamics (cf.
+\cite{Salas1996}). A numerical solver has to capture this kind of physics in
+order to prevent unphysical solutions. 
 
 \paragraph{Method of Characteristics}
 The prototype for second order, hence nonlinear, differential equations is the
@@ -58,12 +58,12 @@ problem}. It provides the theoretical basis for the correct treatment of
 discontinuities in solutions of nonlinear PDEs. Furthermore, the Riemann
 problem is an integral part of finite element schemes who approximate the
 exact solution by piecewise constant or polynomial functions as
-Finite-Volume and discontinuous Galerkin methods, respectively, do. More
-on this can be found in \sec{flux-functions}.
+finite volume and discontinuous Galerkin methods, respectively, do. Further
+discussion follows in \sec{flux-functions}.
 
 \paragraph{Gibb's Phenomenon}
 An inherent downside of schemes involving polynomes is the \vip{Gibb's}
-phenomenon. It states that polyonomes of higher order, trying to approximate
+phenomenon. It states that polynomes of higher order, trying to approximate
 discontinuities, yield spurious oscillations. See \fig{plots/burgers/ringing.png}.
 There are many approaches to get the ringing near shocks under control. Two
 of them, \emph{Artificial Viscosity} and \emph{FV-DG mode switching}, are presented
@@ -71,5 +71,5 @@ in \sec{shock-capturing}.
 \image{0.7}{plots/burgers/ringing.png}{Examples of spurious oscillation of the
 discontinuous Galerkin method solving the one-dimensional advection equations
 with a discontinuous initial condition. The domain is divided into 50 elements each
-containing a third-order polymome. Gauss and Gauss-Lobatto are two types of
+containing a third-order polynome. Gauss and Gauss-Lobatto are two types of
 distributing interpolation nodes within each element (cf. \sec{trafo}).}

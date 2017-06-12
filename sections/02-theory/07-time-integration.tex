@@ -1,21 +1,21 @@
 \subsubsection{Time Integration}
 \label{sec:time-integration}
 
-At the end of \sec{polyonome-ansatz}, in \eqn{semi-discrete-weak-formulation}, we
-arrived at a semi-discrete weak formulation of the DG method. It is nothing
-more than an ordinary differential equation of the form
+The semi-discrete weak formulation in \eqn{semi-discrete-weak-formulation} of
+the DG method is nothing more than an ordinary differential equation of the
+form
 \begin{equation}
 \frac{d}{dt}y = f(t,y).
 \end{equation}
 Defining initial values $y(t_0) = y_0$, this equation can be numerically solved
-in the most naive way via the \emph{explicit} \vip{Euler} (EU) method. Chosing
-an appropiate timestep $\Delta t$ we can explicitly integrate from the current
+in the most naive way via the \emph{explicit} \vip{Euler} (EU) method. Choosing
+an appropriate timestep $\Delta t$ we can explicitly integrate from the current
 state $y^n$ to the future state $y^{n+1}$.
 \begin{equation}
     y^{n+1} = y^{n} + \Delta t \cdot f(t^n,y^n)
 \end{equation}
 However, if the $\Delta t$-convergence rate is worse than the h-p-refinement
-(cf. \sec{polyonome-ansatz}) it would render the advantages of the Galerkin
+(cf. \sec{polynome-ansatz}) it would render the advantages of the Galerkin
 method useless. A widely used class of higher-order time integration schemes
 with good convergence properties are the explicit Runge-Kutta methods (RK). The
 second-order RK, resp. \emph{midpoint} method (MP), reads
@@ -35,12 +35,13 @@ where
 \end{align}
 
 \paragraph{Courant-Friedrichs-Lewy condition}
-To keep a numerical algorithm stable the time step has to obey, the
+To keep a numerical algorithm stable, the time step has to obey the
 \emph{Courant-Friedrichs-Lewy condition} (CFL condition). It requires that the
-domain of dependence of $q_i^{n+1}$ of the algorithm at future time time
-$t^{n+1}$ should include the true domain of dependence at time $t = t^n$ . Or in
-other words: nothing is allowed to flow more than one grid spacing $\Delta x$
-within one time step. This means quantitatively
+domain of dependence, that is $q_i^{n+1}$ at future time $t^{n+1}$, should
+include the true domain of the dependence at time $t = t^n$. Or in other words:
+nothing is allowed to flow more than one grid spacing $\Delta x$ within one
+time step $\Delta t$.
+This means quantitatively
 \begin{equation}
     \Delta t \le \frac{\Delta x}{\vels}
 \end{equation}
@@ -48,10 +49,10 @@ Given a CFL number: $0 < CFL \le 1$
 \begin{equation}
     \Delta t = CFL \cdot \min_{x}\left(\frac{\Delta x}{\vels(x)}\right)
 \end{equation}
-The CFL condition is a nessecary, but not sufficient, condition for the
+The CFL condition is a necessary, but not sufficient, condition for the
 stability of any explicit differencing method. With increasing order of the
 Runge-Kutta scheme the stability increases though. RK3 even allows the CFL
-number, in some cases, to be greater 1. Cf. \cite{jameson1981numerical}.
+number, in some cases, to be greater 1 (cf. \cite{jameson1981numerical}).
 
 In a three-dimensional orthogonal domain the timestep reads
 \begin{equation}

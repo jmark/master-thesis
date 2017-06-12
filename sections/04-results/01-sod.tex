@@ -6,7 +6,7 @@ modifications explained in the previous chapter. The standard test for the
 correct treatment of shocks is the \vip{Sod} Shock Tube Problem in one
 dimension. At first, we look at the classical adiabatic test case, then
 introduce polytropic cooling (isothermal) and finally apply a strong shock
-sitation by setting the initial left-side velocity to $u_L = 15$. All runs took
+situation by setting the initial left-side velocity to $u_L = 15$. All runs took
 place with a conservative CFL number of $CFL = 0.4$.
 If not indicated otherwise the initial conditions were set like follows
 \begin{table}[H]
@@ -56,7 +56,7 @@ CFL    &  0.4 \\
 \end{table}
 
 This setup is not a convergence study or similar. The objective is to test
-wether FLEXI produces the same results as FLASH under identical initial
+whether FLEXI produces the same results as FLASH under identical initial
 conditions.
 
 \footnotetext{Euler Hybrid was only run for adiabatic and isothermal Sod Shock
@@ -68,14 +68,14 @@ expected density profile of the classical Sod-Shock problem with varying
 precision. PPM yields the most accurate result while on the other hand
 RK3-Hybrid smears out the discontinuities considerably. Looking closely at the
 zoomed area all hybrid schemes (blue, yellow and green dashed lines) tend to
-oscillate.  The inacceptable ringing of the Euler-Hybrid is a consequence of
+oscillate.  The unacceptable ringing of the Euler-Hybrid is a consequence of
 the instability of the Euler time integration within the DG operator.
 Consequently, Euler-Hybrid is disqualified and is discarded.  Same assertions
 can be made for the isothermal case shown in
 \fig{plots/sod/isothermal/density.png}.
 \image{1.0}{plots/sod/adiabatic/density.png}{
 Canonical density profile at the conventional time $t$ = 0.2 with anticipated
-regions and discontinuities outlined in the plot. The formular of the analytical
+regions and discontinuities outlined in the plot. The formula of the analytical
 analytical solution is written down in \cite{sod1978survey}.}
 \image{1.0}{plots/sod/isothermal/density.png}{
 Isothermal density profile at conventional time $t$ = 0.2 with expected

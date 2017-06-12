@@ -6,11 +6,11 @@ The term \emph{grid space} refers to the arrangement of nodes within an
 element. Four types of node configurations are of importance here:
 \emph{Face-centered grid} (FCG), \emph{body-centered grid} (BCG), \emph{Gauss
 nodal grid} (GNG) and \emph{Gauss-Lobatto nodal grid} (LNG). Finite Volumes
-live on a BCG while the Galerkin polyonomes are anchored on either GNG or LNG.
+live on a BCG while the Galerkin polynomes are anchored on either GNG or LNG.
 Gauss and Gauss-Lobatto nodes are the roots of special polynomials. See
 \fig{grid-spaces.png}. They minimize the errors of the \emph{Gauss quadrature}
-(numerical integration) which is one of the corner stones in the derivation of the
-Galerkin method as we have done \sec{polyonome-ansatz}). See
+(numerical integration), which is one of the corner stones in the derivation of
+the Galerkin method as we have done \sec{polynome-ansatz}). See
 \cite{gassner2011comparison} for a comparative study of GNG and LNG and further
 information about this subject.
 
@@ -26,18 +26,18 @@ We only consider Gauss nodes, since the FV-DG mode switching (cf.
 \sec{shock-capturing}) does only support Gauss nodes at the time of
 writing.
 
-In order to compare and share data between the FV and DG schemes one has to
+In order to compare and share data between the FV and DG schemes, one has to
 translate between the different grids via Lagrange interpolation.  Although
-FLEXI offers curvilinear grids we only need the Euclidean geometry. Thus whe
+FLEXI offers curvilinear grids, we only need the Euclidean geometry. Thus we
 have a one-to-one relationship between the four grid spaces and are able to
-directly lay them on top of each other as depicted in \Fig{grid-spaces.png}.
+directly lay them on top of each other as depicted in \fig{grid-spaces.png}.
 
 \paragraph{Interpolation Error} is in general inevitable but manageable.
 See \fig{lagrange-interpolation-1d.png} for an interpolation of a trigonometric
 function. The quality of an interpolation procedure is determined by an
 error measure which we motivate in the following.
 
-The Lagrange interpolating polyonome $L(x)$ of order $N$ is exact for a
+The Lagrange interpolating polynome $L(x)$ of order $N$ is exact for a
 polynomial function $f(x)$ of order $M \le N$.
 
 \emph{Proof:} The remainder $R(x) = L(x) - f(x)$ can be expressed as
@@ -52,12 +52,12 @@ derivative of $f(x)$.  Since $M \le N$, $f^{(N+1)}(x) = 0 \; \Rightarrow R(x) =
 An example for an exact Lagrange interpolation in two dimensions is shown
 \Fig{plots/interpolation/2d-third-order}.
 \image{1.0}{plots/interpolation/2d-third-order}{
-Example of a two-dimensional exakt third-order Lagrange interpolation of a
+Example of a two-dimensional exact third-order Lagrange interpolation of a
 second-order polynomial. The relative error $\errorrms$ = 0.000000\% (cf.
 \eqn{error-rms}) is below machine precision.}
 
-Instead of the remainder $R(x)$ we define a \emph{root-means-sqare
-variance} as a kind of distance meassure between an arbitrary function $f(x)$ and
+Instead of the remainder $R(x)$ we define a \emph{root-means-square
+variance} as a kind of distance measure between an arbitrary function $f(x)$ and
 its interpolant $\widetilde{f}(x)$.
 \begin{equation}
 \label{eqn:error-rms}
@@ -119,7 +119,7 @@ Gaussian blur before the interpolation step. This way, almost equal initial
 states in FLASH and FLEXI are ensured.
 
 \image{1.0}{plots/interpolation/flexi-column-density.png}{
-Column densities plots of interpolated hypersonic (Mach 10) turbulence (see
+Column densities plots of interpolated supersonic (Mach 10) turbulence (see
 \fig{plots/forcing/b5-full-turbulence}) from FLASH to FLEXI. Left side: The
 density is interpolated via a third-order (four nodes per element) Lagrange
 interpolation as described in the text. The relative interpolation error is
@@ -129,7 +129,7 @@ the interpolation step: $\errorrms = 0.2808160 \approx 3$\%.
 }
 \image{0.8}{plots/interpolation/density-ray.png}{
 Comparison of one-dimensional density profiles and residuals through a
-hypersonic (Mach 10) turbulent box with original simulation data (flash) and
+supersonic (Mach 10) turbulent box with original simulation data (flash) and
 transferred interpolated data (flexi). The density ray is extracted from same
 data already shown in \fig{plots/forcing/b5-full-turbulence} and
 \fig{plots/interpolation/flexi-column-density.png}. The smoothing (before
