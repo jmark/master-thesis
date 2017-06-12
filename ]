@@ -1,0 +1,564 @@
+\subsection{Driven Turbulence}
+\label{sec:stirturb}
+
+We conduct an isothermal driven supersonic turbulence simulation in a
+three-dimensional periodic box of unit length with a resolution of 512 cells in
+each direction. This kind of setup is very common in ISM simulations and has
+been studied extensively in the past. See
+\cite{schmidt2009numerical,kitsionas2009algorithmic,0004-637X-665-1-416,mac1998kinetic}.
+
+Originating from the driver, kinetic energy enters the box on large scales
+and leaves it as internal energy via polytropic cooling on small scales. This way a
+stationary flow of momentum gets pumped through the system.  In conjunction
+with \emph{bulk motion correction} supersonic turbulent flow emerges, which
+presents a stress test for every numerical scheme.
+
+The simulation consists of three phases. At the beginning of the run, turbulent
+forcing (cf. \sec{turbuforcing}) stirs the medium up to a certain
+root-mean-square velocity, which is equivalent to the sonic Mach number
+$\mach_{\text{forcing}}$ (cf. \sec{governing-equations}/Choice of Parameters).
+Prior tests have shown that FLEXI becomes unstable for driven turbulences with
+Mach numbers beyond 3.  Consequently, we settled to $\mach_{\text{forcing}} =
+2.5$, keeping a small safety gap.
+
+One crossing time amounts to $T_d = L/\mach = 1/2.5 = 0.4$.  When reaching
+$\mach = 2.5$ as fast as possible, but slow enough not to over strain the solver, the
+stirring module perpetually injects just enough energy to stay in proximity of
+$\mach_{\text{forcing}}$. The turbulence is given four crossing times to fully
+develop, after which forcing is deactivated.  We will call this the
+\emph{turbulent phase}. During the \emph{decay phase} it takes another two
+turning times to let the turbulence drop below the supersonic barrier
+(cf. \cite{stone1998dissipation}, \cite{mac1998kinetic}).
+
+Based on the considerations in \sec{governing-equations}, we initialize the
+state as listed in \tbl{initial-state}. 
+\begin{table}[H]
+%\fontsize{3mm}{3mm}\selectfont
+%\captionsetup{width=.6\textwidth}
+\caption{Outline of initial condition for all driven turbulence simulations}
+\centering
+\begin{tabular}{llc|llc}
+\toprule
+\multicolumn{3}{c}{primitive variables} &
+\multicolumn{3}{c}{conservative variables} \\
+\midrule
+Name & Symbol & Value & Name & Symbol & Value\\
+\midrule
+density         & $\rho_0$            & 1.0 & density         & $\rho_0$            & 1.0 \\ 
+x-velocity      & $\vels_{x,0}$       & 0.0 & x-momentum      & $\mom_{x,0}$           & 0.0 \\ 
+y-velocity      & $\vels_{y,0}$       & 0.0 & y-momentum      & $\mom_{y,0}$           & 0.0 \\ 
+z-velocity      & $\vels_{z,0}$       & 0.0 & z-momentum      & $\mom_{z,0}$           & 0.0 \\  
+pressure        & $\pres_{x,0}$       & 0.6 & total energy    & $\ener_{x,0}$       & 0.9 \\  
+\bottomrule
+\end{tabular}
+\label{tab:initial-state}
+\end{table}\remark Bouchut 3 and Bouchut 5 actually solve the ideal
+magneto-hydrodynamics (MHD) equations. By setting the initial magnetic density
+flux $\magdensv_0 = 0$, the MHD equations reduce to the compressible Euler
+equations. 
+
+Apart from the Mach number, the course of energy and energy dissipation
+are measured. Additionally, we look at selected density distributions and
+powerspectra during the turbulent and decay phase. Checkpoints for analysis and
+plotting are saved ten times per crossing time. \Tbl{setup-stirturb} gives an
+overview of the conducted experiments.
+\begin{table}[H]
+%\fontsize{3mm}{3mm}\selectfont
+%\captionsetup{width=.8\textwidth}
+\caption{Outline of Driven Turbulence Simulations}
+\centering
+\begin{tabular}{l| cccc cccc}
+\toprule
+Solver                      & B3 & B5 & PPM & EU-FV & MP-FV & MP-HY & RK3-FV & RK3-HY \\
+\midrule
+Resol. per Dim.             & 512 & 512 & 512 & 512 & 512 & 512 & 512 & 512 \\
+CFL                         & 0.8 & 0.8 & 0.8 & 0.4 & 0.8 & 0.6 & 0.9 & 1.2 \\
+$\mach_{\text{forcing}}$    & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 \\
+$t_{\text{forcing,stop}}$   & 4.0 & 4.0 & 4.0 & 4.0 & 4.0 & 4.0 & 4.0 & 4.0 \\
+$t_{\text{sim. end}}$       & 6.0 & 6.0 & 6.0 & 6.0 & 6.0 & 6.0 & 6.0 & 6.0 \\
+$N_{\text{checkpoints}}$    & 60 & 60 & 60 & 60 & 60 & 60 & 60 & 60 \\
+\bottomrule
+\end{tabular}
+\label{tab:setup-stirturb}
+\end{table}
+
+\subsubsection{Mach Number Evolution}
+\Fig{plots/stirturb/evolutions/sonic-mach.png} clearly depicts the stir-up,
+turbulent and decay phases. After a steep stirring phase of roughly 0.1 turning
+times the forcing routine keeps the solvers from decaying below $\mach = 2.5$.
+The differences in rising times and saw-tooth shapes in the zoomed picture
+(\fig{plots/stirturb/evolutions/sonic-mach.png}) are a result of
+different timesteps.
+
+The decay rates from $t_d = 4$ to 6 (decay phase) diverge considerably.
+The best results with regards to retaining most kinetic energy, see also
+\fig{plots/stirturb/evolutions/ener.png}, is the Euler FV followed by both RK3
+solvers. PPM and Bouchut 3 and Bouchut 5 are in the middle. Both
+Midpoint solvers seem to be most dissipative and end up at roughly $\mach =
+0.75$ at $t_d = 6$.
+\image{1.0}{plots/stirturb/evolutions/sonic-mach.png}{Time evolution of the
+root-mean-square Mach number $\mach$. After a steep elevation to $\mach = 2.5$
+the forcing routines keep the solvers from decaying by perpetually injecting
+small amounts of kinetic energy. Taking a closer look (zoomed picture) a
+distinct saw-tooth profile appears.}
+
+\subsubsection{Column Density \& Velocity}
+\label{sec:stirturb-column-plots}
+\Fig{plots/stirturb/snapshots/forcing-stop-01.png} to
+\fig{plots/stirturb/snapshots/forcing-stop-03.png} show the column Mach number
+and the column density of all eight conducted runs after four crossing times
+when the forcing is stopped and the phase of turbulent decay begins. At this
+point in time all simulations are expected to show a fully developed
+isotropic supersonic turbulence with a variety of large and small scale
+features as well an established energy cascade.
+
+In \fig{plots/stirturb/snapshots/forcing-stop-01.png} the three solvers from
+FLASH are grouped together in one page. Obviously, they fulfill the
+expectations and serve as reference for the solutions brought up by FLEXI.
+
+First of all, the solutions from Euler FV and the RK3 schemes resemble an
+isotropic supersonic turbulence as well, while the Midpoints seem to differ
+considerably. A cascade from large scale structures down to smaller
+scales is visible. However, there are some problems resolving
+structures on smallest scales. The solutions appear smoother than in
+\fig{plots/stirturb/snapshots/forcing-stop-01.png}. In contrast to the rest,
+Midpoint FV (\fig{plots/stirturb/snapshots/forcing-stop-02.png}) has a very
+distinct feature with a large blob of high mass concentration and
+contiguous regions of void swept empty by a strong velocity field.
+Apparently, the large scale modes of the driving force field (cf.
+\sec{turbuforcing}) at that time drags the majority of the medium into one big
+lump. 
+
+The solutions during the decay phase at $t_d = 5$
+(\fig{plots/stirturb/snapshots/decay-01.png},
+\fig{plots/stirturb/snapshots/decay-02.png} and
+\fig{plots/stirturb/snapshots/decay-03.png})
+look much more alike. Most strikingly, Euler FV and both RK3 schemes have the
+most energy left in the system proofed by the color intensity of the Mach
+number plots. All density plots reveal an isotropic turbulence with large and
+small scale features. As mentioned before, FLEXI's solvers again show fewer
+features at smallest scales compared to FLASH.
+
+\image{1.0}{plots/stirturb/snapshots/forcing-stop-01.png}{Turbulent phase: Column Sonic Mach Number and
+column density along z-axis at the time when forcing is stopped: $t_d = 4.0$.}
+
+\image{1.0}{plots/stirturb/snapshots/forcing-stop-02.png}{Turbulent Phase: Column Sonic Mach Number and
+column density along z-axis at the time when forcing is stopped: $t_d = 4.0$.}
+
+\image{1.0}{plots/stirturb/snapshots/forcing-stop-03.png}{Turbulent Phase: Column Sonic Mach Number and
+column density along z-axis at the time when forcing is stopped: $t_d = 4.0$.}
+
+\image{1.0}{plots/stirturb/snapshots/decay-01.png}{Decay phase: Column Sonic Mach Number and
+column density along z-axis during decay phase: $t_d = 5.0$.}
+
+\image{1.0}{plots/stirturb/snapshots/decay-02.png}{Decay phase: Column Sonic Mach Number and
+column density along z-axis during decay phase: $t_d = 5.0$.}
+
+\image{1.0}{plots/stirturb/snapshots/decay-03.png}{Decay phase: Column Sonic Mach Number and
+column density along z-axis during decay phase: $t_d = 5.0$.}
+
+\subsubsection{FV-DG Mode Switching}
+\label{sec:stirturb-mode-switching}
+Two of the conducted runs are hybrid schemes, where shock capturing routines
+decide, when a DG element must switch to FV mode in order to handle a strong
+shock condition correctly. \Sec{shock-capturing} describes the procedure in
+detail. \Fig{plots/stirturb/evolutions/ratio-fv-dg.png} shows the relative
+amount of FV elements over dynamic time. Similar to the Mach number plot
+(\fig{plots/stirturb/evolutions/sonic-mach.png}), the three stages of turbulence
+are reflected in this plot. Initially, all elements are in DG mode.  During the
+stir-up phase the FV elements quickly dominate and settle down on a range
+between 65\% and 75\%. After four crossing times, when forcing is
+stopped, the overall shock situation in the turbulence is relieved and fewer FV
+elements are needed. It finally reaches a balance of 50-50.  If the simulation
+would go on, the amount of FV elements is expected to eventually fall down to 0\%.
+
+The mode switching routines follow the Mach number with some latency. This make
+sense since the amount of FV elements are kind of an indicator for the
+intensity of the turbulence, which inherently responds slowly to external
+changes. Consequently, even after stopping the driver at $t_d = 4$, it takes at
+least half the crossing time till the ratio starts to noticeably decline.
+
+Having only around 25\% DG elements (most of the time) means their influence on
+the performance of the hybrid scheme is expected to be rather small.  Nevertheless,
+\fig{plots/stirturb/evolutions/ratio-fv-dg.png} proofs that the mode switching
+code operates as expected. Increasing the spatial resolution should yield
+better ratios in favor of DG elements. The method is a proof-of-concept with
+lots of room for improvement.
+
+\image{1.0}{plots/stirturb/evolutions/ratio-fv-dg.png}{Time evolution of the
+ratio of Finite-Volume Elements to the total number of elements. The mode
+switching works both ways, otherwise the plots would reach 100\%. At $t_d = 4$
+the driving stops and the amount of FV elements declines. \remark The other
+solvers would stay at 100\% since they operate with Finite-Volumes only.}
+
+\newpage
+
+\subsubsection{Energy Dissipation}
+\label{sec:stirturb-energy-dissipation}
+In order to keep the temperature constant, polytropic cooling deprives the exact
+amount energy, which got transferred from kinetic energy to internal energy. The
+physical mechanics behind this have been explained in \sec{turbulence}/Energy
+Cascade.
+
+\image{1.0}{plots/stirturb/evolutions/ener.png}{Time evolution of the energy in
+the system. The total energy $\ener$ is the sum of the kinetic $\ekin$ and
+internal energy $\eint$: $\ener = \eint + \ekin$.  The internal energy is held
+constant via polytropic cooling (cf.  \sec{computational-frameworks}).} Now we
+are interested in how much kinetic energy is actually dissipated within a
+certain amount of time. A naive approach would be to take the numerical time
+derivative of the evolving kinetic energy
+(\fig{plots/stirturb/evolutions/ekin-dissipation.png}). But it would just yield
+sensible results for the decaying phase. Instead the energy loss right before
+and after polytropic cooling is recorded and divided by the current timestep.
+The resulting plot is shown in
+\fig{plots/stirturb/evolutions/ekin-dissipation.png}.  The rate of internal
+energy deprivation is equivalent to the rate of kinetic energy dissipation,
+since their is only one energy source coming from turbulent forcing and one
+energy sink via cooling. During the transition from the initially constant
+state to turbulent state ($t_d \approx [0,0.3]$) the dissipation rate increases
+rapidly and settles down to a mean rate of around $\avg{\edyndiss}$ = 6.5
+energy units per dynamic timestep. While most solvers follow a similar pattern
+up to 1.5 crossing times, a change of quality seams to appear. This observation
+becomes even more clear in \fig{plots/stirturb/pdfs/evol-sonic-mach.png}.  The
+conducted runs part into two groups. The first group contains the Euler FV and
+both RK3 solvers. They show a balanced profile and happen to be the least
+dissipative ones. The second group, PPM and both Midpoints plus both Bouchuts,
+jump up and down in a incoherent manner. Especially, the Midpoint solvers give rise
+to huge excesses, which also reflect in the cumulative energy accounting shown
+in \fig{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}. Furthermore,
+it seems that the situation would have gotten worse if the solvers would not
+have started to settle down due to driving stop at $t_d = 4$. During the decay
+phase the variations in dissipation rates are much smaller than before and even
+turn upside down at $t_d \approx 4.4$. An explanation of what causes the high
+pitched energy dissipation rates for the Midpoint methods is further
+investigated in the next sections.
+
+\image{1.0}{plots/stirturb/evolutions/ekin-dissipation.png}{Time evolution of
+the internal energy deprivation by measuring the energy loss right before
+and after polytropic cooling and dividing by the current dynamic timestep.}
+\image{1.0}{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}{Cumulated
+energy deprivation collected by the polytropic cooling module. The plots
+represent the numerical integration (trapezoid rule) of the energy deprivation
+rates in \fig{plots/stirturb/evolutions/ekin-dissipation.png}. By the end of
+the simulation circa 10 times the average energy (cf.
+\fig{plots/stirturb/evolutions/ener.png}) was pumped through the system.}
+
+% To get a better understanding of why the Midpoint schemes yield so strong
+% dissipation spikes we take a look at the evolution of maximum root-mean-square
+% velocites over time (\fig{plots/stirturb/evolutions/rmsv-max.png}). The solvers
+% from FLEXI show a strong relationship between dissipation rates (cf.
+% \fig{plots/stirturb/evolutions/ekin-dissipation.png}) and maximum velocity.
+% 
+% \image{1.0}{plots/stirturb/evolutions/eint.png}{Time evolution of the internal
+% energy $\eint$ under polytropic cooling. The quantifiable deviation of the
+% internal energy from the anticipated constant $\eint_{0} = 0.9$ is discussed in
+% the text.}
+
+% --------------------------------------------------------------------------- %
+% Influence of Timesteps on Enstrophy
+
+% \image{1.0}{plots/stirturb/evolutions/enstrophy}{Time evolution of the
+% mean enstrophy $\enst$ which is a measure of the average mass-weighted vorticity
+% in the system (cf. \sec{turbulence}/Mean Values}. It shows how much energy
+
+% --------------------------------------------------------------------------- %
+
+\newpage
+
+\subsubsection{Density \& Velocity Distributions}
+\label{sec:stirturb-pdf}
+\paragraph{Density Distribution}
+Fully developed supersonic turbulences are expected to reveal a normal
+density distribution (cf. \sec{theory-density-pdf}). Additionally, it gives
+an insight into the distribution of mass from smallest to largest scales.
+All log-log. scale density PDFs in \fig{plots/stirturb/pdfs/dens-vw-dyntimes.png}
+show good indications for the presence of turbulence. The dotted lines are
+log-normal fits of \eqn{density-pdf} in \sec{theory-density-pdf}. The notorious
+underestimation of the fits on large scales is caused by the under-resolvement
+of the setup. While during the turbulent phase
+($t_d = [2,4]$) the solvers from FLASH have considerably more mass on small
+scales, this is not the case anymore during the decay phase; exemplified by
+$t_d = 4.7$ and $t_d = 6.0$.
+\image{1.0}{plots/stirturb/pdfs/dens-vw-dyntimes.png}{Log-log. scale
+volume-weighted density PDFs for the turbulent phase $t_d = [2,4]$
+(time-average) and two stages of the decaying phase: $t_d = 4.7$ and $t_d =
+6.0$. The faint grey area marks the margin of error of the time-averaging. As
+the decay progresses, the width of the distributions decrease and the mean
+values return to the initial density:
+$\ld(\dens_0) = \ld(1) = 0$. The log-normal fit (dotted lines) were done with
+\eqn{density-pdf-mach}.}
+The width $\sigma_s$ of the density distribution in
+\fig{plots/stirturb/pdfs/dens-vw-dyntimes.png} are related to the sonic Mach
+number of the system (cf. \sec{theory-density-pdf}). Applying
+\eqn{density-pdf-mach} and \eqn{density-pdf-mach-constant}, where
+\begin{equation}
+b = 1 + (D^{-1} - 1) \, \zeta = 1 + (3^{-1} - 1) \, 0.5 = 2/3,
+\end{equation}
+we can recover the Mach number of the turbulence. The result is shown in
+\fig{plots/stirturb/pdfs/evol-sonic-mach.png}. The plot is similar in shape to
+the energy dissipation in \fig{plots/stirturb/evolutions/ekin-dissipation.png}.
+After two crossing times a change of quality seems to happen for some of the
+solvers, accompanied by a lot of noise over time but better reconstruction of
+the reference sonic Mach number of $\Mach = 2.5$. Again the Midpoint FV has a
+huge spike near the end of the turbulent  phase ($t_d = 4$), which we will take
+a closer look at further down. Euler FV and both RK3 schemes severely
+underestimate the Mach number by 20\%. During the decay phase all fits yield
+smaller values. It might be the case that in this phase the relation in
+\eqn{density-pdf-mach} breaks down. \Tbl{pdf-dens-vw} lists the fitting results
+of the time-averaged turbulent phase from 2 to 4 crossing times, where the
+results seem most promising.
+
+\image{1.0}{plots/stirturb/pdfs/evol-sonic-mach.png}{Time evolution of the
+sonic mach number over time derived from the width of the volume-weighted
+density PDFs via relation \eqn{density-pdf-mach} ($b = 2/3$). The dashed line
+represents the root-mean-square velocity of the PPM solver and serves as a
+reference. Due to the log-normal relationship each individual fit yields very
+low error margins. Hence, the error bars are to small to see.}
+\begin{table}[H]
+\fontsize{4mm}{4mm}\selectfont
+\captionsetup{width=.95\textwidth}
+\caption{Comparison of Gaussian Fitting Results of the Log-normal Density PDF
+averaged over the turbulent phase: $t_d = [2,4]$. See relation
+\eqn{density-pdf-mach}. $b = 2/3$. The PDF Mach number $\mach_{PDF}$ of the
+Midpoint FV overshoots due to the influence of the runaway. Compare
+\fig{plots/stirturb/pdfs/evol-sonic-mach.png}.}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Solver & Mean $s_0$ & Std. Deviation $\sigma_s$ & RMS Mach $\mach_{RMS}$ & PDF Mach $\mach_{PDF}$ \\
+\midrule
+\bouT & -0.31 $\pm$ 0.05 & 0.58 $\pm$ 0.06 & 2.63 $\pm$ 0.13 & 2.5 $\pm$ 0.4 \\
+\bouF & -0.29 $\pm$ 0.06 & 0.57 $\pm$ 0.08 & 2.59 $\pm$ 0.09 & 2.4 $\pm$ 0.6 \\
+\fppm & -0.32 $\pm$ 0.05 & 0.59 $\pm$ 0.06 & 2.62 $\pm$ 0.12 & 2.6 $\pm$ 0.5 \\
+\eufv & -0.24 $\pm$ 0.03 & 0.47 $\pm$ 0.04 & 2.56 $\pm$ 0.04 & 1.8 $\pm$ 0.2 \\
+\mpfv & -0.31 $\pm$ 0.04 & 0.60 $\pm$ 0.09 & 2.80 $\pm$ 0.40 & 2.7 $\pm$ 0.8 \\
+\mphy & -0.32 $\pm$ 0.05 & 0.56 $\pm$ 0.07 & 2.81 $\pm$ 0.18 & 2.4 $\pm$ 0.5 \\
+\rkfv & -0.26 $\pm$ 0.02 & 0.50 $\pm$ 0.03 & 2.61 $\pm$ 0.06 & 2.0 $\pm$ 0.2 \\
+\rkhy & -0.26 $\pm$ 0.03 & 0.48 $\pm$ 0.04 & 2.55 $\pm$ 0.04 & 1.9 $\pm$ 0.3 \\
+\bottomrule
+\end{tabular}
+\label{tab:pdf-dens-vw}
+\end{table}
+
+\paragraph{Velocity Distribution}
+An exceeding dispersion of velocity PDFs indicates strong bulk motions within
+the medium. Bulk motion (cf. \sec{turbulence}) distorts the turbulence by
+drawing off kinetic energy from the turbulence while at the same time the
+root-mean-square velocity of the system remains constant. In the worst case the
+energy cascade breaks down or does not even develop in the first place.
+\Fig{plots/stirturb/pdfs/vels-vw-dyntimes.png} lacks any considerable
+dispersion which means the bulk motion correction (cf.
+\sec{computational-frameworks}) is working correctly. More distinctive is
+the bulge of high velocities brought out by the Midpoint schemes
+accompanied by huge error margins. This means that during the turbulent phase
+there must be extreme velocity fluctuations up to Mach 30 and beyond.
+\Fig{plots/stirturb/evolutions/rmsv-max.png} affirms this observation.
+Comparing this plot with the energy dissipation rates in
+\fig{plots/stirturb/evolutions/ekin-dissipation.png} there is a correlation
+between maximum velocity bursts and high pitched dissipation. Obviously, this
+applies only to the Midpoint schemes. The maximum velocity plot indicates only
+a singular value which does not necessarily represents a prevalent phenomenon in
+the system. In conjunction with the velocity PDF however this can be considered
+true for the Midpoint schemes.
+\image{1.0}{plots/stirturb/pdfs/vels-vw-dyntimes.png}{Volume-weighted velocity
+PDFs computed from the checkpoint files for the turbulent phase $t_d = [2,4]$
+(time-average) and two stages of the decaying phase: $t_d = 4.7$ and $t_d =
+6.0$. The faint grey area marks the margin of error of the time-averaging.  The
+Midpoint schemes yield strong fluctuation of high velocities during the
+turbulent phase (cf. \fig{plots/stirturb/evolutions/rmsv-max.png}).}
+\image{1.0}{plots/stirturb/evolutions/rmsv-max.png}{Maximum root-mean-square
+velocity over time retrieved from the checkpoint files. The Midpoint schemes
+show very strong maximum velocity bursts up to Mach 30 and beyond during the
+turbulent phase.}
+
+As already discussed under \sec{stirturb-column-plots} the Midpoint FV method
+shows a unique pattern of slow-moving mass lumps and regions of highly
+accelerated but very thin gas. When mass-weighting the velocity distribution,
+see \fig{plots/stirturb/pdfs/vels-mw-turb-phase.png}, we get another picture.
+The bulge on the right side of \fig{plots/stirturb/pdfs/vels-vw-dyntimes.png}
+completely disappears which supports the observation of highly accelerated thin
+gas in the Midpoint FV run. By contrast, Bouchut 3, Bouchut 5 and PPM show
+a richer structure in the slow moving range.
+
+%Now instead the impression that structures of smallest scales are absent for
+%the FLEXI solvers becomes evident.
+
+\image{1.0}{plots/stirturb/pdfs/vels-mw-turb-phase.png}{Log-log-scale
+mass-weighted velocity PDF time-averaged over the turbulent phase ($t_d =
+[2,4]$). The gray areas mark the margin of error. The solvers from FLASH have a
+greater amount of slowly moving mass than the others. The bulge on the right
+side in \fig{plots/stirturb/pdfs/vels-vw-dyntimes.png} is gone due to a small
+mass distribution in the high-velocity range.}
+
+% --------------------------------------------------------------------------- %
+
+\subsubsection{Energy \& Velocity Powerspectra}
+\label{sec:stirturb-pws}
+Powerspectra give an insight into the distribution of a physical quantity from large to
+small spatial scales. In this section we discuss the energy and velocity powerspectra
+which were introduced in \sec{theory-powerspectra}. The powerspectrum is
+divided into three ranges. In the driving or large scale range the energy
+injection from the turbulent driver takes place. It spans over the first three
+to four modes.  From there the energy trickles down to smaller and smaller
+scales, called energy cascade, which takes place in the inertial range. Finally
+it reaches the dissipative range which begins in our case at roughly $k = 32$.
+Here the kinetic energy dissipates and gets transformed into internal energy.
+In the powerspectrum of the kinetic energy,
+\fig{plots/stirturb/powerspectra/ekin-dyntimes.png}, the boundaries of the
+mentioned ranges are drawn in. According to Parseval's theorem the normed area
+under the kinetic energy powerspectrum is equal to the total squared real-valued
+kinetic energy in the box. (cf. \sec{theory-powerspectra}).
+\Tbl{stirturb-pws} proofs via numerical integration
+that this is indeed true within the margins of error.  In agreement with the
+discussion of column densities and the density distributions in the previous
+sections, the solutions provided by FLASH's solvers contain more energy on small
+scales than those in FLEXI. To quantify this observation the area under the 
+dissipative range was estimated and compared to the total squared kinetic energy.
+Consulting the right-most column in \tbl{stirturb-pws} the relative amount of
+energy on small scales ranges from 2.4\% (RK3 FV) to 5.7\% (Bouchut 5).
+
+\image{1.0}{plots/stirturb/powerspectra/ekin-dyntimes.png}{Powerspectra of the
+volume-weighted mean kinetic energy field shown for the turbulent phase $t_d =
+[2,4]$ (time-average) and two stages of the decay phase: $t_d = 4.5$ and $t_d =
+6.0$.  When the total kinetic energy declines, the powerspectrum shifts
+downwards. The inertial range starts at $k = 4$ since forcing is applied on
+$k_{drive} = 1,2,3$. The beginning of the dissipative range is estimated to
+$k_{diss} \approx 25$ when the spectra start the bend down. The study in
+\cite{kitsionas2009algorithmic} came to the same conclusion for equal grid
+resolution of $512^3$.}
+
+Besides the log-normality of the density PDF (\sec{stirturb-pdf}) the
+slopes of the inertial range of velocity powerspectra are well-established
+indicators for the accurate modelling of turbulences. According to the theory
+(cf.  \sec{theory-powerspectra}) we expect slopes of $m_{vw} =
+-2.1$ and $m_{mw} = -1.6667$ for the volume-weighted and mass-weighted
+powerspectra of the velocity field, respectively.
+\Fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png} and
+\fig{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png} indeed reproduce
+given slopes for the time-averaged powerspectrum of the turbulent phase.  The
+spectra at the end of the simulation when the turbulent decay progressed
+considerably, are plotted as well. Obviously, the inertial range has leveled
+down. This makes sense considering the fact that the supply of kinetic energy
+was cut off. Hence the large scale structures gradually dissolve and
+push their energy down the cascade. The change of slope can seen in
+\fig{plots/stirturb/powerspectra/evol-slopes-vw-velocity.png} very clearly. In
+the beginning the inertial range is very steep. The turbulent driver is pumping
+energy into the system on first three modes. As the simulation continues the
+energy cascade builds up and is fully established after two crossing times.
+When entering the decay phase ($t_d = 4$) the slope flattens out.
+\Tbl{stirturb-pws} lists the results of the linear fits of the inertial range
+as well as the numerically integrated areas under the time-averaged powerspectra
+of the turbulent phase.
+\image{1.0}{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}{Powerspectra of
+the volume-weighted velocity field for the turbulent phase $t_d = [2,4]$
+(time-average) and at the end of the decaying phase $t_d = 6.0$. 
+The inertial range starts at $k = 4$ since forcing is applied on $k_{drive} =
+1,2,3$. The black solid line marks the expected slope $m_{vw} = -19/9$ (cf.
+\sec{theory-powerspectrum}). In agreement with \cite{kitsionas2009algorithmic}
+(resolution: $512^3$), the beginning of the dissipative range is estimated to
+$k_{diss} \approx 25$, where the spectra start the bend down.}
+\image{1.0}{plots/stirturb/powerspectra/rmsv-mw-dyntimes.png}{Powerspectra of
+the mass-weighted velocity field for the turbulent phase $t_d = [2,4]$
+(time-average) and at the end of the decaying phase $t_d = 6.0$.
+The black solid line marks the expected slope $m_{vw} = -5/3$ (cf.
+\sec{theory-powerspectrum}). In agreement with \cite{kitsionas2009algorithmic}
+(resolution: $512^3$), the beginning of the dissipative range is estimated to
+$k_{diss} \approx 25$, where the spectra start the bend down.
+}
+\image{1.0}{plots/stirturb/powerspectra/evol-slopes-vw-velocity.png}{Time evolution of the
+inertial range's slope of the volume-weighted velocity powerspectra. See 
+\fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}.}
+
+%\image{1.0}{plots/stirturb/powerspectra/evol-slopes-mw-velocity.png}{Time evolution of the
+%inertial range's slope of the mass-weighted velocity powerspectra. Examples
+%are presented in \fig{plots/stirturb/powerspectra/rmsv-vw-dyntimes.png}.}
+
+%\image{1.0}{plots/stirturb/powerspectra/evol-ekin-small-scales.png}{Amount of
+%small-scale energies prevailing in the dissipative length scales over time.}
+
+\begin{table}[H]
+\fontsize{3mm}{4mm}\selectfont
+\captionsetup{width=.8\textwidth}
+\caption{Comparison of the three types of powerspectra averaged over the turbulent phase: $t_d = [2,4]$}
+\centering
+\begin{tabular}{l|cc|cccc}
+\toprule
+Solver & Slope $m$ & Offset $n$ & Mean Squ. $\avg{\cdot^2}$ & Area $A$ & Diss. Area $A_{diss}$ & $A_{diss}/A$ [\%] \\
+\midrule
+\multicolumn{7}{c}{Volume-weighted Mean Kinetic Energy} \\
+\midrule
+\bouT & -1.16 $\pm$ 0.05 & 17.19 $\pm$ 0.24 & 39 $\pm$ 4 & 37 $\pm$ 8 & 2.00 $\pm$ 0.60 & 5.4 $\pm$ 1.7 \\
+\bouF & -1.19 $\pm$ 0.10 & 17.22 $\pm$ 0.30 & 40 $\pm$ 5 & 37 $\pm$ 8 & 2.10 $\pm$ 0.70 & 5.7 $\pm$ 1.8 \\
+\fppm & -1.14 $\pm$ 0.07 & 17.19 $\pm$ 0.24 & 38 $\pm$ 4 & 36 $\pm$ 8 & 1.37 $\pm$ 0.33 & 3.8 $\pm$ 0.9 \\
+\eufv & -1.06 $\pm$ 0.04 & 17.11 $\pm$ 0.30 & 35 $\pm$ 5 & 34 $\pm$ 9 & 0.88 $\pm$ 0.35 & 2.6 $\pm$ 1.0 \\
+\mpfv & -1.10 $\pm$ 0.05 & 17.18 $\pm$ 0.27 & 37 $\pm$ 6 & 35 $\pm$ 9 & 1.00 $\pm$ 0.50 & 3.0 $\pm$ 1.3 \\
+\mphy & -1.06 $\pm$ 0.02 & 17.15 $\pm$ 0.17 & 36 $\pm$ 4 & 34 $\pm$ 7 & 1.12 $\pm$ 0.33 & 3.3 $\pm$ 1.0 \\
+\rkfv & -1.07 $\pm$ 0.08 & 17.12 $\pm$ 0.31 & 33 $\pm$ 4 & 32 $\pm$ 8 & 0.75 $\pm$ 0.28 & 2.4 $\pm$ 0.9 \\
+\rkhy & -1.17 $\pm$ 0.17 & 17.23 $\pm$ 0.34 & 33 $\pm$ 3 & 32 $\pm$ 6 & 0.81 $\pm$ 0.25 & 2.5 $\pm$ 0.8 \\
+\midrule
+\multicolumn{7}{c}{Volume-weighted Velocity} \\
+\midrule
+\bouT & -1.89 $\pm$ 0.13 & 16.67 $\pm$ 0.28 & 4.00 $\pm$ 0.40 & 4.0 $\pm$ 0.9 & 0.0152 $\pm$ 0.0034 & 0.38 $\pm$ 0.09 \\
+\bouF & -1.87 $\pm$ 0.11 & 16.63 $\pm$ 0.23 & 3.86 $\pm$ 0.26 & 3.8 $\pm$ 0.7 & 0.0179 $\pm$ 0.0035 & 0.47 $\pm$ 0.09 \\
+\fppm & -2.00 $\pm$ 0.15 & 16.76 $\pm$ 0.31 & 4.00 $\pm$ 0.40 & 4.0 $\pm$ 0.9 & 0.0143 $\pm$ 0.0029 & 0.36 $\pm$ 0.07 \\
+\eufv & -2.08 $\pm$ 0.10 & 16.80 $\pm$ 0.15 & 3.86 $\pm$ 0.16 & 3.8 $\pm$ 0.6 & 0.0068 $\pm$ 0.0012 & 0.18 $\pm$ 0.03 \\
+\mpfv & -2.09 $\pm$ 0.05 & 17.00 $\pm$ 0.70 & 6.00 $\pm$ 4.00 & 6.0 $\pm$ 0.5 & 0.0150 $\pm$ 0.0130 & 0.24 $\pm$ 0.22 \\
+\mphy & -2.11 $\pm$ 0.03 & 16.94 $\pm$ 0.21 & 4.80 $\pm$ 0.90 & 4.8 $\pm$ 1.4 & 0.0102 $\pm$ 0.0030 & 0.21 $\pm$ 0.06 \\
+\rkfv & -2.10 $\pm$ 0.08 & 16.87 $\pm$ 0.16 & 3.96 $\pm$ 0.17 & 3.9 $\pm$ 0.6 & 0.0074 $\pm$ 0.0015 & 0.19 $\pm$ 0.04 \\
+\rkhy & -2.08 $\pm$ 0.04 & 16.85 $\pm$ 0.12 & 3.79 $\pm$ 0.14 & 3.9 $\pm$ 0.6 & 0.0073 $\pm$ 0.0015 & 0.19 $\pm$ 0.04 \\
+\midrule
+\multicolumn{7}{c}{Mass-weighted Velocity} \\
+\midrule
+\bouT & -1.56 $\pm$ 0.10 & 16.45 $\pm$ 0.19 & 3.158 $\pm$ 0.021 & 3.1 $\pm$ 0.4 & 0.054 $\pm$ 0.010 & 1.72 $\pm$ 0.33 \\
+\bouF & -1.57 $\pm$ 0.13 & 16.45 $\pm$ 0.22 & 3.158 $\pm$ 0.024 & 3.1 $\pm$ 0.4 & 0.060 $\pm$ 0.011 & 1.90 $\pm$ 0.40 \\
+\fppm & -1.59 $\pm$ 0.07 & 16.49 $\pm$ 0.17 & 3.166 $\pm$ 0.020 & 3.1 $\pm$ 0.5 & 0.043 $\pm$ 0.007 & 1.38 $\pm$ 0.24 \\
+\eufv & -1.61 $\pm$ 0.07 & 16.48 $\pm$ 0.15 & 3.134 $\pm$ 0.004 & 3.1 $\pm$ 0.4 & 0.021 $\pm$ 0.004 & 0.69 $\pm$ 0.13 \\
+\mpfv & -1.60 $\pm$ 0.04 & 16.52 $\pm$ 0.15 & 3.128 $\pm$ 0.006 & 3.0 $\pm$ 0.4 & 0.028 $\pm$ 0.009 & 0.93 $\pm$ 0.29 \\
+\mphy & -1.60 $\pm$ 0.03 & 16.55 $\pm$ 0.11 & 3.133 $\pm$ 0.006 & 3.2 $\pm$ 0.5 & 0.029 $\pm$ 0.005 & 0.92 $\pm$ 0.17 \\
+\rkfv & -1.61 $\pm$ 0.05 & 16.52 $\pm$ 0.12 & 3.137 $\pm$ 0.011 & 3.2 $\pm$ 0.4 & 0.022 $\pm$ 0.004 & 0.70 $\pm$ 0.13 \\
+\rkhy & -1.62 $\pm$ 0.12 & 16.54 $\pm$ 0.19 & 3.138 $\pm$ 0.008 & 3.3 $\pm$ 0.5 & 0.022 $\pm$ 0.004 & 0.68 $\pm$ 0.13 \\
+\bottomrule
+\end{tabular}
+\label{tab:stirturb-pws}
+\end{table}
+
+% --------------------------------------------------------------------------- %
+
+\subsubsection{Summary}
+In the driven supersonic turbulence setup we analyzed the various solutions of
+FLASH's and FLEXI's solver over the course of 6 crossing times. All runs
+consisted of three phases or stages. In the first phase the initially restful
+medium was stirred up by turbulent forcing to the root-mean-square velocity
+of $\mach$ = 2.5. After reaching this limit the driver kept the kinetic
+energy stable for 4 crossing times so that a turbulent energy cascade develops. 
+After the turbulent phase, forcing was deactivated and the turbulence
+decayed for another 2 crossing times.
+
+By analyzing density/velocity distributions and powerspectra it was confirmed
+that all solvers modeled a supersonic turbulence correctly. They confirmed a
+log-normal density profile and their inertial ranges descended with the correct
+slopes. However there are differences regarding energy dissipation rates and
+resolution of smallest scales revealing an inverse relationship. Suggested by
+the cumulative energy budget in
+\fig{plots/stirturb/evolutions/ekin-dissipation-cumsum.png}, Euler FV burnt the
+least amount of kinetic energy contrasting PPM, Bouchut 3 and Bouchut 5 who
+consumed roughly 15 to 20\% more. On the other hand the latter yield more
+details on small scales which becomes clearly evident in the mass-weighted
+velocity distribution in \fig{plots/stirturb/pdfs/vels-mw-turb-phase.png}.
+Estimating the energy in the dissipative range, see \tbl{stirturb-pws}, does
+not contradict this observation. We will put this into perspective later on.
+
+The behaviour of the Midpoint schemes falls out of place and should discussed
+separately. It seems that the turbulent driver creates a force field in such a
+unique way and over a longer period of time so that the majority of the mass is
+dragged into a lump surrounded by highly accelerated regions of very thin
+medium. See \fig{plots/stirturb/snapshots/forcing-stop-02.png} for a snapshot.
+The dissolution of those extremely high Mach regions drives up the energy
+dissipation substantially. See
+\fig{plots/stirturb/evolutions/ekin-dissipation.png}.  This remarkable example
+reveals the imprinting influence of the driver on the turbulence which is
+a problem in its own right.
+
+In order to gain insight on how strong the influence of the turbulent driver
+might be, we also conducted a decaying turbulence simulation with exact equal
+initial conditions. The results are described in the next section.

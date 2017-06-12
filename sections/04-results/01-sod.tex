@@ -44,7 +44,7 @@ how well shocks can be resolved within a periodic box of equal size.
 Setups & Adiabatic, Isothermal, Adiabatic w. Strong Shock,
 Isothermal w. Strong Shock \\ 
 \midrule
-Solvers  & Bouchut 3, Bouchut 5, PPM, Euler FV, Euler Hybrid\footnotemark,\\
+Solvers  & Bouchut 3, Bouchut 5, PPM, Euler FV, Euler Hybrid\footnotemark[1],\\
 & Midp. FV, Midp. Hybrid, RK3 FV, RK3 Hybrid \\ 
 \midrule
 Resolution & 512 \\
@@ -59,7 +59,7 @@ This setup is not a convergence study or similar. The objective is to test
 whether FLEXI produces the same results as FLASH under identical initial
 conditions.
 
-\footnotetext{Euler Hybrid was only run for adiabatic and isothermal Sod Shock
+\footnotetext[1]{Euler Hybrid was only tested for adiabatic and isothermal Sod Shock
 since it is unstable.}
 
 \subsubsection{Adiabatic \& Isothermal Shock}
@@ -70,13 +70,13 @@ RK3-Hybrid smears out the discontinuities considerably. Looking closely at the
 zoomed area all hybrid schemes (blue, yellow and green dashed lines) tend to
 oscillate.  The unacceptable ringing of the Euler-Hybrid is a consequence of
 the instability of the Euler time integration within the DG operator.
-Consequently, Euler-Hybrid is disqualified and is discarded.  Same assertions
+Consequently, Euler-Hybrid is disqualified and discarded.  Same assertions
 can be made for the isothermal case shown in
 \fig{plots/sod/isothermal/density.png}.
-\image{1.0}{plots/sod/adiabatic/density.png}{
-Canonical density profile at the conventional time $t$ = 0.2 with anticipated
-regions and discontinuities outlined in the plot. The formula of the analytical
-analytical solution is written down in \cite{sod1978survey}.}
+\image{1.0}{plots/sod/adiabatic/density.png}{ Canonical density profile at the
+conventional time $t$ = 0.2 with anticipated regions and discontinuities
+outlined in the plot. The formula of the analytical solution is given in
+\cite{sod1978survey}.}
 \image{1.0}{plots/sod/isothermal/density.png}{
 Isothermal density profile at conventional time $t$ = 0.2 with expected
 regions and discontinuities outlined in the plot. The contact discontinuity
@@ -88,7 +88,7 @@ gets suppressed due to polytropic cooling.}
 %\image{1.0}{plots/sod/isothermal/velocity.png}{Foobar fo bar}
 
 \subsubsection{Adiabatic \& Isothermal Sod with Strong Shock}
-We compare how the solvers cope with a strong shock situation ($u_L = 15$)
+Here we compare, how the solvers cope with a strong shock situation ($u_L = 15$),
 first in the adiabatic and then in isothermal setting with polytropic cooling.
 
 Considering \fig{plots/sod/adiabatic-supersonic/density} all solutions yield a

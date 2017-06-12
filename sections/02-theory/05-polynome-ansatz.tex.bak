@@ -1,0 +1,214 @@
+\subsubsection{Discontinuous Galerkin Method}
+\label{sec:polyonome-ansatz}
+
+By refining the mesh, the error in the numerical approximation of the physical
+solution decays algebraically, that is, introducing more elements.
+Traditionally, numerical steps in space or time are labeled with the letter
+``h''. Hence, mesh refinement is also known as \emph{h-refinement}.
+
+
+% More information can be found in Bernardo Cockburn George E. Karniadakis
+% Chi-WangShu(Eds.) Discontinuous Galerkin Methods Theory, Computation and
+% Applicationsi
+
+% Source Spectral/hp Element Methods for CFD 1999
+
+An alternative approach is to keep the number of subdomains fixed and increase
+the order of the interpolating polynomials. This is called \emph{p-refinement}.
+For infinitely smooth solutions p-refinement can even lead to exponential
+convergence rates (cf. \cite{tugnoli2016locally}).
+
+Discontinuous Galerkin methods combine h- and p-refinement by defining
+higher-order polynomial functions in each finite element to approximate the
+exact solutions. This way, they are able to model discontinuities by solving
+the Riemann problem at the boundaries of each element.
+
+DG methods have the following main advantages over finite volume methods:
+\begin{itemize}
+\item The order of accuracy only depends on the physical solution. By suitably
+choosing the degree of the approximating polynomials they can obtain an
+arbitrarily high order of accuracy. (cf. \cite{yu2013accuracy})
+
+\item They are highly parallelizable. Since the elements are discontinuous and
+transformed to a reference element, the mass matrix (\eqn{mass-matrix}) becomes
+block diagonal. The blocks must be inverted beforehand just once, since their
+size is equal to the number of degrees of freedom. This massively improves
+performance.
+
+% \item DG methods are very well suited to handling complicated geometries
+% and require an extremely simple treatment of the boundary conditions in
+% order to achieve uniformly high-order accuracy.
+
+% \item DG methods can easily handle adaptivity strategies since refinement or
+% unrefinement of the grid can be achieved without taking into account
+% the continuity restrictions typical of conforming finite element 
+% methods. Moreover, the degree of the approximating polynomial can be easily
+% changed from one element to the other. Adaptivity is of particular 
+% importance in hyperbolic problems given the complexity of the structure of
+% the discontinuities.
+
+\item In essence, they provide fast convergence, small diffusion and dispersion
+errors, better data volume-over-surface ratio for efficient parallel processing
+and better input/output handling due to the smaller volume of data.
+\end{itemize}
+
+%% \image{0.6}{DG-work-over-periods.png}{Computational work (number of
+%% floating-point operations) required to integrate a linear advection equation
+%% for $M$ periods while maintaining a cumulative phase error of e = 10\%. Source:
+%% \cite{},p.10}
+
+It follows a brief derivation of the DG method.  At first the physical domain
+$\Omega$ is divided into a \emph{mesh} of adjunct self-contained sub-domains
+$\Omega_l$ ($l \in \mathbb{N}$) with well-defined boundaries. Every
+element $\Omega_l$ gets transformed to the reference space $\hat{\Omega} =
+[-1,1]^3$. For the sake of clarity, we assume a Cartesian grid, drop any
+transformation prefactor and set $\Omega = \Omega_l = \hat{\Omega}$.
+
+The unknown solution $\vec{U}$ is now replaced by polynomes of order $N_p$
+constructed from linear combinations of orthogonal basis functions
+$\vec{\Psi}^j$.
+\begin{equation}
+    U_{\vec{i}}(t,x,y,z) \approx p_{\vec{i}}(t,x,y,z) = \sum^{N_p}_{\vec{j}=0} U^{\vec{j}}_{\vec{i}}(t) \, \Psi^j(\vec{x}),
+\end{equation}
+where $\vec{i}$ and $\vec{j}$ are three-dimensional \emph{multi-indices}.
+\begin{equation}
+    \vec{i} = (i,j,k)^T, \;\; i,j,k \in \mathbb{N}_0
+\end{equation}
+
+The following treatment is analog for all five conservative variables of the
+Euler equation, so we ignore the index $i$. Remembering the general weak
+formulation, \eqn{weak-formulation}, of the solution integral,
+\begin{align}
+\label{eqn:weak-formulation-galerkin}
+    &\int_\Omega \left(\sum^{N_p}_{j=0} (\partial_t U^j(t)) \, \Psi^j(\vec{x})\right)\,\phi(\vec{x}) d^3x 
+        = \int_\Omega S(t) \, \phi(\vec{x}) d^3x \nonumber \br
+        +&\int_{\partial\Omega} \left[F(t)\,\phi(\vec{x})\,n_x + G(t)\,\phi(\vec{x})\,n_z + H(t)\,\phi(\vec{x})\,n_z \right] d^2x, \br
+        -&\int_\Omega \left[
+              \left(\sum^{N_p}_{j=0} F^j(t)\,\Psi^j(\vec{x})\right)\,\partial_x \phi(\vec{x}) 
+            + \left(\sum^{N_p}_{j=0} G^j(t)\,\Psi^j(\vec{x})\right)\,\partial_y \phi(\vec{x})
+            + \left(\sum^{N_p}_{j=0} H^j(t)\,\Psi^j(\vec{x})\right)\,\partial_z \phi(\vec{x}) \right] d^3x, \nonumber
+\end{align}
+we put the time variable into the coefficients $S,F,G,H$ and the space
+variables into the basis functions $\Psi$ and test functions $\phi$.
+
+\paragraph{Lagrange Polynome}
+If we associate the basis functions $\Psi^{\vec{j}} := L^{\vec{j}}$ and the
+test functions $\phi := L^{\vec{i}}$ with \vip{Lagrange} polyonmes of equal
+order $N_p$, we can formulate an interpolation and integration scheme
+(\emph{collocation}) over the domain $\Omega$. The polynome in one dimension
+reads as follows
+\begin{equation}
+l_j(x) = \prod^p_{k=0,k\neq j} \frac{x-x_k}{x_j-x_k}, \ j = 0,\dots,p,
+\end{equation}
+with the \vip{Kronecker} property $l_j(x_i) = \delta_{ij}$.
+\Fig{lagrange-interpolation-1d.png} shows a third-order ($N_p = 3$)
+Lagrange interpolation of a smooth function at four arbitrary
+interpolation or \emph{anchor} nodes.
+\image{0.8}{lagrange-interpolation-1d.png}{The one-dimensional Lagrange
+polynome of third order ($N_p = 3$) needs four anchor nodes with their
+associated values in order to approximate the exact function. Note the minor
+deviation from the original. This is the interpolation error. 
+Beyond the fringes the Lagrange polynome goes to infinity.}
+
+%% Unfortunately, Lagrange polynomes go to
+%% infinity going further away from the outer anchor nodes. This effect occurs in
+%% the Gauss-Quadrature where the outermost anchor nodes do not lie on the
+%% interval boundaries.
+
+We get to three-dimensional formulation via the \emph{Tensor Product Ansatz}.
+\newcommand{\LI}{L_{\vec{i}}(\vec{x})}
+\begin{equation}
+\label{eq-tensor-ansatz}
+    \LI = L_{ijk}(x,y,z) = l_i(x) \cdot l_j(y) \cdot l_k(z)
+\end{equation}
+and write the three-dimensional interpolating polynome as:
+\newcommand{\PI}{P^{\vec{i}}(t,\vec{x})}
+\newcommand{\FI}{F_{\vec{i}}(t)}
+\newcommand{\sumI}{\sum^{N_p}_{\vec{i}=0}}
+\begin{equation}
+\label{eq-tensor-ansatz-interpolant}
+    \PI = \sumI \FI \LI = \sum^{N_p}_{i,j,k = 0} f_{ijk}(t) \cdot l_i(x) \cdot l_j(y) \cdot l_k(z)
+\end{equation}
+Note that the time varying part of the polynome lives in the coefficients.
+Keep this in mind.
+\newcommand{\FJ}{F_{\vec{j}}(t)}
+\newcommand{\GJ}{G_{\vec{j}}(t)}
+\newcommand{\HJ}{H_{\vec{j}}(t)}
+\newcommand{\STX}{S(t,\vec{x})}
+\newcommand{\UJ}{ \dot{U}_{\vec{j}}(t)}
+\newcommand{\LJ}{L_{\vec{j}}(\vec{x})}
+\newcommand{\sumJ}{\sum^{N_p}_{\vec{j}=0}}
+\newcommand{\nx}{n_x(\vec{x})}
+\newcommand{\ny}{n_y(\vec{x})}
+\newcommand{\nz}{n_z(\vec{x})}
+Going back to \eqn{weak-formulation-galerkin} and replacing $\Psi^{\vec{j}}$
+and $\phi$ with Lagrange polynomes $\LI$, we get an explicit ansatz, called
+\emph{Galerkin polynome}.
+\begin{align}
+     &\int_\Omega \left(\sumJ \UJ \, \LJ \right) \, \LI d^3x = \int_\Omega \STX \, \LI d^3x \nonumber \br
+    +&\int_{\partial\Omega} \bigg[ F(t) \, \nx + G(t) \, \ny + H(t)\, \nz \bigg]\,\LI\, d^2x \br
+    -&\int_\Omega \left[
+          \left(\sumJ \FJ \, \LJ \right) \, \partial_x \LI 
+        + \left(\sumJ \HJ \, \LJ \right) \, \partial_y \LI
+        + \left(\sumJ \GJ \, \LJ \right) \, \partial_z \LI \right] d^3x \nonumber
+\end{align}
+
+\newcommand{\sumK}{\sum^{N_p}_{\vec{k}=0}}
+\newcommand{\wK}{\omega_{\vec{k}}}
+
+\newcommand{\STXK}{S(t,\vec{x}_{\vec{k}})}
+\newcommand{\LIK}{L_{\vec{i}}(\vec{x}_{\vec{k}})}
+\newcommand{\LJK}{L_{\vec{j}}(\vec{x}_{\vec{k}})}
+
+\newcommand{\LXIK}{L^{(x)}_{\vec{i}}(\vec{x}_{\vec{k}})}
+\newcommand{\LYIK}{L^{(y)}_{\vec{i}}(\vec{x}_{\vec{k}})}
+\newcommand{\LZIK}{L^{(z)}_{\vec{i}}(\vec{x}_{\vec{k}})}
+
+Evaluating above formula at discrete nodes $\vec{x}_{\vec{i}}$ (cf.
+\sec{trafo}) and introducing \emph{integration weigths}
+\begin{equation}
+\label{eqn:mass-matrix}
+    \omega_{\vec{i}} = \int_{\Omega} \LI d^3 x
+\end{equation}
+we can discretize the continuous integrals.
+\begin{align}
+     &\sumK \left(\sumJ \UJ \, \LJK \right) \, \LIK \,\wK = \sumK \STXK \, \LIK \wK \nonumber \br
+    +&\bigg[ F^*(t) + G^*(t) + H^*(t)\bigg] \, L_{\vec{j}}\bigg|_{\partial\Omega} \br
+    -&\sumK \left[
+          \left(\sumJ \FJ \, \LJK \right) \, \LXIK 
+        + \left(\sumJ \HJ \, \LJK \right) \, \LYIK
+        + \left(\sumJ \GJ \, \LJK \right) \, \LZIK \right] \wK, \nonumber
+\end{align}
+where $\sumK A_{\vec{i}\vec{k}} \, B_{\vec{k}\vec{j}}$ is the \emph{tensor
+contraction} operation.  The partial differential
+$\partial_x$ turned into a discrete linear operator.
+\newcommand{\DXKI}{D^{(x)}_{\vec{k}\vec{i}}}
+\newcommand{\DYKI}{D^{(y)}_{\vec{k}\vec{i}}}
+\newcommand{\DZKI}{D^{(z)}_{\vec{k}\vec{i}}}
+\begin{equation}
+    L^{(x)}_{\vec{j}}(\vec{x}) = \partial_x \LJ = (\partial_x l_{j_1}(x)) \cdot l_{j_2}(y) \cdot l_{j_3}(z)
+\end{equation}
+\begin{equation}
+    D^{(x)}_{\vec{i}\vec{j}} = D^{(x)}_{i_1i_2i_3j_1j_2j_3} = l^{(x)}_{j_1}(x_{i_1})\cdot l_{j_2}(y_{i_2}) \cdot l_{j_3}(z_{i_3})
+\end{equation}
+The operators for the y- and z-dimension are constructed in analog manner.  The
+surface term got replaced by flux functions $F^*$ (cf. \sec{flux-functions})
+where the exchange of mass, momentum and energy across subdomain/element
+boundaries takes place.
+
+\paragraph{Weak Formulation}
+Finally, we arrive at the semi-discrete \emph{weak formulation} of the
+discontinuous Galerkin method which can be directly translated to computer
+code.
+\begin{align}
+\label{eqn:semi-discrete-weak-formulation}
+     &\sumK \left(\sumJ \UJ \, \LJK \right) \, \LIK \,\wK = \sumK \STXK \, \LIK \wK \nonumber \br
+    +&\bigg[ F^*(t) + G^*(t) + H^*(t)\bigg]\, L_{\vec{j}}\bigg|_{\partial\Omega} \br
+    -&\sumK \left[
+          \left(\sumJ \FJ \, \LJK \right) \, \DXKI 
+        + \left(\sumJ \HJ \, \LJK \right) \, \DYKI
+        + \left(\sumJ \GJ \, \LJK \right) \, \DZKI \right] \wK \nonumber
+\end{align}
+
+\remark If the polynomial order is set to one ($N_p = 1$) the formulation reduces
+to the first order finite volume method!

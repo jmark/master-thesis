@@ -1,0 +1,75 @@
+\subsection{Supersonic Shocks}
+\label{sec:theory-shocks}
+Astrophysical flows often involve shock waves. Shocks, or in more technical
+terms singular compression waves, are escalating highly localized spikes in
+density and pressure due to nonlinear dynamics inherent to the Euler equation.
+When a shock wave is emerging, the velocity behind the wave front is higher than
+in front of it. The medium is highly compressed until an unphysical state is
+reached. The velocity \emph{characteristics} begin to cross. Nature solves this
+dilemma by introducing additional physics like extreme heat radiation,
+explosions, bangs or detachement of fluid. Either way, it involves an increase
+of entropy according to the second law of thermodynamics. Cf. \cite{Salas1996}. A
+numerical solver has to capture this kind of physics in order to prevent
+unphysical solutions. 
+
+\paragraph{Method of Characteristics}
+The prototype for second order, hence nonlinear, differential equations is the
+\vip{Burger}'s equation.
+\begin{equation}
+\label{eqn:burger}
+    \partial_t u + u \, \partial_x u = \epsilon \, \partial^2_x q_,
+\end{equation}
+where $u(x,t)$ represents the velocity at position $x$ at time $t$. \Eqn{burger}
+becomes inviscid in the limit of $\epsilon \to 0$. The characteristic equations
+are
+\begin{equation}
+\label{eqn:burger-characteristics}
+    %\frac{dx}{dt} = u \;\;\;\text{and}\;\;\; \frac{du}{dt} = 0
+    \frac{dx}{dt} = u \;\;\;\wedge\;\;\; \frac{du}{dt} = 0
+\end{equation}
+with their obvious solutions $x(t) = u\,t + C_1$ and $u(t) = C_2$. Since $C_2$
+must be a function of $C_1$, we derive a general solution for \eqn{burger} in
+the inviscid limit.
+\begin{equation}
+\label{eqn:burger-general-solution}
+    u = C_2(C_1) \;\;\;\; \Longleftrightarrow \;\;\;\; u(x,t) = C_2(x - u\,t)
+\end{equation}
+Now, if we set the initial condition to $u(x,0) = 1 - \cos(x)$ and let it
+evolve, we get unphysical multi-valued solutions at some point in time. See
+\fig{plots/burgers/solution.png}. The reason for this behaviour is the
+intersection of characteristics (cf. \fig{plots/burgers/characteristics.png}) due
+to the nonlinearity of the inviscid Burgers' equation.
+\image{0.8}{plots/burgers/solution.png}{Source: \cite{LeonBurgers}. Multiple
+snapshots at successive timesteps of the initial condition $u(x,0) = 1 -
+\cos(x)$ evolving under the inviscid Burger's equation (\eqn{burger}). It
+eventually develops a shock and becomes multi-valued, which is unphysical.}
+\image{0.8}{plots/burgers/characteristics.png}{Source: \cite{LeonBurgers}.
+Intersecting characteristics (\eqn{burger-characteristics}) of the inviscid
+Burger's equation (cf. \eqn{burger}) are symptoms of a shock wave. The left area
+where lines diverge from each other is called \emph{rarefaction} fan.
+Converging lines are part of the \emph{compression} fan. The region of
+intersection marks the shock discontinuity, where the solution (cf.
+\fig{plots/burgers/solution.png}) becomes multi-valued.
+% source: http://www.eng.famu.fsu.edu/~dommelen/pdes/style\_a/burgers
+}
+\paragraph{Riemann Problem}
+The correct modelling of shocks is summarized under the term \emph{Riemann
+problem}. It provides the theoretical basis for the correct treatment of
+discontinuities in solutions of nonlinear PDEs. Furthermore, the Riemann
+problem is an integral part of finite element schemes who approximate the
+exact solution by piecewise constant or polynomial functions as
+Finite-Volume and discontinuous Galerkin methods, respectively, do. More
+on this can be found in \sec{flux-functions}.
+
+\paragraph{Gibb's Phenomenon}
+An inherent downside of schemes involving polynomes is the \vip{Gibb's}
+phenomenon. It states that polyonomes of higher order, trying to approximate
+discontinuities, yield spurious oscillations. See \fig{plots/burgers/ringing.png}.
+There are many approaches to get the ringing near shocks under control. Two
+of them, \emph{Artificial Viscosity} and \emph{FV-DG mode switching}, are presented
+in \sec{shock-capturing}.
+\image{0.7}{plots/burgers/ringing.png}{Examples of spurious oscillation of the
+discontinuous Galerkin method solving the one-dimensional advection equations
+with a discontinuous initial condition. The domain is divided into 50 elements each
+containing a third-order polymome. Gauss and Gauss-Lobatto are two types of
+distributing interpolation nodes within each element (cf. \sec{trafo}).}

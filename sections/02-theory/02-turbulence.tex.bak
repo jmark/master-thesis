@@ -1,0 +1,347 @@
+\subsection{Turbulence Statistics}
+\label{sec:turbulence}
+
+\emph{Turbulences} are common phenomena in nature. It names a flow regime in
+fluid dynamics characterized by chaotic changes in pressure and flow velocity
+and contrasts \emph{laminar} flow which occurs when a fluid flows in parallel
+layers with no disruption between them.
+
+In astrophysics turbulence is suspected to play a major role in star formation
+within interstellar media (cf. \cite{klessen2016physical}).  Hence, a
+theoretical understanding of the underlying mechanics is crucial in order
+correctly model turbulences in numerical simulations. While the problem for
+incompressible media has been thoroughly studied in the past (\emph{Kolmogorov
+scaling}: cf. \sec{theory-powerspectrum}), the additional dynamics introduced
+by compressibility are still an active field of research.
+
+It is important not to forget that real ISM turbulence is neither isothermal,
+nor polytropic. The real ISM has a local temperature that is not a simple
+function of density but results from the evolution of the thermal energy due to
+ongoing heating and cooling processes. Gravity takes over control of the most
+dense regions. Magnetic fields lead to effects like frozen filaments called
+\emph{Alfvén's frozen in theorem} (cf.  \cite{roberts2007alfven}).
+
+% A detailed discussion of turbulences can be found in:
+% H K Versteeg and W Malalasekera: An Introduction to Computational Fluid Dynamics
+% 
+% AKlRA YOSHIZAWA: HydrodynaIllic and MagnetohydrodynaIllic Turbulent Flows Modelling and
+% Statistical Theory
+
+\paragraph{Reynolds Number}
+An important dimensionless quantity in fluid mechanics used to help predict
+flow patterns in different fluid flow situations is the \emph{Reynolds number}
+$\reynold$. The Irish-British physicist \vip{Osborne Reynolds} (1842-1912)
+discovered this fundemental relationship during his famous flow tube
+experiments in the second half of the 19th century. It represents the ratio
+between \emph{inertial} and \emph{viscous} forces and is calculated by
+\begin{equation}
+\label{eqn:reynold}
+    \reynold = \frac{\text{inertial force}}{\text{viscous force}} = \frac{\dens\;\vels\;\clen}{\shearvisc_{vis}},
+\end{equation}
+where $\dens$, $\vels$, $\clen$, $\shearvisc_{visc}$ are the fluid density,
+fluid velocity, characteristic length and dynamic viscosity, respectively.
+Since the governing equations are defined to be the inviscid Euler equations
+(cf. \sec{governing-equations}), in theory, there is no viscosity anywhere present.
+\begin{equation}
+\label{eqn:no-viscosity}
+    \shearvisc_{visc} \equiv 0 \;\; \Longrightarrow \reynold = \infty
+\end{equation}
+This has far-reaching consequences because the Reynolds number predicts the
+transition from \emph{laminar} to \emph{turbulent} flow. Laminar flow becomes
+unstable when the inertial forces dominate over the viscous forces: $\reynold
+\gg 1$. Consequently, the Euler equations lead to chaotic motion over all time and
+length scales for large Re.
+
+\paragraph{Reynolds Decomposition}
+Turbulences are characterized by a random fluctuation $q'$ of a flow variable $q$
+(density, pressure, velocity, temperature, etc.) over time, meassured at a
+fixed point in space. Their evolution can be described with the \emph{Reynolds
+decomposition}.
+\begin{equation}
+    q(t) = \avg{q}_t + q'(t), \ \ \avg{q'} \equiv 0
+\end{equation}
+where 
+\begin{equation}
+    \avg{q}_t = \frac{\int_{t_0}^{t1} q(t) dt}{t_1 - t_0}
+\end{equation}
+is the time-average of the flow property $q(t)$.  Turbulent flows are globally
+described in terms of their mean values of properties like density, velocity
+and pressure. The velocity fluctuations are independent of the axis of
+reference, i.e. invariant to translation, rotation and reflection; they are
+\emph{isotropic}. \emph{Isotropic turbulence} is by its definition always
+homogeneous. In such a situation, the gradient of the mean velocity does not
+exists, the mean velocity is either zero or constant throughout.
+
+As the Reynolds decomposition suggests it does not make sense to talk about a
+turbulence at one specific point in time or space. Thus, we define important
+average properties or \emph{mean values} who help to quantify the current
+state of the turbulent system as a whole.
+
+\paragraph{Root-mean-square Velocity}
+is defined as the mass-weighted average squared velocity of the system.
+\begin{equation}
+    \rmsv = \sqrt{\frac{\int_\Omega \dens \; \velv^2 \; d\Omega}{\int_\Omega \dens \; d\Omega}}
+\end{equation}
+We utilize mass-weighting since the conducted turbulence
+simulations are highly compressible.
+
+\paragraph{Sonic Mach Number}
+is directly related to $\rmsv$ via
+\begin{equation}
+\mach = \frac{\rmsv}{\avg{\sndsped}}.
+\end{equation}
+From $\avg{c} = 1$, according to \eqn{parameter-choice-completion}, follows that
+Mach number and root-mean-square (RMS) velocity are equivalent and, if not stated
+otherwise, used interchangeably.
+
+\remark We break the convention since usually the Mach number is measured with
+the volume-weighted RMS velocity.
+
+\paragraph{Turning time}
+represents a time span characterizing large scale turbulent motions. Under
+\sec{governing-equations} a characteristic time scale $t_r =
+\frac{l_r}{\vels_r}$ was introduced exhibiting the invariance of the Euler equations 
+under unit transformations. Now it gets a practical meaning since we define a
+\emph{turning time} that tells how long it takes for a turbulence vortex to
+traverse the length $L$ of the physical domain.
+\begin{equation}
+\label{eqn:dyn-time}
+    T_{turn} = \frac{L}{\vels_{rms}}
+\end{equation}
+Equivalent terms for the turning time are \emph{crossing time} or \emph{dynamic
+time scale}.
+
+\paragraph{Dynamic time}
+is the scaled \emph{physical} time $t$.
+\begin{equation}
+    t_d = \frac{t}{T_{turn}}
+\end{equation}
+All time evolution plots presented in this thesis are scaled to dynamic
+time which sets the time axis in relation to the analyzed turbulence. 
+
+\remark The dynamic time here is not to be confused with the \emph{free-fall
+time} in gravity-driven simulations.
+
+\paragraph{Bulk Motion}
+is the integrated momentum over the whole domain.
+\begin{equation}
+\label{eqn:bulk-motion}
+    \bulk = \int_{\Omega} \dens\,\velv \; d\Omega
+\end{equation}
+For turbulences in closed systems, say a periodic box
+(three-dimensional torus), bulk motion distorts the measurement of
+mean values like the sonic Mach number. In the worst case scenario the whole
+fluid would coherently move in one direction pretending to be a turbulent flow
+of a certain Mach number. Correction of bulk motion is a crucial subject
+in turbulence simulations.
+
+\paragraph{Total Kinetic Energy}
+is important in the discussion of energy accounting, especially in closed
+systems where the total energy $\ener = \eint + \ekin = \text{const}$ is
+conserved.
+\begin{equation}
+\label{eqn:ekin}
+    \ekin = \int_\Omega \frac{\dens}{2} \; \velv^2 \; d\Omega
+\end{equation}
+
+\paragraph{Total Kinetic Energy Dissipation Rate}
+is the negated time derivative of the total kinetic energy.
+\begin{equation}
+\label{eqn:ekindisp}
+    \ekindisp = -\frac{d\ekin}{dt} 
+\end{equation}
+It quantifies how fast kinetic energy gets transformed into internal
+energy at a certain point in time. 
+\begin{equation}
+\label{eqn:ekindisp-zero}
+    \frac{d\ener}{dt} = \frac{d\eint}{dt} + \frac{d\ekin}{dt} = 0 \;\;
+        \Longleftrightarrow \;\; \frac{d\eint}{dt} = -\frac{d\ekin}{dt}
+\end{equation}
+
+\subsubsection{Energy Cascade \& Powerspectrum}
+\label{sec:theory-powerspectra}
+Real turbulences always have a three-dimensional character and they lead to
+rotational flow structures, called turbulent eddies, with a wide range of
+length and energy scales.
+
+Fluid particles which were initially separated by a large distance can be
+brought close together by eddying motions. Consequently, mass, heat and
+momentum are very effectively exchanged. It is an established fact that this
+property has a profound influence in birth of stars, solar systems and cosmic
+structures.
+
+\vip{Andrey Kolmogorov} (1903-1987) was a pioneering mathematician who provided
+a statistical treatment of turbulent flows, the \emph{Kolmogorov picture}, with
+methods from \emph{dimensional analysis}. Cf. \cite[p. 33ff]{yoshizawa2013hydrodynamic},
+\cite[p. 26ff]{biskamp2003magnetohydrodynamic}.
+The spatial wavenumber $k$ for an eddy of diameter $\lambda$ is defined as
+\begin{equation}
+\label{eqn:wave-number}
+    k = \frac{2\pi}{\lambda}.
+\end{equation}
+For the sake of clarity, $k$ is scaled to $\tilde{k} = k/2\pi$.  We drop the
+tilde and refer to the scaled wave number $k := \tilde{k}$ from now on.
+
+Based on $k$ the eddies in a turbulent flow are arranged into a hierarchy or
+more precisely, a \emph{spectrum}. The largest eddies interact and transfer
+energy from the mean flow.  We call it the range of \emph{large scales}. Since
+large eddies are of the same order of the characteristic length $L$ and
+velocity scale $\rmsv$ the flow is inviscid and their dynamics are dominated by
+inertial effects. At the \emph{inertial range} kinetic energy gets transferred
+down to smaller eddies via \emph{vortex stretching}. An \emph{energy cascade}
+from larger to smaller length scales takes shape. The so called
+\emph{Kolmogorov microscales} (cf. \cite{kolmogorov1991dissipation}), denoting the smallest scales in the spectrum,
+form the \emph{viscous} or \emph{dissipative sublayer range} where the energy
+input from nonlinear interactions and the energy drain from viscous dissipation
+are in exact balance. The Reynolds number is 1 (\eqn{reynold}) and the
+laminar flow dominates.
+\begin{align}
+\label{eqn:kolmogorov-scales}
+    \eta     &= \left(\frac{\visc^3}{\dens^3\,\varepsilon}\right)^{1/4} \;\;\;\; &\text{Kolmogorov length scale} \\[0.4cm]
+    \tau     &= \left(\frac{\visc}{\dens\,\varepsilon}\right)^{1/2} \;\;\;\; &\text{Kolmogorov time scale} \\[0.4cm]
+    \upsilon &= \left(\frac{\visc\,\varepsilon}{\dens}\right)^{1/4} \;\;\;\; &\text{Kolmogorov velocity scale}
+\end{align}
+where $\dens$ is the ambient density and $\varepsilon$ is the
+kinetic energy dissipation rate defined in \eqn{ekindisp}.
+\Fig{energy-cascade-schematic.png} gives an illustration of the energy
+spectrum of a turbulent flow as just described.
+\image{0.8}{energy-cascade-schematic.png}{Source: \cite[p.
+8]{muller2003evolving}. Schematic of the Kolmogorov picture
+of turbulence showing the spatial energy powerspectrum over $k$. The
+mathematical definition is given by \eqn{pws-ekin}.  The physical meaning of
+the marked ranges are detailed in the text.}
+
+\paragraph{Numerical Viscosity} By the very definition of the Euler equations
+there is no viscosity: $\visc \equiv 0$. This would mean turbulent flow all the
+way down. The dissipation range is non existent. It is rather evident that no
+physical simulation, running on a machine with computing power and memory
+limits, is able to model this flow. The profound consequence is that ISM
+simulations are, no matter what, always underresolved.
+
+Every numerical scheme introduces a so called \emph{numerical} viscosity
+$\mu_{\text{n-visc}}$ that marks the very limit of length, time and velocity
+scale this scheme is still capabable to resolve. The exact amount of
+$\mu_{\text{n-visc}}$ is in general unknown but should be unique for every
+numerical method. For grid based schemes it is possible to estimate a 
+lower limit of the length scale $\eta$. The \emph{Nyquist–Shannon sampling
+theorem} (cf. \cite{shannon1949communication}) states that:
+\begin{quote}
+If a function $x(t)$ contains no frequencies higher than $B$ Hertz, it is
+completely determined by giving its ordinates at a series of points spaced
+$1/(2B)$ seconds apart.
+\end{quote}
+Applying this theorem to a uniform grid with $N$ nodes, the smallest length
+scale would then become $\eta = 2/N$. With \eqn{kolmogorov-scales} we arrive at
+a relation between kinetic energy dissipation and numerical viscosity.
+\begin{equation}
+\label{eqn:relation-ekin-diss-numerical-visc}
+    \mu_{\text{n-visc}} = (\eta^4 \; \varepsilon)^{1/3} 
+        = 2^{4/3}\;\left(\frac{\varepsilon}{N^4}\right)^{1/3}
+        \propto \varepsilon^{1/3}
+\end{equation}
+When the grid resolution $N$ is equal among different numerical schemes,
+their capability of resolving smallest scales can be compared by looking at the
+kinetic energy dissipation rate.
+
+\remark The term \emph{dissipation} might mistakenly suggest a physical process
+causing the loss in kinetic energy. This is not the case! It is the sum of
+scattering effects that the coarseness of grids imposes on small scale
+structures. One might call it \emph{numerical} dissipation.
+
+\paragraph{Kinetic Energy Powerspectrum}
+\newcommand{\pekin}{P_{\ekin}}
+\Fig{energy-cascade-schematic.png} shows the schematic of the shell-averaged
+kinetic energy spectrum $\overline{\pekin}$ of a fully developed
+turbulence. The powerspectrum $\pekin$ is defined as
+\begin{equation}
+    \pekin = \hat{\ekin}(\vec{k}) \cdot \hat{\ekin}^{\dagger}(\vec{k}),
+\end{equation}
+where $\vec{k} = (k_1,k_2,k_3)^T$  is the spatial wave vector analog to
+\eqn{wave-number}, $\hat{\ekin}(\vec{k})$ is the Fourier transformed kinetic
+energy field $\ekin(\vec{x})$ and $\hat{\ekin}^{\dagger}(\vec{k})$ its complex
+conjugate. Taking the shell-average over $\pekin$ yields
+\begin{equation}
+\label{eqn:pws-ekin}
+    \overline{\pekin} \; dk = 4\pi\,k^2 \; \hat{\ekin}(\vec{k}) \cdot \hat{\ekin}^{\dagger}(\vec{k}) \; dk
+        = 4\pi\,k^2 \; \hat{\ekin} \cdot \hat{\ekin}^{\dagger} \; dk
+.
+\end{equation}
+The pre-factor $4 \pi\,k^2$ is a contribution from the differential volume of a
+thin sphere at radius $k = |\vec{k}| \ge 0$.  The area under
+$\overline{\pekin}$
+\begin{equation}
+    A_{\ekin^2} = \frac{1}{V_{\Omega}} \; \int_0^\infty 4\pi\,k^2 \; \hat{\ekin} \cdot \hat{\ekin}^{\dagger} \; dk
+\end{equation}
+is equal to the total squared kinetic energy $\ekin^2$ of the system in
+accordance with \vip{Parseval}'s theorem
+\begin{equation}
+    \int_{-\infty}^{\infty} |Y(x)|^2 \, dx = \int_{-\infty}^{\infty} |\hat{Y}(k)|^2 \,dk.
+\end{equation}
+
+\paragraph{Velocity Powerspectrum}
+\label{sec:theory-powerspectrum}
+\newcommand{\pvels}{P_{\vels}}
+\newcommand{\pmvels}{P_{m\vels}}
+It has been shown that the descent of the energy cascade among turbulences is
+universal. See
+\cite{federrath2013universality,she1994universal,boldyrev2002scaling,kitsionas2009algorithmic}.
+By determining the slope of log-log scale velocity powerspectra one can
+determine if the turbulence is modelled correctly.
+
+For each velocity component we take the Fourier transform of the velocity field
+$\velv = (\vels_1, \vels_2, \vels_3)^T$.
+We denote these Fourier transforms as
+$\hat{\velv} = (\hat{\vels}_1, \hat{\vels}_2, \hat{\vels}_3)^T$. Analog
+to above we define the powerspectrum as
+\begin{equation}
+    \pvels = \frac{1}{2} \; \hat{\velv} \cdot \hat{\velv}^{\dagger}.
+\end{equation}
+Taking the shell-average we get
+\begin{equation}
+    \overline{\pvels}\,dk = 4 \pi\,k^2 \;\; \frac{1}{2} \; \hat{\velv} \cdot \hat{\velv}^{\dagger}\,dk,
+\end{equation}
+which we call the \emph{volume-weighted} velocity powerspectrum. By
+mass-weighting the velocity beforehand, $\dens^{1/2}\,\velv$, we get the
+\emph{mass-weighted} velocity powerspectrum.
+\begin{equation}
+    \overline{\pmvels}\,dk = 4 \pi\,k^2 \;\; \frac{1}{2} \; \widehat{(\dens^{1/2}\,\velv)} \cdot \widehat{(\dens^{1/2}\,\velv)}^{\dagger}\,dk
+\end{equation}
+The study in \cite{kitsionas2009algorithmic} lists slopes for the inertial range
+of the volume-weighted and mass-weighted powerspectra, as they are defined
+here, which amount to $m_{vw}$ = -19/9 and $m_{mw}$ = -5/3, respectively. We
+consider these values as reference which we are trying to reproduce in our
+turbulence simulations.
+
+%\remark Real three-dimensional turbulences yield a slope of $m$ = -11/3
+
+\subsubsection{Probability Distribution Functions}
+\label{sec:theory-density-pdf}
+Another tool to verify the properness of a turbulence simulation are density
+and velocity distributions. According to various studies
+\cite{federrath_klessen_schmidt_2008,hopkins_2013,1999intuconf218N,0004-637X-761-2-149},
+a fully developed turbulence yields a nearly log-normal density
+distribution.
+\begin{equation}
+\label{eqn:density-pdf}
+PDF_s(s) = \frac{1}{\sqrt{2\pi}\sigma_s} \exp\left[-\frac{(s-s_0)^2}{2\sigma_s^2}\right],
+\end{equation}
+where $s = \ln(\dens/\dens_0)$. The standard deviation $\sigma_s$ of
+the distribution is related to the sonic Mach number $\mach$ of the
+turbulence via (cf. \cite{federrath_klessen_schmidt_2008,0004-637X-761-2-149})
+\begin{equation}
+(2\,\sigma_s)^2 = \ln(1 + b^2\,\mach^2)
+\end{equation}
+Reordering yields an explicit expression for the Mach number
+\begin{equation}
+\label{eqn:density-pdf-mach}
+\mach_{PDF} = \frac{\sqrt{\exp((2\,\sigma_s)^2) - 1}}{b}
+\end{equation}
+The proportionality constant $b$ dependents on the ratio of compressible to
+solenoidal forcing $\zeta \in [0,1]$ and the number of spatial
+dimensions $D = 1,2,3$.
+\begin{equation}
+\label{eqn:density-pdf-mach-constant}
+b = 1 + (D^{-1} - 1) \, \zeta
+\end{equation}
+Numerical simulations (cf. \cite{padoan2002stellar}) show that $b \approx 0.5$
+for a thermal mix of solenoidal and compressive modes (cf. \sec{turbuforcing}).

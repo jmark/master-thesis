@@ -1,0 +1,80 @@
+\section*{Abstract/Zusammenfassung}
+\paragraph{Abstract}
+Finite Volume methods (FV) are an established numerical scheme for
+astrophysical turbulence simulations of molecular clouds and interstellar media
+(ISM). ISM simulations are characterized by supersonic turbulent flows who
+impose very high demands on the numerical scheme with regards to robustness and
+accuracy. The widely adopted fluid simulation framework FLASH\footnotemark provides
+several specialized FV solvers, meeting the requirements imposed by supersonic
+flows.
+
+Astrophysical turbulences show a rich variety of structure over huge time and
+length scales. They play a major role in several processes such as the
+formation of dense structures and stars as well as the stability of molecular
+clouds. The desire to study and understand the underlying physics has driven
+generations of scientists to develop more advanced numerical schemes with
+higher resolution capabilities. However, FV methods provide limited space for
+improvement due to their lack in degrees-of-freedom.
+
+By contrast to FV schems, modern higher-order discontinuous Galerkin methods
+(DG) promise to provide faster convergence rates, smaller diffusion and
+dispersion errors, better data volume-over-surface ratio for efficient parallel
+processing and better input/output handling due to the smaller volume of data.
+Their drawback is the impracticality in resolving shocks.
+
+In this work, we propose a hybrid scheme which combines the accuracy of DG with
+the stability of FV schemes. In order to provide a proof-of-concept, the DG
+implementation FLEXI\footnotemark is augmented to support supersonic
+isothermal turbulence simulations, governed by the compressible Euler
+equations.
+
+A comparative study of driven and decaying turbulence setups ensures that the
+hybrid scheme models turbulent flows correctly. Widely adopted methods of
+turbulence statistics, such as density/velociy PDFs and powerspectra, give an
+insight into the distribution of mass, velocity and energy from large to small
+length scales. Well-established astrophysics solvers integrated into FLASH,
+namely PPM, Bouchut3 and Bouchut5, serve as a reference.
+
+\footnotetext[1]{http://flash.uchicago.edu/site/flashcode/}
+\footnotetext[2]{https://www.flexi-project.org}
+
+\newpage
+\paragraph{Zusammenfassung}
+Finite Volume Verfahren (FV) sind ein etablierter numerischer Lösungsansatz für
+astrophysikalische Turbulenzsimulationen von Molekülwolken und interstellaren
+Medien (ISM). ISM simulationen sind charakterisiert durch turbulente Strömungen
+im Überschallbereich. Das stellt höchste Anforderungen an das numerische
+Verfahren hinsichtlich Robustheit und Genauigkeit. Die weithin genutzte
+Strömungssimulationssoftware FLASH\footnotemark bietet spezialisierte FV-Löser,
+die den Anforderungen supersonischer Strömungen gerecht werden
+
+Astrophysikalischen Strömungen zeigen eine reiche Vielfalt an Strukturen über
+große Zeiträume und räumliche Ausdehnungen hinweg. Sie spielen eine wichtige
+Rolle in vielen Prozessen, wie zum Beispiel die Formung von hochdichten
+Strukturen und Sternen oder in der Frage über die Langlebigkeit von
+Molekülwolken. Den Drang, die dahinterliegende Physik zu studieren und zu
+verstehen, hat Generationen von Wissenschaftlern angetrieben, immer bessere und
+genauere numerischen Verfahren zu entwickeln. Allerdings bieten FV-Verfahren
+auf Grund ihrer eingeschränkten Flexibilität wenig Spielraum für Verbesserungen.
+
+Im Gegensatz zu FV-Verfahren, versprechen moderne schrittweise glatte
+Galerkin-Methoden (DG) schnellere Konvergenz, weniger Diffusion und Dispersion,
+günstigere Volumen-zu-Oberflächen-Verhältnisse zur guten parallelen
+Verarbeitung und bessere Lese-/Schreibraten durch geringeres Datenaufkommen.
+Allerdings sind sie nicht zur Darstellung von Schockwellen geeignet. Im Rahmen
+dieser Arbeit, stellen wir ein Hybrid-Löser vor, welches die Präzsision von
+DG- mit der Stabilität von FV-Verfahren vereint. Damit wir die Machbarkeit
+dieses Konzepts zeigen können, erweitern wir die DG-Implementierung FLEXI\footnotemark
+um die Möglichkeit supersonische isothermische Turbulenzen zu simulieren.
+Die Dynamiken werden durch die kompressiblen Euler-Gleichungen bestimmt.
+
+Vergleichende Studien von getriebener und zerfallender Turbulenz stellen die
+korrekte Darstellung von Turbulenzen durch den Hybrid-Löser sicher.  Gängige
+Methoden der Turbulenzstatistik, wie Dichte- und Geschwindigkeitsverteilungen
+sowie Energiespektren, geben Auskunft über die Verteilung von Masse,
+Geschwindigkeit und Energie auf großen und kleinen Längenskalen. Etablierte, in
+FLASH integrierte, numerische Löser für die theoretische Astrophysik dienen als
+Referenz. Zu nennen sind PPM, Bouchut3 und Bouchut5.
+
+\footnotetext[1]{http://flash.uchicago.edu/site/flashcode/}
+\footnotetext[2]{https://www.flexi-project.org}

@@ -29,7 +29,7 @@ hybrid and FV-only mode. The same simulation was also performed with three
 solvers from FLASH: PPM, Bouchut3 and Bouchut5. They serve as reference
 (cf. \sec{stirturb}).
 
-In order to check the influence of the turbulent forcing this study was
+In order to check the influence of the turbulent forcing, this study was
 concluded by a decaying turbulence setup with identical initial conditions
 among all solvers (cf. \sec{decayturb}).
 
@@ -45,7 +45,7 @@ equally by all analyzed solvers (cf. \sec{decayturb-column-plots} and
 \sec{decayturb-PDF}). No significant difference among dissipation
 rates (cf. \fig{plots/decayturb/evol-ekin-diss}) has been measured.
 
-\item Isothermal turbulent decay in the way applied here, is an unsuitable
+\item Isothermal turbulent decay, in the way applied here, is an unsuitable
 setup to benchmark numerical schemes. Polytropic cooling might have a
 ``grinding'' effect which renders higher-order reconstruction and DG schemes
 useless. The conclusion of \sec{decayturb} elaborates on this.
@@ -62,13 +62,13 @@ schemes. It renders our dissipation rates inconclusive. Apparently, turbulent
 driving should be treated with caution as it can lead to unnatural
 pseudo-turbulent flows (cf. \fig{plots/stirturb/snapshots/forcing-stop-02.png}).
 
-\item A grid size of $512^3$ cells is still rather low to have a good
+\item A grid size of $512^3$ cells is still rather low in order to have a good
 approximation of an isothermal turbulent flow. In the powerspectra we
 identified the beginning of the dissipation range at $k_{diss} \approx 25$.
-This means a small structure, say a shock, occupies $512/25 \approx
-21$ cells\footnotemark in one dimension. That is 4\% of the box length. Since
-the Reynolds number is, in theory, zero (cf.  \sec{turbulence}), turbulent flow
-goes beyond $k_{diss}$.  Hence, the simulations are under-resolved.
+This means a small structure, say a shock, occupies $512/25 \approx 21$
+cells\footnotemark in one dimension. That is 4\% of the box length. Since the
+Reynolds number is, in theory, infinity (cf.  \sec{turbulence}), the turbulent
+flow should go beyond $k_{diss}$.  Hence, the simulations are under-resolved.
 \end{itemize}
 
 The improvement in dissipation rates and resolution capacity, as we had hoped

@@ -1,33 +1,34 @@
 \subsection{Decaying Turbulence}
 \label{sec:decayturb}
 
-In the previous section we conducted a driven turbulence simulation where we
+In the previous section we conducted a driven turbulence simulation, where we
 identified a significant influence of the turbulent driver on the modeled
 turbulence. Consequently, we test each solver with a decaying turbulence setup
 of identical initial conditions. A snapshot of a fully developed Mach-10
-turbulence, generated with the Bouchut 5 solver provides the basis for the
+turbulence, generated with the Bouchut 5 solver, provides the basis for the
 simulations. The initial turbulence setup is left to decay six turning times
 relative to $\mach = 10 \Rightarrow T_{turn} = 1/10 = 0.1$. In order to avoid
 interpolation errors and unsolicited oscillations during the transfer from
 FLASH to FLEXI (cf. \sec{trafo}), the initial state was slightly smoothed beforehand via
 application of a Gaussian blur (cf.
 \fig{plots/interpolation/flexi-column-density.png}). Apart from that, the setup
-is equivalent to the driven turbulence setup detailed at the beginning of
+is equivalent to the driven turbulence setup, detailed at the beginning of
 \sec{stirturb}. \Tbl{setup-decayturb} gives an overview of the conducted
 experiments.
 \begin{table}[H]
 \fontsize{3mm}{3mm}\selectfont
 %\captionsetup{width=.8\textwidth}
 \caption{Outline of the Decaying Turbulence Setup. Note the small CFL number
-for PPM which turned out to be necessary in order not to crash. There is a
+for PPM, which turned out to be necessary in order not to crash. There is a
 slight variance among the initial Mach numbers/kinetic energies. They stem from
-the fact that these values were measured at simulation runtime when
+the fact that these values were measured at simulation runtime, when
 subjected to minor numerical errors.}
 \centering
 \begin{tabular}{l| cccc cccc}
 \toprule
 Solver                          & B3 & B5 & PPM & EU-FV & MP-FV & MP-HY & RK3-FV & RK3-HY \\
 \midrule
+Resol. per Dim.             & 512 & 512 & 512 & 512 & 512 & 512 & 512 & 512 \\
 CFL number                            & 0.8 & 0.8 & 0.1 & 0.4 & 0.8 & 0.9 & 0.9 & 1.2 \\ 
 initial mach number $\mach_0$   & 9.877 & 9.877 & 9.877 & 9.875 & 9.872 & 9.873 & 9.871 & 9.871 \\
 initial kin. energy $\ekin_0$   & 48.78 & 48.78 & 48.78 & 48.76 & 48.72 & 48.73 & 48.72 & 48.72 \\
@@ -40,7 +41,7 @@ nr. checkpts. $N_{\text{checkpoints}}$        & 30 & 30 & 30 & 30 & 30 & 30 & 30
 
 \subsubsection{Mach Number Evolution}
 In contrast to the different decay rates in
-\fig{plots/stirturb/evolutions/sonic-mach.png} the declines of the Mach number
+\fig{plots/stirturb/evolutions/sonic-mach.png}, the declines of the Mach number
 over time (\fig{plots/decayturb/evol-sonic-mach}) are unexpectedly alike.  The
 decaying turbulences start at $\mach = 10$ and take six crossing times to drop
 below the supersonic regime ($\mach = 1$). 
@@ -56,23 +57,23 @@ conducted simulations at three successive stages of turbulent decay: $t_d =
 The exact point of time, the solver and the Mach number are attached to each
 snapshot in the title and the figure caption.
 
-First of all the large scale structures are congruent among all solvers
-comparing the snapshots depicting equal points in time. As already discussed
-in \sec{theory-powerspectrum} dissipation happens only at small scales.
-And since the velocity field is not influenced by external forces the large
+First of all, the large scale structures are congruent among all solvers,
+when comparing the snapshots at equal points in time. As already discussed
+in \sec{theory-powerspectrum}, dissipation happens only at small scales.
+And since the velocity field is not influenced by external forces, the large
 scale movements are conserved.
 
 The originally smoothed initial state (cf.
-\fig{plots/interpolation/flexi-column-density.png}) reestablished the shocks
+\fig{plots/interpolation/flexi-column-density.png}) reestablished the shocks,
 which can be clearly seen by the sharp edges of the filamentary structures in
 \fig{plots/decayturb/decay-01-01.png} to \fig{plots/decayturb/decay-01-03.png}.
-As expected those structures gradually dissolve with increasing time, which
+As expected, those structures gradually dissolve with increasing time, which
 leads to a transformation of kinetic energy into internal energy. It then
 escapes the system via polytropic cooling. This process is indicated by
 the increased darkening of the column Mach number plots as time progresses.
 
 It is impossible to tell from the snapshots if there are differences in
-the resolution of small scales. In analogy to the driven turbulence setup
+the resolution of small scales. In analogy to the driven turbulence setup,
 density PDFs and powerspectra will give a better insight into this matter.
 
 \image{1.0}{plots/decayturb/decay-01-01.png}{Decaying Turbulence from Mach 10:
@@ -123,14 +124,14 @@ declines in the same fashion as in
 \fig{plots/stirturb/evolutions/ratio-fv-dg.png}.
 
 \image{1.0}{plots/decayturb/evol-fv}{Time evolution of the fraction of
-Finite-Volume Elements to the total number of elements. \remark The other
-solvers would stay at 100\% since they operate solely with Finite-Volumes.}
+vinite volume elements to the total number of elements. \remark The other
+solvers would stay at 100\% since they operate solely with finite volumes.}
 
 \subsubsection{Energy Dissipation}
 \label{sec:decayturb-ekin-diss}
-The course of the total energy \fig{plots/decayturb/evol-ener} is plotted in
+The course of the total energy in \fig{plots/decayturb/evol-ener} is plotted in
 logarithmic scale so that the kinetic energy can be visually distinguished from
-the total energy. Polytropic cooling keeps the system at constant temperature
+the total energy. Polytropic cooling keeps the system at constant temperature,
 hence the internal energy stays steady over time. There is no obvious
 difference among the solvers.  The deprived internal energy is equivalent to
 the dissipated kinetic energy (\fig{plots/decayturb/evol-ekin-diss}). See
@@ -138,12 +139,12 @@ discussion under \sec{stirturb-energy-dissipation}. Right after the simulation h
 started, strong shocks emerge and the dissipation rate shoots up to its highest
 peak. By applying numerical integration
 $\int dt_d \; -\frac{d\ekin}{dt_d} = 48.251 \pm 0.007$,  the initial kinetic
-energy is recovered $\ekin_0 = 48.75 \pm 0.03$ besides a tiny fraction of
+energy is recovered $\ekin_0 = 48.75 \pm 0.03$, besides a tiny fraction of
 $\Delta \ekin = 0.5 \pm 0.03$ still left in the system. This simple calculation
 reveals two insights. First, there are no noticeable energy sources or sinks
 apart from  polytropic cooling. Thus, the energy accounting is balanced. Second,
 the variation in dissipated energy among the solvers is negligible. Conclusively,
-there is no difference in dissipation with this setup which contradicts the
+there is no difference in dissipation with this setup, which contradicts the
 results of the driven turbulence.
 \image{1.0}{plots/decayturb/evol-ener}{Time evolution of the energy. The
 logarithmic scaling helps to visually distinguish to course of total and
@@ -169,7 +170,7 @@ the initial kinetic energy: $\ekin_0 = 48.75 \pm 0.03$.}
 
 \subsubsection{Density \& Velocity Distributions}
 \label{sec:decayturb-PDF}
-In agreement with \fig{plots/stirturb/pdfs/dens-vw-dyntimes.png} FLEXI's
+In agreement with \fig{plots/stirturb/pdfs/dens-vw-dyntimes.png}, FLEXI's
 solvers retain more mass on the outer scales than FLASH's. Fitting was done
 with \eqn{density-pdf-mach} in the same manner as in the driven turbulene (cf.
 \sec{stirturb-pdf}). From the width of the log-normal fits we try to reconstruct
@@ -181,17 +182,17 @@ not show anything surprising besides the fact that there is no significant bulk
 motion (cf. \sec{stirturb-pdf}).
 
 \image{1.0}{plots/decayturb/pdf-vw-dens.png}{Log-log scale volume-weighted
-density PDFs. As the decay progresses the widths of the distributions decrease
+density PDFs. As the decay progresses, the widths of the distributions decrease
 and the mean values return to the intial density: $\ld(\dens_0) = \ld(1) = 0$.
 The solid black curve depicts the density distribution of the smoothed initial
 state (cf. \fig{plots/interpolation/flexi-column-density.png}). The applied
-Gaussian blur truncated the high velocity range. The log-normal fit (dotted
+Gaussian blur truncated the high density range. The log-normal fit (dotted
 lines) were done with \eqn{density-pdf-mach}.}
 \image{1.0}{plots/decayturb/evol-sonic-mach-pdf.png}{Time evolution of the
 sonic mach number over time derived from the width of the volume-weighted
 density PDFs of the decaying turbulence. The dashed line represents the
 root-mean-square velocity of the PPM solver and serves as a reference. Due to
-the lognormal relationship the fit yielded very low error margins. Hence, the
+the lognormal relationship, the fit yields very low error margins. Hence, the
 error bars are to small to see. The spike on the left is caused by the
 originally smoothed initial state. The turbulence has to redevelop in order to
 yield sensible results. However, the Mach number estimation via relation
@@ -206,9 +207,9 @@ dispersion of the PDFs over time indicates no bulk motion which is a good sign
 (cf. \sec{stirturb-pdf}).}
 
 \subsubsection{Energy \& Velocity Powerspectra}
-In analogy with \sec{stirturb-pws} we will take a look at the kinetic
-energy and the velocity powerspectra. In addition to the density PDF discussed
-in the previous section they allow us to gain an insight into the resolution
+In analogy with \sec{stirturb-pws}, we will take a look at the kinetic
+energy and the velocity powerspectra. In addition to the density PDF, discussed
+in the previous section, they allow us to gain an insight into the resolution
 of movement on small spatial scales. Since the kinetic energy declines over
 time, the powerspectra in \fig{plots/decayturb/pws-ekin-dyntimes} shift downwards.
 At the end of the simulation, $t_d = 6$, PPM retained the most energy in the
@@ -231,15 +232,15 @@ $k_{diss} \approx 25$, where the spectra start the bend down.
 \Fig{plots/decayturb/pws-vw-vels-dyntimes.png} and
 \fig{plots/decayturb/pws-mw-vels-dyntimes.png} show that all simulations
 maintain the energy cascade already present in the initial state. The related
-powerspectra $t_d = 0$ are a bit distorted from the Gaussian blur but the
+powerspectra $t_d = 0$ are a bit distorted from the Gaussian blur, but the
 initial slope of the inertial range is very near the expectation marked by the
 solid black line on top of the plot. As described in detail in
-\sec{stirturb-pws} the slopes flatten with increasing time since the energy
-cascade slowly breaks down with progressing the decay.
+\sec{stirturb-pws}, the slopes flatten with increasing time, since the energy
+cascade slowly breaks down with progressing decay.
 
 \image{1.0}{plots/decayturb/pws-vw-vels-dyntimes.png}{Powerspectra of the
 volume-weighted velocity field for three stages of decay: $t_d = 0$, $t_d =
-3.0$ and $t_d = 6.0$.  Since the total kinetic energy declines over time the
+3.0$ and $t_d = 6.0$.  Since the total kinetic energy declines over time, the
 powerspectra shift downwards. The strange looking spectrum from $t_d = 0$ is
 the result of the applied Gaussian blur on the initial state.
 In agreement with \cite{kitsionas2009algorithmic}
@@ -249,7 +250,7 @@ $k_{diss} \approx 25$, where the spectra start the bend down.
 
 \image{1.0}{plots/decayturb/pws-mw-vels-dyntimes.png}{Powerspectra of the
 mass-weighted velocity field for for three stages of decay: $t_d = 0$, $t_d =
-3.0$ and $t_d = 6.0$.  Since the total kinetic energy declines over time the
+3.0$ and $t_d = 6.0$.  Since the total kinetic energy declines over time, the
 powerspectra shift downwards. The strange looking spectrum from $t_d = 0$ is
 the result of the applied Gaussian blur on the initial state.
 In agreement with \cite{kitsionas2009algorithmic}
@@ -289,31 +290,31 @@ was confirmed by the velocity powerspectra in
 \fig{plots/decayturb/pws-vw-vels-dyntimes.png} and
 \fig{plots/decayturb/pws-mw-vels-dyntimes.png}.
 
-There is no clear winner who resolves small scale structures best.  On the
-one hand, FLASH's solvers contain more energy in the dissipative range of the kinetic
-energy powerspectra (cf. \fig{plots/decayturb/pws-ekin-dyntimes}) throughout
-the simulation. But on the other hand the solver from FLEXI show more amount of
-mass on both ends of the density spectrum (cf.
-\fig{plots/decayturb/pdf-vw-dens.png}). However, one should not forget that
-all plots are in log-log scale which means that subtle differences get blown
-up and are enhanced.
+There is no clear winner, who resolves small scale structures best.  On the one
+hand, FLASH's solvers contain more energy in the dissipative range of the
+kinetic energy powerspectra (cf. \fig{plots/decayturb/pws-ekin-dyntimes})
+throughout the simulation. But on the other hand, the solver from FLEXI show
+more amount of mass on both ends of the density spectrum (cf.
+\fig{plots/decayturb/pdf-vw-dens.png}). However, one should not forget that all
+plots are in log-log scale which means that subtle differences are enhanced.
 
 Subsequent decay simulations with lower and higher Mach numbers show the same
-results. FLEXI is expected to be less dissipative. But even PPM is considered
-more accurate than Bouchut5. Apparently, this particular setup, that is
-isothermal turbulent decay, is not suited to benchmark numerical schemes with
-regards to dissipation rates. It might be the case that the polytropic cooling
-has a ``grinding'' effect on small scales. Shocks get sharpened till the solver
-cannot resolve it anymore. Any reconstruction attempts are annihilated by the
-flux limiters who try to save what can be saved. Consequently, the influence of
-the Riemann solvers dominates. The positive effect of higher-order methods never
-get a chance to take effect.
+results. FLEXI is expected to be less dissipative. But even PPM, which is
+considered more accurate than Bouchut5, does not show better results.
+Apparently, this particular setup, that is isothermal turbulent decay, is not
+suited to benchmark numerical schemes with regards to dissipation rates. It
+might be the case that the polytropic cooling has a ``grinding'' effect on
+small scales.  Shocks get sharpened till the solver cannot resolve them anymore.
+Any reconstruction attempts are annihilated by the flux limiters, who try to
+save what can be saved. Consequently, the influence of the Riemann solvers
+dominates. The positive effect of higher-order methods never get a chance to
+take effect.
 
 The decaying turbulence setup is also revealing in the sense that the influence
 of turbulent forcing on the dissipation rates is immense. Despite bulk motion
 correction, the driver still might tend to induce slightly counter-rotating
 mass congregations, which throttle the energy cascade. Maybe this explains why
 FLEXI shows somewhat steeper slopes in the velocity spectra (cf.
-\tbl{stirturb-pws}). It would explain why FLEXI shows less features in the
+\tbl{stirturb-pws}). It would also explain why FLEXI shows less features in the
 small scales and why Euler FV and both RK3 solvers appear to be less
 dissipative.

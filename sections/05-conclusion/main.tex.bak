@@ -1,0 +1,95 @@
+\section{Conclusion \& Outlook}
+The goal of this thesis was to investigate if it is feasible to apply a
+recent third-order discontinuous Galerkin method (FLEXI) to astrophysical
+turbulence simulations and how they compare to established first/second order
+finite volume methods (FLASH). The objective is that DG methods are less
+dissipative and better resolve small scale structures.
+
+The primary focus was to accurately model isothermal turbulences up to Mach 10
+which are, for example, important for simulating star formation rates in
+molecular clouds.
+
+As a first step FLEXI was augmented in order to support isothermal turbulence
+setups in the same way as FLASH does. Modules for polytropic cooling, turbulent
+forcing, bulk motion correction and shock capturing were implemented and
+integrated into FLEXI (cf. \sec{computational-frameworks}). These
+modifications were then tested and verified with the Sod Shock Tube problem
+(cf. \sec{sod-shock-tube}).
+
+Since pure Galerkin schemes cannot cope with discontinuities, shock
+capturing routines try to dampen spurious oscillations and, as a last resort,
+locally switch to second-order finite volumes. In theory, this hybrid scheme
+should yield a convergence rate somewhere between 2 to 3, depending on the
+ratio of DG elements to FV elements (cf. \sec{shock-capturing}).
+
+The next step was to conduct driven turbulence simulations of Mach 2.5 with
+three explicit time integration methods of ascending order (first order Euler,
+second order Midpoint and third-order Runge-Kutta) each in combination with
+hybrid and FV-only mode. The same simulation was also performed with three
+solvers from FLASH: PPM, Bouchut3 and Bouchut5. They serve as reference
+(cf. \sec{stirturb}).
+
+In order to check the influence of the turbulent forcing this study was
+concluded by a decaying turbulence setup with identical initial conditions
+among all solvers (cf. \sec{decayturb}).
+
+Side-by-side comparison of column density snapshots at different times and
+methods from turbulence statistics, namely density PDFs and powerspectra,
+gained insights into the quality of the resulting turbulences.
+
+We arrive at following conclusions:
+\begin{itemize}
+\item The evaluation of the simulation data is in good agreement with the
+reference. Supersonic isothermal turbulent decay is modelled
+equally by all analyzed solvers (cf. \sec{decayturb-column-plots} and
+\sec{decayturb-PDF}). No significant difference among dissipation
+rates (cf. \fig{plots/decayturb/evol-ekin-diss}) has been measured.
+
+\item Isothermal turbulent decay in the way applied here, is an unsuitable
+setup to benchmark numerical schemes. Polytropic cooling might have a
+``grinding'' effect which renders higher-order reconstruction and DG schemes
+useless. The conclusion of \sec{decayturb} elaborates on this.
+
+\item Turbulent driving for four turning times is too short to reach a
+stationary state and get reliable statistics. (cf.
+\fig{plots/stirturb/evolutions/sonic-mach.png}) This is especially true, when
+comparing two totally different simulation frameworks. In fact, serious driven
+turbulence studies drive more than 10 turning times (cf. \cite{konstandin2016mach}).
+
+\item The driven turbulence simulations are substantially influenced by the
+driver. This is, in particular, obvious for the results by the Midpoint
+schemes. It renders our dissipation rates inconclusive. Apparently, turbulent
+driving should be treated with caution as it can lead to unnatural
+pseudo-turbulent flows (cf. \fig{plots/stirturb/snapshots/forcing-stop-02.png}).
+
+\item A grid size of $512^3$ cells is still rather low to have a good
+approximation of an isothermal turbulent flow. In the powerspectra we
+identified the beginning of the dissipation range at $k_{diss} \approx 25$.
+This means a small structure, say a shock, occupies $512/25 \approx
+21$ cells\footnotemark in one dimension. That is 4\% of the box length. Since
+the Reynolds number is, in theory, zero (cf.  \sec{turbulence}), turbulent flow
+goes beyond $k_{diss}$.  Hence, the simulations are under-resolved.
+\end{itemize}
+
+The improvement in dissipation rates and resolution capacity, as we had hoped
+for, was not achieved. To be honest, it would have been a suprise anyway. In
+fact, a supersonic isothermal turbulent flow is one of the worst setups one can
+choose to run higher-order Galerkin methods on. 
+
+%A box full of swirling shocks is not a suitable habitat for polyonomes.
+
+In essence, what we have shown is that discontinuous Galerkin methods can work
+in strong shock environments. It makes sense, now, to look for astrophysical
+problems where DG methods indeed have a chance to yield better results
+without worrying that occasional shock conditions crash the simulation.
+
+Protoplanetary disk simulations, for example, still have problems with
+spurious angular momentum dissipation. Higher-order discontinuous
+Galerkin methods, in combination with recent flux functions, might yield
+promising results.
+
+\footnotetext{Counting the cells under the peaks in
+\fig{plots/sod/isothermal-supersonic/density} (isothermal Sod w. strong shock)
+yields the same number, by the way.}
+
+\newpage

@@ -1,0 +1,137 @@
+\subsection{Interpolation \& Data Transfer}
+\label{sec:trafo}
+
+\paragraph{Grid Spaces}
+The term \emph{grid space} refers to the arrangement of nodes within an
+element. Four types of node configurations are of importance here:
+\emph{Face-centered grid} (FCG), \emph{body-centered grid} (BCG), \emph{Gauss
+nodal grid} (GNG) and \emph{Gauss-Lobatto nodal grid} (LNG). Finite Volumes
+live on a BCG while the Galerkin polyonomes are anchored on either GNG or LNG.
+Gauss and Gauss-Lobatto nodes are the roots of special polynomials. See
+\fig{grid-spaces.png}. They minimize the errors of the \emph{Gauss quadrature}
+(numerical integration) which is one of the corner stones in the derivation of the
+Galerkin method as we have done \sec{polyonome-ansatz}). See
+\cite{gassner2011comparison} for a comparative study of GNG and LNG and further
+information about this subject.
+
+\image{0.5}{grid-spaces.png}{Two finite elements containing
+four cells/volumes. From top to bottom: Gauss-Lobatto nodes ($N_p$ =
+3), Gauss nodes ($N_p$ = 3), body-centered and face-centered nodes. DG schemes
+are defined on Gauss and Gauss-Lobatto nodes while FV methods anchor their
+data at the center of the volumes/cells (body-centered). The exchange of
+information (flux functions: cf. \sec{flux-functions}) happens at the
+cell boundaries (face-centered).}
+
+We only consider Gauss nodes, since the FV-DG mode switching (cf.
+\sec{shock-capturing}) does only support Gauss nodes at the time of
+writing.
+
+In order to compare and share data between the FV and DG schemes one has to
+translate between the different grids via Lagrange interpolation.  Although
+FLEXI offers curvilinear grids we only need the Euclidean geometry. Thus whe
+have a one-to-one relationship between the four grid spaces and are able to
+directly lay them on top of each other as depicted in \Fig{grid-spaces.png}.
+
+\paragraph{Interpolation Error} is in general inevitable but manageable.
+See \fig{lagrange-interpolation-1d.png} for an interpolation of a trigonometric
+function. The quality of an interpolation procedure is determined by an
+error measure which we motivate in the following.
+
+The Lagrange interpolating polyonome $L(x)$ of order $N$ is exact for a
+polynomial function $f(x)$ of order $M \le N$.
+
+\emph{Proof:} The remainder $R(x) = L(x) - f(x)$ can be expressed as
+\begin{equation}
+    R(x) = L(x) \; f^{(N+1)}|_{\zeta}, \;\;\;\; x_0 \le \zeta \le x_N,
+\end{equation}
+using Taylor series analysis (cf. \cite[p. 878]{abramowitz1964handbook}).
+$x_0,...,x_N$ are the interpolation nodes and $f^{(N+1)}(x)$ is the (N+1)-th
+derivative of $f(x)$.  Since $M \le N$, $f^{(N+1)}(x) = 0 \; \Rightarrow R(x) =
+0,\; \forall x$. $\square$
+
+An example for an exact Lagrange interpolation in two dimensions is shown
+\Fig{plots/interpolation/2d-third-order}.
+\image{1.0}{plots/interpolation/2d-third-order}{
+Example of a two-dimensional exakt third-order Lagrange interpolation of a
+second-order polynomial. The relative error $\errorrms$ = 0.000000\% (cf.
+\eqn{error-rms}) is below machine precision.}
+
+Instead of the remainder $R(x)$ we define a \emph{root-means-sqare
+variance} as a kind of distance meassure between an arbitrary function $f(x)$ and
+its interpolant $\widetilde{f}(x)$.
+\begin{equation}
+\label{eqn:error-rms}
+    \errorrms = (f - \widetilde{f})_{\text{RMS}} = \sqrt{\frac{1}{N} \sum^N_i (f_i - \widetilde{f_i})^2}.
+\end{equation}
+The relative error is calculated by
+\begin{equation}
+    \errorrmsrel = \frac{\errorrms}{f_{\text{RMS}}},
+\end{equation}
+where $f_{\text{RMS}} = \sqrt{\frac{1}{N} \sum^N_i f^2_i}$. 
+
+\remark One has to ensure that $f_i$ and $\widetilde{f_i}$ live in the same grid space.
+
+% Another error estimate could be the absolut mean error:
+% \begin{equation}
+%     f_{\text{ABS}} = \frac{1}{N}\sum^N_i |f_i| 
+% \end{equation}
+% 
+% \begin{equation}
+%     \errorabs = (f - \widetilde{f})_{\text{ABS}} = \frac{1}{N}\sum^N_i |f_i - \widetilde{f_i}| 
+% \end{equation}
+% 
+% \begin{equation}
+%     \errorabsrel = \frac{\errorrms}{f_{\text{ABS}}} 
+% \end{equation}
+% In most cases the total absolute error yields smaller results, since runaways
+% get weighted more in the rmse case. A proper handling of runaways especially in
+% interpolation of shocks is still an open question.
+
+% For analysis and defining initial conditions with DG based code interpolation
+% techniques for translating correct state values between different grid spaces
+% are necessary. See \sec{theory-interpolation} for theoretical disuccusion.
+
+\paragraph{Transferring Data from \textsc{FLASH} to \textsc{FLEXI}}
+For the decaying turbulence simulations (cf. \sec{decayturb}) a transfer of
+initial states from FLASH to FLEXI is necessary. A brief overview of the
+procedure and some results are discussed.
+
+In order to give a sense of intuition, we imagine a Cartesian grid with 512
+body-centered points in each of the three dimensions. Each data point
+represents a finite-volume, read in from a FLASH checkpoint file. We subdivide
+the contiguous block of $512^3$ into elements of $4^3 = 64$ nodes.  Within each
+element the data gets transformed via three-dimensional third-order Lagrange
+interpolation into Gauss or Gauss-Lobatta nodal space. Finally, the new data is
+written to a FLEXI checkpoint file. The reverse procedure is available as well,
+which is useful for analysis and visualization. 
+
+% \remark Before the interpolation step the data has to translated from primitive
+% to conservative variables (cf. \sec{sec:computational-frameworks}/FLEXI and 
+% \sec{sec:governing-equation}/Primitive and Conservative Variables).
+
+\Fig{plots/interpolation/flexi-column-density.png} and
+\fig{plots/interpolation/density-ray.png} show practical results of a data
+transfer from FLASH to FLEXI. They confirm the applicability of the transfer
+procedure within acceptable error margins. Unavoidable is the truncation of
+sharp spikes in the data. Evidently, critical information in the proximity of
+strong shocks gets lost. Considering this, it is advisable to apply a
+Gaussian blur before the interpolation step. This way, almost equal initial
+states in FLASH and FLEXI are ensured.
+
+\image{1.0}{plots/interpolation/flexi-column-density.png}{
+Column densities plots of interpolated hypersonic (Mach 10) turbulence (see
+\fig{plots/forcing/b5-full-turbulence}) from FLASH to FLEXI. Left side: The
+density is interpolated via a third-order (four nodes per element) Lagrange
+interpolation as described in the text. The relative interpolation error is
+estimated as $\errorrms = 0.118763 \approx 12$\% (cf. \eqn{error-rms}).  Right
+side: The interpolation can be improved by introducing a Gaussian blur before
+the interpolation step: $\errorrms = 0.2808160 \approx 3$\%.
+}
+\image{0.8}{plots/interpolation/density-ray.png}{
+Comparison of one-dimensional density profiles and residuals through a
+hypersonic (Mach 10) turbulent box with original simulation data (flash) and
+transferred interpolated data (flexi). The density ray is extracted from same
+data already shown in \fig{plots/forcing/b5-full-turbulence} and
+\fig{plots/interpolation/flexi-column-density.png}. The smoothing (before
+the interpolation) was done via a Gaussian blur which minimizes the residual
+considerably.}
