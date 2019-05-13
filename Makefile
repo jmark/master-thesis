@@ -1,9 +1,4 @@
-main:
-	#pdflatex -interaction batchmode -shell-escape -output-directory=out -jobname=main main.tex
-	pdflatex -shell-escape -output-directory=aux -jobname=main main.tex
-	cp aux/main.pdf .
-
-bibtex:
+main: aux
 	#pdflatex -interaction batchmode -shell-escape -output-directory=out -jobname=main main.tex
 	pdflatex -shell-escape -output-directory=aux -jobname=main main.tex
 	bibtex aux/main.aux
@@ -11,18 +6,20 @@ bibtex:
 	pdflatex -shell-escape -output-directory=aux -jobname=main main.tex
 	cp aux/main.pdf .
 
-
-
-draft:
+draft: aux
 	#pdflatex -interaction batchmode -shell-escape -output-directory=out -jobname=main main.tex
 	pdflatex -draft -shell-escape -output-directory=aux -jobname=main main.tex
 	cp aux/main.pdf .
 
-preamble:
+preamble: aux
 	pdftex -ini -output-directory=aux -jobname=preamble "&pdflatex preamble.tex\\dump"
+
+aux:
+	mkdir -p aux
 
 clean: clear
 clear:
-	rm -fv aux/*
+	rm -fv main.pdf
+	rm -rfv aux
 
-.PHONY: preamble main clear clean
+.PHONY: aux preamble main clear clean
